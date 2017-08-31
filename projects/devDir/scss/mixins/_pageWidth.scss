@@ -1,0 +1,6 @@
+@import "../component/placeholder";
+
+@mixin pageWidth (){
+  @extend %pageWidth;
+  @content;
+}

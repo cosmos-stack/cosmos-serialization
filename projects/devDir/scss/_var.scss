@@ -1,0 +1,32 @@
+@charset "UTF-8";
+//变量
+$brand-primary:             #3c2d55;
+$brand-success:             #0c3;
+$brand-info:                #07BAD6;
+$brand-warning:             #ff864a;
+$brand-danger:              #e03627;
+$brand-tip:                 #ff864a;
+
+$gray:                      #6b6b6b;
+$gray-dark:                 #303030;
+$gray-light:                #909090;
+$gray-lighter:              #a1a1a1;
+$gray-lightest:             #ccc;
+
+$font-path: "../fonts";                  //字体路径
+$images-path: "/images/";              //图片路径
+
+
+$box-border-color:      #e4e4e4;        //边框颜色
+$box-border-gray:       #f2f2f2;        //边框颜色加浅
+$box-border-deep:       #d7d7d7;        //边框颜色加深
+
+$color-normal:          $gray;          // 正文文字颜色
+$color-title:           $gray-dark;     // 标题类文字
+$colorSub-color:        $gray-lighter;  // 辅助文字
+$body-bg:               #f8f8fb;        //重写body背景
+$link-active-bg:        #d9d9d9;
+
+
+//reset sasscore
+$white : $body-bg;

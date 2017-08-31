@@ -1,0 +1,20 @@
+[class*=ui-icons] {
+  display: inline-block;
+}
+.ui-icons-cate{
+  width: revertRem(32);
+  //height: revertRem(32);
+  padding-top: revertRem(7);
+  border-top: 0 solid #fff;
+  border-top-width:revertRem(4);
+  &:before,&:after{
+    content:"";
+    display:block;
+    height:revertRem(4);
+    background:#fff;
+}
+  &:before{
+    margin-bottom:revertRem(7);
+  }
+
+}

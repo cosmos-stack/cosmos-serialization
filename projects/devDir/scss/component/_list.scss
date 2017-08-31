@@ -1,0 +1,16 @@
+.list-block{
+  .item-link{
+    @include display-flex();
+    padding:revertRem(20) revertRem(15);
+    color:inherit;
+    &.active-status{
+      background:$link-active-bg;
+    }
+    .item-media{
+      margin-right:15px;
+    }
+    .item-content{
+      @include flex(1);
+    }
+  }
+}

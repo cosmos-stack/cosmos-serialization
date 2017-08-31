@@ -1,0 +1,16 @@
+@mixin border($dir: null, $style: solid, $width: 1px, $color: $box-border-color, $none: null, $important: false) {
+  $isImportant: if($important, !important, null);
+  @if $none == null {
+    @if $dir == null {
+      border: $width $style $color $isImportant;
+    } @else if (type-of($dir) == string) {
+      border-#{$dir} : $width $style $color $isImportant;
+    }
+  } @else {
+    @if $dir != null {
+      border-#{$dir} : none;
+    } @else {
+      border: none;
+    }
+  }
+}
