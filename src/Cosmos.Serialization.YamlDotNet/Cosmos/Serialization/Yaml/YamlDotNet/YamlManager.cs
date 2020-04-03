@@ -36,7 +36,7 @@ namespace Cosmos.Serialization.Yaml.YamlDotNet {
         /// <summary>
         /// Gets default YamlDotNet serializer
         /// </summary>
-        public static ISerializer DefaultSerializer {
+        public static global::YamlDotNet.Serialization.ISerializer DefaultSerializer {
             get => _serializerBuilder.Build();
         }
 
