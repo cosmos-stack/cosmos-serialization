@@ -12,19 +12,37 @@
         <member name="M:Cosmos.Serialization.ZeroFormatterObjectSerializer.Serialize``1(``0)">
             <inheritdoc />
         </member>
+        <member name="M:Cosmos.Serialization.ZeroFormatterObjectSerializer.SerializeToStream``1(``0)">
+            <inheritdoc />
+        </member>
         <member name="M:Cosmos.Serialization.ZeroFormatterObjectSerializer.Deserialize``1(System.Byte[])">
             <inheritdoc />
         </member>
         <member name="M:Cosmos.Serialization.ZeroFormatterObjectSerializer.Deserialize(System.Byte[],System.Type)">
             <inheritdoc />
         </member>
+        <member name="M:Cosmos.Serialization.ZeroFormatterObjectSerializer.DeserializeFromStream``1(System.IO.Stream)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.ZeroFormatterObjectSerializer.DeserializeFromStream(System.IO.Stream,System.Type)">
+            <inheritdoc />
+        </member>
         <member name="M:Cosmos.Serialization.ZeroFormatterObjectSerializer.SerializeAsync``1(``0)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.ZeroFormatterObjectSerializer.SerializeToStreamAsync``1(``0)">
             <inheritdoc />
         </member>
         <member name="M:Cosmos.Serialization.ZeroFormatterObjectSerializer.DeserializeAsync``1(System.Byte[])">
             <inheritdoc />
         </member>
         <member name="M:Cosmos.Serialization.ZeroFormatterObjectSerializer.DeserializeAsync(System.Byte[],System.Type)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.ZeroFormatterObjectSerializer.DeserializeFromStreamAsync``1(System.IO.Stream)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.ZeroFormatterObjectSerializer.DeserializeFromStreamAsync(System.IO.Stream,System.Type)">
             <inheritdoc />
         </member>
         <member name="T:Cosmos.Serialization.ZeroFormatter.ZeroFormatterExtensions">

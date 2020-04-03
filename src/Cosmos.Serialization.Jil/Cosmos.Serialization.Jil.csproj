@@ -21,7 +21,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Cosmos.Extensions" Version="0.1.3-beta1-120055" />
+        <PackageReference Include="Cosmos.Extensions" Version="0.1.3" />
     </ItemGroup>
 
 </Project>

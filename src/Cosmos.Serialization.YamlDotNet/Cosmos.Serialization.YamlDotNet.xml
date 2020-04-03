@@ -12,19 +12,37 @@
         <member name="M:Cosmos.Serialization.YamlSerializer.Serialize``1(``0)">
             <inheritdoc />
         </member>
+        <member name="M:Cosmos.Serialization.YamlSerializer.SerializeToStream``1(``0)">
+            <inheritdoc />
+        </member>
         <member name="M:Cosmos.Serialization.YamlSerializer.Deserialize``1(System.String)">
             <inheritdoc />
         </member>
         <member name="M:Cosmos.Serialization.YamlSerializer.Deserialize(System.String,System.Type)">
             <inheritdoc />
         </member>
+        <member name="M:Cosmos.Serialization.YamlSerializer.DeserializeFromStream``1(System.IO.Stream)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.YamlSerializer.DeserializeFromStream(System.IO.Stream,System.Type)">
+            <inheritdoc />
+        </member>
         <member name="M:Cosmos.Serialization.YamlSerializer.SerializeAsync``1(``0)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.YamlSerializer.SerializeToStreamAsync``1(``0)">
             <inheritdoc />
         </member>
         <member name="M:Cosmos.Serialization.YamlSerializer.DeserializeAsync``1(System.String)">
             <inheritdoc />
         </member>
         <member name="M:Cosmos.Serialization.YamlSerializer.DeserializeAsync(System.String,System.Type)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.YamlSerializer.DeserializeFromStreamAsync``1(System.IO.Stream)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.YamlSerializer.DeserializeFromStreamAsync(System.IO.Stream,System.Type)">
             <inheritdoc />
         </member>
         <member name="T:Cosmos.Serialization.Yaml.Extensions">

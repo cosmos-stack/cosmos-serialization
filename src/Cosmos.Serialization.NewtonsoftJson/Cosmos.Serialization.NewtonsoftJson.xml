@@ -764,19 +764,37 @@
         <member name="M:Cosmos.Serialization.NewtonsoftJsonSerializer.Serialize``1(``0)">
             <inheritdoc />
         </member>
+        <member name="M:Cosmos.Serialization.NewtonsoftJsonSerializer.SerializeToStream``1(``0)">
+            <inheritdoc />
+        </member>
         <member name="M:Cosmos.Serialization.NewtonsoftJsonSerializer.Deserialize``1(System.String)">
             <inheritdoc />
         </member>
         <member name="M:Cosmos.Serialization.NewtonsoftJsonSerializer.Deserialize(System.String,System.Type)">
             <inheritdoc />
         </member>
+        <member name="M:Cosmos.Serialization.NewtonsoftJsonSerializer.DeserializeFromStream``1(System.IO.Stream)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.NewtonsoftJsonSerializer.DeserializeFromStream(System.IO.Stream,System.Type)">
+            <inheritdoc />
+        </member>
         <member name="M:Cosmos.Serialization.NewtonsoftJsonSerializer.SerializeAsync``1(``0)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.NewtonsoftJsonSerializer.SerializeToStreamAsync``1(``0)">
             <inheritdoc />
         </member>
         <member name="M:Cosmos.Serialization.NewtonsoftJsonSerializer.DeserializeAsync``1(System.String)">
             <inheritdoc />
         </member>
         <member name="M:Cosmos.Serialization.NewtonsoftJsonSerializer.DeserializeAsync(System.String,System.Type)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.NewtonsoftJsonSerializer.DeserializeFromStreamAsync``1(System.IO.Stream)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.NewtonsoftJsonSerializer.DeserializeFromStreamAsync(System.IO.Stream,System.Type)">
             <inheritdoc />
         </member>
     </members>

@@ -381,19 +381,37 @@
         <member name="M:Cosmos.Serialization.LitObjectSerializer.Serialize``1(``0)">
             <inheritdoc />
         </member>
+        <member name="M:Cosmos.Serialization.LitObjectSerializer.SerializeToStream``1(``0)">
+            <inheritdoc />
+        </member>
         <member name="M:Cosmos.Serialization.LitObjectSerializer.Deserialize``1(System.String)">
             <inheritdoc />
         </member>
         <member name="M:Cosmos.Serialization.LitObjectSerializer.Deserialize(System.String,System.Type)">
             <inheritdoc />
         </member>
+        <member name="M:Cosmos.Serialization.LitObjectSerializer.DeserializeFromStream``1(System.IO.Stream)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.LitObjectSerializer.DeserializeFromStream(System.IO.Stream,System.Type)">
+            <inheritdoc />
+        </member>
         <member name="M:Cosmos.Serialization.LitObjectSerializer.SerializeAsync``1(``0)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.LitObjectSerializer.SerializeToStreamAsync``1(``0)">
             <inheritdoc />
         </member>
         <member name="M:Cosmos.Serialization.LitObjectSerializer.DeserializeAsync``1(System.String)">
             <inheritdoc />
         </member>
         <member name="M:Cosmos.Serialization.LitObjectSerializer.DeserializeAsync(System.String,System.Type)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.LitObjectSerializer.DeserializeFromStreamAsync``1(System.IO.Stream)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.LitObjectSerializer.DeserializeFromStreamAsync(System.IO.Stream,System.Type)">
             <inheritdoc />
         </member>
     </members>

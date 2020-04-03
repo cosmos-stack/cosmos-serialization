@@ -12,19 +12,37 @@
         <member name="M:Cosmos.Serialization.ProtoBufObjectSerializer.Serialize``1(``0)">
             <inheritdoc />
         </member>
+        <member name="M:Cosmos.Serialization.ProtoBufObjectSerializer.SerializeToStream``1(``0)">
+            <inheritdoc />
+        </member>
         <member name="M:Cosmos.Serialization.ProtoBufObjectSerializer.Deserialize``1(System.Byte[])">
             <inheritdoc />
         </member>
         <member name="M:Cosmos.Serialization.ProtoBufObjectSerializer.Deserialize(System.Byte[],System.Type)">
             <inheritdoc />
         </member>
+        <member name="M:Cosmos.Serialization.ProtoBufObjectSerializer.DeserializeFromStream``1(System.IO.Stream)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.ProtoBufObjectSerializer.DeserializeFromStream(System.IO.Stream,System.Type)">
+            <inheritdoc />
+        </member>
         <member name="M:Cosmos.Serialization.ProtoBufObjectSerializer.SerializeAsync``1(``0)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.ProtoBufObjectSerializer.SerializeToStreamAsync``1(``0)">
             <inheritdoc />
         </member>
         <member name="M:Cosmos.Serialization.ProtoBufObjectSerializer.DeserializeAsync``1(System.Byte[])">
             <inheritdoc />
         </member>
         <member name="M:Cosmos.Serialization.ProtoBufObjectSerializer.DeserializeAsync(System.Byte[],System.Type)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.ProtoBufObjectSerializer.DeserializeFromStreamAsync``1(System.IO.Stream)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.ProtoBufObjectSerializer.DeserializeFromStreamAsync(System.IO.Stream,System.Type)">
             <inheritdoc />
         </member>
         <member name="T:Cosmos.Serialization.ProtoBuf.Extensions">

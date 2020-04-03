@@ -394,19 +394,37 @@
         <member name="M:Cosmos.Serialization.NeueccMessagePackObjectSerializer.Serialize``1(``0)">
             <inheritdoc />
         </member>
+        <member name="M:Cosmos.Serialization.NeueccMessagePackObjectSerializer.SerializeToStream``1(``0)">
+            <inheritdoc />
+        </member>
         <member name="M:Cosmos.Serialization.NeueccMessagePackObjectSerializer.Deserialize``1(System.Byte[])">
             <inheritdoc />
         </member>
         <member name="M:Cosmos.Serialization.NeueccMessagePackObjectSerializer.Deserialize(System.Byte[],System.Type)">
             <inheritdoc />
         </member>
+        <member name="M:Cosmos.Serialization.NeueccMessagePackObjectSerializer.DeserializeFromStream``1(System.IO.Stream)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.NeueccMessagePackObjectSerializer.DeserializeFromStream(System.IO.Stream,System.Type)">
+            <inheritdoc />
+        </member>
         <member name="M:Cosmos.Serialization.NeueccMessagePackObjectSerializer.SerializeAsync``1(``0)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.NeueccMessagePackObjectSerializer.SerializeToStreamAsync``1(``0)">
             <inheritdoc />
         </member>
         <member name="M:Cosmos.Serialization.NeueccMessagePackObjectSerializer.DeserializeAsync``1(System.Byte[])">
             <inheritdoc />
         </member>
         <member name="M:Cosmos.Serialization.NeueccMessagePackObjectSerializer.DeserializeAsync(System.Byte[],System.Type)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.NeueccMessagePackObjectSerializer.DeserializeFromStreamAsync``1(System.IO.Stream)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.NeueccMessagePackObjectSerializer.DeserializeFromStreamAsync(System.IO.Stream,System.Type)">
             <inheritdoc />
         </member>
     </members>

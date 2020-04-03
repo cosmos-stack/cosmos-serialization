@@ -648,19 +648,37 @@
         <member name="M:Cosmos.Serialization.KoobooObjectSerializer.Serialize``1(``0)">
             <inheritdoc />
         </member>
+        <member name="M:Cosmos.Serialization.KoobooObjectSerializer.SerializeToStream``1(``0)">
+            <inheritdoc />
+        </member>
         <member name="M:Cosmos.Serialization.KoobooObjectSerializer.Deserialize``1(System.String)">
             <inheritdoc />
         </member>
         <member name="M:Cosmos.Serialization.KoobooObjectSerializer.Deserialize(System.String,System.Type)">
             <inheritdoc />
         </member>
+        <member name="M:Cosmos.Serialization.KoobooObjectSerializer.DeserializeFromStream``1(System.IO.Stream)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.KoobooObjectSerializer.DeserializeFromStream(System.IO.Stream,System.Type)">
+            <inheritdoc />
+        </member>
         <member name="M:Cosmos.Serialization.KoobooObjectSerializer.SerializeAsync``1(``0)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.KoobooObjectSerializer.SerializeToStreamAsync``1(``0)">
             <inheritdoc />
         </member>
         <member name="M:Cosmos.Serialization.KoobooObjectSerializer.DeserializeAsync``1(System.String)">
             <inheritdoc />
         </member>
         <member name="M:Cosmos.Serialization.KoobooObjectSerializer.DeserializeAsync(System.String,System.Type)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.KoobooObjectSerializer.DeserializeFromStreamAsync``1(System.IO.Stream)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.KoobooObjectSerializer.DeserializeFromStreamAsync(System.IO.Stream,System.Type)">
             <inheritdoc />
         </member>
     </members>
