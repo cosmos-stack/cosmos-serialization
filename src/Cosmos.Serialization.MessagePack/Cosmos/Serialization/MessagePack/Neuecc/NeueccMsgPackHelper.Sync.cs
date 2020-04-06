@@ -29,7 +29,7 @@ namespace Cosmos.Serialization.MessagePack.Neuecc {
 
             return obj is null
                 ? new byte[0]
-#if NETFRAMEWORK
+#if NET451
                 : MessagePackSerializer.NonGeneric.Serialize(type, obj);
 #else
                 : MessagePackSerializer.Serialize(type, obj);
@@ -59,7 +59,7 @@ namespace Cosmos.Serialization.MessagePack.Neuecc {
             if (data is null || data.Length == 0)
                 return null;
 
-#if NETFRAMEWORK
+#if NET451
             return MessagePackSerializer.NonGeneric.Deserialize(type, data);
 #else
             return MessagePackSerializer.Deserialize(type, data);

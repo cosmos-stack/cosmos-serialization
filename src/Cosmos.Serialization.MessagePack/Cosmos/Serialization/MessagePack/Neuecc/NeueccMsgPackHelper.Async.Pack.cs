@@ -69,7 +69,7 @@ namespace Cosmos.Serialization.MessagePack.Neuecc {
             if (obj is null)
                 return;
 
-#if NETFRAMEWORK
+#if NET451
             await Task.Run(() => MessagePackSerializer.NonGeneric.Serialize(type, stream, obj));
 #else
             await MessagePackSerializer.SerializeAsync(type, stream, obj);
@@ -105,7 +105,7 @@ namespace Cosmos.Serialization.MessagePack.Neuecc {
             if (stream.CanSeek && stream.Position > 0)
                 stream.Position = 0;
 
-#if NETFRAMEWORK
+#if NET451
             return await Task.Run(() => MessagePackSerializer.NonGeneric.Deserialize(type, stream));
 #else
             return await MessagePackSerializer.DeserializeAsync(type, stream);
