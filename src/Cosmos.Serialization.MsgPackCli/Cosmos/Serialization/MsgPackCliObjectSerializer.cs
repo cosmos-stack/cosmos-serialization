@@ -3,46 +3,83 @@ using System.IO;
 using System.Threading.Tasks;
 using Cosmos.Serialization.MessagePack.MsgPackCli;
 
-namespace Cosmos.Serialization {
+namespace Cosmos.Serialization
+{
     /// <summary>
     /// MsgPack-cli object serializer
     /// </summary>
-    public class MsgPackCliObjectSerializer : IMessagePackSerializer {
+    public class MsgPackCliObjectSerializer : IMessagePackSerializer
+    {
+        /// <inheritdoc />
+        public byte[] Serialize<T>(T o)
+        {
+            return MsgPackCliHelper.Serialize(o);
+        }
 
         /// <inheritdoc />
-        public byte[] Serialize<T>(T o) => MsgPackCliHelper.Serialize(o);
+        public Stream SerializeToStream<T>(T o)
+        {
+            return MsgPackCliHelper.Pack(o);
+        }
 
         /// <inheritdoc />
-        public Stream SerializeToStream<T>(T o) => MsgPackCliHelper.Pack(o);
+        public T Deserialize<T>(byte[] data)
+        {
+            return MsgPackCliHelper.Deserialize<T>(data);
+        }
 
         /// <inheritdoc />
-        public T Deserialize<T>(byte[] data) => MsgPackCliHelper.Deserialize<T>(data);
+        public object Deserialize(byte[] data, Type type)
+        {
+            return MsgPackCliHelper.Deserialize(data, type);
+        }
 
         /// <inheritdoc />
-        public object Deserialize(byte[] data, Type type) => MsgPackCliHelper.Deserialize(data, type);
+        public T DeserializeFromStream<T>(Stream stream)
+        {
+            return MsgPackCliHelper.Unpack<T>(stream);
+        }
 
         /// <inheritdoc />
-        public T DeserializeFromStream<T>(Stream stream) => MsgPackCliHelper.Unpack<T>(stream);
+        public object DeserializeFromStream(Stream stream, Type type)
+        {
+            return MsgPackCliHelper.Unpack(stream, type);
+        }
 
         /// <inheritdoc />
-        public object DeserializeFromStream(Stream stream, Type type) => MsgPackCliHelper.Unpack(stream, type);
+        public Task<byte[]> SerializeAsync<T>(T o)
+        {
+            return MsgPackCliHelper.SerializeAsync(o);
+        }
 
         /// <inheritdoc />
-        public Task<byte[]> SerializeAsync<T>(T o) => MsgPackCliHelper.SerializeAsync(o);
+        public Task<Stream> SerializeToStreamAsync<T>(T o)
+        {
+            return MsgPackCliHelper.PackAsync(o);
+        }
 
         /// <inheritdoc />
-        public Task<Stream> SerializeToStreamAsync<T>(T o) => MsgPackCliHelper.PackAsync(o);
+        public Task<T> DeserializeAsync<T>(byte[] data)
+        {
+            return MsgPackCliHelper.DeserializeAsync<T>(data);
+        }
 
         /// <inheritdoc />
-        public Task<T> DeserializeAsync<T>(byte[] data) => MsgPackCliHelper.DeserializeAsync<T>(data);
+        public Task<object> DeserializeAsync(byte[] data, Type type)
+        {
+            return MsgPackCliHelper.DeserializeAsync(data, type);
+        }
 
         /// <inheritdoc />
-        public Task<object> DeserializeAsync(byte[] data, Type type) => MsgPackCliHelper.DeserializeAsync(data, type);
+        public Task<T> DeserializeFromStreamAsync<T>(Stream stream)
+        {
+            return MsgPackCliHelper.UnpackAsync<T>(stream);
+        }
 
         /// <inheritdoc />
-        public Task<T> DeserializeFromStreamAsync<T>(Stream stream) => MsgPackCliHelper.UnpackAsync<T>(stream);
-
-        /// <inheritdoc />
-        public Task<object> DeserializeFromStreamAsync(Stream stream, Type type) => MsgPackCliHelper.UnpackAsync(stream, type);
+        public Task<object> DeserializeFromStreamAsync(Stream stream, Type type)
+        {
+            return MsgPackCliHelper.UnpackAsync(stream, type);
+        }
     }
 }

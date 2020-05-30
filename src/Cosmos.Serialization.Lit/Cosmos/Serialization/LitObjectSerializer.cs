@@ -3,45 +3,83 @@ using System.IO;
 using System.Threading.Tasks;
 using Cosmos.Serialization.Json.Lit;
 
-namespace Cosmos.Serialization {
+namespace Cosmos.Serialization
+{
     /// <summary>
     /// LitJson Serializer
     /// </summary>
-    public class LitObjectSerializer : IJsonSerializer {
+    public class LitObjectSerializer : IJsonSerializer
+    {
         /// <inheritdoc />
-        public string Serialize<T>(T o) => LitHelper.Serialize(o);
+        public string Serialize<T>(T o)
+        {
+            return LitHelper.Serialize(o);
+        }
 
         /// <inheritdoc />
-        public Stream SerializeToStream<T>(T o) => LitHelper.Pack(o);
+        public Stream SerializeToStream<T>(T o)
+        {
+            return LitHelper.Pack(o);
+        }
 
         /// <inheritdoc />
-        public T Deserialize<T>(string json) => LitHelper.Deserialize<T>(json);
+        public T Deserialize<T>(string json)
+        {
+            return LitHelper.Deserialize<T>(json);
+        }
 
         /// <inheritdoc />
-        public object Deserialize(string json, Type type) => LitHelper.Deserialize(json, type);
+        public object Deserialize(string json, Type type)
+        {
+            return LitHelper.Deserialize(json, type);
+        }
 
         /// <inheritdoc />
-        public T DeserializeFromStream<T>(Stream stream) => LitHelper.Unpack<T>(stream);
+        public T DeserializeFromStream<T>(Stream stream)
+        {
+            return LitHelper.Unpack<T>(stream);
+        }
 
         /// <inheritdoc />
-        public object DeserializeFromStream(Stream stream, Type type) => LitHelper.Unpack(stream, type);
+        public object DeserializeFromStream(Stream stream, Type type)
+        {
+            return LitHelper.Unpack(stream, type);
+        }
 
         /// <inheritdoc />
-        public Task<string> SerializeAsync<T>(T o) => LitHelper.SerializeAsync(o);
+        public Task<string> SerializeAsync<T>(T o)
+        {
+            return LitHelper.SerializeAsync(o);
+        }
 
         /// <inheritdoc />
-        public Task<Stream> SerializeToStreamAsync<T>(T o) => LitHelper.PackAsync(o);
+        public Task<Stream> SerializeToStreamAsync<T>(T o)
+        {
+            return LitHelper.PackAsync(o);
+        }
 
         /// <inheritdoc />
-        public Task<T> DeserializeAsync<T>(string data) => LitHelper.DeserializeAsync<T>(data);
+        public Task<T> DeserializeAsync<T>(string data)
+        {
+            return LitHelper.DeserializeAsync<T>(data);
+        }
 
         /// <inheritdoc />
-        public Task<object> DeserializeAsync(string data, Type type) => LitHelper.DeserializeAsync(data, type);
+        public Task<object> DeserializeAsync(string data, Type type)
+        {
+            return LitHelper.DeserializeAsync(data, type);
+        }
 
         /// <inheritdoc />
-        public Task<T> DeserializeFromStreamAsync<T>(Stream stream) => LitHelper.UnpackAsync<T>(stream);
+        public Task<T> DeserializeFromStreamAsync<T>(Stream stream)
+        {
+            return LitHelper.UnpackAsync<T>(stream);
+        }
 
         /// <inheritdoc />
-        public Task<object> DeserializeFromStreamAsync(Stream stream, Type type) => LitHelper.UnpackAsync(stream, type);
+        public Task<object> DeserializeFromStreamAsync(Stream stream, Type type)
+        {
+            return LitHelper.UnpackAsync(stream, type);
+        }
     }
 }

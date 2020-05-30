@@ -2,21 +2,24 @@ using System;
 using System.IO;
 using MessagePack;
 
-namespace Cosmos.Serialization.MessagePack.Neuecc {
+namespace Cosmos.Serialization.MessagePack.Neuecc
+{
     /// <summary>
     /// Neuecc's MessagePack helper
     /// </summary>
-    public static partial class NeueccMsgPackHelper {
+    public static partial class NeueccMsgPackHelper
+    {
         /// <summary>
         /// Pack
         /// </summary>
         /// <param name="t"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Stream Pack<T>(T t) {
+        public static Stream Pack<T>(T t)
+        {
             var ms = new MemoryStream();
 
-            if (t == null)
+            if (t is null)
                 return ms;
 
             Pack(t, ms);
@@ -32,8 +35,9 @@ namespace Cosmos.Serialization.MessagePack.Neuecc {
         /// <param name="t"></param>
         /// <param name="stream"></param>
         /// <typeparam name="T"></typeparam>
-        public static void Pack<T>(T t, Stream stream) {
-            if (t == null)
+        public static void Pack<T>(T t, Stream stream)
+        {
+            if (t is null)
                 return;
 
             MessagePackSerializer.Serialize(stream, t);
@@ -45,7 +49,8 @@ namespace Cosmos.Serialization.MessagePack.Neuecc {
         /// <param name="obj"></param>
         /// <param name="type"></param>
         /// <returns></returns>
-        public static Stream Pack(object obj, Type type) {
+        public static Stream Pack(object obj, Type type)
+        {
             var ms = new MemoryStream();
 
             if (obj is null)
@@ -64,7 +69,8 @@ namespace Cosmos.Serialization.MessagePack.Neuecc {
         /// <param name="obj"></param>
         /// <param name="type"></param>
         /// <param name="stream"></param>
-        public static void Pack(object obj, Type type, Stream stream) {
+        public static void Pack(object obj, Type type, Stream stream)
+        {
             if (obj is null)
                 return;
 
@@ -81,7 +87,8 @@ namespace Cosmos.Serialization.MessagePack.Neuecc {
         /// <param name="stream"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T Unpack<T>(Stream stream) {
+        public static T Unpack<T>(Stream stream)
+        {
             if (stream is null)
                 return default;
 
@@ -97,7 +104,8 @@ namespace Cosmos.Serialization.MessagePack.Neuecc {
         /// <param name="stream"></param>
         /// <param name="type"></param>
         /// <returns></returns>
-        public static object Unpack(Stream stream, Type type) {
+        public static object Unpack(Stream stream, Type type)
+        {
             if (stream is null)
                 return null;
 

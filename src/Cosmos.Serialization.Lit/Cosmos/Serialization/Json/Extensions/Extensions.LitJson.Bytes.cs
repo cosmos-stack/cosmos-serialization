@@ -3,18 +3,23 @@ using System.Threading.Tasks;
 using Cosmos.Serialization.Json.Lit;
 
 // ReSharper disable once CheckNamespace
-namespace Cosmos.Serialization.Json {
+namespace Cosmos.Serialization.Json
+{
     /// <summary>
     /// LitJson extensions
     /// </summary>
-    public static partial class Extensions {
+    public static partial class Extensions
+    {
         /// <summary>
         /// To LitJson bytes
         /// </summary>
         /// <param name="obj"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static byte[] ToLitBytes<T>(this T obj) => LitHelper.SerializeToBytes(obj);
+        public static byte[] ToLitBytes<T>(this T obj)
+        {
+            return LitHelper.SerializeToBytes(obj);
+        }
 
         /// <summary>
         /// To LitJson bytes async
@@ -22,7 +27,10 @@ namespace Cosmos.Serialization.Json {
         /// <param name="obj"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<byte[]> ToLitBytesAsync<T>(this T obj) => LitHelper.SerializeToBytesAsync(obj);
+        public static Task<byte[]> ToLitBytesAsync<T>(this T obj)
+        {
+            return LitHelper.SerializeToBytesAsync(obj);
+        }
 
         /// <summary>
         /// From LitJson bytes 
@@ -30,7 +38,10 @@ namespace Cosmos.Serialization.Json {
         /// <param name="data"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T FromLitBytes<T>(this byte[] data) => LitHelper.DeserializeFromBytes<T>(data);
+        public static T FromLitBytes<T>(this byte[] data)
+        {
+            return LitHelper.DeserializeFromBytes<T>(data);
+        }
 
         /// <summary>
         /// From LitJson bytes 
@@ -38,7 +49,10 @@ namespace Cosmos.Serialization.Json {
         /// <param name="data"></param>
         /// <param name="type"></param>
         /// <returns></returns>
-        public static object FromLitBytes(this byte[] data, Type type) => LitHelper.DeserializeFromBytes(data, type);
+        public static object FromLitBytes(this byte[] data, Type type)
+        {
+            return LitHelper.DeserializeFromBytes(data, type);
+        }
 
         /// <summary>
         /// From LitJson bytes async
@@ -46,7 +60,10 @@ namespace Cosmos.Serialization.Json {
         /// <param name="data"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<T> FromLitBytesAsync<T>(this byte[] data) => LitHelper.DeserializeFromBytesAsync<T>(data);
+        public static Task<T> FromLitBytesAsync<T>(this byte[] data)
+        {
+            return LitHelper.DeserializeFromBytesAsync<T>(data);
+        }
 
         /// <summary>
         /// From LitJson bytes async
@@ -54,6 +71,9 @@ namespace Cosmos.Serialization.Json {
         /// <param name="data"></param>
         /// <param name="type"></param>
         /// <returns></returns>
-        public static Task<object> FromLitBytesAsync(this byte[] data, Type type) => LitHelper.DeserializeFromBytesAsync(data, type);
+        public static Task<object> FromLitBytesAsync(this byte[] data, Type type)
+        {
+            return LitHelper.DeserializeFromBytesAsync(data, type);
+        }
     }
 }

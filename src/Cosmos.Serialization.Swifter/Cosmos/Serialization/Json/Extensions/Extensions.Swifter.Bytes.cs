@@ -4,13 +4,15 @@ using Cosmos.Serialization.Json.Swifter;
 using Swifter.Json;
 
 // ReSharper disable once CheckNamespace
-namespace Cosmos.Serialization.Json {
+namespace Cosmos.Serialization.Json
+{
     using S = SwifterHelper;
 
     /// <summary>
     /// SwiftJson extensions
     /// </summary>
-    public static partial class Extensions {
+    public static partial class Extensions
+    {
         /// <summary>
         /// To Swifter bytes
         /// </summary>
@@ -18,7 +20,10 @@ namespace Cosmos.Serialization.Json {
         /// <param name="options"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static byte[] ToSwifterBytes<T>(this T obj, JsonFormatterOptions? options = null) => S.SerializeToBytes(obj, options);
+        public static byte[] ToSwifterBytes<T>(this T obj, JsonFormatterOptions? options = null)
+        {
+            return S.SerializeToBytes(obj, options);
+        }
 
         /// <summary>
         /// To Swifter bytes async
@@ -27,7 +32,10 @@ namespace Cosmos.Serialization.Json {
         /// <param name="options"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<byte[]> ToSwifterBytesAsync<T>(this T obj, JsonFormatterOptions? options = null) => S.SerializeToBytesAsync(obj, options);
+        public static Task<byte[]> ToSwifterBytesAsync<T>(this T obj, JsonFormatterOptions? options = null)
+        {
+            return S.SerializeToBytesAsync(obj, options);
+        }
 
         /// <summary>
         /// From Swifter bytes 
@@ -36,7 +44,10 @@ namespace Cosmos.Serialization.Json {
         /// <param name="options"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T FromSwifterBytes<T>(this byte[] data, JsonFormatterOptions? options = null) => S.DeserializeFromBytes<T>(data, options);
+        public static T FromSwifterBytes<T>(this byte[] data, JsonFormatterOptions? options = null)
+        {
+            return S.DeserializeFromBytes<T>(data, options);
+        }
 
         /// <summary>
         /// From Swifter bytes 
@@ -45,7 +56,10 @@ namespace Cosmos.Serialization.Json {
         /// <param name="type"></param>
         /// <param name="options"></param>
         /// <returns></returns>
-        public static object FromSwifterBytes(this byte[] data, Type type, JsonFormatterOptions? options = null) => S.DeserializeFromBytes(data, type, options);
+        public static object FromSwifterBytes(this byte[] data, Type type, JsonFormatterOptions? options = null)
+        {
+            return S.DeserializeFromBytes(data, type, options);
+        }
 
         /// <summary>
         /// From Swifter bytes async
@@ -54,7 +68,10 @@ namespace Cosmos.Serialization.Json {
         /// <param name="options"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<T> FromSwifterBytesAsync<T>(this byte[] data, JsonFormatterOptions? options = null) => S.DeserializeFromBytesAsync<T>(data, options);
+        public static Task<T> FromSwifterBytesAsync<T>(this byte[] data, JsonFormatterOptions? options = null)
+        {
+            return S.DeserializeFromBytesAsync<T>(data, options);
+        }
 
         /// <summary>
         /// From Swifter bytes async
@@ -63,6 +80,9 @@ namespace Cosmos.Serialization.Json {
         /// <param name="type"></param>
         /// <param name="options"></param>
         /// <returns></returns>
-        public static Task<object> FromSwifterBytesAsync(this byte[] data, Type type, JsonFormatterOptions? options = null) => S.DeserializeFromBytesAsync(data, type, options);
+        public static Task<object> FromSwifterBytesAsync(this byte[] data, Type type, JsonFormatterOptions? options = null)
+        {
+            return S.DeserializeFromBytesAsync(data, type, options);
+        }
     }
 }

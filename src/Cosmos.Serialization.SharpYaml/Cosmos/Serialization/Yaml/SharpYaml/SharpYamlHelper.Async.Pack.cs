@@ -1,22 +1,26 @@
 using System;
 using System.IO;
 using System.Threading.Tasks;
+using Cosmos.Conversions;
 
-namespace Cosmos.Serialization.Yaml.SharpYaml {
+namespace Cosmos.Serialization.Yaml.SharpYaml
+{
     /// <summary>
     /// SharpYaml helper
     /// </summary>
-    public static partial class SharpYamlHelper {
+    public static partial class SharpYamlHelper
+    {
         /// <summary>
         /// Pack async
         /// </summary>
         /// <param name="o"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static async Task<Stream> PackAsync<T>(T o) {
+        public static async Task<Stream> PackAsync<T>(T o)
+        {
             var ms = new MemoryStream();
 
-            if (o == null)
+            if (o is null)
                 return ms;
 
             await PackAsync(o, ms);
@@ -30,10 +34,11 @@ namespace Cosmos.Serialization.Yaml.SharpYaml {
         /// <param name="o"></param>
         /// <param name="type"></param>
         /// <returns></returns>
-        public static async Task<Stream> PackAsync(object o, Type type) {
+        public static async Task<Stream> PackAsync(object o, Type type)
+        {
             var ms = new MemoryStream();
 
-            if (o == null)
+            if (o is null)
                 return ms;
 
             await PackAsync(o, type, ms);
@@ -47,8 +52,9 @@ namespace Cosmos.Serialization.Yaml.SharpYaml {
         /// <param name="o"></param>
         /// <param name="stream"></param>
         /// <typeparam name="T"></typeparam>
-        public static async Task PackAsync<T>(T o, Stream stream) {
-            if (o == null || !stream.CanWrite)
+        public static async Task PackAsync<T>(T o, Stream stream)
+        {
+            if (o is null || !stream.CanWrite)
                 return;
 
             var bytes = await SerializeToBytesAsync(o);
@@ -62,8 +68,9 @@ namespace Cosmos.Serialization.Yaml.SharpYaml {
         /// <param name="o"></param>
         /// <param name="stream"></param>
         /// <param name="type"></param>
-        public static async Task PackAsync(object o, Type type, Stream stream) {
-            if (o == null || !stream.CanWrite)
+        public static async Task PackAsync(object o, Type type, Stream stream)
+        {
+            if (o is null || !stream.CanWrite)
                 return;
 
             var bytes = await SerializeToBytesAsync(o, type);
@@ -77,8 +84,9 @@ namespace Cosmos.Serialization.Yaml.SharpYaml {
         /// <param name="stream"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static async Task<T> UnpackAsync<T>(Stream stream) {
-            return stream == null
+        public static async Task<T> UnpackAsync<T>(Stream stream)
+        {
+            return stream is null
                 ? default
                 : await DeserializeFromBytesAsync<T>(await stream.CastToBytesAsync());
         }
@@ -89,8 +97,9 @@ namespace Cosmos.Serialization.Yaml.SharpYaml {
         /// <param name="stream"></param>
         /// <param name="type"></param>
         /// <returns></returns>
-        public static async Task<object> UnpackAsync(Stream stream, Type type) {
-            return stream == null
+        public static async Task<object> UnpackAsync(Stream stream, Type type)
+        {
+            return stream is null
                 ? null
                 : await DeserializeFromBytesAsync(await stream.CastToBytesAsync(), type);
         }

@@ -2,18 +2,21 @@ using System;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace Cosmos.Serialization.Toml.Nett {
+namespace Cosmos.Serialization.Toml.Nett
+{
     /// <summary>
     /// Yaml Helper
     /// </summary>
-    public static partial class NettHelper {
+    public static partial class NettHelper
+    {
         /// <summary>
         /// Pack async
         /// </summary>
         /// <param name="o"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static async Task<Stream> PackAsync<T>(T o) {
+        public static async Task<Stream> PackAsync<T>(T o)
+        {
             var ms = new MemoryStream();
 
             if (o is null)
@@ -30,7 +33,8 @@ namespace Cosmos.Serialization.Toml.Nett {
         /// <param name="o"></param>
         /// <param name="type"></param>
         /// <returns></returns>
-        public static async Task<Stream> PackAsync(object o, Type type) {
+        public static async Task<Stream> PackAsync(object o, Type type)
+        {
             var ms = new MemoryStream();
 
             if (o is null)
@@ -47,8 +51,9 @@ namespace Cosmos.Serialization.Toml.Nett {
         /// <param name="o"></param>
         /// <param name="stream"></param>
         /// <typeparam name="T"></typeparam>
-        public static async Task PackAsync<T>(T o, Stream stream) {
-            if (o == null || !stream.CanWrite)
+        public static async Task PackAsync<T>(T o, Stream stream)
+        {
+            if (o is null || !stream.CanWrite)
                 return;
 
             await Task.Run(() => Pack(o, stream));
@@ -60,8 +65,9 @@ namespace Cosmos.Serialization.Toml.Nett {
         /// <param name="o"></param>
         /// <param name="type"></param>
         /// <param name="stream"></param>
-        public static async Task PackAsync(object o, Type type, Stream stream) {
-            if (o == null || !stream.CanWrite)
+        public static async Task PackAsync(object o, Type type, Stream stream)
+        {
+            if (o is null || !stream.CanWrite)
                 return;
 
             await Task.Run(() => Pack(o, type, stream));
@@ -73,8 +79,9 @@ namespace Cosmos.Serialization.Toml.Nett {
         /// <param name="stream"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static async Task<T> UnpackAsync<T>(Stream stream) {
-            return stream == null
+        public static async Task<T> UnpackAsync<T>(Stream stream)
+        {
+            return stream is null
                 ? default
                 : await Task.Run(() => Unpack<T>(stream));
         }
@@ -85,8 +92,9 @@ namespace Cosmos.Serialization.Toml.Nett {
         /// <param name="stream"></param>
         /// <param name="type"></param>
         /// <returns></returns>
-        public static async Task<object> UnpackAsync(Stream stream, Type type) {
-            return stream == null
+        public static async Task<object> UnpackAsync(Stream stream, Type type)
+        {
+            return stream is null
                 ? null
                 : await Task.Run(() => Unpack(stream, type));
         }

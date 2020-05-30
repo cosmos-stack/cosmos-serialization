@@ -4,18 +4,23 @@ using System.Threading.Tasks;
 using Cosmos.Serialization.Yaml.YamlDotNet;
 
 // ReSharper disable once CheckNamespace
-namespace Cosmos.Serialization.Yaml {
+namespace Cosmos.Serialization.Yaml
+{
     /// <summary>
     /// YamlDotNet extensions
     /// </summary>
-    public static partial class Extensions {
+    public static partial class Extensions
+    {
         /// <summary>
         /// To stream
         /// </summary>
         /// <param name="t"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Stream ToYamlStream<T>(this T t) => YamlHelper.Pack(t);
+        public static Stream ToYamlStream<T>(this T t)
+        {
+            return YamlHelper.Pack(t);
+        }
 
         /// <summary>
         /// To stream
@@ -23,7 +28,10 @@ namespace Cosmos.Serialization.Yaml {
         /// <param name="obj"></param>
         /// <param name="type"></param>
         /// <returns></returns>
-        public static Stream ToYamlStream(this object obj, Type type) => YamlHelper.Pack(obj, type);
+        public static Stream ToYamlStream(this object obj, Type type)
+        {
+            return YamlHelper.Pack(obj, type);
+        }
 
         /// <summary>
         /// To stream
@@ -31,7 +39,10 @@ namespace Cosmos.Serialization.Yaml {
         /// <param name="t"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static async Task<Stream> ToYamlStreamAsync<T>(this T t) => await YamlHelper.PackAsync(t);
+        public static async Task<Stream> ToYamlStreamAsync<T>(this T t)
+        {
+            return await YamlHelper.PackAsync(t);
+        }
 
         /// <summary>
         /// To stream
@@ -39,6 +50,9 @@ namespace Cosmos.Serialization.Yaml {
         /// <param name="obj"></param>
         /// <param name="type"></param>
         /// <returns></returns>
-        public static async Task<Stream> ToYamlStreamAsync(this object obj, Type type) => await YamlHelper.PackAsync(obj, type);
+        public static async Task<Stream> ToYamlStreamAsync(this object obj, Type type)
+        {
+            return await YamlHelper.PackAsync(obj, type);
+        }
     }
 }

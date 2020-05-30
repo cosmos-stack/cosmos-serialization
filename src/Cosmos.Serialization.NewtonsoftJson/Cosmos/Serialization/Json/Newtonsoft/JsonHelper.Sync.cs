@@ -13,11 +13,13 @@ using NodaTime.Serialization.JsonNet;
  * Changed and updated by Alex LEWIS
  */
 
-namespace Cosmos.Serialization.Json.Newtonsoft {
+namespace Cosmos.Serialization.Json.Newtonsoft
+{
     /// <summary>
     /// Newtonsoft Json Helper
     /// </summary>
-    public static partial class JsonHelper {
+    public static partial class JsonHelper
+    {
         /// <summary>
         /// Serialize to bytes
         /// </summary>
@@ -25,7 +27,8 @@ namespace Cosmos.Serialization.Json.Newtonsoft {
         /// <param name="settings"></param>
         /// <param name="withNodaTime"></param>
         /// <returns></returns>
-        public static byte[] SerializeToBytes(object o, JsonSerializerSettings settings = null, bool withNodaTime = false) {
+        public static byte[] SerializeToBytes(object o, JsonSerializerSettings settings = null, bool withNodaTime = false)
+        {
             return o is null
                 ? new byte[0]
                 : JsonManager.DefaultEncoding.GetBytes(Serialize(o, settings, withNodaTime));
@@ -38,7 +41,8 @@ namespace Cosmos.Serialization.Json.Newtonsoft {
         /// <param name="settings"></param>
         /// <param name="withNodaTime"></param>
         /// <returns></returns>
-        public static string Serialize(object o, JsonSerializerSettings settings = null, bool withNodaTime = false) {
+        public static string Serialize(object o, JsonSerializerSettings settings = null, bool withNodaTime = false)
+        {
             return o is null
                 ? string.Empty
                 : JsonConvert.SerializeObject(o, TouchSettings(settings, withNodaTime));
@@ -52,7 +56,8 @@ namespace Cosmos.Serialization.Json.Newtonsoft {
         /// <param name="withNodaTime"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T DeserializeFromBytes<T>(byte[] data, JsonSerializerSettings settings = null, bool withNodaTime = false) {
+        public static T DeserializeFromBytes<T>(byte[] data, JsonSerializerSettings settings = null, bool withNodaTime = false)
+        {
             return data is null || data.Length is 0
                 ? default
                 : Deserialize<T>(JsonManager.DefaultEncoding.GetString(data), settings, withNodaTime);
@@ -66,7 +71,8 @@ namespace Cosmos.Serialization.Json.Newtonsoft {
         /// <param name="settings"></param>
         /// <param name="withNodaTime"></param>
         /// <returns></returns>
-        public static object DeserializeFromBytes(byte[] data, Type type, JsonSerializerSettings settings = null, bool withNodaTime = false) {
+        public static object DeserializeFromBytes(byte[] data, Type type, JsonSerializerSettings settings = null, bool withNodaTime = false)
+        {
             return data is null || data.Length is 0
                 ? default
                 : Deserialize(JsonManager.DefaultEncoding.GetString(data), type, settings, withNodaTime);
@@ -80,7 +86,8 @@ namespace Cosmos.Serialization.Json.Newtonsoft {
         /// <param name="withNodaTime"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T Deserialize<T>(string json, JsonSerializerSettings settings = null, bool withNodaTime = false) {
+        public static T Deserialize<T>(string json, JsonSerializerSettings settings = null, bool withNodaTime = false)
+        {
             return string.IsNullOrWhiteSpace(json)
                 ? default
                 : JsonConvert.DeserializeObject<T>(json, TouchSettings(settings, withNodaTime));
@@ -94,14 +101,17 @@ namespace Cosmos.Serialization.Json.Newtonsoft {
         /// <param name="type"></param>
         /// <param name="withNodaTime"></param>
         /// <returns></returns>
-        public static object Deserialize(string json, Type type, JsonSerializerSettings settings = null, bool withNodaTime = false) {
+        public static object Deserialize(string json, Type type, JsonSerializerSettings settings = null, bool withNodaTime = false)
+        {
             return string.IsNullOrWhiteSpace(json)
                 ? default
                 : JsonConvert.DeserializeObject(json, type, TouchSettings(settings, withNodaTime));
         }
 
-        private static JsonSerializerSettings TouchSettings(JsonSerializerSettings settings, bool nodatime) {
-            if (settings == null) {
+        private static JsonSerializerSettings TouchSettings(JsonSerializerSettings settings, bool nodatime)
+        {
+            if (settings is null)
+            {
                 return nodatime
                     ? JsonManager.DefaultSettingsWithNodaTime
                     : JsonManager.DefaultSettings;
@@ -112,8 +122,10 @@ namespace Cosmos.Serialization.Json.Newtonsoft {
             return settings;
         }
 
-        private static void UseNodaTimeIfNeed(this JsonSerializerSettings settings, bool withNodaTime) {
-            if (withNodaTime) {
+        private static void UseNodaTimeIfNeed(this JsonSerializerSettings settings, bool withNodaTime)
+        {
+            if (withNodaTime)
+            {
                 settings.ConfigureForNodaTime(DateTimeZoneProviders.Tzdb);
             }
         }

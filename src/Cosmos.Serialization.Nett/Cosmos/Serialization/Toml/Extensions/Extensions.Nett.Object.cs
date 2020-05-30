@@ -2,18 +2,23 @@ using System.Threading.Tasks;
 using Cosmos.Serialization.Toml.Nett;
 
 // ReSharper disable once CheckNamespace
-namespace Cosmos.Serialization.Toml {
+namespace Cosmos.Serialization.Toml
+{
     /// <summary>
     /// TomlDotNet extensions
     /// </summary>
-    public static partial class Extensions {
+    public static partial class Extensions
+    {
         /// <summary>
         /// To Toml
         /// </summary>
         /// <param name="o"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static string ToToml<T>(this T o) => NettHelper.Serialize(o);
+        public static string ToToml<T>(this T o)
+        {
+            return NettHelper.Serialize(o);
+        }
 
         /// <summary>
         /// To Toml async
@@ -21,6 +26,9 @@ namespace Cosmos.Serialization.Toml {
         /// <param name="o"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<string> ToTomlAsync<T>(this T o) => NettHelper.SerializeAsync(o);
+        public static Task<string> ToTomlAsync<T>(this T o)
+        {
+            return NettHelper.SerializeAsync(o);
+        }
     }
 }

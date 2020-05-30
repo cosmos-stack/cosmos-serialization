@@ -4,19 +4,23 @@ using System.Threading.Tasks;
 using Cosmos.Serialization.Yaml.SharpYaml;
 
 // ReSharper disable once CheckNamespace
-namespace Cosmos.Serialization.Yaml {
-
+namespace Cosmos.Serialization.Yaml
+{
     /// <summary>
     /// SharpYaml extensions
     /// </summary>
-    public static partial class Extensions {
+    public static partial class Extensions
+    {
         /// <summary>
         /// To stream
         /// </summary>
         /// <param name="t"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Stream ToSharpYamlStream<T>(this T t) => SharpYamlHelper.Pack(t);
+        public static Stream ToSharpYamlStream<T>(this T t)
+        {
+            return SharpYamlHelper.Pack(t);
+        }
 
         /// <summary>
         /// To stream
@@ -24,7 +28,10 @@ namespace Cosmos.Serialization.Yaml {
         /// <param name="obj"></param>
         /// <param name="type"></param>
         /// <returns></returns>
-        public static Stream ToSharpYamlStream(this object obj, Type type) => SharpYamlHelper.Pack(obj, type);
+        public static Stream ToSharpYamlStream(this object obj, Type type)
+        {
+            return SharpYamlHelper.Pack(obj, type);
+        }
 
         /// <summary>
         /// To stream
@@ -32,7 +39,10 @@ namespace Cosmos.Serialization.Yaml {
         /// <param name="t"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static async Task<Stream> ToSharpYamlStreamAsync<T>(this T t) => await SharpYamlHelper.PackAsync(t);
+        public static async Task<Stream> ToSharpYamlStreamAsync<T>(this T t)
+        {
+            return await SharpYamlHelper.PackAsync(t);
+        }
 
         /// <summary>
         /// To stream
@@ -40,6 +50,9 @@ namespace Cosmos.Serialization.Yaml {
         /// <param name="obj"></param>
         /// <param name="type"></param>
         /// <returns></returns>
-        public static async Task<Stream> ToSharpYamlStreamAsync(this object obj, Type type) => await SharpYamlHelper.PackAsync(obj, type);
+        public static async Task<Stream> ToSharpYamlStreamAsync(this object obj, Type type)
+        {
+            return await SharpYamlHelper.PackAsync(obj, type);
+        }
     }
 }

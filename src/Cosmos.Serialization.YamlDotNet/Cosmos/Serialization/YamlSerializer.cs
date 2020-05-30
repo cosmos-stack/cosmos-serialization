@@ -3,46 +3,83 @@ using System.IO;
 using System.Threading.Tasks;
 using Cosmos.Serialization.Yaml.YamlDotNet;
 
-namespace Cosmos.Serialization {
+namespace Cosmos.Serialization
+{
     /// <summary>
     /// Yaml Serializer
     /// </summary>
-    public class YamlSerializer : IYamlSerializer {
+    public class YamlSerializer : IYamlSerializer
+    {
+        /// <inheritdoc />
+        public string Serialize<T>(T o)
+        {
+            return YamlHelper.Serialize(o);
+        }
 
         /// <inheritdoc />
-        public string Serialize<T>(T o) => YamlHelper.Serialize(o);
+        public Stream SerializeToStream<T>(T o)
+        {
+            return YamlHelper.Pack(o);
+        }
 
         /// <inheritdoc />
-        public Stream SerializeToStream<T>(T o) => YamlHelper.Pack(o);
+        public T Deserialize<T>(string data)
+        {
+            return YamlHelper.Deserialize<T>(data);
+        }
 
         /// <inheritdoc />
-        public T Deserialize<T>(string data) => YamlHelper.Deserialize<T>(data);
+        public object Deserialize(string data, Type type)
+        {
+            return YamlHelper.Deserialize(data, type);
+        }
 
         /// <inheritdoc />
-        public object Deserialize(string data, Type type) => YamlHelper.Deserialize(data, type);
+        public T DeserializeFromStream<T>(Stream stream)
+        {
+            return YamlHelper.Unpack<T>(stream);
+        }
 
         /// <inheritdoc />
-        public T DeserializeFromStream<T>(Stream stream) => YamlHelper.Unpack<T>(stream);
+        public object DeserializeFromStream(Stream stream, Type type)
+        {
+            return YamlHelper.Unpack(stream, type);
+        }
 
         /// <inheritdoc />
-        public object DeserializeFromStream(Stream stream, Type type) => YamlHelper.Unpack(stream, type);
+        public Task<string> SerializeAsync<T>(T o)
+        {
+            return YamlHelper.SerializeAsync(o);
+        }
 
         /// <inheritdoc />
-        public Task<string> SerializeAsync<T>(T o) => YamlHelper.SerializeAsync(o);
+        public Task<Stream> SerializeToStreamAsync<T>(T o)
+        {
+            return YamlHelper.PackAsync(o);
+        }
 
         /// <inheritdoc />
-        public Task<Stream> SerializeToStreamAsync<T>(T o) => YamlHelper.PackAsync(o);
+        public Task<T> DeserializeAsync<T>(string data)
+        {
+            return YamlHelper.DeserializeAsync<T>(data);
+        }
 
         /// <inheritdoc />
-        public Task<T> DeserializeAsync<T>(string data) => YamlHelper.DeserializeAsync<T>(data);
+        public Task<object> DeserializeAsync(string data, Type type)
+        {
+            return YamlHelper.DeserializeAsync(data, type);
+        }
 
         /// <inheritdoc />
-        public Task<object> DeserializeAsync(string data, Type type) => YamlHelper.DeserializeAsync(data, type);
+        public Task<T> DeserializeFromStreamAsync<T>(Stream stream)
+        {
+            return YamlHelper.UnpackAsync<T>(stream);
+        }
 
         /// <inheritdoc />
-        public Task<T> DeserializeFromStreamAsync<T>(Stream stream) => YamlHelper.UnpackAsync<T>(stream);
-
-        /// <inheritdoc />
-        public Task<object> DeserializeFromStreamAsync(Stream stream, Type type) => YamlHelper.UnpackAsync(stream, type);
+        public Task<object> DeserializeFromStreamAsync(Stream stream, Type type)
+        {
+            return YamlHelper.UnpackAsync(stream, type);
+        }
     }
 }

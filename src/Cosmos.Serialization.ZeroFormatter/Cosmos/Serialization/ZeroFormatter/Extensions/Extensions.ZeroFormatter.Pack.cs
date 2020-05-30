@@ -3,10 +3,12 @@ using System.IO;
 using System.Threading.Tasks;
 
 // ReSharper disable once CheckNamespace
-namespace Cosmos.Serialization.ZeroFormatter {
+namespace Cosmos.Serialization.ZeroFormatter
+{
     using Z = ZeroFormatterHelper;
 
-    public static partial class ZeroFormatterExtensions {
+    public static partial class ZeroFormatterExtensions
+    {
         /// <summary>
         /// Pack to
         /// </summary>

@@ -1,18 +1,22 @@
 using System;
 using System.IO;
+using Cosmos.Conversions;
 
-namespace Cosmos.Serialization.Yaml.SharpYaml {
+namespace Cosmos.Serialization.Yaml.SharpYaml
+{
     /// <summary>
     /// SharpYaml helper
     /// </summary>
-    public static partial class SharpYamlHelper {
+    public static partial class SharpYamlHelper
+    {
         /// <summary>
         /// Pack
         /// </summary>
         /// <param name="o"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Stream Pack<T>(T o) {
+        public static Stream Pack<T>(T o)
+        {
             var ms = new MemoryStream();
 
             if (o is null)
@@ -29,7 +33,8 @@ namespace Cosmos.Serialization.Yaml.SharpYaml {
         /// <param name="o"></param>
         /// <param name="type"></param>
         /// <returns></returns>
-        public static Stream Pack(object o, Type type) {
+        public static Stream Pack(object o, Type type)
+        {
             var ms = new MemoryStream();
 
             if (o is null)
@@ -46,8 +51,9 @@ namespace Cosmos.Serialization.Yaml.SharpYaml {
         /// <param name="o"></param>
         /// <param name="stream"></param>
         /// <typeparam name="T"></typeparam>
-        public static void Pack<T>(T o, Stream stream) {
-            if (o == null || !stream.CanWrite)
+        public static void Pack<T>(T o, Stream stream)
+        {
+            if (o is null || !stream.CanWrite)
                 return;
 
             var bytes = SerializeToBytes(o);
@@ -61,8 +67,9 @@ namespace Cosmos.Serialization.Yaml.SharpYaml {
         /// <param name="o"></param>
         /// <param name="stream"></param>
         /// <param name="type"></param>
-        public static void Pack(object o, Type type, Stream stream) {
-            if (o == null || !stream.CanWrite)
+        public static void Pack(object o, Type type, Stream stream)
+        {
+            if (o is null || !stream.CanWrite)
                 return;
 
             var bytes = SerializeToBytes(o, type);
@@ -76,8 +83,9 @@ namespace Cosmos.Serialization.Yaml.SharpYaml {
         /// <param name="stream"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T Unpack<T>(Stream stream) {
-            return stream == null
+        public static T Unpack<T>(Stream stream)
+        {
+            return stream is null
                 ? default
                 : DeserializeFromBytes<T>(stream.CastToBytes());
         }
@@ -88,8 +96,9 @@ namespace Cosmos.Serialization.Yaml.SharpYaml {
         /// <param name="stream"></param>
         /// <param name="type"></param>
         /// <returns></returns>
-        public static object Unpack(Stream stream, Type type) {
-            return stream == null
+        public static object Unpack(Stream stream, Type type)
+        {
+            return stream is null
                 ? null
                 : DeserializeFromBytes(stream.CastToBytes(), type);
         }

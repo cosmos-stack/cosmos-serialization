@@ -5,11 +5,13 @@ using Jil;
 using Cosmos.Serialization.Json.Jil;
 
 // ReSharper disable once CheckNamespace
-namespace Cosmos.Serialization.Json {
+namespace Cosmos.Serialization.Json
+{
     /// <summary>
     /// JilJson extensions
     /// </summary>
-    public static partial class Extensions {
+    public static partial class Extensions
+    {
         /// <summary>
         /// To Jil
         /// </summary>
@@ -17,7 +19,10 @@ namespace Cosmos.Serialization.Json {
         /// <param name="options"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static string ToJil<T>(this T obj, Options options = null) => JilHelper.Serialize(obj, options);
+        public static string ToJil<T>(this T obj, Options options = null)
+        {
+            return JilHelper.Serialize(obj, options);
+        }
 
         /// <summary>
         /// To Jil
@@ -26,7 +31,10 @@ namespace Cosmos.Serialization.Json {
         /// <param name="optionsAct"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static string ToJil<T>(this T obj, Action<Options> optionsAct) => JilHelper.Serialize(obj, optionsAct);
+        public static string ToJil<T>(this T obj, Action<Options> optionsAct)
+        {
+            return JilHelper.Serialize(obj, optionsAct);
+        }
 
         /// <summary>
         /// To Jil
@@ -35,7 +43,10 @@ namespace Cosmos.Serialization.Json {
         /// <param name="textWriter"></param>
         /// <param name="options"></param>
         /// <typeparam name="T"></typeparam>
-        public static void ToJil<T>(this T obj, TextWriter textWriter, Options options = null) => JilHelper.Serialize(obj, textWriter, options);
+        public static void ToJil<T>(this T obj, TextWriter textWriter, Options options = null)
+        {
+            JilHelper.Serialize(obj, textWriter, options);
+        }
 
         /// <summary>
         /// To Jil async
@@ -44,7 +55,10 @@ namespace Cosmos.Serialization.Json {
         /// <param name="options"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<string> ToJilAsync<T>(this T obj, Options options = null) => JilHelper.SerializeAsync(obj, options);
+        public static Task<string> ToJilAsync<T>(this T obj, Options options = null)
+        {
+            return JilHelper.SerializeAsync(obj, options);
+        }
 
         /// <summary>
         /// To Jil async
@@ -53,7 +67,10 @@ namespace Cosmos.Serialization.Json {
         /// <param name="optionsAct"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<string> ToJilAsync<T>(this T obj, Action<Options> optionsAct) => JilHelper.SerializeAsync(obj, optionsAct);
+        public static Task<string> ToJilAsync<T>(this T obj, Action<Options> optionsAct)
+        {
+            return JilHelper.SerializeAsync(obj, optionsAct);
+        }
 
         /// <summary>
         /// To Jil async
@@ -62,6 +79,9 @@ namespace Cosmos.Serialization.Json {
         /// <param name="textWriter"></param>
         /// <param name="options"></param>
         /// <typeparam name="T"></typeparam>
-        public static Task ToJilAsync<T>(this T obj, TextWriter textWriter, Options options = null) => JilHelper.SerializeAsync(obj, textWriter, options);
+        public static Task ToJilAsync<T>(this T obj, TextWriter textWriter, Options options = null)
+        {
+            return JilHelper.SerializeAsync(obj, textWriter, options);
+        }
     }
 }

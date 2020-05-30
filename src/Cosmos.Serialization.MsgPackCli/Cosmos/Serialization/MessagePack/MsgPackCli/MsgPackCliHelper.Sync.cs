@@ -1,19 +1,23 @@
 using System;
 using System.IO;
+using Cosmos.Conversions;
 
-namespace Cosmos.Serialization.MessagePack.MsgPackCli {
+namespace Cosmos.Serialization.MessagePack.MsgPackCli
+{
     /// <summary>
     /// MessagePack-Cli helper
     /// </summary>
-    public static partial class MsgPackCliHelper {
+    public static partial class MsgPackCliHelper
+    {
         /// <summary>
         /// Serialize
         /// </summary>
         /// <param name="t"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static byte[] Serialize<T>(T t) {
-            if (t == null)
+        public static byte[] Serialize<T>(T t)
+        {
+            if (t is null)
                 return new byte[0];
 
             using var stream = Pack(t);
@@ -26,7 +30,8 @@ namespace Cosmos.Serialization.MessagePack.MsgPackCli {
         /// <param name="obj"></param>
         /// <param name="type"></param>
         /// <returns></returns>
-        public static byte[] Serialize(object obj, Type type) {
+        public static byte[] Serialize(object obj, Type type)
+        {
             if (obj is null)
                 return new byte[0];
 
@@ -40,7 +45,8 @@ namespace Cosmos.Serialization.MessagePack.MsgPackCli {
         /// <param name="data"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T Deserialize<T>(byte[] data) {
+        public static T Deserialize<T>(byte[] data)
+        {
             if (data is null || data.Length == 0)
                 return default;
 
@@ -54,7 +60,8 @@ namespace Cosmos.Serialization.MessagePack.MsgPackCli {
         /// <param name="data"></param>
         /// <param name="type"></param>
         /// <returns></returns>
-        public static object Deserialize(byte[] data, Type type) {
+        public static object Deserialize(byte[] data, Type type)
+        {
             if (data is null || data.Length == 0)
                 return null;
 

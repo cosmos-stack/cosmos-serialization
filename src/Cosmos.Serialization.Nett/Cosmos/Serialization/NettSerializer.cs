@@ -3,46 +3,83 @@ using System.IO;
 using System.Threading.Tasks;
 using Cosmos.Serialization.Toml.Nett;
 
-namespace Cosmos.Serialization {
+namespace Cosmos.Serialization
+{
     /// <summary>
     /// Nett TOML Serializer
     /// </summary>
-    public class NettSerializer : ITomlSerializer {
+    public class NettSerializer : ITomlSerializer
+    {
+        /// <inheritdoc />
+        public string Serialize<T>(T o)
+        {
+            return NettHelper.Serialize(o);
+        }
 
         /// <inheritdoc />
-        public string Serialize<T>(T o) => NettHelper.Serialize(o);
+        public Stream SerializeToStream<T>(T o)
+        {
+            return NettHelper.Pack(o);
+        }
 
         /// <inheritdoc />
-        public Stream SerializeToStream<T>(T o) => NettHelper.Pack(o);
+        public T Deserialize<T>(string data)
+        {
+            return NettHelper.Deserialize<T>(data);
+        }
 
         /// <inheritdoc />
-        public T Deserialize<T>(string data) => NettHelper.Deserialize<T>(data);
+        public object Deserialize(string data, Type type)
+        {
+            return NettHelper.Deserialize(data, type);
+        }
 
         /// <inheritdoc />
-        public object Deserialize(string data, Type type) => NettHelper.Deserialize(data, type);
+        public T DeserializeFromStream<T>(Stream stream)
+        {
+            return NettHelper.Unpack<T>(stream);
+        }
 
         /// <inheritdoc />
-        public T DeserializeFromStream<T>(Stream stream) => NettHelper.Unpack<T>(stream);
+        public object DeserializeFromStream(Stream stream, Type type)
+        {
+            return NettHelper.Unpack(stream, type);
+        }
 
         /// <inheritdoc />
-        public object DeserializeFromStream(Stream stream, Type type) => NettHelper.Unpack(stream, type);
+        public Task<string> SerializeAsync<T>(T o)
+        {
+            return NettHelper.SerializeAsync(o);
+        }
 
         /// <inheritdoc />
-        public Task<string> SerializeAsync<T>(T o) => NettHelper.SerializeAsync(o);
+        public Task<Stream> SerializeToStreamAsync<T>(T o)
+        {
+            return NettHelper.PackAsync(o);
+        }
 
         /// <inheritdoc />
-        public Task<Stream> SerializeToStreamAsync<T>(T o) => NettHelper.PackAsync(o);
+        public Task<T> DeserializeAsync<T>(string data)
+        {
+            return NettHelper.DeserializeAsync<T>(data);
+        }
 
         /// <inheritdoc />
-        public Task<T> DeserializeAsync<T>(string data) => NettHelper.DeserializeAsync<T>(data);
+        public Task<object> DeserializeAsync(string data, Type type)
+        {
+            return NettHelper.DeserializeAsync(data, type);
+        }
 
         /// <inheritdoc />
-        public Task<object> DeserializeAsync(string data, Type type) => NettHelper.DeserializeAsync(data, type);
+        public Task<T> DeserializeFromStreamAsync<T>(Stream stream)
+        {
+            return NettHelper.UnpackAsync<T>(stream);
+        }
 
         /// <inheritdoc />
-        public Task<T> DeserializeFromStreamAsync<T>(Stream stream) => NettHelper.UnpackAsync<T>(stream);
-
-        /// <inheritdoc />
-        public Task<object> DeserializeFromStreamAsync(Stream stream, Type type) => NettHelper.UnpackAsync(stream, type);
+        public Task<object> DeserializeFromStreamAsync(Stream stream, Type type)
+        {
+            return NettHelper.UnpackAsync(stream, type);
+        }
     }
 }

@@ -11,11 +11,13 @@ using Cosmos.Serialization.Json.Newtonsoft;
  */
 
 // ReSharper disable once CheckNamespace
-namespace Cosmos.Serialization.Json {
+namespace Cosmos.Serialization.Json
+{
     /// <summary>
     /// Newtonsoft Json Extensions
     /// </summary>
-    public static partial class Extensions {
+    public static partial class Extensions
+    {
         /// <summary>
         /// To Json
         /// </summary>
@@ -23,7 +25,8 @@ namespace Cosmos.Serialization.Json {
         /// <param name="settings"></param>
         /// <param name="withNodaTime"></param>
         /// <returns></returns>
-        public static string ToJson(this object obj, JsonSerializerSettings settings = null, bool withNodaTime = false) {
+        public static string ToJson(this object obj, JsonSerializerSettings settings = null, bool withNodaTime = false)
+        {
             return JsonHelper.Serialize(obj, settings, withNodaTime);
         }
 
@@ -34,7 +37,8 @@ namespace Cosmos.Serialization.Json {
         /// <param name="settings"></param>
         /// <param name="withNodaTime"></param>
         /// <returns></returns>
-        public static Task<string> ToJsonAsync(this object obj, JsonSerializerSettings settings = null, bool withNodaTime = false) {
+        public static Task<string> ToJsonAsync(this object obj, JsonSerializerSettings settings = null, bool withNodaTime = false)
+        {
             return JsonHelper.SerializeAsync(obj, settings, withNodaTime);
         }
     }

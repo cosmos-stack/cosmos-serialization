@@ -1,11 +1,13 @@
 using System;
 using Utf8Json;
 
-namespace Cosmos.Serialization.Json.Utf8Json {
+namespace Cosmos.Serialization.Json.Utf8Json
+{
     /// <summary>
     /// Utf8Json helper
     /// </summary>
-    public static partial class Utf8JsonHelper {
+    public static partial class Utf8JsonHelper
+    {
         /// <summary>
         /// Serialize
         /// </summary>
@@ -13,7 +15,8 @@ namespace Cosmos.Serialization.Json.Utf8Json {
         /// <param name="resolver"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static string Serialize<T>(T o, IJsonFormatterResolver resolver = null) {
+        public static string Serialize<T>(T o, IJsonFormatterResolver resolver = null)
+        {
             return o is null
                 ? string.Empty
                 : JsonSerializer.ToJsonString(o, resolver);
@@ -25,7 +28,8 @@ namespace Cosmos.Serialization.Json.Utf8Json {
         /// <param name="o"></param>
         /// <param name="resolver"></param>
         /// <returns></returns>
-        public static string Serialize(object o, IJsonFormatterResolver resolver = null) {
+        public static string Serialize(object o, IJsonFormatterResolver resolver = null)
+        {
             return o is null
                 ? string.Empty
                 : JsonSerializer.NonGeneric.ToJsonString(o, resolver);
@@ -38,7 +42,8 @@ namespace Cosmos.Serialization.Json.Utf8Json {
         /// <param name="type"></param>
         /// <param name="resolver"></param>
         /// <returns></returns>
-        public static string Serialize(object o, Type type, IJsonFormatterResolver resolver = null) {
+        public static string Serialize(object o, Type type, IJsonFormatterResolver resolver = null)
+        {
             return o is null
                 ? string.Empty
                 : JsonSerializer.NonGeneric.ToJsonString(type, o, resolver);
@@ -51,7 +56,8 @@ namespace Cosmos.Serialization.Json.Utf8Json {
         /// <param name="resolver"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static byte[] SerializeToBytes<T>(T o, IJsonFormatterResolver resolver = null) {
+        public static byte[] SerializeToBytes<T>(T o, IJsonFormatterResolver resolver = null)
+        {
             return o is null
                 ? new byte[0]
                 : JsonSerializer.Serialize(o, resolver);
@@ -63,7 +69,8 @@ namespace Cosmos.Serialization.Json.Utf8Json {
         /// <param name="o"></param>
         /// <param name="resolver"></param>
         /// <returns></returns>
-        public static byte[] SerializeToBytes(object o, IJsonFormatterResolver resolver = null) {
+        public static byte[] SerializeToBytes(object o, IJsonFormatterResolver resolver = null)
+        {
             return o is null
                 ? new byte[0]
                 : JsonSerializer.NonGeneric.Serialize(o, resolver);
@@ -76,7 +83,8 @@ namespace Cosmos.Serialization.Json.Utf8Json {
         /// <param name="type"></param>
         /// <param name="resolver"></param>
         /// <returns></returns>
-        public static byte[] SerializeToBytes(object o, Type type, IJsonFormatterResolver resolver = null) {
+        public static byte[] SerializeToBytes(object o, Type type, IJsonFormatterResolver resolver = null)
+        {
             return o is null
                 ? new byte[0]
                 : JsonSerializer.NonGeneric.Serialize(type, o, resolver);
@@ -89,7 +97,8 @@ namespace Cosmos.Serialization.Json.Utf8Json {
         /// <param name="resolver"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T Deserialize<T>(string json, IJsonFormatterResolver resolver = null) {
+        public static T Deserialize<T>(string json, IJsonFormatterResolver resolver = null)
+        {
             return string.IsNullOrWhiteSpace(json)
                 ? default
                 : JsonSerializer.Deserialize<T>(json, resolver);
@@ -102,7 +111,8 @@ namespace Cosmos.Serialization.Json.Utf8Json {
         /// <param name="type"></param>
         /// <param name="resolver"></param>
         /// <returns></returns>
-        public static object Deserialize(string json, Type type, IJsonFormatterResolver resolver = null) {
+        public static object Deserialize(string json, Type type, IJsonFormatterResolver resolver = null)
+        {
             return string.IsNullOrWhiteSpace(json)
                 ? null
                 : JsonSerializer.NonGeneric.Deserialize(type, json, resolver);
@@ -115,7 +125,8 @@ namespace Cosmos.Serialization.Json.Utf8Json {
         /// <param name="resolver"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T DeserializeFromBytes<T>(byte[] data, IJsonFormatterResolver resolver = null) {
+        public static T DeserializeFromBytes<T>(byte[] data, IJsonFormatterResolver resolver = null)
+        {
             return data is null || data.Length is 0
                 ? default
                 : JsonSerializer.Deserialize<T>(data, resolver);
@@ -128,7 +139,8 @@ namespace Cosmos.Serialization.Json.Utf8Json {
         /// <param name="type"></param>
         /// <param name="resolver"></param>
         /// <returns></returns>
-        public static object DeserializeFromBytes(byte[] data, Type type, IJsonFormatterResolver resolver = null) {
+        public static object DeserializeFromBytes(byte[] data, Type type, IJsonFormatterResolver resolver = null)
+        {
             if (data is null || data.Length is 0)
                 return null;
 

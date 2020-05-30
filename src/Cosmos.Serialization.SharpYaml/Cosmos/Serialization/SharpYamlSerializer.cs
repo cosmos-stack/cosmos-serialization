@@ -3,46 +3,83 @@ using System.IO;
 using System.Threading.Tasks;
 using Cosmos.Serialization.Yaml.SharpYaml;
 
-namespace Cosmos.Serialization {
+namespace Cosmos.Serialization
+{
     /// <summary>
     /// SharpYaml Serializer
     /// </summary>
-    public class SharpYamlSerializer : IYamlSerializer {
+    public class SharpYamlSerializer : IYamlSerializer
+    {
+        /// <inheritdoc />
+        public string Serialize<T>(T o)
+        {
+            return SharpYamlHelper.Serialize(o);
+        }
 
         /// <inheritdoc />
-        public string Serialize<T>(T o) => SharpYamlHelper.Serialize(o);
+        public Stream SerializeToStream<T>(T o)
+        {
+            return SharpYamlHelper.Pack(o);
+        }
 
         /// <inheritdoc />
-        public Stream SerializeToStream<T>(T o) => SharpYamlHelper.Pack(o);
+        public T Deserialize<T>(string data)
+        {
+            return SharpYamlHelper.Deserialize<T>(data);
+        }
 
         /// <inheritdoc />
-        public T Deserialize<T>(string data) => SharpYamlHelper.Deserialize<T>(data);
+        public object Deserialize(string data, Type type)
+        {
+            return SharpYamlHelper.Deserialize(data, type);
+        }
 
         /// <inheritdoc />
-        public object Deserialize(string data, Type type) => SharpYamlHelper.Deserialize(data, type);
+        public T DeserializeFromStream<T>(Stream stream)
+        {
+            return SharpYamlHelper.Unpack<T>(stream);
+        }
 
         /// <inheritdoc />
-        public T DeserializeFromStream<T>(Stream stream) => SharpYamlHelper.Unpack<T>(stream);
+        public object DeserializeFromStream(Stream stream, Type type)
+        {
+            return SharpYamlHelper.Unpack(stream, type);
+        }
 
         /// <inheritdoc />
-        public object DeserializeFromStream(Stream stream, Type type) => SharpYamlHelper.Unpack(stream, type);
+        public Task<string> SerializeAsync<T>(T o)
+        {
+            return SharpYamlHelper.SerializeAsync(o);
+        }
 
         /// <inheritdoc />
-        public Task<string> SerializeAsync<T>(T o) => SharpYamlHelper.SerializeAsync(o);
+        public Task<Stream> SerializeToStreamAsync<T>(T o)
+        {
+            return SharpYamlHelper.PackAsync(o);
+        }
 
         /// <inheritdoc />
-        public Task<Stream> SerializeToStreamAsync<T>(T o) => SharpYamlHelper.PackAsync(o);
+        public Task<T> DeserializeAsync<T>(string data)
+        {
+            return SharpYamlHelper.DeserializeAsync<T>(data);
+        }
 
         /// <inheritdoc />
-        public Task<T> DeserializeAsync<T>(string data) => SharpYamlHelper.DeserializeAsync<T>(data);
+        public Task<object> DeserializeAsync(string data, Type type)
+        {
+            return SharpYamlHelper.DeserializeAsync(data, type);
+        }
 
         /// <inheritdoc />
-        public Task<object> DeserializeAsync(string data, Type type) => SharpYamlHelper.DeserializeAsync(data, type);
+        public Task<T> DeserializeFromStreamAsync<T>(Stream stream)
+        {
+            return SharpYamlHelper.UnpackAsync<T>(stream);
+        }
 
         /// <inheritdoc />
-        public Task<T> DeserializeFromStreamAsync<T>(Stream stream) => SharpYamlHelper.UnpackAsync<T>(stream);
-
-        /// <inheritdoc />
-        public Task<object> DeserializeFromStreamAsync(Stream stream, Type type) => SharpYamlHelper.UnpackAsync(stream, type);
+        public Task<object> DeserializeFromStreamAsync(Stream stream, Type type)
+        {
+            return SharpYamlHelper.UnpackAsync(stream, type);
+        }
     }
 }

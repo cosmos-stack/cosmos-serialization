@@ -1,12 +1,15 @@
 using System;
 using System.IO;
+using Cosmos.Conversions;
 using Jil;
 
-namespace Cosmos.Serialization.Json.Jil {
+namespace Cosmos.Serialization.Json.Jil
+{
     /// <summary>
     /// JilJson helper
     /// </summary>
-    public static partial class JilHelper {
+    public static partial class JilHelper
+    {
         /// <summary>
         /// Pack
         /// </summary>
@@ -14,10 +17,11 @@ namespace Cosmos.Serialization.Json.Jil {
         /// <param name="options"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Stream Pack<T>(T o, Options options = null) {
+        public static Stream Pack<T>(T o, Options options = null)
+        {
             var ms = new MemoryStream();
 
-            if (o == null)
+            if (o is null)
                 return ms;
 
             Pack(o, ms, options);
@@ -32,8 +36,9 @@ namespace Cosmos.Serialization.Json.Jil {
         /// <param name="stream"></param>
         /// <param name="options"></param>
         /// <typeparam name="T"></typeparam>
-        public static void Pack<T>(T t, Stream stream, Options options = null) {
-            if (t == null || !stream.CanWrite)
+        public static void Pack<T>(T t, Stream stream, Options options = null)
+        {
+            if (t is null || !stream.CanWrite)
                 return;
 
             var bytes = SerializeToBytes(t, options);
@@ -48,8 +53,9 @@ namespace Cosmos.Serialization.Json.Jil {
         /// <param name="options"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T Unpack<T>(Stream stream, Options options = null) {
-            return stream == null
+        public static T Unpack<T>(Stream stream, Options options = null)
+        {
+            return stream is null
                 ? default
                 : DeserializeFromBytes<T>(stream.CastToBytes(), options);
         }
@@ -61,8 +67,9 @@ namespace Cosmos.Serialization.Json.Jil {
         /// <param name="type"></param>
         /// <param name="options"></param>
         /// <returns></returns>
-        public static object Unpack(Stream stream, Type type, Options options = null) {
-            return stream == null
+        public static object Unpack(Stream stream, Type type, Options options = null)
+        {
+            return stream is null
                 ? null
                 : DeserializeFromBytes(stream.CastToBytes(), type, options);
         }

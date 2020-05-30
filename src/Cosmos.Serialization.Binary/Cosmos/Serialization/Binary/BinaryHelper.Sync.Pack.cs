@@ -1,16 +1,19 @@
 using System.IO;
 
-namespace Cosmos.Serialization.Binary {
+namespace Cosmos.Serialization.Binary
+{
     /// <summary>
     /// Binary helper
     /// </summary>
-    public static partial class BinaryHelper {
+    public static partial class BinaryHelper
+    {
         /// <summary>
         /// Pack
         /// </summary>
         /// <param name="obj"></param>
         /// <returns></returns>
-        public static Stream Pack(object obj) {
+        public static Stream Pack(object obj)
+        {
             var ms = new MemoryStream();
 
             if (obj != null)
@@ -24,9 +27,11 @@ namespace Cosmos.Serialization.Binary {
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="stream"></param>
-        public static void Pack(object obj, Stream stream) {
+        public static void Pack(object obj, Stream stream)
+        {
             if (obj is null)
                 return;
+
             BinaryManager.GetBinaryFormatter().Serialize(stream, obj);
         }
 
@@ -36,7 +41,8 @@ namespace Cosmos.Serialization.Binary {
         /// <param name="stream"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T Unpack<T>(Stream stream) {
+        public static T Unpack<T>(Stream stream)
+        {
             return (T) Unpack(stream);
         }
 
@@ -45,7 +51,8 @@ namespace Cosmos.Serialization.Binary {
         /// </summary>
         /// <param name="stream"></param>
         /// <returns></returns>
-        public static object Unpack(Stream stream) {
+        public static object Unpack(Stream stream)
+        {
             if (stream is null || stream.Length is 0)
                 return null;
 

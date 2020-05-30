@@ -3,17 +3,20 @@ using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
 
 // ReSharper disable once CheckNamespace
-namespace Cosmos.Serialization.Json {
+namespace Cosmos.Serialization.Json
+{
     /// <summary>
     /// JToken conversion extensions
     /// </summary>
-    public static partial class JTokenConversionExtensions {
+    public static partial class JTokenConversionExtensions
+    {
         /// <summary>
         /// To int
         /// </summary>
         /// <param name="token"></param>
         /// <returns></returns>
-        public static int ToInt(this JToken token) {
+        public static int ToInt(this JToken token)
+        {
             return token?.ToObject<int>() ?? default;
         }
 
@@ -23,7 +26,8 @@ namespace Cosmos.Serialization.Json {
         /// <param name="token"></param>
         /// <param name="sectionName"></param>
         /// <returns></returns>
-        public static int ToInt(this JToken token, string sectionName) {
+        public static int ToInt(this JToken token, string sectionName)
+        {
             return token[sectionName]?.ToObject<int>() ?? default;
         }
 
@@ -32,7 +36,8 @@ namespace Cosmos.Serialization.Json {
         /// </summary>
         /// <param name="token"></param>
         /// <returns></returns>
-        public static long ToLong(this JToken token) {
+        public static long ToLong(this JToken token)
+        {
             return token?.ToObject<long>() ?? default;
         }
 
@@ -42,7 +47,8 @@ namespace Cosmos.Serialization.Json {
         /// <param name="token"></param>
         /// <param name="sectionName"></param>
         /// <returns></returns>
-        public static long ToLong(this JToken token, string sectionName) {
+        public static long ToLong(this JToken token, string sectionName)
+        {
             return token[sectionName]?.ToObject<long>() ?? default;
         }
 
@@ -51,7 +57,8 @@ namespace Cosmos.Serialization.Json {
         /// </summary>
         /// <param name="token"></param>
         /// <returns></returns>
-        public static double ToDouble(this JToken token) {
+        public static double ToDouble(this JToken token)
+        {
             return token?.ToObject<double>() ?? default;
         }
 
@@ -61,7 +68,8 @@ namespace Cosmos.Serialization.Json {
         /// <param name="token"></param>
         /// <param name="sectionName"></param>
         /// <returns></returns>
-        public static double ToDouble(this JToken token, string sectionName) {
+        public static double ToDouble(this JToken token, string sectionName)
+        {
             return token[sectionName]?.ToObject<double>() ?? default;
         }
 
@@ -70,7 +78,8 @@ namespace Cosmos.Serialization.Json {
         /// </summary>
         /// <param name="token"></param>
         /// <returns></returns>
-        public static float ToFloat(this JToken token) {
+        public static float ToFloat(this JToken token)
+        {
             return token?.ToObject<float>() ?? default;
         }
 
@@ -80,7 +89,8 @@ namespace Cosmos.Serialization.Json {
         /// <param name="token"></param>
         /// <param name="sectionName"></param>
         /// <returns></returns>
-        public static float ToFloat(this JToken token, string sectionName) {
+        public static float ToFloat(this JToken token, string sectionName)
+        {
             return token[sectionName]?.ToObject<float>() ?? default;
         }
 
@@ -90,7 +100,8 @@ namespace Cosmos.Serialization.Json {
         /// <typeparam name="T"></typeparam>
         /// <param name="token"></param>
         /// <returns></returns>
-        public static List<T> ToList<T>(this JToken token) {
+        public static List<T> ToList<T>(this JToken token)
+        {
             return token?.ToObject<List<T>>();
         }
 
@@ -101,7 +112,8 @@ namespace Cosmos.Serialization.Json {
         /// <param name="token"></param>
         /// <param name="sectionName"></param>
         /// <returns></returns>
-        public static List<T> ToList<T>(this JToken token, string sectionName) {
+        public static List<T> ToList<T>(this JToken token, string sectionName)
+        {
             return token[sectionName]?.ToObject<List<T>>();
         }
 
@@ -111,7 +123,8 @@ namespace Cosmos.Serialization.Json {
         /// <typeparam name="T"></typeparam>
         /// <param name="token"></param>
         /// <returns></returns>
-        public static IEnumerable<T> ToEnumerable<T>(this JToken token) {
+        public static IEnumerable<T> ToEnumerable<T>(this JToken token)
+        {
             return token?.ToObject<IEnumerable<T>>();
         }
 
@@ -122,7 +135,8 @@ namespace Cosmos.Serialization.Json {
         /// <param name="token"></param>
         /// <param name="sectionName"></param>
         /// <returns></returns>
-        public static IEnumerable<T> ToEnumerable<T>(this JToken token, string sectionName) {
+        public static IEnumerable<T> ToEnumerable<T>(this JToken token, string sectionName)
+        {
             return token[sectionName]?.ToObject<IEnumerable<T>>();
         }
 
@@ -133,7 +147,8 @@ namespace Cosmos.Serialization.Json {
         /// <typeparam name="K"></typeparam>
         /// <param name="token"></param>
         /// <returns></returns>
-        public static Dictionary<T, K> ToDictionary<T, K>(this JToken token) {
+        public static Dictionary<T, K> ToDictionary<T, K>(this JToken token)
+        {
             return token?.ToObject<Dictionary<T, K>>();
         }
 
@@ -145,7 +160,8 @@ namespace Cosmos.Serialization.Json {
         /// <param name="token"></param>
         /// <param name="sectionName"></param>
         /// <returns></returns>
-        public static Dictionary<T, K> ToDictionary<T, K>(this JToken token, string sectionName) {
+        public static Dictionary<T, K> ToDictionary<T, K>(this JToken token, string sectionName)
+        {
             return token[sectionName]?.ToObject<Dictionary<T, K>>();
         }
 
@@ -154,7 +170,8 @@ namespace Cosmos.Serialization.Json {
         /// </summary>
         /// <param name="token"></param>
         /// <returns></returns>
-        public static DateTime ToDateTime(this JToken token) {
+        public static DateTime ToDateTime(this JToken token)
+        {
             return token?.ToObject<DateTime>() ?? default;
         }
 
@@ -164,7 +181,8 @@ namespace Cosmos.Serialization.Json {
         /// <param name="token"></param>
         /// <param name="sectionName"></param>
         /// <returns></returns>
-        public static DateTime ToDateTime(this JToken token, string sectionName) {
+        public static DateTime ToDateTime(this JToken token, string sectionName)
+        {
             return token[sectionName]?.ToObject<DateTime>() ?? default;
         }
 
@@ -173,7 +191,8 @@ namespace Cosmos.Serialization.Json {
         /// </summary>
         /// <param name="token"></param>
         /// <returns></returns>
-        public static Guid ToGuid(this JToken token) {
+        public static Guid ToGuid(this JToken token)
+        {
             return token?.ToObject<Guid>() ?? default;
         }
 
@@ -183,7 +202,8 @@ namespace Cosmos.Serialization.Json {
         /// <param name="token"></param>
         /// <param name="sectionName"></param>
         /// <returns></returns>
-        public static Guid ToGuid(this JToken token, string sectionName) {
+        public static Guid ToGuid(this JToken token, string sectionName)
+        {
             return token[sectionName]?.ToObject<Guid>() ?? default;
         }
     }

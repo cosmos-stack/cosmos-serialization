@@ -1,12 +1,15 @@
 ﻿using System;
 using System.IO;
 using System.Text;
+using Cosmos.Conversions;
 
-namespace Cosmos.Serialization.Xml {
+namespace Cosmos.Serialization.Xml
+{
     /// <summary>
     /// Xml Helper
     /// </summary>
-    public static partial class XmlHelper {
+    public static partial class XmlHelper
+    {
         /// <summary>
         /// Serialize
         /// </summary>
@@ -14,7 +17,8 @@ namespace Cosmos.Serialization.Xml {
         /// <param name="encoding"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static string Serialize<T>(T o, Encoding encoding = null) {
+        public static string Serialize<T>(T o, Encoding encoding = null)
+        {
             return Serialize(o, typeof(T), encoding);
         }
 
@@ -25,7 +29,8 @@ namespace Cosmos.Serialization.Xml {
         /// <param name="type"></param>
         /// <param name="encoding"></param>
         /// <returns></returns>
-        public static string Serialize(object o, Type type, Encoding encoding = null) {
+        public static string Serialize(object o, Type type, Encoding encoding = null)
+        {
             if (o is null)
                 return string.Empty;
 
@@ -41,7 +46,8 @@ namespace Cosmos.Serialization.Xml {
         /// <param name="o"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static byte[] SerializeToBytes<T>(T o) {
+        public static byte[] SerializeToBytes<T>(T o)
+        {
             return SerializeToBytes(o, typeof(T));
         }
 
@@ -51,7 +57,8 @@ namespace Cosmos.Serialization.Xml {
         /// <param name="o"></param>
         /// <param name="type"></param>
         /// <returns></returns>
-        public static byte[] SerializeToBytes(object o, Type type) {
+        public static byte[] SerializeToBytes(object o, Type type)
+        {
             if (o is null)
                 return new byte[0];
 
@@ -66,7 +73,8 @@ namespace Cosmos.Serialization.Xml {
         /// <param name="encoding"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T Deserialize<T>(string xml, Encoding encoding = null) {
+        public static T Deserialize<T>(string xml, Encoding encoding = null)
+        {
             return string.IsNullOrWhiteSpace(xml)
                 ? default
                 : (T) Deserialize(xml, typeof(T), encoding);
@@ -79,7 +87,8 @@ namespace Cosmos.Serialization.Xml {
         /// <param name="type"></param>
         /// <param name="encoding"></param>
         /// <returns></returns>
-        public static object Deserialize(string xml, Type type, Encoding encoding = null) {
+        public static object Deserialize(string xml, Type type, Encoding encoding = null)
+        {
             if (string.IsNullOrWhiteSpace(xml))
                 return null;
 
@@ -95,7 +104,8 @@ namespace Cosmos.Serialization.Xml {
         /// <param name="data"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T DeserializeFromBytes<T>(byte[] data) {
+        public static T DeserializeFromBytes<T>(byte[] data)
+        {
             return data is null || data.Length is 0
                 ? default
                 : (T) DeserializeFromBytes(data, typeof(T));
@@ -107,7 +117,8 @@ namespace Cosmos.Serialization.Xml {
         /// <param name="data"></param>
         /// <param name="type"></param>
         /// <returns></returns>
-        public static object DeserializeFromBytes(byte[] data, Type type) {
+        public static object DeserializeFromBytes(byte[] data, Type type)
+        {
             if (data is null || data.Length == 0)
                 return null;
 

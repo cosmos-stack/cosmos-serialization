@@ -3,18 +3,23 @@ using System.Threading.Tasks;
 using Cosmos.Serialization.Toml.Nett;
 
 // ReSharper disable once CheckNamespace
-namespace Cosmos.Serialization.Toml {
+namespace Cosmos.Serialization.Toml
+{
     /// <summary>
     /// TomlDotNet extensions
     /// </summary>
-    public static partial class Extensions {
+    public static partial class Extensions
+    {
         /// <summary>
         /// To TomlDotNet bytes
         /// </summary>
         /// <param name="obj"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static byte[] ToTomlBytes<T>(this T obj) => NettHelper.SerializeToBytes(obj);
+        public static byte[] ToTomlBytes<T>(this T obj)
+        {
+            return NettHelper.SerializeToBytes(obj);
+        }
 
         /// <summary>
         /// To TomlDotNet bytes async
@@ -22,7 +27,10 @@ namespace Cosmos.Serialization.Toml {
         /// <param name="obj"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<byte[]> ToTomlBytesAsync<T>(this T obj) => NettHelper.SerializeToBytesAsync(obj);
+        public static Task<byte[]> ToTomlBytesAsync<T>(this T obj)
+        {
+            return NettHelper.SerializeToBytesAsync(obj);
+        }
 
         /// <summary>
         /// From TomlDotNet bytes 
@@ -30,7 +38,10 @@ namespace Cosmos.Serialization.Toml {
         /// <param name="data"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T FromTomlBytes<T>(this byte[] data) => NettHelper.DeserializeFromBytes<T>(data);
+        public static T FromTomlBytes<T>(this byte[] data)
+        {
+            return NettHelper.DeserializeFromBytes<T>(data);
+        }
 
         /// <summary>
         /// From TomlDotNet bytes 
@@ -38,7 +49,10 @@ namespace Cosmos.Serialization.Toml {
         /// <param name="data"></param>
         /// <param name="type"></param>
         /// <returns></returns>
-        public static object FromTomlBytes(this byte[] data, Type type) => NettHelper.DeserializeFromBytes(data, type);
+        public static object FromTomlBytes(this byte[] data, Type type)
+        {
+            return NettHelper.DeserializeFromBytes(data, type);
+        }
 
         /// <summary>
         /// From TomlDotNet bytes async
@@ -46,7 +60,10 @@ namespace Cosmos.Serialization.Toml {
         /// <param name="data"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<T> FromTomlBytesAsync<T>(this byte[] data) => NettHelper.DeserializeFromBytesAsync<T>(data);
+        public static Task<T> FromTomlBytesAsync<T>(this byte[] data)
+        {
+            return NettHelper.DeserializeFromBytesAsync<T>(data);
+        }
 
         /// <summary>
         /// From TomlDotNet bytes async
@@ -54,6 +71,9 @@ namespace Cosmos.Serialization.Toml {
         /// <param name="data"></param>
         /// <param name="type"></param>
         /// <returns></returns>
-        public static Task<object> FromTomlBytesAsync(this byte[] data, Type type) => NettHelper.DeserializeFromBytesAsync(data, type);
+        public static Task<object> FromTomlBytesAsync(this byte[] data, Type type)
+        {
+            return NettHelper.DeserializeFromBytesAsync(data, type);
+        }
     }
 }

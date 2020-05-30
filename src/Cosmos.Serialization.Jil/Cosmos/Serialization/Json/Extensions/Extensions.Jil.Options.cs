@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 using Jil;
 
 // ReSharper disable once CheckNamespace
-namespace Cosmos.Serialization.Json {
+namespace Cosmos.Serialization.Json
+{
     /// <summary>
     /// JilJson extensions
     /// </summary>
-    public static partial class Extensions {
+    public static partial class Extensions
+    {
         /// <summary>
         /// Serialize to string
         /// </summary>
@@ -19,10 +21,11 @@ namespace Cosmos.Serialization.Json {
         /// <typeparam name="TRequest"></typeparam>
         /// <returns></returns>
         /// <exception cref="ArgumentNullException"></exception>
-        public static string SerializeToString<TRequest>(this Options options, TRequest request) {
-            if (options == null)
+        public static string SerializeToString<TRequest>(this Options options, TRequest request)
+        {
+            if (options is null)
                 throw new ArgumentNullException(nameof(options));
-            if (request == null)
+            if (request is null)
                 throw new ArgumentNullException(nameof(request));
 
             using var stringWriter = new StringWriter(CultureInfo.InvariantCulture);
@@ -38,8 +41,9 @@ namespace Cosmos.Serialization.Json {
         /// <typeparam name="TResponse"></typeparam>
         /// <returns></returns>
         /// <exception cref="ArgumentNullException"></exception>
-        public static TResponse DeserializeFromString<TResponse>(this Options options, string json) {
-            if (options == null)
+        public static TResponse DeserializeFromString<TResponse>(this Options options, string json)
+        {
+            if (options is null)
                 throw new ArgumentNullException(nameof(options));
             if (string.IsNullOrWhiteSpace(json))
                 throw new ArgumentNullException(nameof(json));
@@ -59,10 +63,11 @@ namespace Cosmos.Serialization.Json {
         /// <exception cref="ArgumentNullException"></exception>
         /// <exception cref="InvalidOperationException"></exception>
         public static async Task<MemoryStream> SerializeToMemoryStreamAsync<TRequest>(
-            this Options options, TRequest request, CancellationToken cancellationToken) {
-            if (options == null)
+            this Options options, TRequest request, CancellationToken cancellationToken)
+        {
+            if (options is null)
                 throw new ArgumentNullException(nameof(options));
-            if (request == null)
+            if (request is null)
                 throw new ArgumentNullException(nameof(request));
 
             using var stream = new MemoryStream();
@@ -87,7 +92,6 @@ namespace Cosmos.Serialization.Json {
                 throw new InvalidOperationException($"The call to {nameof(stream.TryGetBuffer)} returned false.");
 #endif
             return new MemoryStream(buffer.Array, buffer.Offset, buffer.Count);
-
         }
     }
 }

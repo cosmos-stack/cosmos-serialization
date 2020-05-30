@@ -3,20 +3,25 @@ using System.Threading.Tasks;
 using Cosmos.Serialization.MessagePack.Neuecc;
 
 // ReSharper disable once CheckNamespace
-namespace Cosmos.Serialization.MessagePack {
+namespace Cosmos.Serialization.MessagePack
+{
     using N = NeueccMsgPackHelper;
 
     /// <summary>
     /// MessagePack extensions
     /// </summary>
-    public static partial class Extensions {
+    public static partial class Extensions
+    {
         /// <summary>
         /// From neuecc's message pack
         /// </summary>
         /// <param name="data"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T FromMessagePack<T>(this byte[] data) => N.Deserialize<T>(data);
+        public static T FromMessagePack<T>(this byte[] data)
+        {
+            return N.Deserialize<T>(data);
+        }
 
         /// <summary>
         /// From neuecc's message pack
@@ -24,7 +29,10 @@ namespace Cosmos.Serialization.MessagePack {
         /// <param name="data"></param>
         /// <param name="type"></param>
         /// <returns></returns>
-        public static object FromMessagePack(this byte[] data, Type type) => N.Deserialize(data, type);
+        public static object FromMessagePack(this byte[] data, Type type)
+        {
+            return N.Deserialize(data, type);
+        }
 
         /// <summary>
         /// From neuecc's message pack async
@@ -32,7 +40,10 @@ namespace Cosmos.Serialization.MessagePack {
         /// <param name="data"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<T> FromMessagePackAsync<T>(this byte[] data) => N.DeserializeAsync<T>(data);
+        public static Task<T> FromMessagePackAsync<T>(this byte[] data)
+        {
+            return N.DeserializeAsync<T>(data);
+        }
 
         /// <summary>
         /// From neuecc's message pack async
@@ -40,6 +51,9 @@ namespace Cosmos.Serialization.MessagePack {
         /// <param name="data"></param>
         /// <param name="type"></param>
         /// <returns></returns>
-        public static Task<object> FromMessagePackAsync(this byte[] data, Type type) => N.DeserializeAsync(data, type);
+        public static Task<object> FromMessagePackAsync(this byte[] data, Type type)
+        {
+            return N.DeserializeAsync(data, type);
+        }
     }
 }

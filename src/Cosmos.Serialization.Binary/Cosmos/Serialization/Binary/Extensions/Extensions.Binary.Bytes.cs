@@ -2,18 +2,23 @@ using System;
 using System.Threading.Tasks;
 
 // ReSharper disable once CheckNamespace
-namespace Cosmos.Serialization.Binary {
+namespace Cosmos.Serialization.Binary
+{
     /// <summary>
     /// Binary extensions
     /// </summary>
-    public static partial class BinaryExtensions {
+    public static partial class BinaryExtensions
+    {
         /// <summary>
         /// From bytes
         /// </summary>
         /// <param name="bytes"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T FromBytes<T>(this byte[] bytes) => BinaryHelper.Deserialize<T>(bytes);
+        public static T FromBytes<T>(this byte[] bytes)
+        {
+            return BinaryHelper.Deserialize<T>(bytes);
+        }
 
         /// <summary>
         /// From bytes
@@ -21,7 +26,10 @@ namespace Cosmos.Serialization.Binary {
         /// <param name="bytes"></param>
         /// <param name="type"></param>
         /// <returns></returns>
-        public static object FromBytes(this byte[] bytes, Type type) => BinaryHelper.Deserialize(bytes);
+        public static object FromBytes(this byte[] bytes, Type type)
+        {
+            return BinaryHelper.Deserialize(bytes);
+        }
 
         /// <summary>
         /// From bytes async
@@ -29,7 +37,10 @@ namespace Cosmos.Serialization.Binary {
         /// <param name="bytes"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<T> FromBytesAsync<T>(this byte[] bytes) => BinaryHelper.DeserializeAsync<T>(bytes);
+        public static Task<T> FromBytesAsync<T>(this byte[] bytes)
+        {
+            return BinaryHelper.DeserializeAsync<T>(bytes);
+        }
 
         /// <summary>
         /// From bytes async
@@ -37,6 +48,9 @@ namespace Cosmos.Serialization.Binary {
         /// <param name="bytes"></param>
         /// <param name="type"></param>
         /// <returns></returns>
-        public static Task<object> FromBytesAsync(this byte[] bytes, Type type) => BinaryHelper.DeserializeAsync(bytes);
+        public static Task<object> FromBytesAsync(this byte[] bytes, Type type)
+        {
+            return BinaryHelper.DeserializeAsync(bytes);
+        }
     }
 }

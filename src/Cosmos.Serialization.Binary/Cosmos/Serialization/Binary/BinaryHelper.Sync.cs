@@ -1,16 +1,20 @@
 using System.IO;
+using Cosmos.Conversions;
 
-namespace Cosmos.Serialization.Binary {
+namespace Cosmos.Serialization.Binary
+{
     /// <summary>
     /// Binary helper
     /// </summary>
-    public static partial class BinaryHelper {
+    public static partial class BinaryHelper
+    {
         /// <summary>
         /// Serialize
         /// </summary>
         /// <param name="obj"></param>
         /// <returns></returns>
-        public static byte[] Serialize(object obj) {
+        public static byte[] Serialize(object obj)
+        {
             using var stream = Pack(obj);
             return stream.CastToBytes();
         }
@@ -21,7 +25,8 @@ namespace Cosmos.Serialization.Binary {
         /// <param name="bytes"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T Deserialize<T>(byte[] bytes) {
+        public static T Deserialize<T>(byte[] bytes)
+        {
             return (T) Deserialize(bytes);
         }
 
@@ -30,7 +35,8 @@ namespace Cosmos.Serialization.Binary {
         /// </summary>
         /// <param name="bytes"></param>
         /// <returns></returns>
-        public static object Deserialize(byte[] bytes) {
+        public static object Deserialize(byte[] bytes)
+        {
             if (bytes is null || bytes.Length is 0) return default;
             using var ms = new MemoryStream(bytes);
             return Unpack(ms);

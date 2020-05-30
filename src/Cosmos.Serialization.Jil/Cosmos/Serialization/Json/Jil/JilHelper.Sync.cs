@@ -10,11 +10,13 @@ using Jil;
  *          MIT
  */
 
-namespace Cosmos.Serialization.Json.Jil {
+namespace Cosmos.Serialization.Json.Jil
+{
     /// <summary>
     /// JilJson helper
     /// </summary>
-    public static partial class JilHelper {
+    public static partial class JilHelper
+    {
         /// <summary>
         /// Serialize
         /// </summary>
@@ -22,8 +24,9 @@ namespace Cosmos.Serialization.Json.Jil {
         /// <param name="options"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static string Serialize<T>(T o, Options options = null) {
-            return o == null
+        public static string Serialize<T>(T o, Options options = null)
+        {
+            return o is null
                 ? string.Empty
                 : JSON.Serialize(o, options ?? JilManager.DefaultOptions);
         }
@@ -35,7 +38,8 @@ namespace Cosmos.Serialization.Json.Jil {
         /// <param name="optionAct"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static string Serialize<T>(T o, Action<Options> optionAct) {
+        public static string Serialize<T>(T o, Action<Options> optionAct)
+        {
             var options = new Options();
             optionAct?.Invoke(options);
             return Serialize(o, options);
@@ -48,8 +52,9 @@ namespace Cosmos.Serialization.Json.Jil {
         /// <param name="options"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static byte[] SerializeToBytes<T>(T o, Options options = null) {
-            return o == null
+        public static byte[] SerializeToBytes<T>(T o, Options options = null)
+        {
+            return o is null
                 ? new byte[0]
                 : JilManager.DefaultEncoding.GetBytes(Serialize(o, options ?? JilManager.DefaultOptions));
         }
@@ -61,8 +66,9 @@ namespace Cosmos.Serialization.Json.Jil {
         /// <param name="optionAct"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static byte[] SerializeToBytes<T>(T o, Action<Options> optionAct) {
-            return o == null
+        public static byte[] SerializeToBytes<T>(T o, Action<Options> optionAct)
+        {
+            return o is null
                 ? new byte[0]
                 : JilManager.DefaultEncoding.GetBytes(Serialize(o, optionAct));
         }
@@ -73,8 +79,10 @@ namespace Cosmos.Serialization.Json.Jil {
         /// <param name="o"></param>
         /// <param name="output"></param>
         /// <param name="options"></param>
-        public static void Serialize(object o, TextWriter output, Options options = null) {
-            if (o != null) {
+        public static void Serialize(object o, TextWriter output, Options options = null)
+        {
+            if (o != null)
+            {
                 JSON.SerializeDynamic(o, output, options ?? JilManager.DefaultOptions);
             }
         }
@@ -86,7 +94,8 @@ namespace Cosmos.Serialization.Json.Jil {
         /// <param name="options"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T Deserialize<T>(string json, Options options = null) {
+        public static T Deserialize<T>(string json, Options options = null)
+        {
             return string.IsNullOrWhiteSpace(json)
                 ? default
                 : JSON.Deserialize<T>(json, options ?? JilManager.DefaultOptions);
@@ -99,7 +108,8 @@ namespace Cosmos.Serialization.Json.Jil {
         /// <param name="optionAct"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T Deserialize<T>(string json, Action<Options> optionAct) {
+        public static T Deserialize<T>(string json, Action<Options> optionAct)
+        {
             var options = new Options();
             optionAct?.Invoke(options);
             return string.IsNullOrWhiteSpace(json)
@@ -114,7 +124,8 @@ namespace Cosmos.Serialization.Json.Jil {
         /// <param name="type"></param>
         /// <param name="options"></param>
         /// <returns></returns>
-        public static object Deserialize(string json, Type type, Options options = null) {
+        public static object Deserialize(string json, Type type, Options options = null)
+        {
             if (string.IsNullOrWhiteSpace(json))
                 return null;
             using var reader = new StringReader(json);
@@ -128,7 +139,8 @@ namespace Cosmos.Serialization.Json.Jil {
         /// <param name="type"></param>
         /// <param name="optionAct"></param>
         /// <returns></returns>
-        public static object Deserialize(string json, Type type, Action<Options> optionAct) {
+        public static object Deserialize(string json, Type type, Action<Options> optionAct)
+        {
             if (string.IsNullOrWhiteSpace(json))
                 return null;
             using var reader = new StringReader(json);
@@ -142,7 +154,8 @@ namespace Cosmos.Serialization.Json.Jil {
         /// <param name="options"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T DeserializeFromBytes<T>(byte[] data, Options options = null) {
+        public static T DeserializeFromBytes<T>(byte[] data, Options options = null)
+        {
             return data is null || data.Length is 0
                 ? default
                 : JSON.Deserialize<T>(JilManager.DefaultEncoding.GetString(data), options ?? JilManager.DefaultOptions);
@@ -155,7 +168,8 @@ namespace Cosmos.Serialization.Json.Jil {
         /// <param name="optionAct"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T DeserializeFromBytes<T>(byte[] data, Action<Options> optionAct) {
+        public static T DeserializeFromBytes<T>(byte[] data, Action<Options> optionAct)
+        {
             var options = new Options();
             optionAct?.Invoke(options);
             return DeserializeFromBytes<T>(data, options);
@@ -168,7 +182,8 @@ namespace Cosmos.Serialization.Json.Jil {
         /// <param name="type"></param>
         /// <param name="options"></param>
         /// <returns></returns>
-        public static object DeserializeFromBytes(byte[] data, Type type, Options options = null) {
+        public static object DeserializeFromBytes(byte[] data, Type type, Options options = null)
+        {
             return data is null || data.Length is 0
                 ? null
                 : JSON.Deserialize(JilManager.DefaultEncoding.GetString(data), type, options ?? JilManager.DefaultOptions);
@@ -181,7 +196,8 @@ namespace Cosmos.Serialization.Json.Jil {
         /// <param name="type"></param>
         /// <param name="optionAct"></param>
         /// <returns></returns>
-        public static object DeserializeFromBytes(byte[] data, Type type, Action<Options> optionAct) {
+        public static object DeserializeFromBytes(byte[] data, Type type, Action<Options> optionAct)
+        {
             var options = new Options();
             optionAct?.Invoke(options);
             return DeserializeFromBytes(data, type, options);
@@ -194,8 +210,9 @@ namespace Cosmos.Serialization.Json.Jil {
         /// <param name="options"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T Deserialize<T>(TextReader reader, Options options = null) {
-            return reader == null
+        public static T Deserialize<T>(TextReader reader, Options options = null)
+        {
+            return reader is null
                 ? default
                 : JSON.Deserialize<T>(reader, options ?? JilManager.DefaultOptions);
         }
@@ -207,7 +224,8 @@ namespace Cosmos.Serialization.Json.Jil {
         /// <param name="optionAct"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T Deserialize<T>(TextReader reader, Action<Options> optionAct) {
+        public static T Deserialize<T>(TextReader reader, Action<Options> optionAct)
+        {
             var options = new Options();
             optionAct?.Invoke(options);
             return Deserialize<T>(reader, options);
@@ -220,8 +238,9 @@ namespace Cosmos.Serialization.Json.Jil {
         /// <param name="type"></param>
         /// <param name="options"></param>
         /// <returns></returns>
-        public static object Deserialize(TextReader reader, Type type, Options options = null) {
-            return reader == null
+        public static object Deserialize(TextReader reader, Type type, Options options = null)
+        {
+            return reader is null
                 ? null
                 : JSON.Deserialize(reader, type, options ?? JilManager.DefaultOptions);
         }
@@ -233,10 +252,11 @@ namespace Cosmos.Serialization.Json.Jil {
         /// <param name="type"></param>
         /// <param name="optionAct"></param>
         /// <returns></returns>
-        public static object Deserialize(TextReader reader, Type type, Action<Options> optionAct) {
+        public static object Deserialize(TextReader reader, Type type, Action<Options> optionAct)
+        {
             var options = new Options();
             optionAct?.Invoke(options);
-            return reader == null ? null : JSON.Deserialize(reader, type, options);
+            return reader is null ? null : JSON.Deserialize(reader, type, options);
         }
     }
 }

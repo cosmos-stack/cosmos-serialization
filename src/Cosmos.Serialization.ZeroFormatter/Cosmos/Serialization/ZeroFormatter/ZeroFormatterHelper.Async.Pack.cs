@@ -3,21 +3,24 @@ using System.IO;
 using System.Threading.Tasks;
 using ZeroFormatter;
 
-namespace Cosmos.Serialization.ZeroFormatter {
+namespace Cosmos.Serialization.ZeroFormatter
+{
     /// <summary>
     /// ZeroFormatter helper
     /// </summary>
-    public static partial class ZeroFormatterHelper {
+    public static partial class ZeroFormatterHelper
+    {
         /// <summary>
         /// Pack async
         /// </summary>
         /// <param name="t"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static async Task<Stream> PackAsync<T>(T t) {
+        public static async Task<Stream> PackAsync<T>(T t)
+        {
             var ms = new MemoryStream();
 
-            if (t == null)
+            if (t is null)
                 return ms;
 
             await PackAsync(t, ms);
@@ -31,8 +34,10 @@ namespace Cosmos.Serialization.ZeroFormatter {
         /// <param name="o"></param>
         /// <param name="stream"></param>
         /// <typeparam name="T"></typeparam>
-        public static async Task PackAsync<T>(T o, Stream stream) {
-            if (o != null) {
+        public static async Task PackAsync<T>(T o, Stream stream)
+        {
+            if (o != null)
+            {
                 await Task.Run(() => ZeroFormatterSerializer.Serialize(stream, o));
             }
         }
@@ -43,7 +48,8 @@ namespace Cosmos.Serialization.ZeroFormatter {
         /// <param name="type"></param>
         /// <param name="obj"></param>
         /// <returns></returns>
-        public static async Task<Stream> PackAsync(Type type, object obj) {
+        public static async Task<Stream> PackAsync(Type type, object obj)
+        {
             var ms = new MemoryStream();
 
             if (obj is null)
@@ -60,8 +66,10 @@ namespace Cosmos.Serialization.ZeroFormatter {
         /// <param name="obj"></param>
         /// <param name="type"></param>
         /// <param name="stream"></param>
-        public static async Task PackAsync(object obj, Type type, Stream stream) {
-            if (obj != null) {
+        public static async Task PackAsync(object obj, Type type, Stream stream)
+        {
+            if (obj != null)
+            {
                 await Task.Run(() => ZeroFormatterSerializer.NonGeneric.Serialize(type, stream, obj));
             }
         }
@@ -72,7 +80,8 @@ namespace Cosmos.Serialization.ZeroFormatter {
         /// <param name="stream"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static async Task<T> UnpackAsync<T>(Stream stream) {
+        public static async Task<T> UnpackAsync<T>(Stream stream)
+        {
             return stream is null
                 ? default
                 : await Task.Run(() => ZeroFormatterSerializer.Deserialize<T>(stream));
@@ -84,7 +93,8 @@ namespace Cosmos.Serialization.ZeroFormatter {
         /// <param name="stream"></param>
         /// <param name="type"></param>
         /// <returns></returns>
-        public static async Task<object> UnpackAsync(Stream stream, Type type) {
+        public static async Task<object> UnpackAsync(Stream stream, Type type)
+        {
             return stream is null
                 ? default(Type)
                 : await Task.Run(() => ZeroFormatterSerializer.NonGeneric.Deserialize(type, stream));
