@@ -36,7 +36,7 @@ for /R "nuget_pub" %%s in (*symbols.nupkg) do (
 echo.
 echo.
 
-set source=https://www.myget.org/F/alexinea/api/v2/package
+set source=http://nuget.alexinea.com/api/v2/package
 
 for /R "nuget_pub" %%s in (*.nupkg) do ( 
     call nuget push %%s %key% -Source %source%	
