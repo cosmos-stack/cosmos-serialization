@@ -13,7 +13,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Cosmos.Standard" Version="0.1.4.4-alpha1-100901" />
+        <PackageReference Include="Cosmos.Standard" Version="0.1.4.4-alpha2-201012" />
         <PackageReference Include="protobuf-net" Version="2.4.6" />
     </ItemGroup>
 

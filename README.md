@@ -12,7 +12,7 @@ Cosmos.Serialization is an inline common project of [Cosmosloops Labs.](https://
   - Cosmos.Serialization.Lit *(Cosmos.Serialization.LitJson)*
   - Cosmos.Serialization.NewtonsoftJson
   - Cosmos.Serialization.MicrosoftJson
-  - Cosmos.Serialization.Swifter *(Cosmos.Serialization.SwifterJson)*
+  - Cosmos.Serialization.SwifterJson
   - Cosmos.Serialization.Utf8Json
 - Yaml
   - Cosmos.Serialization.YamlDotNet
@@ -26,6 +26,7 @@ Cosmos.Serialization is an inline common project of [Cosmosloops Labs.](https://
 - MessagePack
   - Cosmos.Serialization.MsgPackCli
   - Cosmos.Serialization.MessagePack
+  - Cosmos.Serialization.SwifterMsgPack
 - ZeroFormatter
   - Cosmos.Serialization.ZeroFormatter
 
