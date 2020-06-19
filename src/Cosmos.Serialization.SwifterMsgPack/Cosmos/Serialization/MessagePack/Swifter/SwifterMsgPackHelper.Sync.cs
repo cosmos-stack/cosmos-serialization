@@ -1,0 +1,72 @@
+using System;
+using System.IO;
+using Cosmos.Conversions;
+
+namespace Cosmos.Serialization.MessagePack.Swifter
+{
+    /// <summary>
+    /// Swifter MessagePack helper
+    /// </summary>
+    public static partial class SwifterMsgPackHelper
+    {
+        /// <summary>
+        /// Serialize
+        /// </summary>
+        /// <param name="t"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public static byte[] Serialize<T>(T t)
+        {
+            if (t is null)
+                return new byte[0];
+
+            using var stream = Pack(t);
+            return stream.CastToBytes();
+        }
+
+        /// <summary>
+        /// Serialize
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <param name="type"></param>
+        /// <returns></returns>
+        public static byte[] Serialize(object obj, Type type)
+        {
+            if (obj is null)
+                return new byte[0];
+
+            using var stream = Pack(obj, type);
+            return stream.CastToBytes();
+        }
+
+        /// <summary>
+        /// Deserialize
+        /// </summary>
+        /// <param name="data"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public static T Deserialize<T>(byte[] data)
+        {
+            if (data is null || data.Length == 0)
+                return default;
+
+            using var ms = new MemoryStream(data);
+            return Unpack<T>(ms);
+        }
+
+        /// <summary>
+        /// Deserialize
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="type"></param>
+        /// <returns></returns>
+        public static object Deserialize(byte[] data, Type type)
+        {
+            if (data is null || data.Length == 0)
+                return null;
+
+            using var ms = new MemoryStream(data);
+            return Unpack(ms, type);
+        }
+    }
+}

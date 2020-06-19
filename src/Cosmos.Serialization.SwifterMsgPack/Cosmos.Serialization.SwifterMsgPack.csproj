@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <Import Project="..\..\build\common.props" />
+
+    <PropertyGroup>
+        <TargetFrameworks>netcoreapp3.1;netstandard2.1;netstandard2.0;net461;net451</TargetFrameworks>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <PackageId>Cosmos.Serialization.SwifterMsgPack</PackageId>
+        <Description>Swifter MessagePack serializer extension for Cosmos base library</Description>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Cosmos.Standard" Version="0.1.4.4-alpha2-201012" />
+        <PackageReference Include="Swifter.MessagePack" Version="1.4.0" />
+    </ItemGroup>
+
+</Project>
