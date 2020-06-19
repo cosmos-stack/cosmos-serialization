@@ -8,7 +8,7 @@ namespace Cosmos.Serialization
     /// <summary>
     /// SwiftJson Serializer
     /// </summary>
-    public class SwifterObjectSerializer : IJsonSerializer
+    public class SwifterJsonSerializer : IJsonSerializer
     {
         /// <inheritdoc />
         public string Serialize<T>(T o)
