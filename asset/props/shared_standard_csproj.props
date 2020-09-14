@@ -1,0 +1,7 @@
+<Project>	
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\..\cosmos-standard\src\Cosmos.Standard\Cosmos.Standard._build.csproj" />
+    </ItemGroup>
+    
+</Project>

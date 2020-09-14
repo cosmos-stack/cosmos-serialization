@@ -1,0 +1,12 @@
+<Project>
+	<PropertyGroup Label="Package">
+		<Product>Cosmos.Serialization</Product>
+		<Authors>AlexLEWIS;Cosmos</Authors>
+		<RepositoryUrl>https://github.com/cosmos-loops/cosmos-serialization</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageProjectUrl>https://github.com/cosmos-loops/cosmos-serialization</PackageProjectUrl>
+		<PackageIcon>icon.png</PackageIcon>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<PackageTags>Cosmos;Cosmosloops;Serialization</PackageTags>
+	</PropertyGroup>
+</Project>

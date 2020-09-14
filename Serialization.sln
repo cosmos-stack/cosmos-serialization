@@ -7,21 +7,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{EFAD19EE-C5A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{C7F9D95E-37A9-4B73-B32A-C6637EE96FE5}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{850BA238-D275-4149-8125-C5EBF5CC97A8}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution", "solution", "{850BA238-D275-4149-8125-C5EBF5CC97A8}"
 	ProjectSection(SolutionItems) = preProject
-		NuGet.config = NuGet.config
-		Publish.bat = Publish.bat
-		PublishToMyGet.bat = PublishToMyGet.bat
 		README.MD = README.MD
-		PublishToAlexinea.bat = PublishToAlexinea.bat
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{5F53D90A-2D1B-4D7A-BE79-8050E92DFD87}"
-	ProjectSection(SolutionItems) = preProject
-		build\common.props = build\common.props
-		build\misc.props = build\misc.props
-		build\package.props = build\package.props
-		build\version.props = build\version.props
+		.gitignore = .gitignore
+		common.props = common.props
+		common.tests.props = common.tests.props
+		LICENSE = LICENSE
+		logo.png = logo.png
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.Serialization.Binary", "src\Cosmos.Serialization.Binary\Cosmos.Serialization.Binary.csproj", "{40CF2348-F851-41A7-A223-F23398112E47}"
@@ -105,6 +98,32 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Binary", "Binary", "{D99596A9-CA98-40A9-A643-285063D7F600}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.Serialization.SwifterMsgPack", "src\Cosmos.Serialization.SwifterMsgPack\Cosmos.Serialization.SwifterMsgPack.csproj", "{5A1224F0-F226-44B0-966F-CA0FF798BCAA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "asset", "asset", "{9B0DF39D-9858-43BB-B427-34104D519755}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "props", "props", "{89FF2B35-62A3-43AD-9DA8-6A637812769E}"
+ProjectSection(SolutionItems) = preProject
+	asset\props\misc.props = asset\props\misc.props
+	asset\props\package.props = asset\props\package.props
+EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{918B0A07-1C41-4572-B875-8D283FAC4652}"
+ProjectSection(SolutionItems) = preProject
+	asset\images\icon.back.png = asset\images\icon.back.png
+	asset\images\icon.png = asset\images\icon.png
+EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{62F4975A-298D-4A36-AEAB-E7CBE5F818B9}"
+ProjectSection(SolutionItems) = preProject
+	README.md = README.md
+EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{C39C82BC-5723-4EBF-937E-E8E70A9AE2ED}"
+ProjectSection(SolutionItems) = preProject
+	build\PublishBetaVersion_Script.bat = build\PublishBetaVersion_Script.bat
+	build\PublishNightlyVersion_Script.bat = build\PublishNightlyVersion_Script.bat
+	build\PublishReleaseVersion_Script.bat = build\PublishReleaseVersion_Script.bat
+EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -249,7 +268,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{5F53D90A-2D1B-4D7A-BE79-8050E92DFD87} = {850BA238-D275-4149-8125-C5EBF5CC97A8}
 		{B8C59578-04A1-4053-B6C4-187EFED4BB84} = {C7F9D95E-37A9-4B73-B32A-C6637EE96FE5}
 		{7E8D7931-D91F-45A9-B8D8-88A88007F3D7} = {C7F9D95E-37A9-4B73-B32A-C6637EE96FE5}
 		{FC98C83C-114F-4ACA-A171-01763E50EAF9} = {C7F9D95E-37A9-4B73-B32A-C6637EE96FE5}
@@ -291,6 +309,8 @@ Global
 		{40CF2348-F851-41A7-A223-F23398112E47} = {D99596A9-CA98-40A9-A643-285063D7F600}
 		{37BC7D52-5332-4766-A216-D05A66C53C8D} = {628BA7FD-1267-4E31-A951-9EAA105CAC96}
 		{5A1224F0-F226-44B0-966F-CA0FF798BCAA} = {C6D0D5A4-0503-4430-B429-4035B5F70E71}
+		{89FF2B35-62A3-43AD-9DA8-6A637812769E} = {9B0DF39D-9858-43BB-B427-34104D519755}
+		{918B0A07-1C41-4572-B875-8D283FAC4652} = {9B0DF39D-9858-43BB-B427-34104D519755}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {45736C31-1DF4-498D-A203-98B7B81363D6}
