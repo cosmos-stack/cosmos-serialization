@@ -1,0 +1,45 @@
+﻿<Project>
+
+    <PropertyGroup>
+        <AssemblyName>Cosmos.Serialization.NewtonsoftJson</AssemblyName>
+        <PackageId>Cosmos.Serialization.NewtonsoftJson</PackageId>
+        <Description>Newtonsoft JSON serializer extension for Cosmos base library</Description>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net452' ">
+        <PackageReference Include="NodaTime.Serialization.JsonNet" Version="2.3.0" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net462' ">
+        <PackageReference Include="NodaTime.Serialization.JsonNet" Version="3.0.0" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net472' ">
+        <PackageReference Include="NodaTime.Serialization.JsonNet" Version="3.0.0" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net48' ">
+        <PackageReference Include="NodaTime.Serialization.JsonNet" Version="3.0.0" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
+        <PackageReference Include="NodaTime.Serialization.JsonNet" Version="3.0.0" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.1' ">
+        <PackageReference Include="NodaTime.Serialization.JsonNet" Version="3.0.0" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.0' ">
+        <PackageReference Include="NodaTime.Serialization.JsonNet" Version="3.0.0" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.1' ">
+        <PackageReference Include="NodaTime.Serialization.JsonNet" Version="3.0.0" />
+    </ItemGroup>
+
+</Project>

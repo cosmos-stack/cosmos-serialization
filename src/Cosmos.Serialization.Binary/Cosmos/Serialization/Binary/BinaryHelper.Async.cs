@@ -16,10 +16,10 @@ namespace Cosmos.Serialization.Binary
         /// <returns></returns>
         public static async Task<byte[]> SerializeAsync(object obj)
         {
-#if !NET451 && !NET461 && !NETSTANDARD2_0
-            await using var stream = await PackAsync(obj);
-#else
+#if NETFRAMEWORK || NETSTANDARD2_0
             using var stream = await PackAsync(obj);
+#else
+            await using var stream = await PackAsync(obj);
 #endif
             return await stream.CastToBytesAsync();
         }
@@ -44,10 +44,10 @@ namespace Cosmos.Serialization.Binary
         {
             if (bytes is null || bytes.Length is 0)
                 return default;
-#if !NET451 && !NET461 && !NETSTANDARD2_0
-            await using var ms = new MemoryStream(bytes);
-#else
+#if NETFRAMEWORK || NETSTANDARD2_0
             using var ms = new MemoryStream(bytes);
+#else
+            await using var ms = new MemoryStream(bytes);
 #endif
             return await UnpackAsync(ms);
         }

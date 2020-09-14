@@ -1,0 +1,13 @@
+﻿<Project>
+
+    <PropertyGroup>
+        <AssemblyName>Cosmos.Serialization.SharpYaml</AssemblyName>
+        <PackageId>Cosmos.Serialization.SharpYaml</PackageId>
+        <Description>SharpYaml serializer extension for Cosmos base library</Description>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="SharpYaml" Version="1.6.6" />
+    </ItemGroup>
+
+</Project>

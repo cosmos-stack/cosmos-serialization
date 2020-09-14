@@ -1,0 +1,9 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <Import Project="Cosmos.Serialization.ZeroFormatter._shared.props" />
+
+    <Import Project="..\..\common.props" />
+
+    <Import Project="..\..\asset\props\shared_standard_csproj.props" />
+
+</Project>

@@ -1,0 +1,9 @@
+﻿<Project>
+
+    <PropertyGroup>
+        <AssemblyName>Cosmos.Serialization.Binary</AssemblyName>
+        <PackageId>Cosmos.Serialization.Binary</PackageId>
+        <Description>Binary serializer extension for Cosmos base library</Description>
+    </PropertyGroup>
+
+</Project>

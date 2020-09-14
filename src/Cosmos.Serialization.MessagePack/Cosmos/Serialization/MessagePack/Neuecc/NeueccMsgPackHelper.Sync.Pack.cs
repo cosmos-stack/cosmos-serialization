@@ -74,7 +74,7 @@ namespace Cosmos.Serialization.MessagePack.Neuecc
             if (obj is null)
                 return;
 
-#if NET451
+#if NET451 || NET452
             MessagePackSerializer.NonGeneric.Serialize(type, stream, obj);
 #else
             MessagePackSerializer.Serialize(type, stream, obj);
@@ -112,7 +112,7 @@ namespace Cosmos.Serialization.MessagePack.Neuecc
             if (stream.CanSeek && stream.Position > 0)
                 stream.Position = 0;
 
-#if NET451
+#if NET451 || NET452
             return MessagePackSerializer.NonGeneric.Deserialize(type, stream);
 #else
             return MessagePackSerializer.Deserialize(type, stream);

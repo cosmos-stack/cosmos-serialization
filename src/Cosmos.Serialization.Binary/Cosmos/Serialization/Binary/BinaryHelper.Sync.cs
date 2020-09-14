@@ -1,5 +1,6 @@
 using System.IO;
 using Cosmos.Conversions;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Cosmos.Serialization.Binary
 {

@@ -1,0 +1,41 @@
+﻿<Project>
+
+    <PropertyGroup>
+        <AssemblyName>Cosmos.Serialization.ProtoBuf</AssemblyName>
+        <PackageId>Cosmos.Serialization.ProtoBuf</PackageId>
+        <Description>ProtoBuf serializer extension for Cosmos base library</Description>
+    </PropertyGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net452' ">
+        <PackageReference Include="protobuf-net" Version="2.4.6" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net462' ">
+        <PackageReference Include="protobuf-net" Version="3.0.29" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net472' ">
+        <PackageReference Include="protobuf-net" Version="3.0.29" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net48' ">
+        <PackageReference Include="protobuf-net" Version="3.0.29" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
+        <PackageReference Include="protobuf-net" Version="3.0.29" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.1' ">
+        <PackageReference Include="protobuf-net" Version="3.0.29" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.0' ">
+        <PackageReference Include="protobuf-net" Version="3.0.29" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.1' ">
+        <PackageReference Include="protobuf-net" Version="3.0.29" />
+    </ItemGroup>
+
+</Project>

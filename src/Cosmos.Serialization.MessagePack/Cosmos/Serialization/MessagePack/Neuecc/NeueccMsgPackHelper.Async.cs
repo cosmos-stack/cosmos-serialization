@@ -38,7 +38,7 @@ namespace Cosmos.Serialization.MessagePack.Neuecc
             if (obj is null)
                 return new byte[0];
 
-#if NET451
+#if NET451 || NET452
             return await Task.Run(() => MessagePackSerializer.NonGeneric.Serialize(type, obj));
 #else
             return await Task.Run(() => MessagePackSerializer.Serialize(type, obj));
@@ -71,7 +71,7 @@ namespace Cosmos.Serialization.MessagePack.Neuecc
             if (data is null || data.Length == 0)
                 return null;
 
-#if NET451
+#if NET451 || NET452
             return await Task.Run(() => MessagePackSerializer.NonGeneric.Deserialize(type, data));
 #else
             return await Task.Run(() => MessagePackSerializer.Deserialize(type, data));

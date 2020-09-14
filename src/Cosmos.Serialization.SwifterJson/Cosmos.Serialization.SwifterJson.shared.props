@@ -1,0 +1,13 @@
+﻿<Project>
+
+    <PropertyGroup>
+        <AssemblyName>Cosmos.Serialization.SwifterJson</AssemblyName>
+        <PackageId>Cosmos.Serialization.SwifterJson</PackageId>
+        <Description>SwifterJson serializer extension for Cosmos base library</Description>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Swifter.Json" Version="1.5.0.1" />
+    </ItemGroup>
+
+</Project>

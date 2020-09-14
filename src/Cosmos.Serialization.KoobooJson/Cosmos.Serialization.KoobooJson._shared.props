@@ -1,0 +1,13 @@
+﻿<Project>
+
+    <PropertyGroup>
+        <AssemblyName>Cosmos.Serialization.KoobooJson</AssemblyName>
+        <PackageId>Cosmos.Serialization.KoobooJson</PackageId>
+        <Description>Kooboo JSON serializer extension for Cosmos base library</Description>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Kooboo.Json" Version="1.0.8" />
+    </ItemGroup>
+
+</Project>

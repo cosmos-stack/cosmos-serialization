@@ -1,0 +1,13 @@
+<Project>
+
+    <PropertyGroup>
+        <AssemblyName>Cosmos.Serialization.SwifterMsgPack</AssemblyName>
+        <PackageId>Cosmos.Serialization.SwifterMsgPack</PackageId>
+        <Description>Swifter MessagePack serializer extension for Cosmos base library</Description>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Swifter.MessagePack" Version="1.5.0" />
+    </ItemGroup>
+
+</Project>
