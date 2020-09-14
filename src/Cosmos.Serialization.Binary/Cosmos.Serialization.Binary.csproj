@@ -1,19 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-    <Import Project="..\..\build\common.props" />
+    <Import Project="Cosmos.Serialization.Binary._shared.props" />
 
-    <PropertyGroup>
-        <TargetFrameworks>netcoreapp3.1;netstandard2.1;netstandard2.0;net461;net451</TargetFrameworks>
-    </PropertyGroup>
+    <Import Project="..\..\common.props" />
 
-    <PropertyGroup>
-        <AssemblyName>Cosmos.Serialization.Binary</AssemblyName>
-        <PackageId>Cosmos.Serialization.Binary</PackageId>
-        <Description>Binary serializer extension for Cosmos base library</Description>
-    </PropertyGroup>
-
-    <ItemGroup>
-        <PackageReference Include="Cosmos.Standard" Version="0.1.4.4-alpha2-201012" />
-    </ItemGroup>
+    <Import Project="..\..\asset\props\shared_standard_nuget.props" />
 
 </Project>

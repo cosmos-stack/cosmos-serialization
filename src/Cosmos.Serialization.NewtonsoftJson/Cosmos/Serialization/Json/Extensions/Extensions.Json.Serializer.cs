@@ -83,7 +83,7 @@ namespace Cosmos.Serialization.Json
 
             stream.Position = 0;
 
-#if NET451
+#if NET451 || NET452
             ArraySegment<byte> buffer;
             try
             {
@@ -95,10 +95,10 @@ namespace Cosmos.Serialization.Json
             }
 
 #else
-            if (!stream.TryGetBuffer(out ArraySegment<byte> buffer))
+            if (!stream.TryGetBuffer(out var buffer))
                 throw new InvalidOperationException($"The call to {nameof(stream.TryGetBuffer)} returned false.");
 #endif
-            return new MemoryStream(buffer.Array, buffer.Offset, buffer.Count);
+            return new MemoryStream(buffer.Array!, buffer.Offset, buffer.Count);
         }
     }
 }

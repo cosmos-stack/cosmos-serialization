@@ -19,7 +19,7 @@ namespace Cosmos.Serialization.ProtoBuf
         {
             if (obj is null)
                 return new byte[0];
-#if !NET451 && !NET461 && !NETSTANDARD2_0
+#if !NETFRAMEWORK && !NETSTANDARD2_0
             await using var stream = await PackAsync(obj);
 #else
             using var stream = await PackAsync(obj);
@@ -51,7 +51,7 @@ namespace Cosmos.Serialization.ProtoBuf
         {
             if (data is null || data.Length == 0)
                 return default;
-#if !NET451 && !NET461 && !NETSTANDARD2_0
+#if !NETFRAMEWORK && !NETSTANDARD2_0
             await using var ms = new MemoryStream(data);
 #else
             using var ms = new MemoryStream(data);

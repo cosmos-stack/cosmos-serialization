@@ -1,20 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-    <Import Project="..\..\build\common.props" />
+    <Import Project="Cosmos.Serialization.MicrosoftJson._shared.props" />
+
+    <Import Project="..\..\common.props" />
 
     <PropertyGroup>
-        <TargetFrameworks>netcoreapp3.1;netstandard2.1;netstandard2.0;net461</TargetFrameworks>
+        <!--Overwrite the default target frameworks in common.props-->
+        <TargetFrameworks>netstandard2.1;netstandard2.0;netcoreapp3.1;netcoreapp3.0;net48;net472;net462</TargetFrameworks>
     </PropertyGroup>
 
-    <PropertyGroup>
-        <AssemblyName>Cosmos.Serialization.MicrosoftJson</AssemblyName>
-        <PackageId>Cosmos.Serialization.MicrosoftJson</PackageId>
-        <Description>Microsoft System.Text.Json serializer extension for Cosmos base library</Description>
-    </PropertyGroup>
-
-    <ItemGroup>
-        <PackageReference Include="System.Text.Json" Version="4.7.2" />
-        <PackageReference Include="Cosmos.Standard" Version="0.1.4.4-alpha2-201012" />
-    </ItemGroup>
+    <Import Project="..\..\asset\props\shared_standard_nuget.props" />
 
 </Project>

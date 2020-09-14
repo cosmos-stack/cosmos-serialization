@@ -36,7 +36,7 @@ namespace Cosmos.Serialization.Xml
                 return string.Empty;
 
             encoding ??= XmlManager.DefaultEncoding;
-#if !NET451 && !NET461 && !NETSTANDARD2_0
+#if !NETFRAMEWORK && !NETSTANDARD2_0
             await using var stream = await PackAsync(o, type);
 #else
             using var stream = await PackAsync(o, type);
@@ -65,7 +65,7 @@ namespace Cosmos.Serialization.Xml
         {
             if (o is null)
                 return new byte[0];
-#if !NET451 && !NET461 && !NETSTANDARD2_0
+#if !NETFRAMEWORK && !NETSTANDARD2_0
             await using var stream = await PackAsync(o, type);
 #else
             using var stream = await PackAsync(o, type);
@@ -100,7 +100,7 @@ namespace Cosmos.Serialization.Xml
                 return null;
 
             encoding ??= XmlManager.DefaultEncoding;
-#if !NET451 && !NET461 && !NETSTANDARD2_0
+#if !NETFRAMEWORK && !NETSTANDARD2_0
             await using var memoryStream = new MemoryStream(encoding.GetBytes(xml));
 #else
             using var memoryStream = new MemoryStream(encoding.GetBytes(xml));
@@ -131,7 +131,7 @@ namespace Cosmos.Serialization.Xml
         {
             if (data is null || data.Length == 0)
                 return null;
-#if !NET451 && !NET461 && !NETSTANDARD2_0
+#if !NETFRAMEWORK && !NETSTANDARD2_0
             await using var memoryStream = new MemoryStream(data);
 #else
             using var memoryStream = new MemoryStream(data);

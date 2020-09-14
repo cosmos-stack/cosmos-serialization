@@ -1,4 +1,4 @@
-# COSMOSLOOPS/Cosmos.Serialization
+# COSMOSLOOPS/Serialization
 
 Cosmos.Serialization is an inline common project of [Cosmosloops Labs.](https://github.com/cosmos-loops).
 

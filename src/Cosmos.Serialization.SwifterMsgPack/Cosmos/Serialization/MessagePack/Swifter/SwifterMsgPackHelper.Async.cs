@@ -20,7 +20,7 @@ namespace Cosmos.Serialization.MessagePack.Swifter
         {
             if (t is null)
                 return new byte[0];
-#if !NET451 && !NET461 && !NETSTANDARD2_0
+#if !NETFRAMEWORK && !NETSTANDARD2_0
             await using var stream = await PackAsync(t);
 #else
             using var stream = await PackAsync(t);
@@ -38,7 +38,7 @@ namespace Cosmos.Serialization.MessagePack.Swifter
         {
             if (obj is null)
                 return new byte[0];
-#if !NET451 && !NET461 && !NETSTANDARD2_0
+#if !NETFRAMEWORK && !NETSTANDARD2_0
             await using var stream = await PackAsync(obj, type);
 #else
             using var stream = await PackAsync(obj, type);
@@ -56,7 +56,7 @@ namespace Cosmos.Serialization.MessagePack.Swifter
         {
             if (data is null || data.Length == 0)
                 return default;
-#if !NET451 && !NET461 && !NETSTANDARD2_0
+#if !NETFRAMEWORK && !NETSTANDARD2_0
             await using var ms = new MemoryStream(data);
 #else
             using var ms = new MemoryStream(data);
@@ -74,7 +74,7 @@ namespace Cosmos.Serialization.MessagePack.Swifter
         {
             if (data is null || data.Length == 0)
                 return null;
-#if !NET451 && !NET461 && !NETSTANDARD2_0
+#if !NETFRAMEWORK && !NETSTANDARD2_0
             await using var ms = new MemoryStream(data);
 #else
             using var ms = new MemoryStream(data);

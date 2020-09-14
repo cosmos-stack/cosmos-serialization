@@ -46,7 +46,7 @@ namespace Cosmos.Serialization.Json.Swifter
         public static Task SerializeAsync<T>(T o, TextWriter output, JsonFormatterOptions? options = null)
         {
             return JsonFormatter.SerializeObjectAsync(o, output, TouchSerializeOptions(options))
-#if NETCOREAPP3_1
+#if NETCOREAPP
                    .AsTask()
 #endif
                 ;
@@ -120,7 +120,7 @@ namespace Cosmos.Serialization.Json.Swifter
             return reader is null
                     ? default
                     : JsonFormatter.DeserializeObjectAsync<T>(reader, TouchDeserializeOptions(options))
-#if NETCOREAPP3_1
+#if NETCOREAPP
                        .AsTask()
 #endif
                 ;
@@ -138,7 +138,7 @@ namespace Cosmos.Serialization.Json.Swifter
             return reader is null
                     ? null
                     : JsonFormatter.DeserializeObjectAsync(reader, type, TouchDeserializeOptions(options))
-#if NETCOREAPP3_1
+#if NETCOREAPP
                        .AsTask()
 #endif
                 ;
