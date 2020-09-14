@@ -1,20 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-    <Import Project="..\..\build\common.props" />
+    <Import Project="Cosmos.Serialization.ProtoBuf._shared.props" />
 
-    <PropertyGroup>
-        <TargetFrameworks>netcoreapp3.1;netstandard2.1;netstandard2.0;net461;net451</TargetFrameworks>
-    </PropertyGroup>
+    <Import Project="..\..\common.props" />
 
-    <PropertyGroup>
-        <AssemblyName>Cosmos.Serialization.ProtoBuf</AssemblyName>
-        <PackageId>Cosmos.Serialization.ProtoBuf</PackageId>
-        <Description>ProtoBuf serializer extension for Cosmos base library</Description>
-    </PropertyGroup>
+    <Import Project="..\..\asset\props\shared_standard_nuget.props" />
 
-    <ItemGroup>
-        <PackageReference Include="Cosmos.Standard" Version="0.1.4.4-alpha2-201012" />
-        <PackageReference Include="protobuf-net" Version="2.4.6" />
+    <ItemGroup>    
+        <PackageReference Include="Cosmos.Extensions.Enums" Version="$(TargetPkgVersion)" />
     </ItemGroup>
 
 </Project>
