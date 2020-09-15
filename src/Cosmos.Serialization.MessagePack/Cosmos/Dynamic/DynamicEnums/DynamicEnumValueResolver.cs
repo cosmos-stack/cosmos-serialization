@@ -2,15 +2,16 @@
 using MessagePack;
 using MessagePack.Formatters;
 
-namespace Cosmos.Serialization.MessagePack.Neuecc.Dynamic
+namespace Cosmos.Dynamic.DynamicEnums
 {
-    public class DynamicEnumNameResolver : IFormatterResolver
+    public class DynamicEnumValueResolver : IFormatterResolver
     {
-        public static readonly DynamicEnumNameResolver Instance = new DynamicEnumNameResolver();
+        public static readonly DynamicEnumValueResolver Instance = new DynamicEnumValueResolver();
 
-        private DynamicEnumNameResolver() { }
+        private DynamicEnumValueResolver() { }
 
-        public IMessagePackFormatter<T> GetFormatter<T>() => FormatterCache<T>.Formatter;
+        public IMessagePackFormatter<T> GetFormatter<T>() =>
+            FormatterCache<T>.Formatter;
 
         private static class FormatterCache<T>
         {
@@ -20,7 +21,7 @@ namespace Cosmos.Serialization.MessagePack.Neuecc.Dynamic
             {
                 if (Enums.IsDynamicEnum(typeof(T), out var genericArguments))
                 {
-                    var formatterType = typeof(DynamicEnumNameFormatter<,>).MakeGenericType(genericArguments);
+                    var formatterType = typeof(DynamicEnumValueFormatter<,>).MakeGenericType(genericArguments);
                     Formatter = (IMessagePackFormatter<T>) Types.CreateInstance(formatterType);
                 }
             }

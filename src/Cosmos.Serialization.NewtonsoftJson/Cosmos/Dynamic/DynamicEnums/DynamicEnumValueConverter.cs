@@ -1,11 +1,10 @@
 ﻿using System;
-using Cosmos.Dynamic;
 using Newtonsoft.Json;
 
-namespace Cosmos.Serialization.Json.Newtonsoft.Dynamic
+namespace Cosmos.Dynamic.DynamicEnums
 {
     public class DynamicEnumValueConverter<TEnum, TValue> : JsonConverter<TEnum>
-        where TEnum : DynamicEnum<TEnum, TValue>
+        where TEnum : DynamicEnum<TEnum, TValue>, IDynamicEnum
         where TValue : struct, IEquatable<TValue>, IComparable<TValue>
     {
         public override bool CanRead => true;
@@ -29,7 +28,7 @@ namespace Cosmos.Serialization.Json.Newtonsoft.Dynamic
                     value = (TValue) reader.Value!;
                 }
 
-                return DynamicEnum<TEnum, TValue>.SingleFromValue(value);
+                return DynamicEnum<TEnum, TValue>.FromValueSingle(value);
             }
             catch (Exception ex)
             {

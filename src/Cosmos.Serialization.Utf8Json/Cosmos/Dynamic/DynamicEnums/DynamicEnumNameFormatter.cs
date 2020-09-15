@@ -1,8 +1,7 @@
 ﻿using System;
-using Cosmos.Dynamic;
 using Utf8Json;
 
-namespace Cosmos.Serialization.Json.Utf8Json.Dynamic
+namespace Cosmos.Dynamic.DynamicEnums
 {
     public class DynamicEnumNameFormatter<TEnum, TValue> : IJsonFormatter<TEnum>
         where TEnum : DynamicEnum<TEnum, TValue>

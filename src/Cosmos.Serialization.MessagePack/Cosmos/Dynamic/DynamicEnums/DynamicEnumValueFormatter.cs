@@ -1,13 +1,12 @@
 ﻿using System;
-using Cosmos.Dynamic;
 using Cosmos.Reflection;
 using MessagePack;
 using MessagePack.Formatters;
 
-namespace Cosmos.Serialization.MessagePack.Neuecc.Dynamic
+namespace Cosmos.Dynamic.DynamicEnums
 {
     public class DynamicEnumValueFormatter<TEnum, TValue> : IMessagePackFormatter<TEnum>
-        where TEnum : DynamicEnum<TEnum, TValue>
+        where TEnum : DynamicEnum<TEnum, TValue>, IDynamicEnum
         where TValue : struct, IEquatable<TValue>, IComparable<TValue>
     {
 #if NET451 || NET452
@@ -27,7 +26,7 @@ namespace Cosmos.Serialization.MessagePack.Neuecc.Dynamic
                 return default;
             }
 
-            return DynamicEnum<TEnum, TValue>.SingleFromValue(Read(ref bytes, offset, out readSize));
+            return DynamicEnum<TEnum, TValue>.FromValueSingle(Read(ref bytes, offset, out readSize));
         }
 
         public int Write(ref byte[] bytes, int offset, TValue value)
@@ -105,7 +104,7 @@ namespace Cosmos.Serialization.MessagePack.Neuecc.Dynamic
             else
             {
                 var value = Read(ref reader);
-                return DynamicEnum<TEnum, TValue>.SingleFromValue(value);
+                return DynamicEnum<TEnum, TValue>.FromValueSingle(value);
             }
         }
 

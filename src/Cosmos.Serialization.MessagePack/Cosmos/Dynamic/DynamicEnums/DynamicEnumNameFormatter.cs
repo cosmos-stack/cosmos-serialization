@@ -1,15 +1,15 @@
 ﻿using System;
-using Cosmos.Dynamic;
 using MessagePack;
 using MessagePack.Formatters;
 
-namespace Cosmos.Serialization.MessagePack.Neuecc.Dynamic
+namespace Cosmos.Dynamic.DynamicEnums
 {
     public class DynamicEnumNameFormatter<TEnum, TValue> : IMessagePackFormatter<TEnum>
-        where TEnum : DynamicEnum<TEnum, TValue>
+        where TEnum : DynamicEnum<TEnum, TValue>, IDynamicEnum
         where TValue : struct, IEquatable<TValue>, IComparable<TValue>
     {
 #if NET451 || NET452
+
         public int Serialize(ref byte[] bytes, int offset, TEnum value, IFormatterResolver formatterResolver)
         {
             if (value is null)
@@ -31,7 +31,9 @@ namespace Cosmos.Serialization.MessagePack.Neuecc.Dynamic
             var name = MessagePackBinary.ReadString(bytes, offset, out readSize);
             return DynamicEnum<TEnum, TValue>.FromName(name);
         }
+        
 #else
+        
         public void Serialize(ref MessagePackWriter writer, TEnum value, MessagePackSerializerOptions options)
         {
             if (value is null)
@@ -56,6 +58,7 @@ namespace Cosmos.Serialization.MessagePack.Neuecc.Dynamic
                 return DynamicEnum<TEnum, TValue>.FromName(name);
             }
         }
+        
 #endif
     }
 }

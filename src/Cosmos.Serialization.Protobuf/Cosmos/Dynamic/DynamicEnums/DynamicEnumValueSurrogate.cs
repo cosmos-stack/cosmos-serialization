@@ -1,12 +1,11 @@
 ﻿using System;
-using Cosmos.Dynamic;
 using ProtoBuf;
 
-namespace Cosmos.Serialization.ProtoBuf.Dynamic
+namespace Cosmos.Dynamic.DynamicEnums
 {
     [ProtoContract]
     public class DynamicEnumValueSurrogate<TEnum, TValue>
-        where TEnum : DynamicEnum<TEnum, TValue>
+        where TEnum : DynamicEnum<TEnum, TValue>, IDynamicEnum
         where TValue : struct, IEquatable<TValue>, IComparable<TValue>
     {
         [ProtoMember(1, IsRequired = true)] TValue Value { get; set; }
@@ -22,7 +21,7 @@ namespace Cosmos.Serialization.ProtoBuf.Dynamic
         {
             if (surrogate is null)
                 return null;
-            return DynamicEnum<TEnum, TValue>.SingleFromValue(surrogate.Value);
+            return DynamicEnum<TEnum, TValue>.FromValueSingle(surrogate.Value);
         }
     }
 }

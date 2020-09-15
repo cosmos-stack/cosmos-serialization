@@ -1,11 +1,10 @@
 ﻿using System;
-using Cosmos.Dynamic;
 using Newtonsoft.Json;
 
-namespace Cosmos.Serialization.Json.Newtonsoft.Dynamic
+namespace Cosmos.Dynamic.DynamicEnums
 {
     public class DynamicEnumNameConverter<TEnum, TValue> : JsonConverter<TEnum>
-        where TEnum : DynamicEnum<TEnum, TValue>
+        where TEnum : DynamicEnum<TEnum, TValue>, IDynamicEnum
         where TValue : struct, IEquatable<TValue>, IComparable<TValue>
     {
         public override bool CanRead => true;
@@ -17,7 +16,7 @@ namespace Cosmos.Serialization.Json.Newtonsoft.Dynamic
             return reader.TokenType switch
             {
                 JsonToken.String => __getViaName((string) reader.Value),
-                _ => throw new JsonSerializationException($"Unexpected token {reader.TokenType} when parsing a smart enum.")
+                _ => throw new JsonSerializationException($"Unexpected token {reader.TokenType} when parsing a dynamic enum.")
             };
 
             TEnum __getViaName(string name)
@@ -28,7 +27,7 @@ namespace Cosmos.Serialization.Json.Newtonsoft.Dynamic
                 }
                 catch (Exception ex)
                 {
-                    throw new JsonSerializationException($"Error converting value '{name}' to a smart enum.", ex);
+                    throw new JsonSerializationException($"Error converting value '{name}' to a dynamic enum.", ex);
                 }
             }
         }

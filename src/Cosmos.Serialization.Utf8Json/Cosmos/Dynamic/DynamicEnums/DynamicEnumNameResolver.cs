@@ -1,7 +1,7 @@
 ﻿using Cosmos.Reflection;
 using Utf8Json;
 
-namespace Cosmos.Serialization.Json.Utf8Json.Dynamic
+namespace Cosmos.Dynamic.DynamicEnums
 {
     public class DynamicEnumNameResolver : IJsonFormatterResolver
     {

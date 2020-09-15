@@ -1,9 +1,8 @@
 ﻿using System;
-using Cosmos.Dynamic;
 using Cosmos.Reflection;
 using Utf8Json;
 
-namespace Cosmos.Serialization.Json.Utf8Json.Dynamic
+namespace Cosmos.Dynamic.DynamicEnums
 {
     public class DynamicEnumValueFormatter<TEnum, TValue> : IJsonFormatter<TEnum>
         where TEnum : DynamicEnum<TEnum, TValue>
@@ -48,7 +47,7 @@ namespace Cosmos.Serialization.Json.Utf8Json.Dynamic
             if (reader.ReadIsNull())
                 return null;
 
-            return DynamicEnum<TEnum, TValue>.SingleFromValue(ReadValue(ref reader));
+            return DynamicEnum<TEnum, TValue>.FromValueSingle(ReadValue(ref reader));
         }
 
         TValue ReadValue(ref JsonReader reader)

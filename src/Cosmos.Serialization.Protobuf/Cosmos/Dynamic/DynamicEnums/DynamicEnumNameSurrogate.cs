@@ -1,12 +1,11 @@
 ﻿using System;
-using Cosmos.Dynamic;
 using ProtoBuf;
 
-namespace Cosmos.Serialization.ProtoBuf.Dynamic
+namespace Cosmos.Dynamic.DynamicEnums
 {
     [ProtoContract]
     public class DynamicEnumNameSurrogate<TEnum, TValue>
-        where TEnum : DynamicEnum<TEnum, TValue>
+        where TEnum : DynamicEnum<TEnum, TValue>, IDynamicEnum
         where TValue : struct, IEquatable<TValue>, IComparable<TValue>
     {
         [ProtoMember(1, IsRequired = true)] string Name { get; set; }
