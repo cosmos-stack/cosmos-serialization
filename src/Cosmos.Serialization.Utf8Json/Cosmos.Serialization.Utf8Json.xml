@@ -248,6 +248,18 @@
             <param name="resolver"></param>
             <returns></returns>
         </member>
+        <member name="F:Cosmos.Serialization.Json.Utf8Json.Dynamic.DynamicEnumValueResolver.Instance">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Utf8Json.Dynamic.DynamicEnumValueResolver.GetFormatter``1">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
         <member name="T:Cosmos.Serialization.Json.Utf8Json.Utf8JsonHelper">
             <summary>
             Utf8Json helper
