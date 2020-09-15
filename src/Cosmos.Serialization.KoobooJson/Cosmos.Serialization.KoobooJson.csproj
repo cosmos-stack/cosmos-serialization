@@ -6,4 +6,8 @@
 
     <Import Project="..\..\asset\props\shared_standard_nuget.props" />
 
+    <ItemGroup>    
+        <PackageReference Include="Cosmos.Extensions.Enums" Version="$(TargetPkgVersion)" />
+    </ItemGroup>
+
 </Project>

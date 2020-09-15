@@ -6,4 +6,8 @@
 
     <Import Project="..\..\asset\props\shared_standard_csproj.props" />
 
+    <ItemGroup>
+        <ProjectReference Include="..\..\..\cosmos-prowess\src\Cosmos.Extensions.Enums\Cosmos.Extensions.Enums._build.csproj" />
+    </ItemGroup>
+
 </Project>

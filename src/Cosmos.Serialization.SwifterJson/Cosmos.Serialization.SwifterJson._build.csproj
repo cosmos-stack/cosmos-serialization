@@ -1,9 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-    <Import Project="Cosmos.Serialization.SwifterJson.shared.props" />
+    <Import Project="Cosmos.Serialization.SwifterJson._shared.props" />
 
     <Import Project="..\..\common.props" />
 
     <Import Project="..\..\asset\props\shared_standard_csproj.props" />
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\..\cosmos-prowess\src\Cosmos.Extensions.Enums\Cosmos.Extensions.Enums._build.csproj" />
+    </ItemGroup>
 
 </Project>
