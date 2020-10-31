@@ -21,6 +21,7 @@ Cosmos.Serialization is an inline common project of [Cosmosloops Labs.](https://
   - Cosmos.Serialization.Nett
 - Binary
   - Cosmos.Serialization.Binary
+  - Cosmos.Serialization.Bssom
 - Protobuf
   - Cosmos.Serialization.Protobuf
 - MessagePack
