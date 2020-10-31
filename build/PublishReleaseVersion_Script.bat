@@ -25,6 +25,7 @@ dotnet pack src/Cosmos.serialization.Xml/Cosmos.serialization.Xml._build.csproj 
 dotnet pack src/Cosmos.Serialization.Jil/Cosmos.Serialization.Jil._build.csproj                       -c Release -o nuget_packages --no-restore
 dotnet pack src/Cosmos.Serialization.Lit/Cosmos.Serialization.Lit._build.csproj                       -c Release -o nuget_packages --no-restore
 dotnet pack src/Cosmos.Serialization.Nett/Cosmos.Serialization.Nett._build.csproj                     -c Release -o nuget_packages --no-restore
+dotnet pack src/Cosmos.serialization.Bsoom/Cosmos.serialization.Bsoom._build.csproj                   -c Release -o nuget_packages --no-restore
 dotnet pack src/Cosmos.serialization.Binary/Cosmos.serialization.Binary._build.csproj                 -c Release -o nuget_packages --no-restore
 dotnet pack src/Cosmos.Serialization.Utf8Json/Cosmos.Serialization.Utf8Json._build.csproj             -c Release -o nuget_packages --no-restore
 dotnet pack src/Cosmos.Serialization.Protobuf/Cosmos.Serialization.Protobuf._build.csproj             -c Release -o nuget_packages --no-restore

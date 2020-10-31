@@ -1,0 +1,13 @@
+<Project>
+
+    <PropertyGroup>
+        <AssemblyName>Cosmos.Serialization.Bssom</AssemblyName>
+        <PackageId>Cosmos.Serialization.Bssom</PackageId>
+        <Description>Bssom serializer extension for Cosmos base library</Description>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="BssomSerializer" Version="1.0.0" />
+    </ItemGroup>
+
+</Project>
