@@ -1,5 +1,6 @@
 using System;
 using ProtoBuf.Meta;
+// ReSharper disable InconsistentNaming
 
 namespace Cosmos.Serialization.ProtoBuf
 {

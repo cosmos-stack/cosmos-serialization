@@ -3,6 +3,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Cosmos.Reflection;
 
 /*
  * Reference to:
@@ -51,10 +52,9 @@ namespace ProtoBuf.Meta
                 if (BuiltTypes.Contains(type))
                     return;
 
-                if (runtimeTypeModel.CanSerialize(type))
+                if (runtimeTypeModel.CanSerialize(type) && type.IsGenericType)
                 {
-                    if (type.IsGenericType)
-                        BuildGenerics(runtimeTypeModel, type);
+                    BuildGenerics(runtimeTypeModel, type);
                     return;
                 }
 
@@ -98,8 +98,12 @@ namespace ProtoBuf.Meta
 
         private static void BuildGenerics(RuntimeTypeModel runtimeTypeModel, Type type)
         {
-            if (!type.IsGenericType && (type.BaseType == null || !type.BaseType.IsGenericType)) return;
-            var generics = type.IsGenericType ? type.GetGenericArguments() : type.BaseType.GetGenericArguments();
+            if (!type.IsGenericType && (type.BaseType is null || !type.BaseType.IsGenericType))
+                return;
+
+            var generics = type.IsGenericType
+                ? type.GetGenericArguments()
+                : type.BaseType!.GetGenericArguments();
 
             foreach (var generic in generics)
                 Build(runtimeTypeModel, generic);

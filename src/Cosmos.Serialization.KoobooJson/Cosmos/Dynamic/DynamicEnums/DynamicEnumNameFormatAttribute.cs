@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Reflection;
-using Cosmos.Reflection;
-using Cosmos.Text;
 using Kooboo.Json;
 
 namespace Cosmos.Dynamic.DynamicEnums
