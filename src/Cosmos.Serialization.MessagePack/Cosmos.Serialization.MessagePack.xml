@@ -4,6 +4,18 @@
         <name>Cosmos.Serialization.MessagePack</name>
     </assembly>
     <members>
+        <member name="F:Cosmos.Dynamic.DynamicEnums.DynamicFlagEnumValueResolver.Instance">
+            <summary>
+            Return the instance.
+            </summary>
+        </member>
+        <member name="M:Cosmos.Dynamic.DynamicEnums.DynamicFlagEnumValueResolver.GetFormatter``1">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
         <member name="T:Cosmos.Serialization.MessagePack.Extensions">
             <summary>
             MessagePack extensions

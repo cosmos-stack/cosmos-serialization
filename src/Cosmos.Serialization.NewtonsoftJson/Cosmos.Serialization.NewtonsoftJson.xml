@@ -4,6 +4,25 @@
         <name>Cosmos.Serialization.NewtonsoftJson</name>
     </assembly>
     <members>
+        <member name="M:Cosmos.Dynamic.DynamicEnums.DynamicFlagEnumValueConverter`2.ReadJson(Newtonsoft.Json.JsonReader,System.Type,`0,System.Boolean,Newtonsoft.Json.JsonSerializer)">
+            <summary>
+            
+            </summary>
+            <param name="reader"></param>
+            <param name="objectType"></param>
+            <param name="existingValue"></param>
+            <param name="hasExistingValue"></param>
+            <param name="serializer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Dynamic.DynamicEnums.DynamicFlagEnumValueConverter`2.WriteJson(Newtonsoft.Json.JsonWriter,`0,Newtonsoft.Json.JsonSerializer)">
+            <summary>
+            
+            </summary>
+            <param name="writer"></param>
+            <param name="value"></param>
+            <param name="serializer"></param>
+        </member>
         <member name="T:Cosmos.Serialization.Json.JTokenConversionExtensions">
             <summary>
             JToken conversion extensions
