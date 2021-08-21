@@ -1,4 +1,4 @@
-# COSMOSLOOPS/Serialization
+# Cosmos Serialization Overview
 
 Cosmos.Serialization is an inline common project of [Cosmosloops Labs.](https://github.com/cosmos-loops).
 
@@ -12,6 +12,7 @@ Cosmos.Serialization is an inline common project of [Cosmosloops Labs.](https://
   - Cosmos.Serialization.Lit *(Cosmos.Serialization.LitJson)*
   - Cosmos.Serialization.NewtonsoftJson
   - Cosmos.Serialization.MicrosoftJson
+  - Cosmos.Serialization.FastJson
   - Cosmos.Serialization.SwifterJson
   - Cosmos.Serialization.Utf8Json
 - Yaml
@@ -51,3 +52,4 @@ People or projects that have made a great contributions to this project:
 Member project of [Cosmosloops Labs.](https://github.com/cosmos-loops).
 
 [Apache License 2.0](/LICENSE)
+~~~~

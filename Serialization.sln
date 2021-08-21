@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution", "solution", "{85
 		common.tests.props = common.tests.props
 		LICENSE = LICENSE
 		logo.png = logo.png
+		asset\version.dev.props = asset\version.dev.props
+		asset\version.props = asset\version.props
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.Serialization.Binary", "src\Cosmos.Serialization.Binary\Cosmos.Serialization.Binary.csproj", "{40CF2348-F851-41A7-A223-F23398112E47}"
@@ -120,12 +122,17 @@ EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{C39C82BC-5723-4EBF-937E-E8E70A9AE2ED}"
 ProjectSection(SolutionItems) = preProject
-	build\PublishBetaVersion_Script.bat = build\PublishBetaVersion_Script.bat
-	build\PublishNightlyVersion_Script.bat = build\PublishNightlyVersion_Script.bat
-	build\PublishReleaseVersion_Script.bat = build\PublishReleaseVersion_Script.bat
+	build\Beta.bat = build\Beta.bat
+	build\Beta_WithoutBuild.bat = build\Beta_WithoutBuild.bat
+	build\Nightly.bat = build\Nightly.bat
+	build\Nightly_WithoutBuild.bat = build\Nightly_WithoutBuild.bat
+	build\Release.bat = build\Release.bat
+	build\Release_WithoutBuild.bat = build\Release_WithoutBuild.bat
 EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.Serialization.Bssom", "src\Cosmos.Serialization.Bssom\Cosmos.Serialization.Bssom.csproj", "{443F953F-1963-40A5-BE49-6B1DEC20CA5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.Serialization.FastJson", "src\Cosmos.Serialization.FastJson\Cosmos.Serialization.FastJson.csproj", "{3F73D857-7EE0-44F0-B03F-DB6F35DF9A49}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -269,6 +276,10 @@ Global
 		{443F953F-1963-40A5-BE49-6B1DEC20CA5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{443F953F-1963-40A5-BE49-6B1DEC20CA5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{443F953F-1963-40A5-BE49-6B1DEC20CA5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F73D857-7EE0-44F0-B03F-DB6F35DF9A49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F73D857-7EE0-44F0-B03F-DB6F35DF9A49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F73D857-7EE0-44F0-B03F-DB6F35DF9A49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F73D857-7EE0-44F0-B03F-DB6F35DF9A49}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -318,6 +329,7 @@ Global
 		{89FF2B35-62A3-43AD-9DA8-6A637812769E} = {9B0DF39D-9858-43BB-B427-34104D519755}
 		{918B0A07-1C41-4572-B875-8D283FAC4652} = {9B0DF39D-9858-43BB-B427-34104D519755}
 		{443F953F-1963-40A5-BE49-6B1DEC20CA5A} = {D99596A9-CA98-40A9-A643-285063D7F600}
+		{3F73D857-7EE0-44F0-B03F-DB6F35DF9A49} = {9F9BB5E8-2BC0-4339-BDAA-8118526B4D58}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {45736C31-1DF4-498D-A203-98B7B81363D6}
