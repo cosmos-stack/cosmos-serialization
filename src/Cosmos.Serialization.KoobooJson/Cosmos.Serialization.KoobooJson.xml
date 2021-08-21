@@ -354,21 +354,23 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Kooboo.KoobooJsonHelper.SerializeToBytesAsync``1(``0,Kooboo.Json.JsonSerializerOption)">
+        <member name="M:Cosmos.Serialization.Json.Kooboo.KoobooJsonHelper.SerializeToBytesAsync``1(``0,Kooboo.Json.JsonSerializerOption,System.Text.Encoding)">
             <summary>
             Serialize to bytes async
             </summary>
             <param name="o"></param>
             <param name="option"></param>
+            <param name="encoding"></param>
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Kooboo.KoobooJsonHelper.SerializeToBytesAsync``1(``0,System.Action{Kooboo.Json.JsonSerializerOption})">
+        <member name="M:Cosmos.Serialization.Json.Kooboo.KoobooJsonHelper.SerializeToBytesAsync``1(``0,System.Action{Kooboo.Json.JsonSerializerOption},System.Text.Encoding)">
             <summary>
             Serialize to bytes async
             </summary>
             <param name="o"></param>
             <param name="optionAct"></param>
+            <param name="encoding"></param>
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
@@ -408,59 +410,65 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Kooboo.KoobooJsonHelper.DeserializeFromBytesAsync(System.Byte[],System.Type,Kooboo.Json.JsonDeserializeOption)">
+        <member name="M:Cosmos.Serialization.Json.Kooboo.KoobooJsonHelper.DeserializeFromBytesAsync(System.Byte[],System.Type,Kooboo.Json.JsonDeserializeOption,System.Text.Encoding)">
             <summary>
             Deserialize from bytes async
             </summary>
             <param name="data"></param>
             <param name="type"></param>
             <param name="option"></param>
+            <param name="encoding"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Kooboo.KoobooJsonHelper.DeserializeFromBytesAsync(System.Byte[],System.Type,System.Action{Kooboo.Json.JsonDeserializeOption})">
+        <member name="M:Cosmos.Serialization.Json.Kooboo.KoobooJsonHelper.DeserializeFromBytesAsync(System.Byte[],System.Type,System.Action{Kooboo.Json.JsonDeserializeOption},System.Text.Encoding)">
             <summary>
             Deserialize from bytes async
             </summary>
             <param name="type"></param>
             <param name="optionAct"></param>
             <param name="data"></param>
+            <param name="encoding"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Kooboo.KoobooJsonHelper.DeserializeFromBytesAsync``1(System.Byte[],Kooboo.Json.JsonDeserializeOption)">
+        <member name="M:Cosmos.Serialization.Json.Kooboo.KoobooJsonHelper.DeserializeFromBytesAsync``1(System.Byte[],Kooboo.Json.JsonDeserializeOption,System.Text.Encoding)">
             <summary>
             Deserialize from bytes async
             </summary>
             <param name="data"></param>
             <param name="option"></param>
+            <param name="encoding"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Kooboo.KoobooJsonHelper.DeserializeFromBytesAsync``1(System.Byte[],System.Action{Kooboo.Json.JsonDeserializeOption})">
+        <member name="M:Cosmos.Serialization.Json.Kooboo.KoobooJsonHelper.DeserializeFromBytesAsync``1(System.Byte[],System.Action{Kooboo.Json.JsonDeserializeOption},System.Text.Encoding)">
             <summary>
             Deserialize from bytes async
             </summary>
             <param name="optionAct"></param>
             <param name="data"></param>
+            <param name="encoding"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Kooboo.KoobooJsonHelper.PackAsync``1(``0,Kooboo.Json.JsonSerializerOption)">
+        <member name="M:Cosmos.Serialization.Json.Kooboo.KoobooJsonHelper.PackAsync``1(``0,Kooboo.Json.JsonSerializerOption,System.Text.Encoding)">
             <summary>
             Pack async
             </summary>
             <param name="o"></param>
             <param name="option"></param>
+            <param name="encoding"></param>
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Kooboo.KoobooJsonHelper.PackAsync``1(``0,System.IO.Stream,Kooboo.Json.JsonSerializerOption)">
+        <member name="M:Cosmos.Serialization.Json.Kooboo.KoobooJsonHelper.PackAsync``1(``0,System.IO.Stream,Kooboo.Json.JsonSerializerOption,System.Text.Encoding)">
             <summary>
             Pack async
             </summary>
             <param name="o"></param>
             <param name="stream"></param>
             <param name="option"></param>
+            <param name="encoding"></param>
             <typeparam name="T"></typeparam>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Kooboo.KoobooJsonHelper.UnpackAsync``1(System.IO.Stream,Kooboo.Json.JsonDeserializeOption)">
+        <member name="M:Cosmos.Serialization.Json.Kooboo.KoobooJsonHelper.UnpackAsync``1(System.IO.Stream,Kooboo.Json.JsonDeserializeOption,System.Text.Encoding)">
             <summary>
             Unpack async
             </summary>
@@ -469,7 +477,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Kooboo.KoobooJsonHelper.UnpackAsync(System.IO.Stream,System.Type,Kooboo.Json.JsonDeserializeOption)">
+        <member name="M:Cosmos.Serialization.Json.Kooboo.KoobooJsonHelper.UnpackAsync(System.IO.Stream,System.Type,Kooboo.Json.JsonDeserializeOption,System.Text.Encoding)">
             <summary>
             Unpack async
             </summary>
@@ -496,21 +504,23 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Kooboo.KoobooJsonHelper.SerializeToBytes``1(``0,Kooboo.Json.JsonSerializerOption)">
+        <member name="M:Cosmos.Serialization.Json.Kooboo.KoobooJsonHelper.SerializeToBytes``1(``0,Kooboo.Json.JsonSerializerOption,System.Text.Encoding)">
             <summary>
             Serialize to bytes
             </summary>
             <param name="o"></param>
             <param name="option"></param>
+            <param name="encoding"></param>
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Kooboo.KoobooJsonHelper.SerializeToBytes``1(``0,System.Action{Kooboo.Json.JsonSerializerOption})">
+        <member name="M:Cosmos.Serialization.Json.Kooboo.KoobooJsonHelper.SerializeToBytes``1(``0,System.Action{Kooboo.Json.JsonSerializerOption},System.Text.Encoding)">
             <summary>
             Serialize to bytes
             </summary>
             <param name="o"></param>
             <param name="optionAct"></param>
+            <param name="encoding"></param>
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
@@ -550,74 +560,82 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Kooboo.KoobooJsonHelper.DeserializeFromBytes(System.Byte[],System.Type,Kooboo.Json.JsonDeserializeOption)">
+        <member name="M:Cosmos.Serialization.Json.Kooboo.KoobooJsonHelper.DeserializeFromBytes(System.Byte[],System.Type,Kooboo.Json.JsonDeserializeOption,System.Text.Encoding)">
             <summary>
             Deserialize from bytes
             </summary>
             <param name="data"></param>
             <param name="type"></param>
             <param name="option"></param>
+            <param name="encoding"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Kooboo.KoobooJsonHelper.DeserializeFromBytes(System.Byte[],System.Type,System.Action{Kooboo.Json.JsonDeserializeOption})">
+        <member name="M:Cosmos.Serialization.Json.Kooboo.KoobooJsonHelper.DeserializeFromBytes(System.Byte[],System.Type,System.Action{Kooboo.Json.JsonDeserializeOption},System.Text.Encoding)">
             <summary>
             Deserialize from bytes
             </summary>
             <param name="type"></param>
             <param name="optionAct"></param>
             <param name="data"></param>
+            <param name="encoding"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Kooboo.KoobooJsonHelper.DeserializeFromBytes``1(System.Byte[],Kooboo.Json.JsonDeserializeOption)">
+        <member name="M:Cosmos.Serialization.Json.Kooboo.KoobooJsonHelper.DeserializeFromBytes``1(System.Byte[],Kooboo.Json.JsonDeserializeOption,System.Text.Encoding)">
             <summary>
             Deserialize from bytes
             </summary>
             <param name="data"></param>
             <param name="option"></param>
+            <param name="encoding"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Kooboo.KoobooJsonHelper.DeserializeFromBytes``1(System.Byte[],System.Action{Kooboo.Json.JsonDeserializeOption})">
+        <member name="M:Cosmos.Serialization.Json.Kooboo.KoobooJsonHelper.DeserializeFromBytes``1(System.Byte[],System.Action{Kooboo.Json.JsonDeserializeOption},System.Text.Encoding)">
             <summary>
             Deserialize from bytes
             </summary>
             <param name="optionAct"></param>
             <param name="data"></param>
+            <param name="encoding"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Kooboo.KoobooJsonHelper.Pack``1(``0,Kooboo.Json.JsonSerializerOption)">
+        <member name="M:Cosmos.Serialization.Json.Kooboo.KoobooJsonHelper.Pack``1(``0,Kooboo.Json.JsonSerializerOption,System.Text.Encoding)">
             <summary>
             Pack
             </summary>
             <param name="o"></param>
             <param name="option"></param>
+            <param name="encoding"></param>
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Kooboo.KoobooJsonHelper.Pack``1(``0,System.IO.Stream,Kooboo.Json.JsonSerializerOption)">
+        <member name="M:Cosmos.Serialization.Json.Kooboo.KoobooJsonHelper.Pack``1(``0,System.IO.Stream,Kooboo.Json.JsonSerializerOption,System.Text.Encoding)">
             <summary>
             Pack
             </summary>
             <param name="o"></param>
             <param name="stream"></param>
             <param name="option"></param>
+            <param name="encoding"></param>
             <typeparam name="T"></typeparam>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Kooboo.KoobooJsonHelper.Unpack``1(System.IO.Stream,Kooboo.Json.JsonDeserializeOption)">
+        <member name="M:Cosmos.Serialization.Json.Kooboo.KoobooJsonHelper.Unpack``1(System.IO.Stream,Kooboo.Json.JsonDeserializeOption,System.Text.Encoding)">
             <summary>
             Unpack
             </summary>
             <param name="stream"></param>
             <param name="option"></param>
+            <param name="encoding"></param>
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Kooboo.KoobooJsonHelper.Unpack(System.IO.Stream,System.Type,Kooboo.Json.JsonDeserializeOption)">
+        <member name="M:Cosmos.Serialization.Json.Kooboo.KoobooJsonHelper.Unpack(System.IO.Stream,System.Type,Kooboo.Json.JsonDeserializeOption,System.Text.Encoding)">
             <summary>
             Unpack
             </summary>
             <param name="stream"></param>
             <param name="type"></param>
             <param name="option"></param>
+            <param name="encoding"></param>
             <returns></returns>
         </member>
         <member name="T:Cosmos.Serialization.Json.Kooboo.KoobooManager">
@@ -680,6 +698,40 @@
         </member>
         <member name="M:Cosmos.Serialization.KoobooObjectSerializer.DeserializeFromStreamAsync(System.IO.Stream,System.Type)">
             <inheritdoc />
+        </member>
+        <member name="T:Cosmos.Serialization.KoobooObjectSerializerExtensions">
+            <summary>
+            KoobooObjectSerializer extensions.
+            </summary>
+        </member>
+        <member name="M:Cosmos.Serialization.KoobooObjectSerializerExtensions.UseKooboo(Cosmos.Serialization.IJsonSerializerConfigureEntry)">
+            <summary>
+            Use KoobooObjectSerializer
+            </summary>
+            <param name="entry"></param>
+        </member>
+        <member name="M:Cosmos.Serialization.KoobooObjectSerializerExtensions.UseKooboo(Cosmos.Serialization.IJsonSerializerConfigureEntry,Kooboo.Json.JsonSerializerOption,Kooboo.Json.JsonDeserializeOption)">
+            <summary>
+            Use KoobooObjectSerializer
+            </summary>
+            <param name="entry"></param>
+            <param name="options1"></param>
+            <param name="options2"></param>
+        </member>
+        <member name="M:Cosmos.Serialization.KoobooObjectSerializerExtensions.UseKooboo(Cosmos.Serialization.IJsonSerializerConfigureEntry,System.Func{Kooboo.Json.JsonSerializerOption},System.Func{Kooboo.Json.JsonDeserializeOption})">
+            <summary>
+            Use KoobooObjectSerializer
+            </summary>
+            <param name="entry"></param>
+            <param name="optionsFactory1"></param>
+            <param name="optionsFactory2"></param>
+        </member>
+        <member name="M:Cosmos.Serialization.KoobooObjectSerializerExtensions.UseKooboo(Cosmos.Serialization.IJsonSerializerConfigureEntry,System.Func{Cosmos.Serialization.KoobooObjectSerializer})">
+            <summary>
+            Use KoobooObjectSerializer
+            </summary>
+            <param name="entry"></param>
+            <param name="serializerFactory"></param>
         </member>
     </members>
 </doc>

@@ -1,0 +1,8 @@
+<Project>
+
+    <ItemGroup>
+        <PackageReference Include="Cosmos.Standard" Version="$(Standard-PkgVersion)" />
+        <PackageReference Include="BssomSerializer" Version="1.1.3" />
+    </ItemGroup>
+
+</Project>

@@ -551,5 +551,23 @@
         <member name="M:Cosmos.Serialization.Utf8JsonObjectSerializer.DeserializeFromStreamAsync(System.IO.Stream,System.Type)">
             <inheritdoc />
         </member>
+        <member name="T:Cosmos.Serialization.Utf8JsonObjectSerializerExtensions">
+            <summary>
+            Utf8JsonObjectSerializer extensions.
+            </summary>
+        </member>
+        <member name="M:Cosmos.Serialization.Utf8JsonObjectSerializerExtensions.UseUtf8Json(Cosmos.Serialization.IJsonSerializerConfigureEntry)">
+            <summary>
+            Use Utf8JsonObjectSerializer
+            </summary>
+            <param name="entry"></param>
+        </member>
+        <member name="M:Cosmos.Serialization.Utf8JsonObjectSerializerExtensions.UseUtf8Json(Cosmos.Serialization.IJsonSerializerConfigureEntry,System.Func{Cosmos.Serialization.Utf8JsonObjectSerializer})">
+            <summary>
+            Use Utf8JsonObjectSerializer
+            </summary>
+            <param name="entry"></param>
+            <param name="serializerFactory"></param>
+        </member>
     </members>
 </doc>

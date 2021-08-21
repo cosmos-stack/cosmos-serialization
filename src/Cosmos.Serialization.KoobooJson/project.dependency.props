@@ -1,0 +1,9 @@
+<Project>
+
+    <ItemGroup>
+        <PackageReference Include="Cosmos.Extensions.Reflection.Enhanced" Version="$(Prowess-PkgVersion)" />
+        <PackageReference Include="Cosmos.Extensions.DynamicEnums" Version="$(DynamicEnums-PkgVersion)" />
+        <PackageReference Include="Kooboo.Json" Version="1.0.8" />
+    </ItemGroup>
+
+</Project>

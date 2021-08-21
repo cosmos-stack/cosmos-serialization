@@ -1,0 +1,9 @@
+<Project>
+
+    <PropertyGroup>
+        <AssemblyName>Cosmos.Serialization.Jil</AssemblyName>
+        <PackageId>Cosmos.Serialization.Jil</PackageId>
+        <Description>Jil serializer extension for Cosmos base library</Description>
+    </PropertyGroup>
+
+</Project>

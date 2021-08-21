@@ -45,6 +45,38 @@
         <member name="M:Cosmos.Serialization.JilObjectSerializer.DeserializeFromStreamAsync(System.IO.Stream,System.Type)">
             <inheritdoc />
         </member>
+        <member name="T:Cosmos.Serialization.JilObjectSerializerExtensions">
+            <summary>
+            JilObjectSerializer extensions.
+            </summary>
+        </member>
+        <member name="M:Cosmos.Serialization.JilObjectSerializerExtensions.UseJil(Cosmos.Serialization.IJsonSerializerConfigureEntry)">
+            <summary>
+            Use JilObjectSerializer
+            </summary>
+            <param name="entry"></param>
+        </member>
+        <member name="M:Cosmos.Serialization.JilObjectSerializerExtensions.UseJil(Cosmos.Serialization.IJsonSerializerConfigureEntry,Jil.Options)">
+            <summary>
+            Use JilObjectSerializer
+            </summary>
+            <param name="entry"></param>
+            <param name="options"></param>
+        </member>
+        <member name="M:Cosmos.Serialization.JilObjectSerializerExtensions.UseJil(Cosmos.Serialization.IJsonSerializerConfigureEntry,System.Func{Jil.Options})">
+            <summary>
+            Use JilObjectSerializer
+            </summary>
+            <param name="entry"></param>
+            <param name="optionsFactory"></param>
+        </member>
+        <member name="M:Cosmos.Serialization.JilObjectSerializerExtensions.UseJil(Cosmos.Serialization.IJsonSerializerConfigureEntry,System.Func{Cosmos.Serialization.JilObjectSerializer})">
+            <summary>
+            Use JilObjectSerializer
+            </summary>
+            <param name="entry"></param>
+            <param name="serializerFactory"></param>
+        </member>
         <member name="T:Cosmos.Serialization.Json.Extensions">
             <summary>
             JilJson extensions
@@ -523,21 +555,23 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Jil.JilHelper.SerializeToBytesAsync``1(``0,Jil.Options)">
+        <member name="M:Cosmos.Serialization.Json.Jil.JilHelper.SerializeToBytesAsync``1(``0,Jil.Options,System.Text.Encoding)">
             <summary>
             Serialize to bytes async
             </summary>
             <param name="o"></param>
             <param name="options"></param>
+            <param name="encoding"></param>
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Jil.JilHelper.SerializeToBytesAsync``1(``0,System.Action{Jil.Options})">
+        <member name="M:Cosmos.Serialization.Json.Jil.JilHelper.SerializeToBytesAsync``1(``0,System.Action{Jil.Options},System.Text.Encoding)">
             <summary>
             Serialize to bytes async
             </summary>
             <param name="o"></param>
             <param name="optionAct"></param>
+            <param name="encoding"></param>
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
@@ -596,40 +630,44 @@
             <param name="optionAct"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Jil.JilHelper.DeserializeFromBytesAsync``1(System.Byte[],Jil.Options)">
+        <member name="M:Cosmos.Serialization.Json.Jil.JilHelper.DeserializeFromBytesAsync``1(System.Byte[],Jil.Options,System.Text.Encoding)">
             <summary>
             Deserialize from bytes async
             </summary>
             <param name="data"></param>
             <param name="options"></param>
+            <param name="encoding"></param>
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Jil.JilHelper.DeserializeFromBytesAsync``1(System.Byte[],System.Action{Jil.Options})">
+        <member name="M:Cosmos.Serialization.Json.Jil.JilHelper.DeserializeFromBytesAsync``1(System.Byte[],System.Action{Jil.Options},System.Text.Encoding)">
             <summary>
             Deserialize from bytes async
             </summary>
             <param name="data"></param>
             <param name="optionAct"></param>
+            <param name="encoding"></param>
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Jil.JilHelper.DeserializeFromBytesAsync(System.Byte[],System.Type,Jil.Options)">
+        <member name="M:Cosmos.Serialization.Json.Jil.JilHelper.DeserializeFromBytesAsync(System.Byte[],System.Type,Jil.Options,System.Text.Encoding)">
             <summary>
             Deserialize from bytes async
             </summary>
             <param name="data"></param>
             <param name="type"></param>
             <param name="options"></param>
+            <param name="encoding"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Jil.JilHelper.DeserializeFromBytesAsync(System.Byte[],System.Type,System.Action{Jil.Options})">
+        <member name="M:Cosmos.Serialization.Json.Jil.JilHelper.DeserializeFromBytesAsync(System.Byte[],System.Type,System.Action{Jil.Options},System.Text.Encoding)">
             <summary>
             Deserialize from bytes async
             </summary>
             <param name="data"></param>
             <param name="type"></param>
             <param name="optionAct"></param>
+            <param name="encoding"></param>
             <returns></returns>
         </member>
         <member name="M:Cosmos.Serialization.Json.Jil.JilHelper.DeserializeAsync``1(System.IO.TextReader,Jil.Options)">
@@ -668,41 +706,45 @@
             <param name="optionAct"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Jil.JilHelper.PackAsync``1(``0,Jil.Options)">
+        <member name="M:Cosmos.Serialization.Json.Jil.JilHelper.PackAsync``1(``0,Jil.Options,System.Text.Encoding)">
             <summary>
             Pack async
             </summary>
             <param name="o"></param>
             <param name="options"></param>
+            <param name="encoding"></param>
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Jil.JilHelper.PackAsync``1(``0,System.IO.Stream,Jil.Options)">
+        <member name="M:Cosmos.Serialization.Json.Jil.JilHelper.PackAsync``1(``0,System.IO.Stream,Jil.Options,System.Text.Encoding)">
             <summary>
             Pack async
             </summary>
             <param name="o"></param>
             <param name="stream"></param>
             <param name="options"></param>
+            <param name="encoding"></param>
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Jil.JilHelper.UnpackAsync``1(System.IO.Stream,Jil.Options)">
+        <member name="M:Cosmos.Serialization.Json.Jil.JilHelper.UnpackAsync``1(System.IO.Stream,Jil.Options,System.Text.Encoding)">
             <summary>
             Unpack async
             </summary>
             <param name="stream"></param>
             <param name="options"></param>
+            <param name="encoding"></param>
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Jil.JilHelper.UnpackAsync(System.IO.Stream,System.Type,Jil.Options)">
+        <member name="M:Cosmos.Serialization.Json.Jil.JilHelper.UnpackAsync(System.IO.Stream,System.Type,Jil.Options,System.Text.Encoding)">
             <summary>
             Unpack async
             </summary>
             <param name="type"></param>
             <param name="stream"></param>
             <param name="options"></param>
+            <param name="encoding"></param>
             <returns></returns>
         </member>
         <member name="M:Cosmos.Serialization.Json.Jil.JilHelper.Serialize``1(``0,Jil.Options)">
@@ -723,21 +765,23 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Jil.JilHelper.SerializeToBytes``1(``0,Jil.Options)">
+        <member name="M:Cosmos.Serialization.Json.Jil.JilHelper.SerializeToBytes``1(``0,Jil.Options,System.Text.Encoding)">
             <summary>
             Serialize to bytes
             </summary>
             <param name="o"></param>
             <param name="options"></param>
+            <param name="encoding"></param>
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Jil.JilHelper.SerializeToBytes``1(``0,System.Action{Jil.Options})">
+        <member name="M:Cosmos.Serialization.Json.Jil.JilHelper.SerializeToBytes``1(``0,System.Action{Jil.Options},System.Text.Encoding)">
             <summary>
             Serialize to bytes
             </summary>
             <param name="o"></param>
             <param name="optionAct"></param>
+            <param name="encoding"></param>
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
@@ -785,12 +829,13 @@
             <param name="optionAct"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Jil.JilHelper.DeserializeFromBytes``1(System.Byte[],Jil.Options)">
+        <member name="M:Cosmos.Serialization.Json.Jil.JilHelper.DeserializeFromBytes``1(System.Byte[],Jil.Options,System.Text.Encoding)">
             <summary>
             Deserialize from bytes
             </summary>
             <param name="data"></param>
             <param name="options"></param>
+            <param name="encoding"></param>
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
@@ -803,13 +848,14 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Jil.JilHelper.DeserializeFromBytes(System.Byte[],System.Type,Jil.Options)">
+        <member name="M:Cosmos.Serialization.Json.Jil.JilHelper.DeserializeFromBytes(System.Byte[],System.Type,Jil.Options,System.Text.Encoding)">
             <summary>
             Deserialize from bytes
             </summary>
             <param name="data"></param>
             <param name="type"></param>
             <param name="options"></param>
+            <param name="encoding"></param>
             <returns></returns>
         </member>
         <member name="M:Cosmos.Serialization.Json.Jil.JilHelper.DeserializeFromBytes(System.Byte[],System.Type,System.Action{Jil.Options})">
@@ -857,40 +903,44 @@
             <param name="optionAct"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Jil.JilHelper.Pack``1(``0,Jil.Options)">
+        <member name="M:Cosmos.Serialization.Json.Jil.JilHelper.Pack``1(``0,Jil.Options,System.Text.Encoding)">
             <summary>
             Pack
             </summary>
             <param name="o"></param>
             <param name="options"></param>
+            <param name="encoding"></param>
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Jil.JilHelper.Pack``1(``0,System.IO.Stream,Jil.Options)">
+        <member name="M:Cosmos.Serialization.Json.Jil.JilHelper.Pack``1(``0,System.IO.Stream,Jil.Options,System.Text.Encoding)">
             <summary>
             Pack
             </summary>
             <param name="t"></param>
             <param name="stream"></param>
             <param name="options"></param>
+            <param name="encoding"></param>
             <typeparam name="T"></typeparam>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Jil.JilHelper.Unpack``1(System.IO.Stream,Jil.Options)">
+        <member name="M:Cosmos.Serialization.Json.Jil.JilHelper.Unpack``1(System.IO.Stream,Jil.Options,System.Text.Encoding)">
             <summary>
             Unpack
             </summary>
             <param name="stream"></param>
             <param name="options"></param>
+            <param name="encoding"></param>
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Jil.JilHelper.Unpack(System.IO.Stream,System.Type,Jil.Options)">
+        <member name="M:Cosmos.Serialization.Json.Jil.JilHelper.Unpack(System.IO.Stream,System.Type,Jil.Options,System.Text.Encoding)">
             <summary>
             Unpack
             </summary>
             <param name="stream"></param>
             <param name="type"></param>
             <param name="options"></param>
+            <param name="encoding"></param>
             <returns></returns>
         </member>
         <member name="T:Cosmos.Serialization.Json.Jil.JilManager">

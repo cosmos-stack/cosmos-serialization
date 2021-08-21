@@ -1,0 +1,9 @@
+<Project>
+
+    <PropertyGroup>
+        <AssemblyName>Cosmos.Serialization.MessagePack</AssemblyName>
+        <PackageId>Cosmos.Serialization.MessagePack</PackageId>
+        <Description>Neuecc's MessagePack serializer extension for Cosmos base library</Description>
+    </PropertyGroup>
+
+</Project>

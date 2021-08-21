@@ -1,0 +1,9 @@
+<Project>
+
+    <PropertyGroup>
+        <AssemblyName>Cosmos.Serialization.FastJson</AssemblyName>
+        <PackageId>Cosmos.Serialization.FastJson</PackageId>
+        <Description>FastJson serializer extension for Cosmos base library</Description>
+    </PropertyGroup>
+
+</Project>

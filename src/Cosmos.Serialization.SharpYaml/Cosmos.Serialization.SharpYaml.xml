@@ -318,262 +318,302 @@
             SharpYaml helper
             </summary>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.SerializeAsync``1(``0)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.SerializeAsync``1(``0,SharpYaml.Serialization.Serializer)">
             <summary>
             Serialize async
             </summary>
             <param name="o"></param>
+            <param name="serializer"></param>
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.SerializeAsync(System.Object,System.Type)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.SerializeAsync(System.Object,System.Type,SharpYaml.Serialization.Serializer)">
             <summary>
             Serialize async
             </summary>
             <param name="o"></param>
             <param name="expectedType"></param>
+            <param name="serializer"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.SerializeToBytesAsync``1(``0)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.SerializeToBytesAsync``1(``0,SharpYaml.Serialization.Serializer,System.Text.Encoding)">
             <summary>
             Serialize to bytes async
             </summary>
             <param name="o"></param>
+            <param name="serializer"></param>
+            <param name="encoding"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.SerializeToBytesAsync(System.Object,System.Type)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.SerializeToBytesAsync(System.Object,System.Type,SharpYaml.Serialization.Serializer,System.Text.Encoding)">
             <summary>
             Serialize to bytes async
             </summary>
             <param name="o"></param>
             <param name="expectedType"></param>
+            <param name="serializer"></param>
+            <param name="encoding"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.DeserializeAsync``1(System.String)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.DeserializeAsync``1(System.String,SharpYaml.Serialization.Serializer)">
             <summary>
             Deserialize async
             </summary>
             <param name="data"></param>
+            <param name="serializer"></param>
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.DeserializeAsync(System.String,System.Type)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.DeserializeAsync(System.String,System.Type,SharpYaml.Serialization.Serializer)">
             <summary>
             Deserialize async
             </summary>
             <param name="data"></param>
             <param name="type"></param>
+            <param name="serializer"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.DeserializeFromBytesAsync``1(System.Byte[])">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.DeserializeFromBytesAsync``1(System.Byte[],SharpYaml.Serialization.Serializer,System.Text.Encoding)">
             <summary>
             Deserialize
             </summary>
             <param name="data"></param>
+            <param name="serializer"></param>
+            <param name="encoding"></param>
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.DeserializeFromBytesAsync(System.Byte[],System.Type)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.DeserializeFromBytesAsync(System.Byte[],System.Type,SharpYaml.Serialization.Serializer,System.Text.Encoding)">
             <summary>
             Deserialize
             </summary>
             <param name="data"></param>
             <param name="type"></param>
+            <param name="serializer"></param>
+            <param name="encoding"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.DeserializeIntoAsync``1(System.String,``0)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.DeserializeIntoAsync``1(System.String,``0,SharpYaml.Serialization.Serializer)">
             <summary>
             Deserialize async
             </summary>
             <param name="data"></param>
             <param name="targetObj"></param>
+            <param name="serializer"></param>
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.DeserializeIntoAsync(System.String,System.Type,System.Object)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.DeserializeIntoAsync(System.String,System.Type,System.Object,SharpYaml.Serialization.Serializer)">
             <summary>
             Deserialize async
             </summary>
             <param name="data"></param>
             <param name="type"></param>
             <param name="targetObj"></param>
+            <param name="serializer"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.PackAsync``1(``0)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.PackAsync``1(``0,SharpYaml.Serialization.Serializer,System.Text.Encoding)">
             <summary>
             Pack async
             </summary>
             <param name="o"></param>
+            <param name="encoding"></param>
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.PackAsync(System.Object,System.Type)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.PackAsync(System.Object,System.Type,SharpYaml.Serialization.Serializer,System.Text.Encoding)">
             <summary>
             Pack async
             </summary>
             <param name="o"></param>
             <param name="type"></param>
+            <param name="encoding"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.PackAsync``1(``0,System.IO.Stream)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.PackAsync``1(``0,System.IO.Stream,SharpYaml.Serialization.Serializer,System.Text.Encoding)">
             <summary>
             Pack async
             </summary>
             <param name="o"></param>
             <param name="stream"></param>
+            <param name="encoding"></param>
             <typeparam name="T"></typeparam>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.PackAsync(System.Object,System.Type,System.IO.Stream)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.PackAsync(System.Object,System.Type,System.IO.Stream,SharpYaml.Serialization.Serializer,System.Text.Encoding)">
             <summary>
             Pack async
             </summary>
             <param name="o"></param>
             <param name="stream"></param>
             <param name="type"></param>
+            <param name="encoding"></param>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.UnpackAsync``1(System.IO.Stream)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.UnpackAsync``1(System.IO.Stream,SharpYaml.Serialization.Serializer,System.Text.Encoding)">
             <summary>
             Unpack async
             </summary>
             <param name="stream"></param>
+            <param name="encoding"></param>
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.UnpackAsync(System.IO.Stream,System.Type)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.UnpackAsync(System.IO.Stream,System.Type,SharpYaml.Serialization.Serializer,System.Text.Encoding)">
             <summary>
             Unpack async
             </summary>
             <param name="stream"></param>
             <param name="type"></param>
+            <param name="encoding"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.Serialize``1(``0)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.Serialize``1(``0,SharpYaml.Serialization.Serializer)">
             <summary>
             Serialize
             </summary>
             <param name="o"></param>
+            <param name="serializer"></param>
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.Serialize(System.Object,System.Type)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.Serialize(System.Object,System.Type,SharpYaml.Serialization.Serializer)">
             <summary>
             Serialize
             </summary>
             <param name="o"></param>
             <param name="expectedType"></param>
+            <param name="serializer"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.SerializeToBytes``1(``0)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.SerializeToBytes``1(``0,SharpYaml.Serialization.Serializer,System.Text.Encoding)">
             <summary>
             Serialize to bytes
             </summary>
             <param name="o"></param>
+            <param name="serializer"></param>
+            <param name="encoding"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.SerializeToBytes(System.Object,System.Type)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.SerializeToBytes(System.Object,System.Type,SharpYaml.Serialization.Serializer,System.Text.Encoding)">
             <summary>
             Serialize to bytes
             </summary>
             <param name="o"></param>
             <param name="expectedType"></param>
+            <param name="serializer"></param>
+            <param name="encoding"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.Deserialize``1(System.String)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.Deserialize``1(System.String,SharpYaml.Serialization.Serializer)">
             <summary>
             Deserialize
             </summary>
             <param name="data"></param>
+            <param name="serializer"></param>
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.Deserialize(System.String,System.Type)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.Deserialize(System.String,System.Type,SharpYaml.Serialization.Serializer)">
             <summary>
             Deserialize
             </summary>
             <param name="data"></param>
             <param name="type"></param>
+            <param name="serializer"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.DeserializeFromBytes``1(System.Byte[])">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.DeserializeFromBytes``1(System.Byte[],SharpYaml.Serialization.Serializer,System.Text.Encoding)">
             <summary>
             Deserialize
             </summary>
             <param name="data"></param>
+            <param name="serializer"></param>
+            <param name="encoding"></param>
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.DeserializeFromBytes(System.Byte[],System.Type)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.DeserializeFromBytes(System.Byte[],System.Type,SharpYaml.Serialization.Serializer,System.Text.Encoding)">
             <summary>
             Deserialize
             </summary>
             <param name="data"></param>
             <param name="type"></param>
+            <param name="serializer"></param>
+            <param name="encoding"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.DeserializeInto``1(System.String,``0)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.DeserializeInto``1(System.String,``0,SharpYaml.Serialization.Serializer)">
             <summary>
             Deserialize
             </summary>
             <param name="data"></param>
             <param name="targetObj"></param>
+            <param name="serializer"></param>
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.DeserializeInto(System.String,System.Type,System.Object)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.DeserializeInto(System.String,System.Type,System.Object,SharpYaml.Serialization.Serializer)">
             <summary>
             Deserialize
             </summary>
             <param name="data"></param>
             <param name="type"></param>
             <param name="targetObj"></param>
+            <param name="serializer"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.Pack``1(``0)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.Pack``1(``0,SharpYaml.Serialization.Serializer,System.Text.Encoding)">
             <summary>
             Pack
             </summary>
             <param name="o"></param>
+            <param name="encoding"></param>
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.Pack(System.Object,System.Type)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.Pack(System.Object,System.Type,SharpYaml.Serialization.Serializer,System.Text.Encoding)">
             <summary>
             Pack
             </summary>
             <param name="o"></param>
             <param name="type"></param>
+            <param name="encoding"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.Pack``1(``0,System.IO.Stream)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.Pack``1(``0,System.IO.Stream,SharpYaml.Serialization.Serializer,System.Text.Encoding)">
             <summary>
             Pack
             </summary>
             <param name="o"></param>
             <param name="stream"></param>
+            <param name="encoding"></param>
             <typeparam name="T"></typeparam>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.Pack(System.Object,System.Type,System.IO.Stream)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.Pack(System.Object,System.Type,System.IO.Stream,SharpYaml.Serialization.Serializer,System.Text.Encoding)">
             <summary>
             Pack
             </summary>
             <param name="o"></param>
             <param name="stream"></param>
             <param name="type"></param>
+            <param name="encoding"></param>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.Unpack``1(System.IO.Stream)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.Unpack``1(System.IO.Stream,SharpYaml.Serialization.Serializer,System.Text.Encoding)">
             <summary>
             Unpack
             </summary>
             <param name="stream"></param>
+            <param name="encoding"></param>
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.Unpack(System.IO.Stream,System.Type)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.Unpack(System.IO.Stream,System.Type,SharpYaml.Serialization.Serializer,System.Text.Encoding)">
             <summary>
             Unpack
             </summary>
             <param name="stream"></param>
             <param name="type"></param>
+            <param name="encoding"></param>
             <returns></returns>
         </member>
         <member name="T:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlManager">

@@ -1,0 +1,9 @@
+<Project>
+
+    <PropertyGroup>
+        <AssemblyName>Cosmos.Serialization.YamlDotNet</AssemblyName>
+        <PackageId>Cosmos.Serialization.YamlDotNet</PackageId>
+        <Description>YamlDotNet serializer extension for Cosmos base library</Description>
+    </PropertyGroup>
+
+</Project>

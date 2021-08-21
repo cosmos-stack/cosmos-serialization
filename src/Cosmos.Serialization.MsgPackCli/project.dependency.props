@@ -1,0 +1,8 @@
+<Project>
+
+    <ItemGroup>
+        <PackageReference Include="Cosmos.Standard" Version="$(Standard-PkgVersion)" />
+        <PackageReference Include="MsgPack.Cli" Version="1.0.1" />
+    </ItemGroup>
+
+</Project>

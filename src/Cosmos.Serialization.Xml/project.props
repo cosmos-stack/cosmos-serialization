@@ -1,0 +1,9 @@
+<Project>
+
+    <PropertyGroup>
+        <AssemblyName>Cosmos.Serialization.Xml</AssemblyName>
+        <PackageId>Cosmos.Serialization.Xml</PackageId>
+        <Description>Xml serializer extension for Cosmos base library</Description>
+    </PropertyGroup>
+
+</Project>

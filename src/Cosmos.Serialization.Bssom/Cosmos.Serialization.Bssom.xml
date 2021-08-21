@@ -228,6 +228,15 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
+        <member name="M:Cosmos.Serialization.Binary.BssomExtensions.FromBssomBytes``1(System.Byte[],Bssom.Serializer.BssomSerializerOptions)">
+            <summary>
+            From bytes
+            </summary>
+            <param name="bytes"></param>
+            <param name="options"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
         <member name="M:Cosmos.Serialization.Binary.BssomExtensions.FromBssomBytes(System.Byte[],System.Type)">
             <summary>
             From bytes
@@ -236,11 +245,29 @@
             <param name="type"></param>
             <returns></returns>
         </member>
+        <member name="M:Cosmos.Serialization.Binary.BssomExtensions.FromBssomBytes(System.Byte[],System.Type,Bssom.Serializer.BssomSerializerOptions)">
+            <summary>
+            From bytes
+            </summary>
+            <param name="bytes"></param>
+            <param name="type"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
         <member name="M:Cosmos.Serialization.Binary.BssomExtensions.FromBssomBytesAsync``1(System.Byte[])">
             <summary>
             From bytes async
             </summary>
             <param name="bytes"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Binary.BssomExtensions.FromBssomBytesAsync``1(System.Byte[],Bssom.Serializer.BssomSerializerOptions)">
+            <summary>
+            From bytes async
+            </summary>
+            <param name="bytes"></param>
+            <param name="options"></param>
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
@@ -252,11 +279,28 @@
             <param name="type"></param>
             <returns></returns>
         </member>
+        <member name="M:Cosmos.Serialization.Binary.BssomExtensions.FromBssomBytesAsync(System.Byte[],System.Type,Bssom.Serializer.BssomSerializerOptions)">
+            <summary>
+            From bytes async
+            </summary>
+            <param name="bytes"></param>
+            <param name="type"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
         <member name="M:Cosmos.Serialization.Binary.BssomExtensions.ToBssomBytes(System.Object)">
             <summary>
             To bytes
             </summary>
             <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Binary.BssomExtensions.ToBssomBytes(System.Object,Bssom.Serializer.BssomSerializerOptions)">
+            <summary>
+            To bytes
+            </summary>
+            <param name="obj"></param>
+            <param name="options"></param>
             <returns></returns>
         </member>
         <member name="M:Cosmos.Serialization.Binary.BssomExtensions.BssomPack(System.Object)">
@@ -266,6 +310,14 @@
             <param name="obj"></param>
             <returns></returns>
         </member>
+        <member name="M:Cosmos.Serialization.Binary.BssomExtensions.BssomPack(System.Object,Bssom.Serializer.BssomSerializerOptions)">
+            <summary>
+            Pack
+            </summary>
+            <param name="obj"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
         <member name="M:Cosmos.Serialization.Binary.BssomExtensions.BssomPackTo(System.Object,System.IO.Stream)">
             <summary>
             Pack to
@@ -273,11 +325,27 @@
             <param name="obj"></param>
             <param name="stream"></param>
         </member>
+        <member name="M:Cosmos.Serialization.Binary.BssomExtensions.BssomPackTo(System.Object,System.IO.Stream,Bssom.Serializer.BssomSerializerOptions)">
+            <summary>
+            Pack to
+            </summary>
+            <param name="obj"></param>
+            <param name="stream"></param>
+            <param name="options"></param>
+        </member>
         <member name="M:Cosmos.Serialization.Binary.BssomExtensions.ToBssomBytesAsync(System.Object)">
             <summary>
             To bytes async
             </summary>
             <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Binary.BssomExtensions.ToBssomBytesAsync(System.Object,Bssom.Serializer.BssomSerializerOptions)">
+            <summary>
+            To bytes async
+            </summary>
+            <param name="obj"></param>
+            <param name="options"></param>
             <returns></returns>
         </member>
         <member name="M:Cosmos.Serialization.Binary.BssomExtensions.BssomPackAsync(System.Object)">
@@ -287,12 +355,28 @@
             <param name="obj"></param>
             <returns></returns>
         </member>
+        <member name="M:Cosmos.Serialization.Binary.BssomExtensions.BssomPackAsync(System.Object,Bssom.Serializer.BssomSerializerOptions)">
+            <summary>
+            Pack async
+            </summary>
+            <param name="obj"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
         <member name="M:Cosmos.Serialization.Binary.BssomExtensions.BssomPackToAsync(System.Object,System.IO.Stream)">
             <summary>
             Pack to async
             </summary>
             <param name="obj"></param>
             <param name="stream"></param>
+        </member>
+        <member name="M:Cosmos.Serialization.Binary.BssomExtensions.BssomPackToAsync(System.Object,System.IO.Stream,Bssom.Serializer.BssomSerializerOptions)">
+            <summary>
+            Pack to async
+            </summary>
+            <param name="obj"></param>
+            <param name="stream"></param>
+            <param name="options"></param>
         </member>
         <member name="M:Cosmos.Serialization.Binary.BssomExtensions.BssomPackBy``1(System.IO.Stream,``0)">
             <summary>
@@ -302,11 +386,29 @@
             <param name="obj"></param>
             <typeparam name="T"></typeparam>
         </member>
+        <member name="M:Cosmos.Serialization.Binary.BssomExtensions.BssomPackBy``1(System.IO.Stream,``0,Bssom.Serializer.BssomSerializerOptions)">
+            <summary>
+            Pack by
+            </summary>
+            <param name="stream"></param>
+            <param name="obj"></param>
+            <param name="options"></param>
+            <typeparam name="T"></typeparam>
+        </member>
         <member name="M:Cosmos.Serialization.Binary.BssomExtensions.BssomUnpack``1(System.IO.Stream)">
             <summary>
             Unpack
             </summary>
             <param name="stream"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Binary.BssomExtensions.BssomUnpack``1(System.IO.Stream,Bssom.Serializer.BssomSerializerOptions)">
+            <summary>
+            Unpack
+            </summary>
+            <param name="stream"></param>
+            <param name="options"></param>
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
@@ -318,12 +420,30 @@
             <param name="type"></param>
             <returns></returns>
         </member>
+        <member name="M:Cosmos.Serialization.Binary.BssomExtensions.BssomUnpack(System.IO.Stream,System.Type,Bssom.Serializer.BssomSerializerOptions)">
+            <summary>
+            Unpack
+            </summary>
+            <param name="stream"></param>
+            <param name="type"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
         <member name="M:Cosmos.Serialization.Binary.BssomExtensions.BssomPackByAsync``1(System.IO.Stream,``0)">
             <summary>
             Pack by async
             </summary>
             <param name="stream"></param>
             <param name="obj"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Cosmos.Serialization.Binary.BssomExtensions.BssomPackByAsync``1(System.IO.Stream,``0,Bssom.Serializer.BssomSerializerOptions)">
+            <summary>
+            Pack by async
+            </summary>
+            <param name="stream"></param>
+            <param name="obj"></param>
+            <param name="options"></param>
             <typeparam name="T"></typeparam>
         </member>
         <member name="M:Cosmos.Serialization.Binary.BssomExtensions.BssomUnpackAsync``1(System.IO.Stream)">
@@ -334,12 +454,30 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
+        <member name="M:Cosmos.Serialization.Binary.BssomExtensions.BssomUnpackAsync``1(System.IO.Stream,Bssom.Serializer.BssomSerializerOptions)">
+            <summary>
+            Unpack async
+            </summary>
+            <param name="stream"></param>
+            <param name="options"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
         <member name="M:Cosmos.Serialization.Binary.BssomExtensions.BssomUnpackAsync(System.IO.Stream,System.Type)">
             <summary>
             Unpack async
             </summary>
             <param name="stream"></param>
             <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Binary.BssomExtensions.BssomUnpackAsync(System.IO.Stream,System.Type,Bssom.Serializer.BssomSerializerOptions)">
+            <summary>
+            Unpack async
+            </summary>
+            <param name="stream"></param>
+            <param name="type"></param>
+            <param name="options"></param>
             <returns></returns>
         </member>
         <member name="T:Cosmos.Serialization.BssomObjectSerializer">

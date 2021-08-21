@@ -1,0 +1,8 @@
+<Project>
+
+    <ItemGroup>
+        <PackageReference Include="Cosmos.Standard" Version="$(Standard-PkgVersion)" />
+        <PackageReference Include="fastJSON" Version="2.4.0.4" />
+    </ItemGroup>
+
+</Project>

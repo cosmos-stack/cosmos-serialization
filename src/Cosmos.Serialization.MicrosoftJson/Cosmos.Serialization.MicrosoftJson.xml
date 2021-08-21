@@ -455,5 +455,37 @@
         <member name="M:Cosmos.Serialization.MicrosoftJsonObjectSerializer.DeserializeFromStreamAsync(System.IO.Stream,System.Type)">
             <inheritdoc />
         </member>
+        <member name="T:Cosmos.Serialization.MicrosoftJsonObjectSerializerExtensions">
+            <summary>
+            System.Text.Json (MicrosoftJson) extensions.
+            </summary>
+        </member>
+        <member name="M:Cosmos.Serialization.MicrosoftJsonObjectSerializerExtensions.UseMicrosoftJson(Cosmos.Serialization.IJsonSerializerConfigureEntry)">
+            <summary>
+            Use Microsoft System.Text.Json object serializer
+            </summary>
+            <param name="entry"></param>
+        </member>
+        <member name="M:Cosmos.Serialization.MicrosoftJsonObjectSerializerExtensions.UseMicrosoftJson(Cosmos.Serialization.IJsonSerializerConfigureEntry,System.Text.Json.JsonSerializerOptions)">
+            <summary>
+            Use Microsoft System.Text.Json object serializer
+            </summary>
+            <param name="entry"></param>
+            <param name="options"></param>
+        </member>
+        <member name="M:Cosmos.Serialization.MicrosoftJsonObjectSerializerExtensions.UseMicrosoftJson(Cosmos.Serialization.IJsonSerializerConfigureEntry,System.Func{System.Text.Json.JsonSerializerOptions})">
+            <summary>
+            Use Microsoft System.Text.Json object serializer
+            </summary>
+            <param name="entry"></param>
+            <param name="optionsFactory"></param>
+        </member>
+        <member name="M:Cosmos.Serialization.MicrosoftJsonObjectSerializerExtensions.UseMicrosoftJson(Cosmos.Serialization.IJsonSerializerConfigureEntry,System.Func{Cosmos.Serialization.MicrosoftJsonObjectSerializer})">
+            <summary>
+            Use Microsoft System.Text.Json object serializer
+            </summary>
+            <param name="entry"></param>
+            <param name="serializerFactory"></param>
+        </member>
     </members>
 </doc>

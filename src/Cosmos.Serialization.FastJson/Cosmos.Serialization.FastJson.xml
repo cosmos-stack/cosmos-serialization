@@ -1,0 +1,735 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cosmos.Serialization.FastJson</name>
+    </assembly>
+    <members>
+        <member name="T:Cosmos.Serialization.FastJsonObjectSerializer">
+            <summary>
+            FastJson serializer
+            </summary>
+        </member>
+        <member name="M:Cosmos.Serialization.FastJsonObjectSerializer.Serialize``1(``0)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.FastJsonObjectSerializer.SerializeToStream``1(``0)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.FastJsonObjectSerializer.Deserialize``1(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.FastJsonObjectSerializer.Deserialize(System.String,System.Type)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.FastJsonObjectSerializer.DeserializeFromStream``1(System.IO.Stream)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.FastJsonObjectSerializer.DeserializeFromStream(System.IO.Stream,System.Type)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.FastJsonObjectSerializer.SerializeAsync``1(``0)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.FastJsonObjectSerializer.SerializeToStreamAsync``1(``0)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.FastJsonObjectSerializer.DeserializeAsync``1(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.FastJsonObjectSerializer.DeserializeAsync(System.String,System.Type)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.FastJsonObjectSerializer.DeserializeFromStreamAsync``1(System.IO.Stream)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.FastJsonObjectSerializer.DeserializeFromStreamAsync(System.IO.Stream,System.Type)">
+            <inheritdoc />
+        </member>
+        <member name="T:Cosmos.Serialization.FastJsonObjectSerializerExtensions">
+            <summary>
+            FastJsonObjectSerializer extensions.
+            </summary>
+        </member>
+        <member name="M:Cosmos.Serialization.FastJsonObjectSerializerExtensions.UseJil(Cosmos.Serialization.IJsonSerializerConfigureEntry)">
+            <summary>
+            Use FastJsonObjectSerializer
+            </summary>
+            <param name="entry"></param>
+        </member>
+        <member name="M:Cosmos.Serialization.FastJsonObjectSerializerExtensions.UseJil(Cosmos.Serialization.IJsonSerializerConfigureEntry,fastJSON.JSONParameters)">
+            <summary>
+            Use FastJsonObjectSerializer
+            </summary>
+            <param name="entry"></param>
+            <param name="options"></param>
+        </member>
+        <member name="M:Cosmos.Serialization.FastJsonObjectSerializerExtensions.UseJil(Cosmos.Serialization.IJsonSerializerConfigureEntry,System.Func{fastJSON.JSONParameters})">
+            <summary>
+            Use FastJsonObjectSerializer
+            </summary>
+            <param name="entry"></param>
+            <param name="optionsFactory"></param>
+        </member>
+        <member name="M:Cosmos.Serialization.FastJsonObjectSerializerExtensions.UseJil(Cosmos.Serialization.IJsonSerializerConfigureEntry,System.Func{Cosmos.Serialization.FastJsonObjectSerializer})">
+            <summary>
+            Use FastJsonObjectSerializer
+            </summary>
+            <param name="entry"></param>
+            <param name="serializerFactory"></param>
+        </member>
+        <member name="T:Cosmos.Serialization.Json.Extensions">
+            <summary>
+            FastJson extensions
+            </summary>
+            <summary>
+            FastJson extensions
+            </summary>
+            <summary>
+            FastJson extensions
+            </summary>
+            <summary>
+            FastJson extensions
+            </summary>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.ToFastJsonBytes``1(``0,fastJSON.JSONParameters)">
+            <summary>
+            To fastJSON bytes
+            </summary>
+            <param name="obj"></param>
+            <param name="options"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.ToFastJsonBytes``1(``0,System.Action{fastJSON.JSONParameters})">
+            <summary>
+            To fastJSON bytes
+            </summary>
+            <param name="obj"></param>
+            <param name="optionsAct"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.ToFastJsonBytesAsync``1(``0,fastJSON.JSONParameters)">
+            <summary>
+            To fastJSON bytes async
+            </summary>
+            <param name="obj"></param>
+            <param name="options"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.ToFastJsonBytesAsync``1(``0,System.Action{fastJSON.JSONParameters})">
+            <summary>
+            To fastJSON bytes async
+            </summary>
+            <param name="obj"></param>
+            <param name="optionsAct"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.FromFastJsonBytes``1(System.Byte[],fastJSON.JSONParameters)">
+            <summary>
+            From fastJSON bytes 
+            </summary>
+            <param name="data"></param>
+            <param name="options"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.FromFastJsonBytes``1(System.Byte[],System.Action{fastJSON.JSONParameters})">
+            <summary>
+            From fastJSON bytes 
+            </summary>
+            <param name="data"></param>
+            <param name="optionsAct"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.FromFastJsonBytes(System.Byte[],System.Type,fastJSON.JSONParameters)">
+            <summary>
+            From fastJSON bytes 
+            </summary>
+            <param name="data"></param>
+            <param name="type"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.FromFastJsonBytes(System.Byte[],System.Type,System.Action{fastJSON.JSONParameters})">
+            <summary>
+            From fastJSON bytes 
+            </summary>
+            <param name="data"></param>
+            <param name="type"></param>
+            <param name="optionsAct"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.FromFastJsonBytesAsync``1(System.Byte[],fastJSON.JSONParameters)">
+            <summary>
+            From fastJSON bytes async
+            </summary>
+            <param name="data"></param>
+            <param name="options"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.FromFastJsonBytesAsync``1(System.Byte[],System.Action{fastJSON.JSONParameters})">
+            <summary>
+            From fastJSON bytes async
+            </summary>
+            <param name="data"></param>
+            <param name="optionsAct"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.FromFastJsonBytesAsync(System.Byte[],System.Type,fastJSON.JSONParameters)">
+            <summary>
+            From fastJSON bytes async
+            </summary>
+            <param name="data"></param>
+            <param name="type"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.FromFastJsonBytesAsync(System.Byte[],System.Type,System.Action{fastJSON.JSONParameters})">
+            <summary>
+            From fastJSON bytes async
+            </summary>
+            <param name="data"></param>
+            <param name="type"></param>
+            <param name="optionsAct"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.ToFastJson``1(``0,fastJSON.JSONParameters)">
+            <summary>
+            To fastJSON
+            </summary>
+            <param name="obj"></param>
+            <param name="options"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.ToFastJson``1(``0,System.Action{fastJSON.JSONParameters})">
+            <summary>
+            To fastJSON
+            </summary>
+            <param name="obj"></param>
+            <param name="optionsAct"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.ToFastJsonAsync``1(``0,fastJSON.JSONParameters)">
+            <summary>
+            To fastJSON async
+            </summary>
+            <param name="obj"></param>
+            <param name="options"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.ToFastJsonAsync``1(``0,System.Action{fastJSON.JSONParameters})">
+            <summary>
+            To fastJSON async
+            </summary>
+            <param name="obj"></param>
+            <param name="optionsAct"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.FastJsonPack``1(``0,fastJSON.JSONParameters)">
+            <summary>
+            FastJson pack to
+            </summary>
+            <param name="obj"></param>
+            <param name="options"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.FastJsonPackTo``1(``0,System.IO.Stream,fastJSON.JSONParameters)">
+            <summary>
+            FastJson pack to
+            </summary>
+            <param name="obj"></param>
+            <param name="stream"></param>
+            <param name="options"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.FastJsonPackBy(System.IO.Stream,System.Object,fastJSON.JSONParameters)">
+            <summary>
+            FastJson pack by
+            </summary>
+            <param name="stream"></param>
+            <param name="obj"></param>
+            <param name="options"></param>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.FastJsonPackAsync``1(``0,fastJSON.JSONParameters)">
+            <summary>
+            FastJson pack to
+            </summary>
+            <param name="obj"></param>
+            <param name="options"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.FastJsonPackToAsync``1(``0,System.IO.Stream,fastJSON.JSONParameters)">
+            <summary>
+            FastJson pack to
+            </summary>
+            <param name="obj"></param>
+            <param name="stream"></param>
+            <param name="options"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.FastJsonPackByAsync(System.IO.Stream,System.Object,fastJSON.JSONParameters)">
+            <summary>
+            FastJson pack by async
+            </summary>
+            <param name="stream"></param>
+            <param name="obj"></param>
+            <param name="options"></param>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.FastJsonUnpack``1(System.IO.Stream,fastJSON.JSONParameters)">
+            <summary>
+            FastJson unpack
+            </summary>
+            <param name="stream"></param>
+            <param name="options"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.FastJsonUnpack(System.IO.Stream,System.Type,fastJSON.JSONParameters)">
+            <summary>
+            FastJson unpack
+            </summary>
+            <param name="stream"></param>
+            <param name="type"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.FastJsonUnpackAsync``1(System.IO.Stream,fastJSON.JSONParameters)">
+            <summary>
+            FastJson unpack async
+            </summary>
+            <param name="stream"></param>
+            <param name="options"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.FastJsonUnpackAsync(System.IO.Stream,System.Type,fastJSON.JSONParameters)">
+            <summary>
+            FastJson unpack async
+            </summary>
+            <param name="stream"></param>
+            <param name="type"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.FromFastJson``1(System.String,fastJSON.JSONParameters)">
+            <summary>
+            From FastJson
+            </summary>
+            <param name="json"></param>
+            <param name="options"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.FromFastJson``1(System.String,System.Action{fastJSON.JSONParameters})">
+            <summary>
+            From FastJson
+            </summary>
+            <param name="json"></param>
+            <param name="optionsAct"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.FromFastJson(System.String,System.Type,fastJSON.JSONParameters)">
+            <summary>
+            From FastJson
+            </summary>
+            <param name="json"></param>
+            <param name="type"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.FromFastJson(System.String,System.Type,System.Action{fastJSON.JSONParameters})">
+            <summary>
+            From FastJson
+            </summary>
+            <param name="json"></param>
+            <param name="type"></param>
+            <param name="optionsAct"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.FromFastJsonAsync``1(System.String,fastJSON.JSONParameters)">
+            <summary>
+            From FastJson async
+            </summary>
+            <param name="json"></param>
+            <param name="options"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.FromFastJsonAsync``1(System.String,System.Action{fastJSON.JSONParameters})">
+            <summary>
+            From FastJson async
+            </summary>
+            <param name="json"></param>
+            <param name="optionsAct"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.FromFastJsonAsync(System.String,System.Type,fastJSON.JSONParameters)">
+            <summary>
+            From FastJson async
+            </summary>
+            <param name="json"></param>
+            <param name="typpe"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.FromFastJsonAsync(System.String,System.Type,System.Action{fastJSON.JSONParameters})">
+            <summary>
+            From FastJson async
+            </summary>
+            <param name="json"></param>
+            <param name="type"></param>
+            <param name="optionsAct"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.Serialization.Json.FastJson.FastJsonHelper">
+            <summary>
+            FastJson helper
+            </summary>
+            <summary>
+            FastJson helper
+            </summary>
+            <summary>
+            FastJson helper
+            </summary>
+            <summary>
+            FastJson helper
+            </summary>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.FastJson.FastJsonHelper.SerializeAsync``1(``0,fastJSON.JSONParameters)">
+            <summary>
+            Serialize async
+            </summary>
+            <param name="o"></param>
+            <param name="options"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.FastJson.FastJsonHelper.SerializeAsync``1(``0,System.Action{fastJSON.JSONParameters})">
+            <summary>
+            Serialize async
+            </summary>
+            <param name="o"></param>
+            <param name="optionAct"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.FastJson.FastJsonHelper.SerializeToBytesAsync``1(``0,fastJSON.JSONParameters,System.Text.Encoding)">
+            <summary>
+            Serialize to bytes async
+            </summary>
+            <param name="o"></param>
+            <param name="options"></param>
+            <param name="encoding"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.FastJson.FastJsonHelper.SerializeToBytesAsync``1(``0,System.Action{fastJSON.JSONParameters},System.Text.Encoding)">
+            <summary>
+            Serialize to bytes async
+            </summary>
+            <param name="o"></param>
+            <param name="optionAct"></param>
+            <param name="encoding"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.FastJson.FastJsonHelper.DeserializeAsync``1(System.String,fastJSON.JSONParameters)">
+            <summary>
+            Deserialize async
+            </summary>
+            <param name="json"></param>
+            <param name="options"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.FastJson.FastJsonHelper.DeserializeAsync``1(System.String,System.Action{fastJSON.JSONParameters})">
+            <summary>
+            Deserialize async
+            </summary>
+            <param name="json"></param>
+            <param name="optionAct"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.FastJson.FastJsonHelper.DeserializeAsync(System.String,System.Type,fastJSON.JSONParameters)">
+            <summary>
+            Deserialize async
+            </summary>
+            <param name="json"></param>
+            <param name="type"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.FastJson.FastJsonHelper.DeserializeAsync(System.String,System.Type,System.Action{fastJSON.JSONParameters})">
+            <summary>
+            Deserialize async
+            </summary>
+            <param name="json"></param>
+            <param name="type"></param>
+            <param name="optionAct"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.FastJson.FastJsonHelper.DeserializeFromBytesAsync``1(System.Byte[],fastJSON.JSONParameters,System.Text.Encoding)">
+            <summary>
+            Deserialize from bytes async
+            </summary>
+            <param name="data"></param>
+            <param name="options"></param>
+            <param name="encoding"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.FastJson.FastJsonHelper.DeserializeFromBytesAsync``1(System.Byte[],System.Action{fastJSON.JSONParameters},System.Text.Encoding)">
+            <summary>
+            Deserialize from bytes async
+            </summary>
+            <param name="data"></param>
+            <param name="optionAct"></param>
+            <param name="encoding"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.FastJson.FastJsonHelper.DeserializeFromBytesAsync(System.Byte[],System.Type,fastJSON.JSONParameters,System.Text.Encoding)">
+            <summary>
+            Deserialize from bytes async
+            </summary>
+            <param name="data"></param>
+            <param name="type"></param>
+            <param name="options"></param>
+            <param name="encoding"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.FastJson.FastJsonHelper.DeserializeFromBytesAsync(System.Byte[],System.Type,System.Action{fastJSON.JSONParameters},System.Text.Encoding)">
+            <summary>
+            Deserialize from bytes async
+            </summary>
+            <param name="data"></param>
+            <param name="type"></param>
+            <param name="optionAct"></param>
+            <param name="encoding"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.FastJson.FastJsonHelper.PackAsync``1(``0,fastJSON.JSONParameters,System.Text.Encoding)">
+            <summary>
+            Pack async
+            </summary>
+            <param name="o"></param>
+            <param name="options"></param>
+            <param name="encoding"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.FastJson.FastJsonHelper.PackAsync``1(``0,System.IO.Stream,fastJSON.JSONParameters,System.Text.Encoding)">
+            <summary>
+            Pack async
+            </summary>
+            <param name="o"></param>
+            <param name="stream"></param>
+            <param name="options"></param>
+            <param name="encoding"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.FastJson.FastJsonHelper.UnpackAsync``1(System.IO.Stream,fastJSON.JSONParameters,System.Text.Encoding)">
+            <summary>
+            Unpack async
+            </summary>
+            <param name="stream"></param>
+            <param name="options"></param>
+            <param name="encoding"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.FastJson.FastJsonHelper.UnpackAsync(System.IO.Stream,System.Type,fastJSON.JSONParameters,System.Text.Encoding)">
+            <summary>
+            Unpack async
+            </summary>
+            <param name="type"></param>
+            <param name="stream"></param>
+            <param name="options"></param>
+            <param name="encoding"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.FastJson.FastJsonHelper.Serialize``1(``0,fastJSON.JSONParameters)">
+            <summary>
+            Serialize
+            </summary>
+            <param name="o"></param>
+            <param name="options"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.FastJson.FastJsonHelper.Serialize``1(``0,System.Action{fastJSON.JSONParameters})">
+            <summary>
+            Serialize
+            </summary>
+            <param name="o"></param>
+            <param name="optionAct"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.FastJson.FastJsonHelper.SerializeToBytes``1(``0,fastJSON.JSONParameters,System.Text.Encoding)">
+            <summary>
+            Serialize to bytes
+            </summary>
+            <param name="o"></param>
+            <param name="options"></param>
+            <param name="encoding"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.FastJson.FastJsonHelper.SerializeToBytes``1(``0,System.Action{fastJSON.JSONParameters},System.Text.Encoding)">
+            <summary>
+            Serialize to bytes
+            </summary>
+            <param name="o"></param>
+            <param name="optionAct"></param>
+            <param name="encoding"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.FastJson.FastJsonHelper.Deserialize``1(System.String,fastJSON.JSONParameters)">
+            <summary>
+            Deserialize
+            </summary>
+            <param name="json"></param>
+            <param name="options"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.FastJson.FastJsonHelper.Deserialize``1(System.String,System.Action{fastJSON.JSONParameters})">
+            <summary>
+            Deserialize
+            </summary>
+            <param name="json"></param>
+            <param name="optionAct"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.FastJson.FastJsonHelper.Deserialize(System.String,System.Type,fastJSON.JSONParameters)">
+            <summary>
+            Deserialize
+            </summary>
+            <param name="json"></param>
+            <param name="type"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.FastJson.FastJsonHelper.Deserialize(System.String,System.Type,System.Action{fastJSON.JSONParameters})">
+            <summary>
+            Deserialize
+            </summary>
+            <param name="json"></param>
+            <param name="type"></param>
+            <param name="optionAct"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.FastJson.FastJsonHelper.DeserializeFromBytes``1(System.Byte[],fastJSON.JSONParameters,System.Text.Encoding)">
+            <summary>
+            Deserialize from bytes
+            </summary>
+            <param name="data"></param>
+            <param name="options"></param>
+            <param name="encoding"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.FastJson.FastJsonHelper.DeserializeFromBytes``1(System.Byte[],System.Action{fastJSON.JSONParameters})">
+            <summary>
+            Deserialize from bytes
+            </summary>
+            <param name="data"></param>
+            <param name="optionAct"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.FastJson.FastJsonHelper.DeserializeFromBytes(System.Byte[],System.Type,fastJSON.JSONParameters,System.Text.Encoding)">
+            <summary>
+            Deserialize from bytes
+            </summary>
+            <param name="data"></param>
+            <param name="type"></param>
+            <param name="options"></param>
+            <param name="encoding"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.FastJson.FastJsonHelper.DeserializeFromBytes(System.Byte[],System.Type,System.Action{fastJSON.JSONParameters})">
+            <summary>
+            Deserialize from bytes
+            </summary>
+            <param name="data"></param>
+            <param name="type"></param>
+            <param name="optionAct"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.FastJson.FastJsonHelper.Pack``1(``0,fastJSON.JSONParameters,System.Text.Encoding)">
+            <summary>
+            Pack
+            </summary>
+            <param name="o"></param>
+            <param name="options"></param>
+            <param name="encoding"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.FastJson.FastJsonHelper.Pack``1(``0,System.IO.Stream,fastJSON.JSONParameters,System.Text.Encoding)">
+            <summary>
+            Pack
+            </summary>
+            <param name="t"></param>
+            <param name="stream"></param>
+            <param name="options"></param>
+            <param name="encoding"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.FastJson.FastJsonHelper.Unpack``1(System.IO.Stream,fastJSON.JSONParameters,System.Text.Encoding)">
+            <summary>
+            Unpack
+            </summary>
+            <param name="stream"></param>
+            <param name="options"></param>
+            <param name="encoding"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.FastJson.FastJsonHelper.Unpack(System.IO.Stream,System.Type,fastJSON.JSONParameters,System.Text.Encoding)">
+            <summary>
+            Unpack
+            </summary>
+            <param name="stream"></param>
+            <param name="type"></param>
+            <param name="options"></param>
+            <param name="encoding"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.Serialization.Json.FastJson.FastJsonManager">
+            <summary>
+            Jil manager
+            </summary>
+        </member>
+        <member name="P:Cosmos.Serialization.Json.FastJson.FastJsonManager.DefaultEncoding">
+            <summary>
+            Gets or sets default encoding
+            </summary>
+        </member>
+        <member name="P:Cosmos.Serialization.Json.FastJson.FastJsonManager.DefaultParameters">
+            <summary>
+            Gets or sets default JSONParameters
+            </summary>
+        </member>
+    </members>
+</doc>

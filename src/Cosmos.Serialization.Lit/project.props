@@ -1,0 +1,9 @@
+<Project>
+
+    <PropertyGroup>
+        <AssemblyName>Cosmos.Serialization.Lit</AssemblyName>
+        <PackageId>Cosmos.Serialization.LitJson</PackageId>
+        <Description>LitJson serializer extension for Cosmos base library</Description>
+    </PropertyGroup>
+
+</Project>

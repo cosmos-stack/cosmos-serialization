@@ -1,0 +1,9 @@
+<Project>
+
+    <ItemGroup>
+        <PackageReference Include="Cosmos.Standard" Version="$(Standard-PkgVersion)" />
+        <PackageReference Include="Cosmos.Extensions.DynamicEnums" Version="$(DynamicEnums-PkgVersion)" />
+        <PackageReference Include="Utf8Json" Version="1.3.7" />
+    </ItemGroup>
+
+</Project>

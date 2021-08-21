@@ -1,9 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-    <Import Project="Cosmos.Serialization.SharpYaml._shared.props" />
+    <PropertyGroup>
+      <Configurations>Debug;Release</Configurations>
+      <Platforms>AnyCPU</Platforms>
+    </PropertyGroup>
+
+    <Import Project="project.props" />
 
     <Import Project="..\..\common.props" />
 
-    <Import Project="..\..\asset\props\shared_standard_nuget.props" />
+    <Import Project="project.dependency.props" />
 
 </Project>

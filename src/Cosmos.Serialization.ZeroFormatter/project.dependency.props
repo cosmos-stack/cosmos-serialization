@@ -1,0 +1,8 @@
+<Project>
+
+    <ItemGroup>
+        <PackageReference Include="Cosmos.Standard" Version="$(Standard-PkgVersion)" />
+        <PackageReference Include="Alexinea.ZeroFormatter" Version="1.6.4" />
+    </ItemGroup>
+
+</Project>

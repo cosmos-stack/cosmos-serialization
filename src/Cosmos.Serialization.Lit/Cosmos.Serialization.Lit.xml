@@ -213,11 +213,12 @@
             <param name="o"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Lit.LitHelper.SerializeToBytesAsync(System.Object)">
+        <member name="M:Cosmos.Serialization.Json.Lit.LitHelper.SerializeToBytesAsync(System.Object,System.Text.Encoding)">
             <summary>
             Serialize to bytes
             </summary>
             <param name="o"></param>
+            <param name="encoding"></param>
             <returns></returns>
         </member>
         <member name="M:Cosmos.Serialization.Json.Lit.LitHelper.DeserializeAsync``1(System.String)">
@@ -236,23 +237,25 @@
             <param name="type"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Lit.LitHelper.DeserializeFromBytesAsync``1(System.Byte[])">
+        <member name="M:Cosmos.Serialization.Json.Lit.LitHelper.DeserializeFromBytesAsync``1(System.Byte[],System.Text.Encoding)">
             <summary>
             Deserialize
             </summary>
             <param name="data"></param>
+            <param name="encoding"></param>
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Lit.LitHelper.DeserializeFromBytesAsync(System.Byte[],System.Type)">
+        <member name="M:Cosmos.Serialization.Json.Lit.LitHelper.DeserializeFromBytesAsync(System.Byte[],System.Type,System.Text.Encoding)">
             <summary>
             Deserialize
             </summary>
             <param name="data"></param>
             <param name="type"></param>
+            <param name="encoding"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Lit.LitHelper.PackAsync``1(``0)">
+        <member name="M:Cosmos.Serialization.Json.Lit.LitHelper.PackAsync``1(``0,System.Text.Encoding)">
             <summary>
             Pack async
             </summary>
@@ -260,29 +263,32 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Lit.LitHelper.PackAsync``1(``0,System.IO.Stream)">
+        <member name="M:Cosmos.Serialization.Json.Lit.LitHelper.PackAsync``1(``0,System.IO.Stream,System.Text.Encoding)">
             <summary>
             Pack async
             </summary>
             <param name="o"></param>
             <param name="stream"></param>
+            <param name="encoding"></param>
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Lit.LitHelper.UnpackAsync``1(System.IO.Stream)">
+        <member name="M:Cosmos.Serialization.Json.Lit.LitHelper.UnpackAsync``1(System.IO.Stream,System.Text.Encoding)">
             <summary>
             Unpack async
             </summary>
             <param name="stream"></param>
+            <param name="encoding"></param>
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Lit.LitHelper.UnpackAsync(System.IO.Stream,System.Type)">
+        <member name="M:Cosmos.Serialization.Json.Lit.LitHelper.UnpackAsync(System.IO.Stream,System.Type,System.Text.Encoding)">
             <summary>
             Unpack async
             </summary>
             <param name="type"></param>
             <param name="stream"></param>
+            <param name="encoding"></param>
             <returns></returns>
         </member>
         <member name="M:Cosmos.Serialization.Json.Lit.LitHelper.Serialize(System.Object)">
@@ -292,11 +298,12 @@
             <param name="o"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Lit.LitHelper.SerializeToBytes(System.Object)">
+        <member name="M:Cosmos.Serialization.Json.Lit.LitHelper.SerializeToBytes(System.Object,System.Text.Encoding)">
             <summary>
             Serialize to bytes
             </summary>
             <param name="o"></param>
+            <param name="encoding"></param>
             <returns></returns>
         </member>
         <member name="M:Cosmos.Serialization.Json.Lit.LitHelper.Deserialize``1(System.String)">
@@ -315,52 +322,58 @@
             <param name="type"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Lit.LitHelper.DeserializeFromBytes``1(System.Byte[])">
+        <member name="M:Cosmos.Serialization.Json.Lit.LitHelper.DeserializeFromBytes``1(System.Byte[],System.Text.Encoding)">
             <summary>
             Deserialize
             </summary>
             <param name="data"></param>
+            <param name="encoding"></param>
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Lit.LitHelper.DeserializeFromBytes(System.Byte[],System.Type)">
+        <member name="M:Cosmos.Serialization.Json.Lit.LitHelper.DeserializeFromBytes(System.Byte[],System.Type,System.Text.Encoding)">
             <summary>
             Deserialize
             </summary>
             <param name="data"></param>
             <param name="type"></param>
+            <param name="encoding"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Lit.LitHelper.Pack``1(``0)">
+        <member name="M:Cosmos.Serialization.Json.Lit.LitHelper.Pack``1(``0,System.Text.Encoding)">
             <summary>
             Pack
             </summary>
             <param name="o"></param>
+            <param name="encoding"></param>
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Lit.LitHelper.Pack``1(``0,System.IO.Stream)">
+        <member name="M:Cosmos.Serialization.Json.Lit.LitHelper.Pack``1(``0,System.IO.Stream,System.Text.Encoding)">
             <summary>
             Pack
             </summary>
             <param name="t"></param>
             <param name="stream"></param>
+            <param name="encoding"></param>
             <typeparam name="T"></typeparam>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Lit.LitHelper.Unpack``1(System.IO.Stream)">
+        <member name="M:Cosmos.Serialization.Json.Lit.LitHelper.Unpack``1(System.IO.Stream,System.Text.Encoding)">
             <summary>
             Unpack
             </summary>
             <param name="stream"></param>
+            <param name="encoding"></param>
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Json.Lit.LitHelper.Unpack(System.IO.Stream,System.Type)">
+        <member name="M:Cosmos.Serialization.Json.Lit.LitHelper.Unpack(System.IO.Stream,System.Type,System.Text.Encoding)">
             <summary>
             Unpack
             </summary>
             <param name="stream"></param>
             <param name="type"></param>
+            <param name="encoding"></param>
             <returns></returns>
         </member>
         <member name="T:Cosmos.Serialization.Json.Lit.LitManager">
@@ -413,6 +426,24 @@
         </member>
         <member name="M:Cosmos.Serialization.LitObjectSerializer.DeserializeFromStreamAsync(System.IO.Stream,System.Type)">
             <inheritdoc />
+        </member>
+        <member name="T:Cosmos.Serialization.LitObjectSerializerExtensions">
+            <summary>
+            LitObjectSerializer extensions.
+            </summary>
+        </member>
+        <member name="M:Cosmos.Serialization.LitObjectSerializerExtensions.UseLit(Cosmos.Serialization.IJsonSerializerConfigureEntry)">
+            <summary>
+            Use LitObjectSerializer
+            </summary>
+            <param name="entry"></param>
+        </member>
+        <member name="M:Cosmos.Serialization.LitObjectSerializerExtensions.UseLit(Cosmos.Serialization.IJsonSerializerConfigureEntry,System.Func{Cosmos.Serialization.LitObjectSerializer})">
+            <summary>
+            Use LitObjectSerializer
+            </summary>
+            <param name="entry"></param>
+            <param name="serializerFactory"></param>
         </member>
     </members>
 </doc>
