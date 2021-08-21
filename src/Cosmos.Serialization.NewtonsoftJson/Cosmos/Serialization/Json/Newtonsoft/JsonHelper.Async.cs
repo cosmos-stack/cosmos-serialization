@@ -1,5 +1,7 @@
 using System;
+using System.Text;
 using System.Threading.Tasks;
+using Cosmos.Optionals;
 using Newtonsoft.Json;
 
 namespace Cosmos.Serialization.Json.Newtonsoft
@@ -15,12 +17,13 @@ namespace Cosmos.Serialization.Json.Newtonsoft
         /// <param name="o"></param>
         /// <param name="settings"></param>
         /// <param name="withNodaTime"></param>
+        /// <param name="encoding"></param>
         /// <returns></returns>
-        public static async Task<byte[]> SerializeToBytesAsync(object o, JsonSerializerSettings settings = null, bool withNodaTime = false)
+        public static async Task<byte[]> SerializeToBytesAsync(object o, JsonSerializerSettings settings = null, bool withNodaTime = false, Encoding encoding = null)
         {
             return o is null
                 ? new byte[0]
-                : JsonManager.DefaultEncoding.GetBytes(await SerializeAsync(o, settings, withNodaTime));
+                : encoding.SafeEncodingValue(JsonManager.DefaultEncoding).GetBytes(await SerializeAsync(o, settings, withNodaTime));
         }
 
         /// <summary>
@@ -43,13 +46,14 @@ namespace Cosmos.Serialization.Json.Newtonsoft
         /// <param name="data"></param>
         /// <param name="settings"></param>
         /// <param name="withNodaTime"></param>
+        /// <param name="encoding"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static async Task<T> DeserializeFromBytesAsync<T>(byte[] data, JsonSerializerSettings settings = null, bool withNodaTime = false)
+        public static async Task<T> DeserializeFromBytesAsync<T>(byte[] data, JsonSerializerSettings settings = null, bool withNodaTime = false, Encoding encoding = null)
         {
             return data is null || data.Length is 0
                 ? default
-                : await DeserializeAsync<T>(JsonManager.DefaultEncoding.GetString(data), settings, withNodaTime);
+                : await DeserializeAsync<T>(encoding.SafeEncodingValue(JsonManager.DefaultEncoding).GetString(data), settings, withNodaTime);
         }
 
         /// <summary>
@@ -59,12 +63,13 @@ namespace Cosmos.Serialization.Json.Newtonsoft
         /// <param name="type"></param>
         /// <param name="settings"></param>
         /// <param name="withNodaTime"></param>
+        /// <param name="encoding"></param>
         /// <returns></returns>
-        public static async Task<object> DeserializeFromBytesAsync(byte[] data, Type type, JsonSerializerSettings settings = null, bool withNodaTime = false)
+        public static async Task<object> DeserializeFromBytesAsync(byte[] data, Type type, JsonSerializerSettings settings = null, bool withNodaTime = false, Encoding encoding = null)
         {
             return data is null || data.Length is 0
                 ? default
-                : await DeserializeAsync(JsonManager.DefaultEncoding.GetString(data), type, settings, withNodaTime);
+                : await DeserializeAsync(encoding.SafeEncodingValue(JsonManager.DefaultEncoding).GetString(data), type, settings, withNodaTime);
         }
 
         /// <summary>

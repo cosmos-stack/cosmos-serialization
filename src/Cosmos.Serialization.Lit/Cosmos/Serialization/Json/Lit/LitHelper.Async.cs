@@ -1,5 +1,7 @@
 using System;
+using System.Text;
 using System.Threading.Tasks;
+using Cosmos.Optionals;
 using LitJson;
 
 namespace Cosmos.Serialization.Json.Lit
@@ -25,12 +27,13 @@ namespace Cosmos.Serialization.Json.Lit
         /// Serialize to bytes
         /// </summary>
         /// <param name="o"></param>
+        /// <param name="encoding"></param>
         /// <returns></returns>
-        public static async Task<byte[]> SerializeToBytesAsync(object o)
+        public static async Task<byte[]> SerializeToBytesAsync(object o, Encoding encoding = null)
         {
             return o is null
                 ? new byte[0]
-                : await Task.Run(() => LitManager.DefaultEncoding.GetBytes(Serialize(o)));
+                : await Task.Run(() => encoding.SafeEncodingValue(LitManager.DefaultEncoding).GetBytes(Serialize(o)));
         }
 
         /// <summary>
@@ -63,13 +66,14 @@ namespace Cosmos.Serialization.Json.Lit
         /// Deserialize
         /// </summary>
         /// <param name="data"></param>
+        /// <param name="encoding"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<T> DeserializeFromBytesAsync<T>(byte[] data)
+        public static Task<T> DeserializeFromBytesAsync<T>(byte[] data, Encoding encoding = null)
         {
             return data is null || data.Length is 0
                 ? default
-                : DeserializeAsync<T>(LitManager.DefaultEncoding.GetString(data));
+                : DeserializeAsync<T>(encoding.SafeEncodingValue(LitManager.DefaultEncoding).GetString(data));
         }
 
         /// <summary>
@@ -77,12 +81,13 @@ namespace Cosmos.Serialization.Json.Lit
         /// </summary>
         /// <param name="data"></param>
         /// <param name="type"></param>
+        /// <param name="encoding"></param>
         /// <returns></returns>
-        public static Task<object> DeserializeFromBytesAsync(byte[] data, Type type)
+        public static Task<object> DeserializeFromBytesAsync(byte[] data, Type type, Encoding encoding = null)
         {
             return data is null || data.Length is 0
                 ? null
-                : DeserializeAsync(LitManager.DefaultEncoding.GetString(data), type);
+                : DeserializeAsync(encoding.SafeEncodingValue(LitManager.DefaultEncoding).GetString(data), type);
         }
     }
 }

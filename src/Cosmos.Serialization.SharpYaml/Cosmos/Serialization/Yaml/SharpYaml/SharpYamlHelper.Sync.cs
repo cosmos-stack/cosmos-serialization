@@ -1,4 +1,7 @@
 using System;
+using System.Text;
+using Cosmos.Optionals;
+using SharpYaml.Serialization;
 
 namespace Cosmos.Serialization.Yaml.SharpYaml
 {
@@ -11,11 +14,12 @@ namespace Cosmos.Serialization.Yaml.SharpYaml
         /// Serialize
         /// </summary>
         /// <param name="o"></param>
+        /// <param name="serializer"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static string Serialize<T>(T o)
+        public static string Serialize<T>(T o, Serializer serializer = null)
         {
-            return SharpYamlManager.DefaultSerializer.Serialize(o);
+            return (serializer ?? SharpYamlManager.DefaultSerializer).Serialize(o);
         }
 
         /// <summary>
@@ -23,22 +27,25 @@ namespace Cosmos.Serialization.Yaml.SharpYaml
         /// </summary>
         /// <param name="o"></param>
         /// <param name="expectedType"></param>
+        /// <param name="serializer"></param>
         /// <returns></returns>
-        public static string Serialize(object o, Type expectedType)
+        public static string Serialize(object o, Type expectedType, Serializer serializer = null)
         {
-            return SharpYamlManager.DefaultSerializer.Serialize(o, expectedType);
+            return (serializer ?? SharpYamlManager.DefaultSerializer).Serialize(o, expectedType);
         }
 
         /// <summary>
         /// Serialize to bytes
         /// </summary>
         /// <param name="o"></param>
+        /// <param name="serializer"></param>
+        /// <param name="encoding"></param>
         /// <returns></returns>
-        public static byte[] SerializeToBytes<T>(T o)
+        public static byte[] SerializeToBytes<T>(T o, Serializer serializer = null, Encoding encoding = null)
         {
             return o is null
                 ? new byte[0]
-                : SharpYamlManager.DefaultEncoding.GetBytes(Serialize(o));
+                : encoding.SafeEncodingValue(SharpYamlManager.DefaultEncoding).GetBytes(Serialize(o, serializer));
         }
 
         /// <summary>
@@ -46,25 +53,28 @@ namespace Cosmos.Serialization.Yaml.SharpYaml
         /// </summary>
         /// <param name="o"></param>
         /// <param name="expectedType"></param>
+        /// <param name="serializer"></param>
+        /// <param name="encoding"></param>
         /// <returns></returns>
-        public static byte[] SerializeToBytes(object o, Type expectedType)
+        public static byte[] SerializeToBytes(object o, Type expectedType, Serializer serializer = null, Encoding encoding = null)
         {
             return o is null
                 ? new byte[0]
-                : SharpYamlManager.DefaultEncoding.GetBytes(Serialize(o, expectedType));
+                : encoding.SafeEncodingValue(SharpYamlManager.DefaultEncoding).GetBytes(Serialize(o, expectedType, serializer));
         }
 
         /// <summary>
         /// Deserialize
         /// </summary>
         /// <param name="data"></param>
+        /// <param name="serializer"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T Deserialize<T>(string data)
+        public static T Deserialize<T>(string data, Serializer serializer = null)
         {
             return string.IsNullOrWhiteSpace(data)
                 ? default
-                : SharpYamlManager.DefaultSerializer.Deserialize<T>(data);
+                : (serializer ?? SharpYamlManager.DefaultSerializer).Deserialize<T>(data);
         }
 
         /// <summary>
@@ -72,25 +82,28 @@ namespace Cosmos.Serialization.Yaml.SharpYaml
         /// </summary>
         /// <param name="data"></param>
         /// <param name="type"></param>
+        /// <param name="serializer"></param>
         /// <returns></returns>
-        public static object Deserialize(string data, Type type)
+        public static object Deserialize(string data, Type type, Serializer serializer = null)
         {
             return string.IsNullOrWhiteSpace(data)
                 ? null
-                : SharpYamlManager.DefaultSerializer.Deserialize(data, type);
+                : (serializer ?? SharpYamlManager.DefaultSerializer).Deserialize(data, type);
         }
 
         /// <summary>
         /// Deserialize
         /// </summary>
         /// <param name="data"></param>
+        /// <param name="serializer"></param>
+        /// <param name="encoding"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T DeserializeFromBytes<T>(byte[] data)
+        public static T DeserializeFromBytes<T>(byte[] data, Serializer serializer = null, Encoding encoding = null)
         {
             return data is null || data.Length is 0
                 ? default
-                : Deserialize<T>(SharpYamlManager.DefaultEncoding.GetString(data));
+                : Deserialize<T>(encoding.SafeEncodingValue(SharpYamlManager.DefaultEncoding).GetString(data), serializer);
         }
 
         /// <summary>
@@ -98,12 +111,14 @@ namespace Cosmos.Serialization.Yaml.SharpYaml
         /// </summary>
         /// <param name="data"></param>
         /// <param name="type"></param>
+        /// <param name="serializer"></param>
+        /// <param name="encoding"></param>
         /// <returns></returns>
-        public static object DeserializeFromBytes(byte[] data, Type type)
+        public static object DeserializeFromBytes(byte[] data, Type type, Serializer serializer = null, Encoding encoding = null)
         {
             return data is null || data.Length is 0
                 ? null
-                : Deserialize(SharpYamlManager.DefaultEncoding.GetString(data), type);
+                : Deserialize(encoding.SafeEncodingValue(SharpYamlManager.DefaultEncoding).GetString(data), type, serializer);
         }
 
         /// <summary>
@@ -111,13 +126,14 @@ namespace Cosmos.Serialization.Yaml.SharpYaml
         /// </summary>
         /// <param name="data"></param>
         /// <param name="targetObj"></param>
+        /// <param name="serializer"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T DeserializeInto<T>(string data, T targetObj)
+        public static T DeserializeInto<T>(string data, T targetObj, Serializer serializer = null)
         {
             return string.IsNullOrWhiteSpace(data)
                 ? targetObj
-                : SharpYamlManager.DefaultSerializer.DeserializeInto(data, targetObj);
+                : (serializer ?? SharpYamlManager.DefaultSerializer).DeserializeInto(data, targetObj);
         }
 
         /// <summary>
@@ -126,12 +142,13 @@ namespace Cosmos.Serialization.Yaml.SharpYaml
         /// <param name="data"></param>
         /// <param name="type"></param>
         /// <param name="targetObj"></param>
+        /// <param name="serializer"></param>
         /// <returns></returns>
-        public static object DeserializeInto(string data, Type type, object targetObj)
+        public static object DeserializeInto(string data, Type type, object targetObj, Serializer serializer = null)
         {
             return string.IsNullOrWhiteSpace(data)
                 ? targetObj
-                : SharpYamlManager.DefaultSerializer.Deserialize(data, type, targetObj);
+                : (serializer ?? SharpYamlManager.DefaultSerializer).Deserialize(data, type, targetObj);
         }
     }
 }

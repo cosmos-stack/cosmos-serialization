@@ -1,6 +1,8 @@
 using System;
 using System.IO;
+using System.Text;
 using System.Threading.Tasks;
+using Cosmos.Optionals;
 using Jil;
 
 namespace Cosmos.Serialization.Json.Jil
@@ -43,13 +45,14 @@ namespace Cosmos.Serialization.Json.Jil
         /// </summary>
         /// <param name="o"></param>
         /// <param name="options"></param>
+        /// <param name="encoding"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static async Task<byte[]> SerializeToBytesAsync<T>(T o, Options options = null)
+        public static async Task<byte[]> SerializeToBytesAsync<T>(T o, Options options = null, Encoding encoding = null)
         {
             return o is null
                 ? new byte[0]
-                : JilManager.DefaultEncoding.GetBytes(await SerializeAsync(o, options));
+                : encoding.SafeEncodingValue(JilManager.DefaultEncoding).GetBytes(await SerializeAsync(o, options));
         }
 
         /// <summary>
@@ -57,13 +60,14 @@ namespace Cosmos.Serialization.Json.Jil
         /// </summary>
         /// <param name="o"></param>
         /// <param name="optionAct"></param>
+        /// <param name="encoding"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<byte[]> SerializeToBytesAsync<T>(T o, Action<Options> optionAct)
+        public static Task<byte[]> SerializeToBytesAsync<T>(T o, Action<Options> optionAct, Encoding encoding = null)
         {
             var options = new Options();
             optionAct?.Invoke(options);
-            return SerializeToBytesAsync(o, options);
+            return SerializeToBytesAsync(o, options, encoding);
         }
 
         /// <summary>
@@ -166,13 +170,14 @@ namespace Cosmos.Serialization.Json.Jil
         /// </summary>
         /// <param name="data"></param>
         /// <param name="options"></param>
+        /// <param name="encoding"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static async Task<T> DeserializeFromBytesAsync<T>(byte[] data, Options options = null)
+        public static async Task<T> DeserializeFromBytesAsync<T>(byte[] data, Options options = null, Encoding encoding = null)
         {
             return data is null || data.Length is 0
                 ? default
-                : await Task.Run(() => JSON.Deserialize<T>(JilManager.DefaultEncoding.GetString(data), options ?? JilManager.DefaultOptions));
+                : await Task.Run(() => JSON.Deserialize<T>(encoding.SafeEncodingValue(JilManager.DefaultEncoding).GetString(data), options ?? JilManager.DefaultOptions));
         }
 
         /// <summary>
@@ -180,13 +185,14 @@ namespace Cosmos.Serialization.Json.Jil
         /// </summary>
         /// <param name="data"></param>
         /// <param name="optionAct"></param>
+        /// <param name="encoding"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<T> DeserializeFromBytesAsync<T>(byte[] data, Action<Options> optionAct)
+        public static Task<T> DeserializeFromBytesAsync<T>(byte[] data, Action<Options> optionAct, Encoding encoding = null)
         {
             var options = new Options();
             optionAct?.Invoke(options);
-            return DeserializeFromBytesAsync<T>(data, options);
+            return DeserializeFromBytesAsync<T>(data, options, encoding);
         }
 
         /// <summary>
@@ -195,12 +201,13 @@ namespace Cosmos.Serialization.Json.Jil
         /// <param name="data"></param>
         /// <param name="type"></param>
         /// <param name="options"></param>
+        /// <param name="encoding"></param>
         /// <returns></returns>
-        public static async Task<object> DeserializeFromBytesAsync(byte[] data, Type type, Options options = null)
+        public static async Task<object> DeserializeFromBytesAsync(byte[] data, Type type, Options options = null, Encoding encoding = null)
         {
             return data is null || data.Length is 0
                 ? default
-                : await Task.Run(() => JSON.Deserialize(JilManager.DefaultEncoding.GetString(data), type, options ?? JilManager.DefaultOptions));
+                : await Task.Run(() => JSON.Deserialize(encoding.SafeEncodingValue(JilManager.DefaultEncoding).GetString(data), type, options ?? JilManager.DefaultOptions));
         }
 
         /// <summary>
@@ -209,12 +216,13 @@ namespace Cosmos.Serialization.Json.Jil
         /// <param name="data"></param>
         /// <param name="type"></param>
         /// <param name="optionAct"></param>
+        /// <param name="encoding"></param>
         /// <returns></returns>
-        public static Task<object> DeserializeFromBytesAsync(byte[] data, Type type, Action<Options> optionAct)
+        public static Task<object> DeserializeFromBytesAsync(byte[] data, Type type, Action<Options> optionAct, Encoding encoding = null)
         {
             var options = new Options();
             optionAct?.Invoke(options);
-            return DeserializeFromBytesAsync(data, type, options);
+            return DeserializeFromBytesAsync(data, type, options, encoding);
         }
 
         /// <summary>

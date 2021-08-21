@@ -7,7 +7,7 @@ namespace Cosmos.Serialization.Binary
     {
         [ThreadStatic]
         private static BinaryFormatter _binaryFormatter;
-
+        
         public static BinaryFormatter GetBinaryFormatter()
         {
             return _binaryFormatter ??= new BinaryFormatter();

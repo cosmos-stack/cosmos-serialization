@@ -1,6 +1,8 @@
 using System;
 using System.IO;
+using System.Text;
 using System.Threading.Tasks;
+using Cosmos.Optionals;
 using Swifter.Json;
 
 namespace Cosmos.Serialization.Json.Swifter
@@ -29,11 +31,12 @@ namespace Cosmos.Serialization.Json.Swifter
         /// </summary>
         /// <param name="o"></param>
         /// <param name="options"></param>
+        /// <param name="encoding"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static async Task<byte[]> SerializeToBytesAsync<T>(T o, JsonFormatterOptions? options = null)
+        public static async Task<byte[]> SerializeToBytesAsync<T>(T o, JsonFormatterOptions? options = null, Encoding encoding = null)
         {
-            return SwifterJsonManager.DefaultEncoding.GetBytes(await SerializeAsync(o, options));
+            return encoding.SafeEncodingValue(SwifterJsonManager.DefaultEncoding).GetBytes(await SerializeAsync(o, options));
         }
 
         /// <summary>
@@ -85,13 +88,14 @@ namespace Cosmos.Serialization.Json.Swifter
         /// </summary>
         /// <param name="data"></param>
         /// <param name="options"></param>
+        /// <param name="encoding"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static async Task<T> DeserializeFromBytesAsync<T>(byte[] data, JsonFormatterOptions? options = null)
+        public static async Task<T> DeserializeFromBytesAsync<T>(byte[] data, JsonFormatterOptions? options = null, Encoding encoding = null)
         {
             return data is null || data.Length is 0
                 ? default
-                : await DeserializeAsync<T>(SwifterJsonManager.DefaultEncoding.GetString(data), TouchDeserializeOptions(options));
+                : await DeserializeAsync<T>(encoding.SafeEncodingValue(SwifterJsonManager.DefaultEncoding).GetString(data), TouchDeserializeOptions(options));
         }
 
         /// <summary>
@@ -100,12 +104,13 @@ namespace Cosmos.Serialization.Json.Swifter
         /// <param name="data"></param>
         /// <param name="type"></param>
         /// <param name="options"></param>
+        /// <param name="encoding"></param>
         /// <returns></returns>
-        public static async Task<object> DeserializeFromBytesAsync(byte[] data, Type type, JsonFormatterOptions? options = null)
+        public static async Task<object> DeserializeFromBytesAsync(byte[] data, Type type, JsonFormatterOptions? options = null, Encoding encoding = null)
         {
             return data is null || data.Length is 0
                 ? null
-                : await DeserializeAsync(SwifterJsonManager.DefaultEncoding.GetString(data), type, TouchDeserializeOptions(options));
+                : await DeserializeAsync(encoding.SafeEncodingValue(SwifterJsonManager.DefaultEncoding).GetString(data), type, TouchDeserializeOptions(options));
         }
 
         /// <summary>

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.IO;
+using System.Text;
+using Cosmos.Optionals;
 using Jil;
 
 /*
@@ -50,13 +52,14 @@ namespace Cosmos.Serialization.Json.Jil
         /// </summary>
         /// <param name="o"></param>
         /// <param name="options"></param>
+        /// <param name="encoding"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static byte[] SerializeToBytes<T>(T o, Options options = null)
+        public static byte[] SerializeToBytes<T>(T o, Options options = null, Encoding encoding = null)
         {
             return o is null
                 ? new byte[0]
-                : JilManager.DefaultEncoding.GetBytes(Serialize(o, options ?? JilManager.DefaultOptions));
+                : encoding.SafeEncodingValue(JilManager.DefaultEncoding).GetBytes(Serialize(o, options ?? JilManager.DefaultOptions));
         }
 
         /// <summary>
@@ -64,13 +67,14 @@ namespace Cosmos.Serialization.Json.Jil
         /// </summary>
         /// <param name="o"></param>
         /// <param name="optionAct"></param>
+        /// <param name="encoding"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static byte[] SerializeToBytes<T>(T o, Action<Options> optionAct)
+        public static byte[] SerializeToBytes<T>(T o, Action<Options> optionAct, Encoding encoding = null)
         {
             return o is null
                 ? new byte[0]
-                : JilManager.DefaultEncoding.GetBytes(Serialize(o, optionAct));
+                : encoding.SafeEncodingValue(JilManager.DefaultEncoding).GetBytes(Serialize(o, optionAct));
         }
 
         /// <summary>
@@ -152,13 +156,14 @@ namespace Cosmos.Serialization.Json.Jil
         /// </summary>
         /// <param name="data"></param>
         /// <param name="options"></param>
+        /// <param name="encoding"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T DeserializeFromBytes<T>(byte[] data, Options options = null)
+        public static T DeserializeFromBytes<T>(byte[] data, Options options = null, Encoding encoding = null)
         {
             return data is null || data.Length is 0
                 ? default
-                : JSON.Deserialize<T>(JilManager.DefaultEncoding.GetString(data), options ?? JilManager.DefaultOptions);
+                : JSON.Deserialize<T>(encoding.SafeEncodingValue(JilManager.DefaultEncoding).GetString(data), options ?? JilManager.DefaultOptions);
         }
 
         /// <summary>
@@ -181,12 +186,13 @@ namespace Cosmos.Serialization.Json.Jil
         /// <param name="data"></param>
         /// <param name="type"></param>
         /// <param name="options"></param>
+        /// <param name="encoding"></param>
         /// <returns></returns>
-        public static object DeserializeFromBytes(byte[] data, Type type, Options options = null)
+        public static object DeserializeFromBytes(byte[] data, Type type, Options options = null, Encoding encoding = null)
         {
             return data is null || data.Length is 0
                 ? null
-                : JSON.Deserialize(JilManager.DefaultEncoding.GetString(data), type, options ?? JilManager.DefaultOptions);
+                : JSON.Deserialize(encoding.SafeEncodingValue(JilManager.DefaultEncoding).GetString(data), type, options ?? JilManager.DefaultOptions);
         }
 
         /// <summary>

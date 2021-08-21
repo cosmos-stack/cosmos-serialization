@@ -18,7 +18,7 @@ namespace Cosmos.Serialization.ProtoBuf
         {
             var ms = new MemoryStream();
 
-            if (obj != null)
+            if (obj is not null)
                 await PackAsync(obj, ms);
 
             return ms;
@@ -31,7 +31,7 @@ namespace Cosmos.Serialization.ProtoBuf
         /// <param name="stream"></param>
         public static async Task PackAsync(object obj, Stream stream)
         {
-            if (obj != null)
+            if (obj is not null)
             {
                 Action action = () => ProtoBufManager.Model.Serialize(stream, obj);
                 await Task.Run(action);

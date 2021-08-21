@@ -1,5 +1,7 @@
 using System;
+using System.Text;
 using System.Threading.Tasks;
+using Cosmos.Optionals;
 using Kooboo.Json;
 
 namespace Cosmos.Serialization.Json.Kooboo
@@ -43,13 +45,14 @@ namespace Cosmos.Serialization.Json.Kooboo
         /// </summary>
         /// <param name="o"></param>
         /// <param name="option"></param>
+        /// <param name="encoding"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static async Task<byte[]> SerializeToBytesAsync<T>(T o, JsonSerializerOption option = null)
+        public static async Task<byte[]> SerializeToBytesAsync<T>(T o, JsonSerializerOption option = null, Encoding encoding = null)
         {
             return o is null
                 ? new byte[0]
-                : await Task.Run(() => KoobooManager.DefaultEncoding.GetBytes(Serialize(o, option ?? KoobooManager.DefaultSerializerOptions)));
+                : await Task.Run(() => encoding.SafeEncodingValue(KoobooManager.DefaultEncoding).GetBytes(Serialize(o, option ?? KoobooManager.DefaultSerializerOptions)));
         }
 
         /// <summary>
@@ -57,14 +60,15 @@ namespace Cosmos.Serialization.Json.Kooboo
         /// </summary>
         /// <param name="o"></param>
         /// <param name="optionAct"></param>
+        /// <param name="encoding"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Task<byte[]> SerializeToBytesAsync<T>(T o, Action<JsonSerializerOption> optionAct)
+        public static Task<byte[]> SerializeToBytesAsync<T>(T o, Action<JsonSerializerOption> optionAct, Encoding encoding = null)
         {
             var option = new JsonSerializerOption();
             optionAct?.Invoke(option);
 
-            return SerializeToBytesAsync(o, option);
+            return SerializeToBytesAsync(o, option, encoding);
         }
 
         /// <summary>
@@ -131,12 +135,13 @@ namespace Cosmos.Serialization.Json.Kooboo
         /// <param name="data"></param>
         /// <param name="type"></param>
         /// <param name="option"></param>
+        /// <param name="encoding"></param>
         /// <returns></returns>
-        public static async Task<object> DeserializeFromBytesAsync(byte[] data, Type type, JsonDeserializeOption option = null)
+        public static async Task<object> DeserializeFromBytesAsync(byte[] data, Type type, JsonDeserializeOption option = null, Encoding encoding = null)
         {
             return data is null || data.Length is 0
                 ? default
-                : await DeserializeAsync(KoobooManager.DefaultEncoding.GetString(data), type, option ?? KoobooManager.DefaultDeserializeOptions);
+                : await DeserializeAsync(encoding.SafeEncodingValue(KoobooManager.DefaultEncoding).GetString(data), type, option ?? KoobooManager.DefaultDeserializeOptions);
         }
 
         /// <summary>
@@ -145,13 +150,14 @@ namespace Cosmos.Serialization.Json.Kooboo
         /// <param name="type"></param>
         /// <param name="optionAct"></param>
         /// <param name="data"></param>
+        /// <param name="encoding"></param>
         /// <returns></returns>
-        public static Task<object> DeserializeFromBytesAsync(byte[] data, Type type, Action<JsonDeserializeOption> optionAct)
+        public static Task<object> DeserializeFromBytesAsync(byte[] data, Type type, Action<JsonDeserializeOption> optionAct, Encoding encoding = null)
         {
             var option = new JsonDeserializeOption();
             optionAct?.Invoke(option);
 
-            return DeserializeFromBytesAsync(data, type, option);
+            return DeserializeFromBytesAsync(data, type, option, encoding);
         }
 
         /// <summary>
@@ -159,12 +165,13 @@ namespace Cosmos.Serialization.Json.Kooboo
         /// </summary>
         /// <param name="data"></param>
         /// <param name="option"></param>
+        /// <param name="encoding"></param>
         /// <returns></returns>
-        public static async Task<T> DeserializeFromBytesAsync<T>(byte[] data, JsonDeserializeOption option = null)
+        public static async Task<T> DeserializeFromBytesAsync<T>(byte[] data, JsonDeserializeOption option = null, Encoding encoding = null)
         {
             return data is null || data.Length is 0
                 ? default
-                : await DeserializeAsync<T>(KoobooManager.DefaultEncoding.GetString(data), option ?? KoobooManager.DefaultDeserializeOptions);
+                : await DeserializeAsync<T>(encoding.SafeEncodingValue(KoobooManager.DefaultEncoding).GetString(data), option ?? KoobooManager.DefaultDeserializeOptions);
         }
 
         /// <summary>
@@ -172,13 +179,14 @@ namespace Cosmos.Serialization.Json.Kooboo
         /// </summary>
         /// <param name="optionAct"></param>
         /// <param name="data"></param>
+        /// <param name="encoding"></param>
         /// <returns></returns>
-        public static Task<T> DeserializeFromBytesAsync<T>(byte[] data, Action<JsonDeserializeOption> optionAct)
+        public static Task<T> DeserializeFromBytesAsync<T>(byte[] data, Action<JsonDeserializeOption> optionAct, Encoding encoding = null)
         {
             var option = new JsonDeserializeOption();
             optionAct?.Invoke(option);
 
-            return DeserializeFromBytesAsync<T>(data, option);
+            return DeserializeFromBytesAsync<T>(data, option, encoding);
         }
     }
 }

@@ -1,4 +1,8 @@
 using System;
+using System.Text;
+using Cosmos.Optionals;
+using S = YamlDotNet.Serialization.ISerializer;
+using D = YamlDotNet.Serialization.IDeserializer;
 
 namespace Cosmos.Serialization.Yaml.YamlDotNet
 {
@@ -11,36 +15,40 @@ namespace Cosmos.Serialization.Yaml.YamlDotNet
         /// Serialize
         /// </summary>
         /// <param name="o"></param>
+        /// <param name="serializer"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static string Serialize<T>(T o)
+        public static string Serialize<T>(T o, S serializer = null)
         {
-            return YamlManager.DefaultSerializer.Serialize(o);
+            return (serializer ?? YamlManager.DefaultSerializer).Serialize(o);
         }
 
         /// <summary>
         /// Serialize to bytes
         /// </summary>
         /// <param name="o"></param>
+        /// <param name="serializer"></param>
+        /// <param name="encoding"></param>
         /// <returns></returns>
-        public static byte[] SerializeToBytes<T>(T o)
+        public static byte[] SerializeToBytes<T>(T o, S serializer = null, Encoding encoding = null)
         {
             return o is null
                 ? new byte[0]
-                : YamlManager.DefaultEncoding.GetBytes(Serialize(o));
+                : encoding.SafeEncodingValue(YamlManager.DefaultEncoding).GetBytes(Serialize(o, serializer));
         }
 
         /// <summary>
         /// Deserialize
         /// </summary>
         /// <param name="data"></param>
+        /// <param name="deserializer"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T Deserialize<T>(string data)
+        public static T Deserialize<T>(string data, D deserializer = null)
         {
             return string.IsNullOrWhiteSpace(data)
                 ? default
-                : YamlManager.DefaultDeserializer.Deserialize<T>(data);
+                : (deserializer ?? YamlManager.DefaultDeserializer).Deserialize<T>(data);
         }
 
         /// <summary>
@@ -48,25 +56,28 @@ namespace Cosmos.Serialization.Yaml.YamlDotNet
         /// </summary>
         /// <param name="data"></param>
         /// <param name="type"></param>
+        /// <param name="deserializer"></param>
         /// <returns></returns>
-        public static object Deserialize(string data, Type type)
+        public static object Deserialize(string data, Type type, D deserializer = null)
         {
             return string.IsNullOrWhiteSpace(data)
                 ? null
-                : YamlManager.DefaultDeserializer.Deserialize(data, type);
+                : (deserializer ?? YamlManager.DefaultDeserializer).Deserialize(data, type);
         }
 
         /// <summary>
         /// Deserialize
         /// </summary>
         /// <param name="data"></param>
+        /// <param name="deserializer"></param>
+        /// <param name="encoding"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T DeserializeFromBytes<T>(byte[] data)
+        public static T DeserializeFromBytes<T>(byte[] data, D deserializer = null, Encoding encoding = null)
         {
             return data is null || data.Length is 0
                 ? default
-                : Deserialize<T>(YamlManager.DefaultEncoding.GetString(data));
+                : Deserialize<T>(encoding.SafeEncodingValue(YamlManager.DefaultEncoding).GetString(data), deserializer);
         }
 
         /// <summary>
@@ -74,12 +85,14 @@ namespace Cosmos.Serialization.Yaml.YamlDotNet
         /// </summary>
         /// <param name="data"></param>
         /// <param name="type"></param>
+        /// <param name="deserializer"></param>
+        /// <param name="encoding"></param>
         /// <returns></returns>
-        public static object DeserializeFromBytes(byte[] data, Type type)
+        public static object DeserializeFromBytes(byte[] data, Type type, D deserializer = null, Encoding encoding = null)
         {
             return data is null || data.Length is 0
                 ? null
-                : Deserialize(YamlManager.DefaultEncoding.GetString(data), type);
+                : Deserialize(encoding.SafeEncodingValue(YamlManager.DefaultEncoding).GetString(data), type, deserializer);
         }
     }
 }

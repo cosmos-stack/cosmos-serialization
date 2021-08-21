@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Text;
+using Cosmos.Optionals;
 using LitJson;
 
 namespace Cosmos.Serialization.Json.Lit
@@ -24,12 +26,13 @@ namespace Cosmos.Serialization.Json.Lit
         /// Serialize to bytes
         /// </summary>
         /// <param name="o"></param>
+        /// <param name="encoding"></param>
         /// <returns></returns>
-        public static byte[] SerializeToBytes(object o)
+        public static byte[] SerializeToBytes(object o, Encoding encoding = null)
         {
             return o is null
                 ? new byte[0]
-                : LitManager.DefaultEncoding.GetBytes(Serialize(o));
+                : encoding.SafeEncodingValue(LitManager.DefaultEncoding).GetBytes(Serialize(o));
         }
 
         /// <summary>
@@ -62,13 +65,14 @@ namespace Cosmos.Serialization.Json.Lit
         /// Deserialize
         /// </summary>
         /// <param name="data"></param>
+        /// <param name="encoding"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T DeserializeFromBytes<T>(byte[] data)
+        public static T DeserializeFromBytes<T>(byte[] data, Encoding encoding = null)
         {
             return data is null || data.Length is 0
                 ? default
-                : Deserialize<T>(LitManager.DefaultEncoding.GetString(data));
+                : Deserialize<T>(encoding.SafeEncodingValue(LitManager.DefaultEncoding).GetString(data));
         }
 
         /// <summary>
@@ -76,12 +80,13 @@ namespace Cosmos.Serialization.Json.Lit
         /// </summary>
         /// <param name="data"></param>
         /// <param name="type"></param>
+        /// <param name="encoding"></param>
         /// <returns></returns>
-        public static object DeserializeFromBytes(byte[] data, Type type)
+        public static object DeserializeFromBytes(byte[] data, Type type, Encoding encoding = null)
         {
             return data is null || data.Length is 0
                 ? null
-                : Deserialize(LitManager.DefaultEncoding.GetString(data), type);
+                : Deserialize(encoding.SafeEncodingValue(LitManager.DefaultEncoding).GetString(data), type);
         }
     }
 }

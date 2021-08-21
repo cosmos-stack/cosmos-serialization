@@ -17,10 +17,10 @@ namespace Cosmos.Dynamic.DynamicEnums
 
             static FormatterCache()
             {
-                if (Enums.IsDynamicEnum(typeof(T), out var genericArguments))
+                if (DynamicEnumVisit.IsDynamicEnum(typeof(T), out var genericArguments))
                 {
                     var formatterType = typeof(DynamicEnumValueFormatter<,>).MakeGenericType(genericArguments);
-                    Formatter = (IJsonFormatter<T>) Types.CreateInstance(formatterType);
+                    Formatter = (IJsonFormatter<T>) TypeVisit.CreateInstance(formatterType);
                 }
             }
         }

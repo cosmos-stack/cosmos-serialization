@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Text;
+using Cosmos.Optionals;
 using Kooboo.Json;
 
 namespace Cosmos.Serialization.Json.Kooboo
@@ -42,13 +44,14 @@ namespace Cosmos.Serialization.Json.Kooboo
         /// </summary>
         /// <param name="o"></param>
         /// <param name="option"></param>
+        /// <param name="encoding"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static byte[] SerializeToBytes<T>(T o, JsonSerializerOption option = null)
+        public static byte[] SerializeToBytes<T>(T o, JsonSerializerOption option = null, Encoding encoding = null)
         {
             return o is null
                 ? new byte[0]
-                : KoobooManager.DefaultEncoding.GetBytes(Serialize(o, option ?? KoobooManager.DefaultSerializerOptions));
+                : encoding.SafeEncodingValue(KoobooManager.DefaultEncoding).GetBytes(Serialize(o, option ?? KoobooManager.DefaultSerializerOptions));
         }
 
         /// <summary>
@@ -56,14 +59,15 @@ namespace Cosmos.Serialization.Json.Kooboo
         /// </summary>
         /// <param name="o"></param>
         /// <param name="optionAct"></param>
+        /// <param name="encoding"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static byte[] SerializeToBytes<T>(T o, Action<JsonSerializerOption> optionAct)
+        public static byte[] SerializeToBytes<T>(T o, Action<JsonSerializerOption> optionAct, Encoding encoding = null)
         {
             var option = new JsonSerializerOption();
             optionAct?.Invoke(option);
 
-            return SerializeToBytes(o, option);
+            return SerializeToBytes(o, option, encoding);
         }
 
         /// <summary>
@@ -130,12 +134,13 @@ namespace Cosmos.Serialization.Json.Kooboo
         /// <param name="data"></param>
         /// <param name="type"></param>
         /// <param name="option"></param>
+        /// <param name="encoding"></param>
         /// <returns></returns>
-        public static object DeserializeFromBytes(byte[] data, Type type, JsonDeserializeOption option = null)
+        public static object DeserializeFromBytes(byte[] data, Type type, JsonDeserializeOption option = null, Encoding encoding = null)
         {
             return data is null || data.Length is 0
                 ? default
-                : Deserialize(KoobooManager.DefaultEncoding.GetString(data), type, option ?? KoobooManager.DefaultDeserializeOptions);
+                : Deserialize(encoding.SafeEncodingValue(KoobooManager.DefaultEncoding).GetString(data), type, option ?? KoobooManager.DefaultDeserializeOptions);
         }
 
         /// <summary>
@@ -144,13 +149,14 @@ namespace Cosmos.Serialization.Json.Kooboo
         /// <param name="type"></param>
         /// <param name="optionAct"></param>
         /// <param name="data"></param>
+        /// <param name="encoding"></param>
         /// <returns></returns>
-        public static object DeserializeFromBytes(byte[] data, Type type, Action<JsonDeserializeOption> optionAct)
+        public static object DeserializeFromBytes(byte[] data, Type type, Action<JsonDeserializeOption> optionAct, Encoding encoding = null)
         {
             var option = new JsonDeserializeOption();
             optionAct?.Invoke(option);
 
-            return DeserializeFromBytes(data, type, option);
+            return DeserializeFromBytes(data, type, option, encoding);
         }
 
         /// <summary>
@@ -158,12 +164,13 @@ namespace Cosmos.Serialization.Json.Kooboo
         /// </summary>
         /// <param name="data"></param>
         /// <param name="option"></param>
+        /// <param name="encoding"></param>
         /// <returns></returns>
-        public static T DeserializeFromBytes<T>(byte[] data, JsonDeserializeOption option = null)
+        public static T DeserializeFromBytes<T>(byte[] data, JsonDeserializeOption option = null, Encoding encoding = null)
         {
             return data is null || data.Length is 0
                 ? default
-                : Deserialize<T>(KoobooManager.DefaultEncoding.GetString(data), option ?? KoobooManager.DefaultDeserializeOptions);
+                : Deserialize<T>(encoding.SafeEncodingValue(KoobooManager.DefaultEncoding).GetString(data), option ?? KoobooManager.DefaultDeserializeOptions);
         }
 
         /// <summary>
@@ -171,13 +178,14 @@ namespace Cosmos.Serialization.Json.Kooboo
         /// </summary>
         /// <param name="optionAct"></param>
         /// <param name="data"></param>
+        /// <param name="encoding"></param>
         /// <returns></returns>
-        public static T DeserializeFromBytes<T>(byte[] data, Action<JsonDeserializeOption> optionAct)
+        public static T DeserializeFromBytes<T>(byte[] data, Action<JsonDeserializeOption> optionAct, Encoding encoding = null)
         {
             var option = new JsonDeserializeOption();
             optionAct?.Invoke(option);
 
-            return DeserializeFromBytes<T>(data, option);
+            return DeserializeFromBytes<T>(data, option, encoding);
         }
     }
 }

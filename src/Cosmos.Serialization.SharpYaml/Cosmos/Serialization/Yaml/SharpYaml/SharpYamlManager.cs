@@ -9,7 +9,8 @@ namespace Cosmos.Serialization.Yaml.SharpYaml
     public static class SharpYamlManager
     {
         private static Encoding _encoding = Encoding.UTF8;
-        private static SerializerSettings _settings = new SerializerSettings();
+        private static SerializerSettings _settings = new();
+        private static Serializer _serializer = new(_settings);
 
         /// <summary>
         /// Gets or sets default Newtonsoft Json serializer settings
@@ -25,7 +26,8 @@ namespace Cosmos.Serialization.Yaml.SharpYaml
         /// </summary>
         public static Serializer DefaultSerializer
         {
-            get => new Serializer(_settings);
+            get => _serializer;
+            set => _serializer = value ?? _serializer;
         }
 
         /// <summary>

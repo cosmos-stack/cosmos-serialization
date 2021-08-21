@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Reflection;
+using Cosmos.Reflection;
 using Kooboo.Json;
 
 namespace Cosmos.Dynamic.DynamicEnums
@@ -10,9 +10,9 @@ namespace Cosmos.Dynamic.DynamicEnums
         {
             isValueFormat = true;
 
-            if (Enums.IsDynamicEnum(type, out _))
+            if (DynamicEnumVisit.IsDynamicEnum(type, out _))
             {
-                var val = value.GetPropertyValue("Name");
+                var val = value.GetValueAccessor(type).GetValue("Name");
 
                 if (val is string stringVal)
                     return stringVal;
@@ -27,7 +27,7 @@ namespace Cosmos.Dynamic.DynamicEnums
         {
             isValueFormat = true;
 
-            if (Enums.IsDynamicEnum(type, out var genericArguments))
+            if (DynamicEnumVisit.IsDynamicEnum(type, out var genericArguments))
             {
                 if (value is null || string.IsNullOrEmpty(value))
                     return default;

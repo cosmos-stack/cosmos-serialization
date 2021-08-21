@@ -12,7 +12,7 @@ namespace Cosmos.Serialization.Json.Newtonsoft
     {
         private static Encoding _encoding = Encoding.UTF8;
 
-        private static JsonSerializerSettings _settings = new JsonSerializerSettings();
+        private static JsonSerializerSettings _settings = new ();
 
         private static JsonSerializerSettings _settingsWithNodaTime = new JsonSerializerSettings().ConfigureForNodaTime(DateTimeZoneProviders.Tzdb);
 
@@ -35,7 +35,7 @@ namespace Cosmos.Serialization.Json.Newtonsoft
         }
 
         /// <summary>
-        /// Getsor sets default Newtonsoft Json serializer settings with NodaTime
+        /// Gets or sets default Newtonsoft Json serializer settings with NodaTime
         /// </summary>
         public static JsonSerializerSettings DefaultSettingsWithNodaTime
         {

@@ -17,7 +17,7 @@ namespace Cosmos.Serialization.ProtoBuf
         {
             var ms = new MemoryStream();
 
-            if (obj != null)
+            if (obj is not null)
                 Pack(obj, ms);
 
             return ms;
@@ -30,7 +30,7 @@ namespace Cosmos.Serialization.ProtoBuf
         /// <param name="stream"></param>
         public static void Pack(object obj, Stream stream)
         {
-            if (obj != null)
+            if (obj is not null)
             {
                 ProtoBufManager.Model.Serialize(stream, obj);
             }

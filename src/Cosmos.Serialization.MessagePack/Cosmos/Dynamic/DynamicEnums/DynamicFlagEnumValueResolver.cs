@@ -27,10 +27,10 @@ namespace Cosmos.Dynamic.DynamicEnums
 
             static FormatterCache()
             {
-                if (Enums.IsDynamicEnum(typeof(T), out var genericArguments))
+                if (DynamicEnumVisit.IsDynamicEnum(typeof(T), out var genericArguments))
                 {
                     var formatterType = typeof(DynamicFlagEnumValueFormatter<,>).MakeGenericType(genericArguments);
-                    Formatter = (IMessagePackFormatter<T>) Types.CreateInstance(formatterType);
+                    Formatter = (IMessagePackFormatter<T>) TypeVisit.CreateInstance(formatterType);
                 }
             }
         }

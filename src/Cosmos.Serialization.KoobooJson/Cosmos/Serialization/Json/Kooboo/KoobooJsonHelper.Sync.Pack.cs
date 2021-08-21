@@ -1,6 +1,8 @@
 using System;
 using System.IO;
+using System.Text;
 using Cosmos.Conversions;
+using Cosmos.Optionals;
 using Kooboo.Json;
 
 namespace Cosmos.Serialization.Json.Kooboo
@@ -15,16 +17,17 @@ namespace Cosmos.Serialization.Json.Kooboo
         /// </summary>
         /// <param name="o"></param>
         /// <param name="option"></param>
+        /// <param name="encoding"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static Stream Pack<T>(T o, JsonSerializerOption option = null)
+        public static Stream Pack<T>(T o, JsonSerializerOption option = null, Encoding encoding = null)
         {
             var ms = new MemoryStream();
 
             if (o is null)
                 return ms;
 
-            Pack(o, ms, option);
+            Pack(o, ms, option, encoding);
 
             return ms;
         }
@@ -35,13 +38,14 @@ namespace Cosmos.Serialization.Json.Kooboo
         /// <param name="o"></param>
         /// <param name="stream"></param>
         /// <param name="option"></param>
+        /// <param name="encoding"></param>
         /// <typeparam name="T"></typeparam>
-        public static void Pack<T>(T o, Stream stream, JsonSerializerOption option = null)
+        public static void Pack<T>(T o, Stream stream, JsonSerializerOption option = null, Encoding encoding = null)
         {
             if (o is null)
                 return;
 
-            var bytes = SerializeToBytes(o, option);
+            var bytes = SerializeToBytes(o, option, encoding);
 
             stream.Write(bytes, 0, bytes.Length);
         }
@@ -51,13 +55,14 @@ namespace Cosmos.Serialization.Json.Kooboo
         /// </summary>
         /// <param name="stream"></param>
         /// <param name="option"></param>
+        /// <param name="encoding"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T Unpack<T>(Stream stream, JsonDeserializeOption option = null)
+        public static T Unpack<T>(Stream stream, JsonDeserializeOption option = null, Encoding encoding = null)
         {
             return stream is null
                 ? default
-                : Deserialize<T>(KoobooManager.DefaultEncoding.GetString(stream.CastToBytes()), option);
+                : Deserialize<T>(encoding.SafeEncodingValue(KoobooManager.DefaultEncoding).GetString(stream.CastToBytes()), option);
         }
 
         /// <summary>
@@ -66,12 +71,13 @@ namespace Cosmos.Serialization.Json.Kooboo
         /// <param name="stream"></param>
         /// <param name="type"></param>
         /// <param name="option"></param>
+        /// <param name="encoding"></param>
         /// <returns></returns>
-        public static object Unpack(Stream stream, Type type, JsonDeserializeOption option = null)
+        public static object Unpack(Stream stream, Type type, JsonDeserializeOption option = null, Encoding encoding = null)
         {
             return stream is null
                 ? default
-                : Deserialize(KoobooManager.DefaultEncoding.GetString(stream.CastToBytes()), type, option);
+                : Deserialize(encoding.SafeEncodingValue(KoobooManager.DefaultEncoding).GetString(stream.CastToBytes()), type, option);
         }
     }
 }

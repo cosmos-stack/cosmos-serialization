@@ -7,7 +7,7 @@ namespace Cosmos.Serialization.Json.MicrosoftJson
     /// </summary>
     public static class MicrosoftJsonManager
     {
-        private static JsonSerializerOptions _options = new JsonSerializerOptions();
+        private static JsonSerializerOptions _options = new();
 
         /// <summary>
         /// Gets or sets default json serializer options

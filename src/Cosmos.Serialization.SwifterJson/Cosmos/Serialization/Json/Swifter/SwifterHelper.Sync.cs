@@ -1,5 +1,7 @@
 ﻿using System;
 using System.IO;
+using System.Text;
+using Cosmos.Optionals;
 using Swifter.Json;
 
 namespace Cosmos.Serialization.Json.Swifter
@@ -28,11 +30,12 @@ namespace Cosmos.Serialization.Json.Swifter
         /// </summary>
         /// <param name="o"></param>
         /// <param name="options"></param>
+        /// <param name="encoding"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static byte[] SerializeToBytes<T>(T o, JsonFormatterOptions? options = null)
+        public static byte[] SerializeToBytes<T>(T o, JsonFormatterOptions? options = null, Encoding encoding = null)
         {
-            return SwifterJsonManager.DefaultEncoding.GetBytes(Serialize(o, options));
+            return encoding.SafeEncodingValue(SwifterJsonManager.DefaultEncoding).GetBytes(Serialize(o, options));
         }
 
         /// <summary>
@@ -80,13 +83,14 @@ namespace Cosmos.Serialization.Json.Swifter
         /// </summary>
         /// <param name="data"></param>
         /// <param name="options"></param>
+        /// <param name="encoding"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T DeserializeFromBytes<T>(byte[] data, JsonFormatterOptions? options = null)
+        public static T DeserializeFromBytes<T>(byte[] data, JsonFormatterOptions? options = null, Encoding encoding = null)
         {
             return data is null || data.Length is 0
                 ? default
-                : Deserialize<T>(SwifterJsonManager.DefaultEncoding.GetString(data), TouchDeserializeOptions(options));
+                : Deserialize<T>(encoding.SafeEncodingValue(SwifterJsonManager.DefaultEncoding).GetString(data), TouchDeserializeOptions(options));
         }
 
         /// <summary>
@@ -95,12 +99,13 @@ namespace Cosmos.Serialization.Json.Swifter
         /// <param name="data"></param>
         /// <param name="type"></param>
         /// <param name="options"></param>
+        /// <param name="encoding"></param>
         /// <returns></returns>
-        public static object DeserializeFromBytes(byte[] data, Type type, JsonFormatterOptions? options = null)
+        public static object DeserializeFromBytes(byte[] data, Type type, JsonFormatterOptions? options = null, Encoding encoding = null)
         {
             return data is null || data.Length is 0
                 ? null
-                : Deserialize(SwifterJsonManager.DefaultEncoding.GetString(data), type, TouchDeserializeOptions(options));
+                : Deserialize(encoding.SafeEncodingValue(SwifterJsonManager.DefaultEncoding).GetString(data), type, TouchDeserializeOptions(options));
         }
 
         /// <summary>

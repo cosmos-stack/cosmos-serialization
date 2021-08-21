@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Text;
+using Cosmos.Optionals;
 using Newtonsoft.Json;
 using NodaTime;
 using NodaTime.Serialization.JsonNet;
@@ -26,12 +28,13 @@ namespace Cosmos.Serialization.Json.Newtonsoft
         /// <param name="o"></param>
         /// <param name="settings"></param>
         /// <param name="withNodaTime"></param>
+        /// <param name="encoding"></param>
         /// <returns></returns>
-        public static byte[] SerializeToBytes(object o, JsonSerializerSettings settings = null, bool withNodaTime = false)
+        public static byte[] SerializeToBytes(object o, JsonSerializerSettings settings = null, bool withNodaTime = false, Encoding encoding = null)
         {
             return o is null
                 ? new byte[0]
-                : JsonManager.DefaultEncoding.GetBytes(Serialize(o, settings, withNodaTime));
+                : encoding.SafeEncodingValue(JsonManager.DefaultEncoding).GetBytes(Serialize(o, settings, withNodaTime));
         }
 
         /// <summary>
@@ -56,11 +59,11 @@ namespace Cosmos.Serialization.Json.Newtonsoft
         /// <param name="withNodaTime"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static T DeserializeFromBytes<T>(byte[] data, JsonSerializerSettings settings = null, bool withNodaTime = false)
+        public static T DeserializeFromBytes<T>(byte[] data, JsonSerializerSettings settings = null, bool withNodaTime = false, Encoding encoding = null)
         {
             return data is null || data.Length is 0
                 ? default
-                : Deserialize<T>(JsonManager.DefaultEncoding.GetString(data), settings, withNodaTime);
+                : Deserialize<T>(encoding.SafeEncodingValue(JsonManager.DefaultEncoding).GetString(data), settings, withNodaTime);
         }
 
         /// <summary>
@@ -71,11 +74,11 @@ namespace Cosmos.Serialization.Json.Newtonsoft
         /// <param name="settings"></param>
         /// <param name="withNodaTime"></param>
         /// <returns></returns>
-        public static object DeserializeFromBytes(byte[] data, Type type, JsonSerializerSettings settings = null, bool withNodaTime = false)
+        public static object DeserializeFromBytes(byte[] data, Type type, JsonSerializerSettings settings = null, bool withNodaTime = false, Encoding encoding = null)
         {
             return data is null || data.Length is 0
                 ? default
-                : Deserialize(JsonManager.DefaultEncoding.GetString(data), type, settings, withNodaTime);
+                : Deserialize(encoding.SafeEncodingValue(JsonManager.DefaultEncoding).GetString(data), type, settings, withNodaTime);
         }
 
         /// <summary>

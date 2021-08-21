@@ -1,6 +1,8 @@
 using System.Text;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
+using S = YamlDotNet.Serialization.ISerializer;
+using D = YamlDotNet.Serialization.IDeserializer;
 
 namespace Cosmos.Serialization.Yaml.YamlDotNet
 {
@@ -40,18 +42,12 @@ namespace Cosmos.Serialization.Yaml.YamlDotNet
         /// <summary>
         /// Gets default YamlDotNet serializer
         /// </summary>
-        public static global::YamlDotNet.Serialization.ISerializer DefaultSerializer
-        {
-            get => _serializerBuilder.Build();
-        }
+        public static S DefaultSerializer => _serializerBuilder.Build();
 
         /// <summary>
         /// Gets default YamlDotNet deserializer
         /// </summary>
-        public static IDeserializer DefaultDeserializer
-        {
-            get => _deserializerBuilder.Build();
-        }
+        public static D DefaultDeserializer => _deserializerBuilder.Build();
 
         /// <summary>
         /// Gets or sets default encoding

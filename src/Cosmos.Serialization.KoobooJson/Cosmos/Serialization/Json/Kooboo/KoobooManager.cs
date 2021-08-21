@@ -10,9 +10,9 @@ namespace Cosmos.Serialization.Json.Kooboo
     {
         private static Encoding _encoding = Encoding.UTF8;
 
-        private static JsonSerializerOption _option1 = new JsonSerializerOption();
+        private static JsonSerializerOption _option1 = new();
 
-        private static JsonDeserializeOption _option2 = new JsonDeserializeOption();
+        private static JsonDeserializeOption _option2 = new();
 
         /// <summary>
         /// Gets or sets default encoding
