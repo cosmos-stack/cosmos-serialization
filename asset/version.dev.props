@@ -1,9 +1,9 @@
 <Project>
 
     <PropertyGroup>
-        <Standard-PkgVersion>0.1.9.9</Standard-PkgVersion>
-        <Prowess-PkgVersion>0.1.9.9</Prowess-PkgVersion>
-        <DynamicEnums-PkgVersion>0.1.1.1</DynamicEnums-PkgVersion>
+        <Standard-PkgVersion>0.2.0</Standard-PkgVersion>
+        <Prowess-PkgVersion>0.2.0</Prowess-PkgVersion>
+        <DynamicEnums-PkgVersion>0.1.1.2</DynamicEnums-PkgVersion>
     </PropertyGroup>
 
 </Project>
