@@ -1,12 +1,19 @@
 <Project>
-	<PropertyGroup Label="Package">
-		<Product>Cosmos.Serialization</Product>
-		<Authors>AlexLEWIS;Cosmos</Authors>
-		<RepositoryUrl>https://github.com/cosmos-loops/cosmos-serialization</RepositoryUrl>
-		<RepositoryType>git</RepositoryType>
-		<PackageProjectUrl>https://github.com/cosmos-loops/cosmos-serialization</PackageProjectUrl>
-		<PackageIcon>icon.png</PackageIcon>
-		<PackageLicenseFile>LICENSE</PackageLicenseFile>
-		<PackageTags>Cosmos;Cosmosloops;Serialization</PackageTags>
-	</PropertyGroup>
+
+    <PropertyGroup Label="Package">
+        <Product>CosmosStack.Serialization</Product>
+        <Authors>AlexLEWIS;CosmosStack</Authors>
+        <RepositoryUrl>https://github.com/cosmos-stack/cosmos-serialization</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageProjectUrl>https://github.com/cosmos-stack/cosmos-serialization</PackageProjectUrl>
+        <PackageIcon>icon.png</PackageIcon>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
+        <PackageTags>CosmosStack;Serialization</PackageTags>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    </PropertyGroup>
+
 </Project>
