@@ -1,9 +1,0 @@
-<Project>
-
-    <PropertyGroup>
-        <AssemblyName>Cosmos.Serialization.Nett</AssemblyName>
-        <PackageId>Cosmos.Serialization.Nett</PackageId>
-        <Description>Nett TOML serializer extension for Cosmos base library</Description>
-    </PropertyGroup>
-
-</Project>
