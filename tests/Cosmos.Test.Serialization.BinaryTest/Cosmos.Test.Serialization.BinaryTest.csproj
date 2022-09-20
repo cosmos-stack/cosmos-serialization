@@ -1,6 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
+    <PropertyGroup>
+      <RootNamespace>CosmosStack.Test.Serialization.BinaryTest</RootNamespace>
+    </PropertyGroup>
+
     <Import Project="..\..\common.tests.props" />
+    
+    <PropertyGroup>
+        <RootNamespace>Cosmos.Test.Serialization.BinaryTest</RootNamespace>
+    </PropertyGroup>
 
     <ItemGroup>
         <ProjectReference Include="..\..\src\Cosmos.Serialization.Binary\Cosmos.Serialization.Binary.csproj" />

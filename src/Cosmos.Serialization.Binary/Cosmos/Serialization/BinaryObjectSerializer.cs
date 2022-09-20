@@ -1,85 +1,82 @@
-using System;
-using System.IO;
-using System.Threading.Tasks;
 using Cosmos.Serialization.Binary;
 
-namespace Cosmos.Serialization
+namespace Cosmos.Serialization;
+
+/// <summary>
+/// Binary object serializer
+/// </summary>
+[Obsolete("将在 Cosmos-Stack 0.4.7.5 中进行重构")]
+public class BinaryObjectSerializer : IObjectSerializer<byte[]>
 {
-    /// <summary>
-    /// Binary object serializer
-    /// </summary>
-    public class BinaryObjectSerializer : IObjectSerializer<byte[]>
+    /// <inheritdoc />
+    public byte[] Serialize<T>(T o)
     {
-        /// <inheritdoc />
-        public byte[] Serialize<T>(T o)
-        {
-            return BinaryHelper.Serialize(o);
-        }
+        return BinaryHelper.ToBytes(o);
+    }
 
-        /// <inheritdoc />
-        public Stream SerializeToStream<T>(T o)
-        {
-            return BinaryHelper.Pack(o);
-        }
+    /// <inheritdoc />
+    public Stream SerializeToStream<T>(T o)
+    {
+        return BinaryHelper.ToStream(o);
+    }
 
-        /// <inheritdoc />
-        public T Deserialize<T>(byte[] data)
-        {
-            return BinaryHelper.Deserialize<T>(data);
-        }
+    /// <inheritdoc />
+    public T Deserialize<T>(byte[] data)
+    {
+        return BinaryHelper.FromBytes<T>(data);
+    }
 
-        /// <inheritdoc />
-        public object Deserialize(byte[] data, Type type)
-        {
-            return BinaryHelper.Deserialize(data);
-        }
+    /// <inheritdoc />
+    public object Deserialize(byte[] data, Type type)
+    {
+        return BinaryHelper.FromBytes(data);
+    }
 
-        /// <inheritdoc />
-        public T DeserializeFromStream<T>(Stream stream)
-        {
-            return BinaryHelper.Unpack<T>(stream);
-        }
+    /// <inheritdoc />
+    public Task<byte[]> SerializeAsync<T>(T o)
+    {
+        return Task.FromResult(BinaryHelper.ToBytes(o));
+    }
 
-        /// <inheritdoc />
-        public object DeserializeFromStream(Stream stream, Type type)
-        {
-            return BinaryHelper.Unpack(stream);
-        }
+    /// <inheritdoc />
+    public Task<T> DeserializeAsync<T>(byte[] data)
+    {
+        return Task.FromResult(BinaryHelper.FromBytes<T>(data));
+    }
 
-        /// <inheritdoc />
-        public Task<byte[]> SerializeAsync<T>(T o)
-        {
-            return BinaryHelper.SerializeAsync(o);
-        }
+    /// <inheritdoc />
+    public Task<object> DeserializeAsync(byte[] data, Type type)
+    {
+        return Task.FromResult(BinaryHelper.FromBytes(data));
+    }
 
-        /// <inheritdoc />
-        public Task<Stream> SerializeToStreamAsync<T>(T o)
-        {
-            return BinaryHelper.PackAsync(o);
-        }
+    /// <inheritdoc />
+    public T DeserializeFromStream<T>(Stream stream)
+    {
+        return BinaryHelper.FromStream<T>(stream);
+    }
 
-        /// <inheritdoc />
-        public Task<T> DeserializeAsync<T>(byte[] data)
-        {
-            return BinaryHelper.DeserializeAsync<T>(data);
-        }
+    /// <inheritdoc />
+    public object DeserializeFromStream(Stream stream, Type type)
+    {
+        return BinaryHelper.FromStream(stream);
+    }
 
-        /// <inheritdoc />
-        public Task<object> DeserializeAsync(byte[] data, Type type)
-        {
-            return BinaryHelper.DeserializeAsync(data);
-        }
+    /// <inheritdoc />
+    public async Task<Stream> SerializeToStreamAsync<T>(T o)
+    {
+        return BinaryHelper.ToStream(o);
+    }
 
-        /// <inheritdoc />
-        public Task<T> DeserializeFromStreamAsync<T>(Stream stream)
-        {
-            return BinaryHelper.UnpackAsync<T>(stream);
-        }
+    /// <inheritdoc />
+    public Task<T> DeserializeFromStreamAsync<T>(Stream stream)
+    {
+        return Task.FromResult(BinaryHelper.FromStream<T>(stream));
+    }
 
-        /// <inheritdoc />
-        public Task<object> DeserializeFromStreamAsync(Stream stream, Type type)
-        {
-            return BinaryHelper.UnpackAsync(stream);
-        }
+    /// <inheritdoc />
+    public Task<object> DeserializeFromStreamAsync(Stream stream, Type type)
+    {
+        return Task.FromResult(BinaryHelper.FromStream(stream));
     }
 }
