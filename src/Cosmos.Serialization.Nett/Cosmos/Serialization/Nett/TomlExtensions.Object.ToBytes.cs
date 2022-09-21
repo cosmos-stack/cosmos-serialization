@@ -6,4 +6,9 @@ public static partial class TomlExtensions
     {
         return TomlHelper.ToBytes(value, settings);
     }
+
+    public static Task<byte[]> ToTomlBytesAsync<TValue>(this TValue value, TomlSettings settings = default, CancellationToken cancellationToken = default)
+    {
+        return TomlHelper.ToBytesAsync(value, settings, cancellationToken);
+    }
 }

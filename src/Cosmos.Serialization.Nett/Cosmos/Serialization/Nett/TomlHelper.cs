@@ -53,7 +53,7 @@ public static partial class TomlHelper
 
     private static Encoding ToEncoding(this Encoding encoding)
     {
-        return encoding ??= Encoding.UTF8;
+        return encoding ??= Man.DefaultEncoding;
     }
 
     private static Task<T> Async<T>(Func<T> func, CancellationToken cancellationToken = default)
