@@ -5,10 +5,18 @@
       <Platforms>AnyCPU</Platforms>
     </PropertyGroup>
 
-    <Import Project="project.props" />
+    <PropertyGroup>
+        <AssemblyName>Cosmos.Serialization.SharpYaml</AssemblyName>
+        <PackageId>CosmosStack.Serialization.SharpYaml</PackageId>
+        <Description>SharpYaml serializer extension for Cosmos base library</Description>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Compile Include="Cosmos\Serialization\SharpYaml\SharpYamlExtensions.Stream.FromStream.cs" />
+    </ItemGroup>
 
     <Import Project="..\..\common.props" />
 
-    <Import Project="project.dependency.props" />
+    <Import Project="dependency.props" />
 
 </Project>

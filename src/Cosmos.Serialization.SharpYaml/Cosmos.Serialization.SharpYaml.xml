@@ -45,7 +45,7 @@
         <member name="M:Cosmos.Serialization.SharpYamlSerializer.DeserializeFromStreamAsync(System.IO.Stream,System.Type)">
             <inheritdoc />
         </member>
-        <member name="T:Cosmos.Serialization.Yaml.Extensions">
+        <member name="T:Cosmos.Serialization.Yaml.SharpYaml.Extensions">
             <summary>
             SharpYaml extensions
             </summary>
@@ -62,7 +62,7 @@
             SharpYaml extensions
             </summary>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.Extensions.ToSharpYamlBytes``1(``0)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.Extensions.ToSharpYamlBytes``1(``0)">
             <summary>
             To SharpYaml bytes
             </summary>
@@ -70,7 +70,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.Extensions.ToSharpYamlBytesAsync``1(``0)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.Extensions.ToSharpYamlBytesAsync``1(``0)">
             <summary>
             To SharpYaml bytes async
             </summary>
@@ -78,23 +78,23 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.Extensions.FromSharpYamlBytes``1(System.Byte[])">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.Extensions.FromSharpYamlBytes``1(System.Byte[])">
             <summary>
-            From SharpYaml bytes 
+            From SharpYaml bytes
             </summary>
             <param name="data"></param>
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.Extensions.FromSharpYamlBytes(System.Byte[],System.Type)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.Extensions.FromSharpYamlBytes(System.Byte[],System.Type)">
             <summary>
-            From SharpYaml bytes 
+            From SharpYaml bytes
             </summary>
             <param name="data"></param>
             <param name="type"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.Extensions.FromSharpYamlBytesAsync``1(System.Byte[])">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.Extensions.FromSharpYamlBytesAsync``1(System.Byte[])">
             <summary>
             From SharpYaml bytes async
             </summary>
@@ -102,7 +102,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.Extensions.FromSharpYamlBytesAsync(System.Byte[],System.Type)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.Extensions.FromSharpYamlBytesAsync(System.Byte[],System.Type)">
             <summary>
             From SharpYaml bytes async
             </summary>
@@ -110,7 +110,7 @@
             <param name="type"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.Extensions.ToSharpYaml``1(``0)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.Extensions.ToSharpYaml``1(``0)">
             <summary>
             To Yaml
             </summary>
@@ -118,7 +118,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.Extensions.ToSharpYamlAsync``1(``0)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.Extensions.ToSharpYamlAsync``1(``0)">
             <summary>
             To Yaml async
             </summary>
@@ -126,7 +126,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.Extensions.SharpYamlPack``1(``0)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.Extensions.SharpYamlPack``1(``0)">
             <summary>
             Yaml pack
             </summary>
@@ -134,7 +134,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.Extensions.SharpYamlPackTo``1(``0,System.IO.Stream)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.Extensions.SharpYamlPackTo``1(``0,System.IO.Stream)">
             <summary>
             Pack to
             </summary>
@@ -142,7 +142,7 @@
             <param name="stream"></param>
             <typeparam name="T"></typeparam>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.Extensions.SharpYamlPackTo(System.Object,System.Type,System.IO.Stream)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.Extensions.SharpYamlPackTo(System.Object,System.Type,System.IO.Stream)">
             <summary>
             Pack to
             </summary>
@@ -150,7 +150,7 @@
             <param name="type"></param>
             <param name="stream"></param>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.Extensions.SharpYamlPackBy``1(System.IO.Stream,``0)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.Extensions.SharpYamlPackBy``1(System.IO.Stream,``0)">
             <summary>
             Pack by
             </summary>
@@ -158,7 +158,7 @@
             <param name="t"></param>
             <typeparam name="T"></typeparam>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.Extensions.SharpYamlPackBy(System.IO.Stream,System.Object,System.Type)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.Extensions.SharpYamlPackBy(System.IO.Stream,System.Object,System.Type)">
             <summary>
             Pack by
             </summary>
@@ -166,7 +166,7 @@
             <param name="obj"></param>
             <param name="type"></param>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.Extensions.SharpYamlPackAsync``1(``0)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.Extensions.SharpYamlPackAsync``1(``0)">
             <summary>
             Yaml pack to
             </summary>
@@ -174,7 +174,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.Extensions.SharpYamlPackToAsync``1(``0,System.IO.Stream)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.Extensions.SharpYamlPackToAsync``1(``0,System.IO.Stream)">
             <summary>
             Pack to async
             </summary>
@@ -183,7 +183,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.Extensions.SharpYamlPackToAsync(System.Object,System.Type,System.IO.Stream)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.Extensions.SharpYamlPackToAsync(System.Object,System.Type,System.IO.Stream)">
             <summary>
             Pack to async
             </summary>
@@ -192,7 +192,7 @@
             <param name="stream"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.Extensions.SharpYamlPackByAsync``1(System.IO.Stream,``0)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.Extensions.SharpYamlPackByAsync``1(System.IO.Stream,``0)">
             <summary>
             Pack by
             </summary>
@@ -200,7 +200,7 @@
             <param name="t"></param>
             <typeparam name="T"></typeparam>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.Extensions.SharpYamlPackByAsync(System.IO.Stream,System.Object,System.Type)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.Extensions.SharpYamlPackByAsync(System.IO.Stream,System.Object,System.Type)">
             <summary>
             Pack by
             </summary>
@@ -208,7 +208,7 @@
             <param name="obj"></param>
             <param name="type"></param>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.Extensions.SharpYamlUnpack``1(System.IO.Stream)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.Extensions.SharpYamlUnpack``1(System.IO.Stream)">
             <summary>
             Unpack
             </summary>
@@ -216,7 +216,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.Extensions.SharpYamlUnpack(System.IO.Stream,System.Type)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.Extensions.SharpYamlUnpack(System.IO.Stream,System.Type)">
             <summary>
             Unpack
             </summary>
@@ -224,7 +224,7 @@
             <param name="type"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.Extensions.SharpYamlUnpackAsync``1(System.IO.Stream)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.Extensions.SharpYamlUnpackAsync``1(System.IO.Stream)">
             <summary>
             Unpack async
             </summary>
@@ -232,7 +232,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.Extensions.SharpYamlUnpackAsync(System.IO.Stream,System.Type)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.Extensions.SharpYamlUnpackAsync(System.IO.Stream,System.Type)">
             <summary>
             Unpack async
             </summary>
@@ -240,7 +240,7 @@
             <param name="type"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.Extensions.ToSharpYamlStream``1(``0)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.Extensions.ToSharpYamlStream``1(``0)">
             <summary>
             To stream
             </summary>
@@ -248,7 +248,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.Extensions.ToSharpYamlStream(System.Object,System.Type)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.Extensions.ToSharpYamlStream(System.Object,System.Type)">
             <summary>
             To stream
             </summary>
@@ -256,7 +256,7 @@
             <param name="type"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.Extensions.ToSharpYamlStreamAsync``1(``0)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.Extensions.ToSharpYamlStreamAsync``1(``0)">
             <summary>
             To stream
             </summary>
@@ -264,7 +264,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.Extensions.ToSharpYamlStreamAsync(System.Object,System.Type)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.Extensions.ToSharpYamlStreamAsync(System.Object,System.Type)">
             <summary>
             To stream
             </summary>
@@ -272,7 +272,7 @@
             <param name="type"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.Extensions.FromSharpYaml``1(System.String)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.Extensions.FromSharpYaml``1(System.String)">
             <summary>
             From Yaml
             </summary>
@@ -280,7 +280,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.Extensions.FromSharpYaml(System.String,System.Type)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.Extensions.FromSharpYaml(System.String,System.Type)">
             <summary>
             From Yaml
             </summary>
@@ -288,7 +288,7 @@
             <param name="type"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.Extensions.FromSharpYamlAsync``1(System.String)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.Extensions.FromSharpYamlAsync``1(System.String)">
             <summary>
             From Yaml async
             </summary>
@@ -296,7 +296,7 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Serialization.Yaml.Extensions.FromSharpYamlAsync(System.String,System.Type)">
+        <member name="M:Cosmos.Serialization.Yaml.SharpYaml.Extensions.FromSharpYamlAsync(System.String,System.Type)">
             <summary>
             From Yaml async
             </summary>
@@ -418,6 +418,7 @@
             Pack async
             </summary>
             <param name="o"></param>
+            <param name="serializer"></param>
             <param name="encoding"></param>
             <typeparam name="T"></typeparam>
             <returns></returns>
@@ -428,6 +429,7 @@
             </summary>
             <param name="o"></param>
             <param name="type"></param>
+            <param name="serializer"></param>
             <param name="encoding"></param>
             <returns></returns>
         </member>
@@ -437,6 +439,7 @@
             </summary>
             <param name="o"></param>
             <param name="stream"></param>
+            <param name="serializer"></param>
             <param name="encoding"></param>
             <typeparam name="T"></typeparam>
         </member>
@@ -447,6 +450,7 @@
             <param name="o"></param>
             <param name="stream"></param>
             <param name="type"></param>
+            <param name="serializer"></param>
             <param name="encoding"></param>
         </member>
         <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.UnpackAsync``1(System.IO.Stream,SharpYaml.Serialization.Serializer,System.Text.Encoding)">
@@ -454,6 +458,7 @@
             Unpack async
             </summary>
             <param name="stream"></param>
+            <param name="serializer"></param>
             <param name="encoding"></param>
             <typeparam name="T"></typeparam>
             <returns></returns>
@@ -464,6 +469,7 @@
             </summary>
             <param name="stream"></param>
             <param name="type"></param>
+            <param name="serializer"></param>
             <param name="encoding"></param>
             <returns></returns>
         </member>
@@ -567,6 +573,7 @@
             Pack
             </summary>
             <param name="o"></param>
+            <param name="serializer"></param>
             <param name="encoding"></param>
             <typeparam name="T"></typeparam>
             <returns></returns>
@@ -577,6 +584,7 @@
             </summary>
             <param name="o"></param>
             <param name="type"></param>
+            <param name="serializer"></param>
             <param name="encoding"></param>
             <returns></returns>
         </member>
@@ -586,6 +594,7 @@
             </summary>
             <param name="o"></param>
             <param name="stream"></param>
+            <param name="serializer"></param>
             <param name="encoding"></param>
             <typeparam name="T"></typeparam>
         </member>
@@ -596,6 +605,7 @@
             <param name="o"></param>
             <param name="stream"></param>
             <param name="type"></param>
+            <param name="serializer"></param>
             <param name="encoding"></param>
         </member>
         <member name="M:Cosmos.Serialization.Yaml.SharpYaml.SharpYamlHelper.Unpack``1(System.IO.Stream,SharpYaml.Serialization.Serializer,System.Text.Encoding)">
@@ -603,6 +613,7 @@
             Unpack
             </summary>
             <param name="stream"></param>
+            <param name="serializer"></param>
             <param name="encoding"></param>
             <typeparam name="T"></typeparam>
             <returns></returns>
@@ -613,6 +624,7 @@
             </summary>
             <param name="stream"></param>
             <param name="type"></param>
+            <param name="serializer"></param>
             <param name="encoding"></param>
             <returns></returns>
         </member>
