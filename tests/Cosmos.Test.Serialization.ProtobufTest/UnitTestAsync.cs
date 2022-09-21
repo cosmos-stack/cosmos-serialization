@@ -4,91 +4,98 @@ using System.Threading.Tasks;
 using Cosmos.Serialization.ProtoBuf;
 using Xunit;
 
-namespace Cosmos.Test.Serialization.ProtobufTest {
-    public class UnitTestAsync {
-        [Fact]
-        public async Task BytesTest() {
-            var model = CreateNiceModel();
-            var bytes = await model.ToProtoBytesAsync();
-            var backs = await bytes.FromProtoBytesAsync<NiceModel>();
+namespace Cosmos.Test.Serialization.ProtobufTest;
 
-            Assert.Equal(
-                Tuple.Create(model.Id, model.Name, model.NiceType, model.Count, model.CreatedTime, model.IsValid),
-                Tuple.Create(backs.Id, backs.Name, backs.NiceType, backs.Count, backs.CreatedTime, backs.IsValid));
-        }
+public class UnitTestAsync
+{
+    [Fact]
+    public async Task BytesTest()
+    {
+        var model = CreateNiceModel();
+        var bytes = await model.ToProtobufBytesAsync();
+        var backs = await bytes.FromProtobufBytesAsync<NiceModel>();
 
-        [Fact]
-        public async Task NonGenericBytesTest() {
-            var model = CreateNiceModel();
-            var bytes = await model.ToProtoBytesAsync();
-            var backs = (NiceModel) await bytes.FromProtoBytesAsync(typeof(NiceModel));
+        Assert.Equal(
+            Tuple.Create(model.Id, model.Name, model.NiceType, model.Count, model.CreatedTime, model.IsValid),
+            Tuple.Create(backs.Id, backs.Name, backs.NiceType, backs.Count, backs.CreatedTime, backs.IsValid));
+    }
 
-            Assert.Equal(
-                Tuple.Create(model.Id, model.Name, model.NiceType, model.Count, model.CreatedTime, model.IsValid),
-                Tuple.Create(backs.Id, backs.Name, backs.NiceType, backs.Count, backs.CreatedTime, backs.IsValid));
-        }
+    [Fact]
+    public async Task NonGenericBytesTest()
+    {
+        var model = CreateNiceModel();
+        var bytes = await model.ToProtobufBytesAsync();
+        var backs = (NiceModel)await bytes.FromProtobufBytesAsync(typeof(NiceModel));
 
-        [Fact]
-        public async Task StreamTest() {
-            var model = CreateNiceModel();
-            var stream1 = await model.ToStreamAsync();
-            var stream2 = new MemoryStream();
-            await model.ProtoPackToAsync(stream2);
-            var stream3 = new MemoryStream();
-            await stream3.ProtoPackByAsync(model);
+        Assert.Equal(
+            Tuple.Create(model.Id, model.Name, model.NiceType, model.Count, model.CreatedTime, model.IsValid),
+            Tuple.Create(backs.Id, backs.Name, backs.NiceType, backs.Count, backs.CreatedTime, backs.IsValid));
+    }
 
-            var back1 = await stream1.ProtoUnpackAsync<NiceModel>();
-            var back2 = await stream2.ProtoUnpackAsync<NiceModel>();
-            var back3 = await stream3.ProtoUnpackAsync<NiceModel>();
+    [Fact]
+    public async Task StreamTest()
+    {
+        var model = CreateNiceModel();
+        var stream1 = await model.ToProtobufStreamAsync();
+        var stream2 = new MemoryStream();
+        await model.ProtobufPackToAsync(stream2);
+        var stream3 = new MemoryStream();
+        await stream3.ProtobufPackByAsync(model);
 
-            Assert.Equal(
-                Tuple.Create(model.Id, model.Name, model.NiceType, model.Count, model.CreatedTime, model.IsValid),
-                Tuple.Create(back1.Id, back1.Name, back1.NiceType, back1.Count, back1.CreatedTime, back1.IsValid));
+        var back1 = await stream1.FromProtobufStreamAsync<NiceModel>();
+        var back2 = await stream2.FromProtobufStreamAsync<NiceModel>();
+        var back3 = await stream3.FromProtobufStreamAsync<NiceModel>();
 
-            Assert.Equal(
-                Tuple.Create(model.Id, model.Name, model.NiceType, model.Count, model.CreatedTime, model.IsValid),
-                Tuple.Create(back2.Id, back2.Name, back2.NiceType, back2.Count, back2.CreatedTime, back2.IsValid));
+        Assert.Equal(
+            Tuple.Create(model.Id, model.Name, model.NiceType, model.Count, model.CreatedTime, model.IsValid),
+            Tuple.Create(back1.Id, back1.Name, back1.NiceType, back1.Count, back1.CreatedTime, back1.IsValid));
 
-            Assert.Equal(
-                Tuple.Create(model.Id, model.Name, model.NiceType, model.Count, model.CreatedTime, model.IsValid),
-                Tuple.Create(back3.Id, back3.Name, back3.NiceType, back3.Count, back3.CreatedTime, back3.IsValid));
-        }
+        Assert.Equal(
+            Tuple.Create(model.Id, model.Name, model.NiceType, model.Count, model.CreatedTime, model.IsValid),
+            Tuple.Create(back2.Id, back2.Name, back2.NiceType, back2.Count, back2.CreatedTime, back2.IsValid));
 
-        [Fact]
-        public async Task NonGenericStreamTest() {
-            var model = CreateNiceModel();
-            var stream1 = await model.ToStreamAsync();
-            var stream2 = new MemoryStream();
-            await model.ProtoPackToAsync(stream2);
-            var stream3 = new MemoryStream();
-            await stream3.ProtoPackByAsync(model);
+        Assert.Equal(
+            Tuple.Create(model.Id, model.Name, model.NiceType, model.Count, model.CreatedTime, model.IsValid),
+            Tuple.Create(back3.Id, back3.Name, back3.NiceType, back3.Count, back3.CreatedTime, back3.IsValid));
+    }
 
-            var back1 = (NiceModel) await stream1.ProtoUnpackAsync(typeof(NiceModel));
-            var back2 = (NiceModel) await stream2.ProtoUnpackAsync(typeof(NiceModel));
-            var back3 = (NiceModel) await stream3.ProtoUnpackAsync(typeof(NiceModel));
+    [Fact]
+    public async Task NonGenericStreamTest()
+    {
+        var model = CreateNiceModel();
+        var stream1 = await model.ToProtobufStreamAsync();
+        var stream2 = new MemoryStream();
+        await model.ProtobufPackToAsync(stream2);
+        var stream3 = new MemoryStream();
+        await stream3.ProtobufPackByAsync(model);
 
-            Assert.Equal(
-                Tuple.Create(model.Id, model.Name, model.NiceType, model.Count, model.CreatedTime, model.IsValid),
-                Tuple.Create(back1.Id, back1.Name, back1.NiceType, back1.Count, back1.CreatedTime, back1.IsValid));
+        var back1 = (NiceModel)await stream1.FromProtobufStreamAsync(typeof(NiceModel));
+        var back2 = (NiceModel)await stream2.FromProtobufStreamAsync(typeof(NiceModel));
+        var back3 = (NiceModel)await stream3.FromProtobufStreamAsync(typeof(NiceModel));
 
-            Assert.Equal(
-                Tuple.Create(model.Id, model.Name, model.NiceType, model.Count, model.CreatedTime, model.IsValid),
-                Tuple.Create(back2.Id, back2.Name, back2.NiceType, back2.Count, back2.CreatedTime, back2.IsValid));
+        Assert.Equal(
+            Tuple.Create(model.Id, model.Name, model.NiceType, model.Count, model.CreatedTime, model.IsValid),
+            Tuple.Create(back1.Id, back1.Name, back1.NiceType, back1.Count, back1.CreatedTime, back1.IsValid));
 
-            Assert.Equal(
-                Tuple.Create(model.Id, model.Name, model.NiceType, model.Count, model.CreatedTime, model.IsValid),
-                Tuple.Create(back3.Id, back3.Name, back3.NiceType, back3.Count, back3.CreatedTime, back3.IsValid));
-        }
+        Assert.Equal(
+            Tuple.Create(model.Id, model.Name, model.NiceType, model.Count, model.CreatedTime, model.IsValid),
+            Tuple.Create(back2.Id, back2.Name, back2.NiceType, back2.Count, back2.CreatedTime, back2.IsValid));
 
-        private static NiceModel CreateNiceModel() {
-            return new NiceModel {
-                Id = Guid.NewGuid(),
-                Name = "nice",
-                NiceType = NiceType.Yes,
-                Count = new Random().Next(0, 100),
-                CreatedTime = new DateTime(2019, 10, 1),
-                IsValid = true
-            };
-        }
+        Assert.Equal(
+            Tuple.Create(model.Id, model.Name, model.NiceType, model.Count, model.CreatedTime, model.IsValid),
+            Tuple.Create(back3.Id, back3.Name, back3.NiceType, back3.Count, back3.CreatedTime, back3.IsValid));
+    }
+
+    private static NiceModel CreateNiceModel()
+    {
+        return new NiceModel
+        {
+            Id = Guid.NewGuid(),
+            Name = "nice",
+            NiceType = NiceType.Yes,
+            Count = new Random().Next(0, 100),
+            CreatedTime = new DateTime(2019, 10, 1),
+            IsValid = true
+        };
     }
 }

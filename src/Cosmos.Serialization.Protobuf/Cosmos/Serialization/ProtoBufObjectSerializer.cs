@@ -1,7 +1,5 @@
-using System;
-using System.IO;
-using System.Threading.Tasks;
 using Cosmos.Serialization.ProtoBuf;
+using Cosmos.Serialization.Variousness;
 
 namespace Cosmos.Serialization
 {
@@ -13,73 +11,73 @@ namespace Cosmos.Serialization
         /// <inheritdoc />
         public byte[] Serialize<T>(T o)
         {
-            return ProtobufHelper.Serialize(o);
+            return ProtobufHelper.ToBytes(o);
         }
 
         /// <inheritdoc />
         public Stream SerializeToStream<T>(T o)
         {
-            return ProtobufHelper.Pack(o);
+            return ProtobufHelper.ToStream(o);
         }
 
         /// <inheritdoc />
         public T Deserialize<T>(byte[] data)
         {
-            return ProtobufHelper.Deserialize<T>(data);
+            return ProtobufHelper.FromBytes<T>(data);
         }
 
         /// <inheritdoc />
         public object Deserialize(byte[] data, Type type)
         {
-            return ProtobufHelper.Deserialize(data, type);
+            return ProtobufHelper.FromBytes(type, data);
         }
 
         /// <inheritdoc />
         public T DeserializeFromStream<T>(Stream stream)
         {
-            return ProtobufHelper.Unpack<T>(stream);
+            return ProtobufHelper.FromStream<T>(stream);
         }
 
         /// <inheritdoc />
         public object DeserializeFromStream(Stream stream, Type type)
         {
-            return ProtobufHelper.Unpack(stream, type);
+            return ProtobufHelper.FromStream(type, stream);
         }
 
         /// <inheritdoc />
         public Task<byte[]> SerializeAsync<T>(T o)
         {
-            return ProtobufHelper.SerializeAsync(o);
+            return ProtobufHelper.ToBytesAsync(o);
         }
 
         /// <inheritdoc />
         public Task<Stream> SerializeToStreamAsync<T>(T o)
         {
-            return ProtobufHelper.PackAsync(o);
+            return ProtobufHelper.ToStreamAsync(o);
         }
 
         /// <inheritdoc />
         public Task<T> DeserializeAsync<T>(byte[] data)
         {
-            return ProtobufHelper.DeserializeAsync<T>(data);
+            return ProtobufHelper.FromBytesAsync<T>(data);
         }
 
         /// <inheritdoc />
         public Task<object> DeserializeAsync(byte[] data, Type type)
         {
-            return ProtobufHelper.DeserializeAsync(data, type);
+            return ProtobufHelper.FromBytesAsync(type, data);
         }
 
         /// <inheritdoc />
         public Task<T> DeserializeFromStreamAsync<T>(Stream stream)
         {
-            return ProtobufHelper.UnpackAsync<T>(stream);
+            return ProtobufHelper.FromStreamAsync<T>(stream);
         }
 
         /// <inheritdoc />
         public Task<object> DeserializeFromStreamAsync(Stream stream, Type type)
         {
-            return ProtobufHelper.UnpackAsync(stream, type);
+            return ProtobufHelper.FromStreamAsync(type, stream);
         }
     }
 }

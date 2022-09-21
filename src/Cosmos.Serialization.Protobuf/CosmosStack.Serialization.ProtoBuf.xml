@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>Cosmos.Serialization.ProtoBuf</name>
+        <name>CosmosStack.Serialization.ProtoBuf</name>
     </assembly>
     <members>
         <member name="T:Cosmos.Serialization.ProtoBufObjectSerializer">

@@ -1,9 +1,0 @@
-<Project>
-
-    <PropertyGroup>
-        <AssemblyName>Cosmos.Serialization.ProtoBuf</AssemblyName>
-        <PackageId>Cosmos.Serialization.ProtoBuf</PackageId>
-        <Description>ProtoBuf serializer extension for Cosmos base library</Description>
-    </PropertyGroup>
-
-</Project>
