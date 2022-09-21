@@ -5,10 +5,18 @@
       <Platforms>AnyCPU</Platforms>
     </PropertyGroup>
 
-    <Import Project="project.props" />
+    <PropertyGroup>
+        <AssemblyName>Cosmos.Serialization.Xml</AssemblyName>
+        <PackageId>CosmosStack.Serialization.Xml</PackageId>
+        <Description>Xml serializer extension for Cosmos base library</Description>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Compile Include="Cosmos\Serialization\Xml\XmlExtensions.TextWriter.WriteXml.cs" />
+    </ItemGroup>
 
     <Import Project="..\..\common.props" />
 
-    <Import Project="project.dependency.props" />
+    <Import Project="dependency.props" />
 
 </Project>

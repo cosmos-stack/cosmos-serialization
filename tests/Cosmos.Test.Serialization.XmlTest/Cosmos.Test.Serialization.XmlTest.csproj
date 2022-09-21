@@ -1,5 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
+    <PropertyGroup>
+      <RootNamespace>Cosmos.Test.Serialization.XmlTest</RootNamespace>
+    </PropertyGroup>
+
     <Import Project="..\..\common.tests.props" />
 
     <ItemGroup>

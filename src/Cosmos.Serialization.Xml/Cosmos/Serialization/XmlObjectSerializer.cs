@@ -1,85 +1,81 @@
-﻿using System;
-using System.IO;
-using System.Threading.Tasks;
-using Cosmos.Serialization.Xml;
+﻿using Cosmos.Serialization.Xml;
 
-namespace Cosmos.Serialization
+namespace Cosmos.Serialization;
+
+/// <summary>
+/// Xml Serializer
+/// </summary>
+public class XmlObjectSerializer : IXmlSerializer
 {
-    /// <summary>
-    /// Xml Serializer
-    /// </summary>
-    public class XmlObjectSerializer : IXmlSerializer
+    /// <inheritdoc />
+    public string Serialize<T>(T o)
     {
-        /// <inheritdoc />
-        public string Serialize<T>(T o)
-        {
-            return XmlHelper.Serialize(o);
-        }
+        return XmlHelper.ToXml(o);
+    }
 
-        /// <inheritdoc />
-        public Stream SerializeToStream<T>(T o)
-        {
-            return XmlHelper.Pack(o);
-        }
+    /// <inheritdoc />
+    public Stream SerializeToStream<T>(T o)
+    {
+        return XmlHelper.ToStream(o);
+    }
 
-        /// <inheritdoc />
-        public T Deserialize<T>(string data)
-        {
-            return XmlHelper.Deserialize<T>(data);
-        }
+    /// <inheritdoc />
+    public T Deserialize<T>(string data)
+    {
+        return XmlHelper.FromXml<T>(data);
+    }
 
-        /// <inheritdoc />
-        public object Deserialize(string data, Type type)
-        {
-            return XmlHelper.Deserialize(data, type);
-        }
+    /// <inheritdoc />
+    public object Deserialize(string data, Type type)
+    {
+        return XmlHelper.FromXml(type, data);
+    }
 
-        /// <inheritdoc />
-        public T DeserializeFromStream<T>(Stream stream)
-        {
-            return XmlHelper.Unpack<T>(stream);
-        }
+    /// <inheritdoc />
+    public T DeserializeFromStream<T>(Stream stream)
+    {
+        return XmlHelper.FromStream<T>(stream);
+    }
 
-        /// <inheritdoc />
-        public object DeserializeFromStream(Stream stream, Type type)
-        {
-            return XmlHelper.Unpack(stream, type);
-        }
+    /// <inheritdoc />
+    public object DeserializeFromStream(Stream stream, Type type)
+    {
+        return XmlHelper.FromStream(type, stream);
+    }
 
-        /// <inheritdoc />
-        public Task<string> SerializeAsync<T>(T o)
-        {
-            return XmlHelper.SerializeAsync(o);
-        }
+    /// <inheritdoc />
+    public Task<string> SerializeAsync<T>(T o)
+    {
+        return XmlHelper.ToXmlAsync(o);
+    }
 
-        /// <inheritdoc />
-        public Task<Stream> SerializeToStreamAsync<T>(T o)
-        {
-            return XmlHelper.PackAsync(o);
-        }
+    /// <inheritdoc />
+    public Task<Stream> SerializeToStreamAsync<T>(T o)
+    {
+        return XmlHelper.ToStreamAsync(o);
+    }
 
-        /// <inheritdoc />
-        public Task<T> DeserializeAsync<T>(string data)
-        {
-            return XmlHelper.DeserializeAsync<T>(data);
-        }
+    /// <inheritdoc />
+    public Task<T> DeserializeAsync<T>(string data)
+    {
+        return XmlHelper.FromXmlAsync<T>(data);
+    }
 
-        /// <inheritdoc />
-        public Task<object> DeserializeAsync(string data, Type type)
-        {
-            return XmlHelper.DeserializeAsync(data, type);
-        }
+    /// <inheritdoc />
+    public Task<object> DeserializeAsync(string data, Type type)
+    {
+        return XmlHelper.FromXmlAsync(type, data);
+    }
 
-        /// <inheritdoc />
-        public Task<T> DeserializeFromStreamAsync<T>(Stream stream)
-        {
-            return XmlHelper.UnpackAsync<T>(stream);
-        }
+    /// <inheritdoc />
+    public Task<T> DeserializeFromStreamAsync<T>(Stream stream)
+    {
+        return XmlHelper.FromStreamAsync<T>(stream);
+    }
 
-        /// <inheritdoc />
-        public Task<object> DeserializeFromStreamAsync(Stream stream, Type type)
-        {
-            return XmlHelper.UnpackAsync(stream, type);
-        }
+    /// <inheritdoc />
+    public Task<object> DeserializeFromStreamAsync(Stream stream, Type type)
+    {
+        return XmlHelper.FromStreamAsync(type, stream);
     }
 }
