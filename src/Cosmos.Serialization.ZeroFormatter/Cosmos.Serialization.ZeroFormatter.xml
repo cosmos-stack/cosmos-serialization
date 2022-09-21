@@ -52,7 +52,7 @@
         </member>
         <member name="M:Cosmos.Serialization.ZeroFormatter.ZeroFormatterExtensions.FromZeroFormatter``1(System.Byte[])">
             <summary>
-            From ZeroFormatter 
+            From ZeroFormatter
             </summary>
             <param name="data"></param>
             <typeparam name="T"></typeparam>
@@ -60,7 +60,7 @@
         </member>
         <member name="M:Cosmos.Serialization.ZeroFormatter.ZeroFormatterExtensions.FromZeroFormatter(System.Byte[],System.Type)">
             <summary>
-            From ZeroFormatter 
+            From ZeroFormatter
             </summary>
             <param name="data"></param>
             <param name="type"></param>

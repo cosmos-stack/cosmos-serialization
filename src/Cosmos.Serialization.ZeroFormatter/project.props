@@ -1,9 +1,0 @@
-<Project>
-
-    <PropertyGroup>
-        <AssemblyName>Cosmos.Serialization.ZeroFormatter</AssemblyName>
-        <PackageId>Cosmos.Serialization.ZeroFormatter</PackageId>
-        <Description>ZeroFormatter serializer extension for Cosmos base library</Description>
-    </PropertyGroup>
-
-</Project>
