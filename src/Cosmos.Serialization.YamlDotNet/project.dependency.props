@@ -1,8 +1,0 @@
-<Project>
-
-    <ItemGroup>
-        <PackageReference Include="Cosmos.Standard" Version="$(Standard-PkgVersion)" />
-        <PackageReference Include="YamlDotNet" Version="11.2.1" />
-    </ItemGroup>
-
-</Project>

@@ -1,0 +1,8 @@
+﻿<Project>
+
+    <ItemGroup>
+        <PackageReference Include="CosmosStack.Standard" Version="$(Standard-RefVersion)" />
+        <PackageReference Include="YamlDotNet" Version="12.0.0" />
+    </ItemGroup>
+
+</Project>

@@ -1,21 +1,21 @@
-using System.Text;
+﻿using System.Text;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
-using S = YamlDotNet.Serialization.ISerializer;
-using D = YamlDotNet.Serialization.IDeserializer;
 
-namespace Cosmos.Serialization.Yaml.YamlDotNet
+namespace Cosmos.Serialization.YamlDotNet;
+
+public static partial class YamlDotNetHelper
 {
     /// <summary>
     /// YamlDotNet manager
     /// </summary>
-    public static class YamlManager
+    private static class Man
     {
         private static Encoding _encoding = Encoding.UTF8;
         private static SerializerBuilder _serializerBuilder;
         private static DeserializerBuilder _deserializerBuilder;
 
-        static YamlManager()
+        static Man()
         {
             _serializerBuilder = new SerializerBuilder().WithNamingConvention(CamelCaseNamingConvention.Instance);
             _deserializerBuilder = new DeserializerBuilder().WithNamingConvention(CamelCaseNamingConvention.Instance);
@@ -57,5 +57,49 @@ namespace Cosmos.Serialization.Yaml.YamlDotNet
             get => _encoding;
             set => _encoding = value ?? _encoding;
         }
+    }
+
+    public static Encoding GetDefaultEncoding()
+    {
+        return Man.DefaultEncoding;
+    }
+
+    public static void SetDefaultEncoding(Encoding encoding)
+    {
+        Man.DefaultEncoding = encoding;
+    }
+
+    public static SerializerBuilder GetDefaultSerializerBuilder()
+    {
+        return Man.DefaultSerializerBuilder;
+    }
+
+    public static void SetDefaultSerializerBuilder(SerializerBuilder serializer)
+    {
+        Man.DefaultSerializerBuilder = serializer;
+    }
+
+    public static DeserializerBuilder GetDefaultDeserializerBuilder()
+    {
+        return Man.DefaultDeserializerBuilder;
+    }
+
+    public static void SetDefaultDeserializerBuilder(DeserializerBuilder settings)
+    {
+        Man.DefaultDeserializerBuilder = settings;
+    }
+
+    public static S GetDefaultSerializer() => Man.DefaultSerializer;
+
+    public static D GetDefaultDeserializer() => Man.DefaultDeserializer;
+
+    private static Encoding ToEncoding(this Encoding encoding)
+    {
+        return encoding ??= Man.DefaultEncoding;
+    }
+
+    private static Task<T> Async<T>(Func<T> func, CancellationToken cancellationToken = default)
+    {
+        return Task.Run(func.Invoke, cancellationToken);
     }
 }
