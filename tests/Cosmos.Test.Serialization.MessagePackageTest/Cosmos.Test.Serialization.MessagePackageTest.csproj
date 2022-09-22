@@ -1,9 +1,20 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
+    <PropertyGroup>
+      <RootNamespace>Cosmos.Test.Serialization.MessagePackageTest</RootNamespace>
+    </PropertyGroup>
+
     <Import Project="..\..\common.tests.props" />
 
     <ItemGroup>
         <ProjectReference Include="..\..\src\Cosmos.Serialization.MessagePack\Cosmos.Serialization.MessagePack.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Update="coverlet.collector" Version="3.1.2">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
     </ItemGroup>
 
 </Project>

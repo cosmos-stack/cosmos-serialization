@@ -1,0 +1,41 @@
+﻿<Project>
+
+    <PropertyGroup>
+        <MsgPack-RefVersion>2.4.35</MsgPack-RefVersion>
+        <MsgPack-RefVersion-nfx452>1.9.11</MsgPack-RefVersion-nfx452>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="CosmosStack.Standard" Version="$(Standard-RefVersion)" />
+        <PackageReference Include="CosmosStack.Prowess" Version="$(Prowess-RefVersion)" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net6.0' ">
+        <PackageReference Include="MessagePack" Version="$(MsgPack-RefVersion)" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net5.0' ">
+        <PackageReference Include="MessagePack" Version="$(MsgPack-RefVersion)" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.1' ">
+        <PackageReference Include="MessagePack" Version="$(MsgPack-RefVersion)" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net48' ">
+        <PackageReference Include="MessagePack" Version="$(MsgPack-RefVersion)" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net472' ">
+        <PackageReference Include="MessagePack" Version="$(MsgPack-RefVersion)" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net462' ">
+        <PackageReference Include="MessagePack" Version="$(MsgPack-RefVersion)" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net452' ">
+        <PackageReference Include="MessagePack" Version="$(MsgPack-RefVersion-nfx452)" />
+    </ItemGroup>
+
+</Project>

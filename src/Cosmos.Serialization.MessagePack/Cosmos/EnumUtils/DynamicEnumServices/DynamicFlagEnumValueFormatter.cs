@@ -1,15 +1,14 @@
-﻿using System;
-using Cosmos.Reflection;
+﻿using Cosmos.Reflection;
 using MessagePack;
 using MessagePack.Formatters;
 
-namespace Cosmos.Dynamic.DynamicEnums
+namespace Cosmos.EnumUtils.DynamicEnumServices;
+
+public class DynamicFlagEnumValueFormatter<TEnum, TValue> : IMessagePackFormatter<TEnum>
+    where TEnum : DynamicFlagEnum<TEnum, TValue>, IDynamicEnum
+    where TValue : struct, IEquatable<TValue>, IComparable<TValue>
 {
-    public class DynamicFlagEnumValueFormatter<TEnum, TValue> : IMessagePackFormatter<TEnum>
-        where TEnum : DynamicFlagEnum<TEnum, TValue>, IDynamicEnum
-        where TValue : struct, IEquatable<TValue>, IComparable<TValue>
-    {
-#if NET451 || NET452
+    #if NET451 || NET452
         public int Serialize(ref byte[] bytes, int offset, TEnum value, IFormatterResolver formatterResolver)
         {
             if (value is null)
@@ -84,85 +83,83 @@ namespace Cosmos.Dynamic.DynamicEnums
         }
 #else
 
-        public void Serialize(ref MessagePackWriter writer, TEnum value, MessagePackSerializerOptions options)
+    public void Serialize(ref MessagePackWriter writer, TEnum value, MessagePackSerializerOptions options)
+    {
+        if (value is null)
         {
-            if (value is null)
-            {
-                writer.WriteNil();
-            }
-            else
-            {
-                Write(ref writer, value.Value);
-            }
+            writer.WriteNil();
         }
-
-        public TEnum Deserialize(ref MessagePackReader reader, MessagePackSerializerOptions options)
+        else
         {
-            if (reader.TryReadNil())
-            {
-                return default;
-            }
-            else
-            {
-                var value = Read(ref reader);
-                return DynamicFlagEnum<TEnum, TValue>.FromValueSingle(value);
-            }
+            Write(ref writer, value.Value);
         }
-
-        public void Write(ref MessagePackWriter writer, TValue value)
-        {
-            if (typeof(TValue) == TypeClass.BooleanClazz)
-                writer.Write((bool) (object) value);
-            if (typeof(TValue) == TypeClass.ByteClazz)
-                writer.Write((byte) (object) value);
-            if (typeof(TValue) == TypeClass.SByteClazz)
-                writer.WriteInt8((sbyte) (object) value);
-            if (typeof(TValue) == TypeClass.ShortClazz)
-                writer.WriteInt16((short) (object) value);
-            if (typeof(TValue) == TypeClass.UShortClazz)
-                writer.WriteUInt16((ushort) (object) value);
-            if (typeof(TValue) == TypeClass.Int32Clazz)
-                writer.WriteInt32((int) (object) value);
-            if (typeof(TValue) == TypeClass.UInt32Clazz)
-                writer.WriteUInt32((uint) (object) value);
-            if (typeof(TValue) == TypeClass.Int64Clazz)
-                writer.WriteInt64((long) (object) value);
-            if (typeof(TValue) == TypeClass.UInt64Clazz)
-                writer.WriteUInt64((ulong) (object) value);
-            if (typeof(TValue) == TypeClass.FloatClazz)
-                writer.Write((float) (object) value);
-            if (typeof(TValue) == TypeClass.DoubleClazz)
-                writer.Write((double) (object) value);
-            throw new ArgumentOutOfRangeException(nameof(value), $"{typeof(TValue)} is not supported."); // should not get to here
-        }
-
-        public TValue Read(ref MessagePackReader reader)
-        {
-            if (typeof(TValue) == TypeClass.BooleanClazz)
-                return (TValue) (object) reader.ReadBoolean();
-            if (typeof(TValue) == TypeClass.ByteClazz)
-                return (TValue) (object) reader.ReadByte();
-            if (typeof(TValue) == TypeClass.SByteClazz)
-                return (TValue) (object) reader.ReadSByte();
-            if (typeof(TValue) == TypeClass.ShortClazz)
-                return (TValue) (object) reader.ReadInt16();
-            if (typeof(TValue) == TypeClass.UShortClazz)
-                return (TValue) (object) reader.ReadUInt16();
-            if (typeof(TValue) == TypeClass.Int32Clazz)
-                return (TValue) (object) reader.ReadInt32();
-            if (typeof(TValue) == TypeClass.UInt32Clazz)
-                return (TValue) (object) reader.ReadUInt32();
-            if (typeof(TValue) == TypeClass.Int64Clazz)
-                return (TValue) (object) reader.ReadInt64();
-            if (typeof(TValue) == TypeClass.UInt64Clazz)
-                return (TValue) (object) reader.ReadUInt64();
-            if (typeof(TValue) == TypeClass.FloatClazz)
-                return (TValue) (object) reader.ReadSingle();
-            if (typeof(TValue) == TypeClass.DoubleClazz)
-                return (TValue) (object) reader.ReadDouble();
-            throw new ArgumentOutOfRangeException(typeof(TValue).ToString(), $"{typeof(TValue)} is not supported."); // should not get to here
-        }
-
-#endif
     }
+
+    public TEnum Deserialize(ref MessagePackReader reader, MessagePackSerializerOptions options)
+    {
+        if (reader.TryReadNil())
+        {
+            return default;
+        }
+        else
+        {
+            var value = Read(ref reader);
+            return DynamicFlagEnum<TEnum, TValue>.FromValueSingle(value);
+        }
+    }
+
+    public void Write(ref MessagePackWriter writer, TValue value)
+    {
+        if (typeof(TValue) == TypeClass.BooleanClazz)
+            writer.Write((bool)(object)value);
+        if (typeof(TValue) == TypeClass.ByteClazz)
+            writer.Write((byte)(object)value);
+        if (typeof(TValue) == TypeClass.SByteClazz)
+            writer.WriteInt8((sbyte)(object)value);
+        if (typeof(TValue) == TypeClass.ShortClazz)
+            writer.WriteInt16((short)(object)value);
+        if (typeof(TValue) == TypeClass.UShortClazz)
+            writer.WriteUInt16((ushort)(object)value);
+        if (typeof(TValue) == TypeClass.Int32Clazz)
+            writer.WriteInt32((int)(object)value);
+        if (typeof(TValue) == TypeClass.UInt32Clazz)
+            writer.WriteUInt32((uint)(object)value);
+        if (typeof(TValue) == TypeClass.Int64Clazz)
+            writer.WriteInt64((long)(object)value);
+        if (typeof(TValue) == TypeClass.UInt64Clazz)
+            writer.WriteUInt64((ulong)(object)value);
+        if (typeof(TValue) == TypeClass.FloatClazz)
+            writer.Write((float)(object)value);
+        if (typeof(TValue) == TypeClass.DoubleClazz)
+            writer.Write((double)(object)value);
+        throw new ArgumentOutOfRangeException(nameof(value), $"{typeof(TValue)} is not supported."); // should not get to here
+    }
+
+    public TValue Read(ref MessagePackReader reader)
+    {
+        if (typeof(TValue) == TypeClass.BooleanClazz)
+            return (TValue)(object)reader.ReadBoolean();
+        if (typeof(TValue) == TypeClass.ByteClazz)
+            return (TValue)(object)reader.ReadByte();
+        if (typeof(TValue) == TypeClass.SByteClazz)
+            return (TValue)(object)reader.ReadSByte();
+        if (typeof(TValue) == TypeClass.ShortClazz)
+            return (TValue)(object)reader.ReadInt16();
+        if (typeof(TValue) == TypeClass.UShortClazz)
+            return (TValue)(object)reader.ReadUInt16();
+        if (typeof(TValue) == TypeClass.Int32Clazz)
+            return (TValue)(object)reader.ReadInt32();
+        if (typeof(TValue) == TypeClass.UInt32Clazz)
+            return (TValue)(object)reader.ReadUInt32();
+        if (typeof(TValue) == TypeClass.Int64Clazz)
+            return (TValue)(object)reader.ReadInt64();
+        if (typeof(TValue) == TypeClass.UInt64Clazz)
+            return (TValue)(object)reader.ReadUInt64();
+        if (typeof(TValue) == TypeClass.FloatClazz)
+            return (TValue)(object)reader.ReadSingle();
+        if (typeof(TValue) == TypeClass.DoubleClazz)
+            return (TValue)(object)reader.ReadDouble();
+        throw new ArgumentOutOfRangeException(typeof(TValue).ToString(), $"{typeof(TValue)} is not supported."); // should not get to here
+    }
+#endif
 }
