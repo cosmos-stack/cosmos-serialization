@@ -1,9 +1,0 @@
-<Project>
-
-    <PropertyGroup>
-        <AssemblyName>Cosmos.Serialization.MsgPackCli</AssemblyName>
-        <PackageId>Cosmos.Serialization.MsgPackCli</PackageId>
-        <Description>MsgPack-Cli serializer extension for Cosmos base library</Description>
-    </PropertyGroup>
-
-</Project>
