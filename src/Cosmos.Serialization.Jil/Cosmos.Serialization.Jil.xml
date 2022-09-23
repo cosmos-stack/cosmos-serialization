@@ -135,7 +135,7 @@
         </member>
         <member name="M:Cosmos.Serialization.Json.Extensions.FromJilBytes``1(System.Byte[],Jil.Options)">
             <summary>
-            From Jil bytes 
+            From Jil bytes
             </summary>
             <param name="data"></param>
             <param name="options"></param>
@@ -144,7 +144,7 @@
         </member>
         <member name="M:Cosmos.Serialization.Json.Extensions.FromJilBytes``1(System.Byte[],System.Action{Jil.Options})">
             <summary>
-            From Jil bytes 
+            From Jil bytes
             </summary>
             <param name="data"></param>
             <param name="optionsAct"></param>
@@ -153,7 +153,7 @@
         </member>
         <member name="M:Cosmos.Serialization.Json.Extensions.FromJilBytes(System.Byte[],System.Type,Jil.Options)">
             <summary>
-            From Jil bytes 
+            From Jil bytes
             </summary>
             <param name="data"></param>
             <param name="type"></param>
@@ -162,7 +162,7 @@
         </member>
         <member name="M:Cosmos.Serialization.Json.Extensions.FromJilBytes(System.Byte[],System.Type,System.Action{Jil.Options})">
             <summary>
-            From Jil bytes 
+            From Jil bytes
             </summary>
             <param name="data"></param>
             <param name="type"></param>
