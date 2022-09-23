@@ -129,7 +129,7 @@
         </member>
         <member name="M:Cosmos.Serialization.Json.Extensions.FromFastJsonBytes``1(System.Byte[],fastJSON.JSONParameters)">
             <summary>
-            From fastJSON bytes 
+            From fastJSON bytes
             </summary>
             <param name="data"></param>
             <param name="options"></param>
@@ -138,7 +138,7 @@
         </member>
         <member name="M:Cosmos.Serialization.Json.Extensions.FromFastJsonBytes``1(System.Byte[],System.Action{fastJSON.JSONParameters})">
             <summary>
-            From fastJSON bytes 
+            From fastJSON bytes
             </summary>
             <param name="data"></param>
             <param name="optionsAct"></param>
@@ -147,7 +147,7 @@
         </member>
         <member name="M:Cosmos.Serialization.Json.Extensions.FromFastJsonBytes(System.Byte[],System.Type,fastJSON.JSONParameters)">
             <summary>
-            From fastJSON bytes 
+            From fastJSON bytes
             </summary>
             <param name="data"></param>
             <param name="type"></param>
@@ -156,7 +156,7 @@
         </member>
         <member name="M:Cosmos.Serialization.Json.Extensions.FromFastJsonBytes(System.Byte[],System.Type,System.Action{fastJSON.JSONParameters})">
             <summary>
-            From fastJSON bytes 
+            From fastJSON bytes
             </summary>
             <param name="data"></param>
             <param name="type"></param>

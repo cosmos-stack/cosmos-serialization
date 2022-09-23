@@ -1,103 +1,98 @@
-﻿using System;
-using System.IO;
-using System.Threading.Tasks;
-using Cosmos.Serialization.Json.FastJson;
-using fastJSON;
+﻿using Cosmos.Serialization.FastJson;
 
-namespace Cosmos.Serialization
+namespace Cosmos.Serialization;
+
+/// <summary>
+/// FastJson serializer
+/// </summary>
+public class FastJsonObjectSerializer : IJsonSerializer
 {
-    /// <summary>
-    /// FastJson serializer
-    /// </summary>
-    public class FastJsonObjectSerializer : IJsonSerializer
+    private readonly JSONParameters _parameters;
+
+    public FastJsonObjectSerializer()
     {
-        private readonly JSONParameters _options;
+        _parameters = FastJsonHelper.GetDefaultParameters();
+    }
 
-        public FastJsonObjectSerializer()
-        {
-            _options = FastJsonManager.DefaultParameters;
-        }
+    public FastJsonObjectSerializer(JSONParameters options)
+    {
+        _parameters = options ?? FastJsonHelper.GetDefaultParameters();
+    }
 
-        public FastJsonObjectSerializer(JSONParameters options)
-        {
-            _options = options ?? FastJsonManager.DefaultParameters;
-        }
+    public FastJsonObjectSerializer(Func<JSONParameters> optionsFactory)
+    {
+        _parameters = optionsFactory is null ? FastJsonHelper.GetDefaultParameters() : optionsFactory();
+    }
 
-        public FastJsonObjectSerializer(Func<JSONParameters> optionsFactory)
-        {
-            _options = optionsFactory is null ? FastJsonManager.DefaultParameters : optionsFactory();
-        }
+    /// <inheritdoc />
+    public string Serialize<T>(T o)
+    {
+        return FastJsonHelper.ToJson(o, _parameters);
+    }
 
-        /// <inheritdoc />
-        public string Serialize<T>(T o)
-        {
-            return FastJsonHelper.Serialize(o, _options);
-        }
+    /// <inheritdoc />
+    public Stream SerializeToStream<T>(T o)
+    {
+        return FastJsonHelper.ToStream(o, _parameters);
+    }
 
-        /// <inheritdoc />
-        public Stream SerializeToStream<T>(T o)
-        {
-            return FastJsonHelper.Pack(o, _options);
-        }
+    /// <inheritdoc />
+    public T Deserialize<T>(string json)
+    {
+        return FastJsonHelper.FromJson<T>(json, _parameters);
+    }
 
-        /// <inheritdoc />
-        public T Deserialize<T>(string json)
-        {
-            return FastJsonHelper.Deserialize<T>(json, _options);
-        }
+    /// <inheritdoc />
+    public object Deserialize(string json, Type type)
+    {
+        return FastJsonHelper.FromJson(type, json, _parameters);
+    }
 
-        /// <inheritdoc />
-        public object Deserialize(string json, Type type)
-        {
-            return FastJsonHelper.Deserialize(json, type, _options);
-        }
+    /// <inheritdoc />
+    public T DeserializeFromStream<T>(Stream stream)
+    {
+        return FastJsonHelper.FromStream<T>(stream, _parameters);
+    }
 
-        /// <inheritdoc />
-        public T DeserializeFromStream<T>(Stream stream)
-        {
-            return FastJsonHelper.Unpack<T>(stream, _options);
-        }
+    /// <inheritdoc />
+    public object DeserializeFromStream(Stream stream, Type type)
+    {
+        return FastJsonHelper.FromStream(type, stream, _parameters);
+    }
 
-        /// <inheritdoc />
-        public object DeserializeFromStream(Stream stream, Type type)
-        {
-            return FastJsonHelper.Unpack(stream, type, _options);
-        }
+    /// <inheritdoc />
+    public Task<string> SerializeAsync<T>(T o)
+    {
+        return FastJsonHelper.ToJsonAsync(o, _parameters);
+    }
 
-        /// <inheritdoc />
-        public Task<string> SerializeAsync<T>(T o)
-        {
-            return FastJsonHelper.SerializeAsync(o, _options);
-        }
+    /// <inheritdoc />
+    public Task<Stream> SerializeToStreamAsync<T>(T o)
+    {
+        return FastJsonHelper.ToStreamAsync(o, _parameters);
+    }
 
-        /// <inheritdoc />
-        public Task<Stream> SerializeToStreamAsync<T>(T o)
-        {
-            return FastJsonHelper.PackAsync(o, _options);
-        }
+    /// <inheritdoc />
+    public Task<T> DeserializeAsync<T>(string data)
+    {
+        return FastJsonHelper.FromJsonAsync<T>(data, _parameters);
+    }
 
-        /// <inheritdoc />
-        public Task<T> DeserializeAsync<T>(string data)
-        {
-            return FastJsonHelper.DeserializeAsync<T>(data, _options);
-        }
+    /// <inheritdoc />
+    public Task<object> DeserializeAsync(string data, Type type)
+    {
+        return FastJsonHelper.FromJsonAsync(type, data, _parameters);
+    }
 
-        /// <inheritdoc />
-        public Task<object> DeserializeAsync(string data, Type type)
-        {
-            return FastJsonHelper.DeserializeAsync(data, type, _options);
-        }
+    /// <inheritdoc />
+    public Task<T> DeserializeFromStreamAsync<T>(Stream stream)
+    {
+        return FastJsonHelper.FromStreamAsync<T>(stream, _parameters);
+    }
 
-        /// <inheritdoc />
-        public Task<T> DeserializeFromStreamAsync<T>(Stream stream)
-        {
-            return FastJsonHelper.UnpackAsync<T>(stream, _options);
-        }
-
-        /// <inheritdoc />
-        public Task<object> DeserializeFromStreamAsync(Stream stream, Type type)
-        {
-            return FastJsonHelper.UnpackAsync(stream, type, _options);
-        }
+    /// <inheritdoc />
+    public Task<object> DeserializeFromStreamAsync(Stream stream, Type type)
+    {
+        return FastJsonHelper.FromStreamAsync(type, stream, _parameters);
     }
 }
