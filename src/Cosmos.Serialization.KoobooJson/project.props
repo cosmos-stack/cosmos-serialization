@@ -1,9 +1,0 @@
-<Project>
-
-    <PropertyGroup>
-        <AssemblyName>Cosmos.Serialization.KoobooJson</AssemblyName>
-        <PackageId>Cosmos.Serialization.KoobooJson</PackageId>
-        <Description>Kooboo JSON serializer extension for Cosmos base library</Description>
-    </PropertyGroup>
-
-</Project>

@@ -1,6 +1,7 @@
-namespace Cosmos.Test.Serializaion.KoobooTest {
-    public enum NiceType {
-        Yes,
-        No
-    }
+namespace Cosmos.Test.Serialization.KoobooTest;
+
+public enum NiceType
+{
+    Yes,
+    No
 }

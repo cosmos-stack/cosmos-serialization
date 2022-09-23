@@ -56,7 +56,7 @@
         </member>
         <member name="M:Cosmos.Serialization.Json.Extensions.FromKoobooBytes``1(System.Byte[],Kooboo.Json.JsonDeserializeOption)">
             <summary>
-            From Kooboo bytes 
+            From Kooboo bytes
             </summary>
             <param name="data"></param>
             <param name="options"></param>
@@ -65,7 +65,7 @@
         </member>
         <member name="M:Cosmos.Serialization.Json.Extensions.FromKoobooBytes``1(System.Byte[],System.Action{Kooboo.Json.JsonDeserializeOption})">
             <summary>
-            From Kooboo bytes 
+            From Kooboo bytes
             </summary>
             <param name="data"></param>
             <param name="optionsAct"></param>
@@ -74,7 +74,7 @@
         </member>
         <member name="M:Cosmos.Serialization.Json.Extensions.FromKoobooBytes(System.Byte[],System.Type,Kooboo.Json.JsonDeserializeOption)">
             <summary>
-            From Kooboo bytes 
+            From Kooboo bytes
             </summary>
             <param name="data"></param>
             <param name="type"></param>
@@ -83,7 +83,7 @@
         </member>
         <member name="M:Cosmos.Serialization.Json.Extensions.FromKoobooBytes(System.Byte[],System.Type,System.Action{Kooboo.Json.JsonDeserializeOption})">
             <summary>
-            From Kooboo bytes 
+            From Kooboo bytes
             </summary>
             <param name="data"></param>
             <param name="type"></param>
@@ -474,6 +474,7 @@
             </summary>
             <param name="stream"></param>
             <param name="option"></param>
+            <param name="encoding"></param>
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
@@ -484,6 +485,7 @@
             <param name="stream"></param>
             <param name="type"></param>
             <param name="option"></param>
+            <param name="encoding"></param>
             <returns></returns>
         </member>
         <member name="M:Cosmos.Serialization.Json.Kooboo.KoobooJsonHelper.Serialize``1(``0,Kooboo.Json.JsonSerializerOption)">

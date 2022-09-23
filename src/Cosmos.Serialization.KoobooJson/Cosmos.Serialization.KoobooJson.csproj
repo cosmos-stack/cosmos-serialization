@@ -5,10 +5,14 @@
       <Platforms>AnyCPU</Platforms>
     </PropertyGroup>
 
-    <Import Project="project.props" />
+    <PropertyGroup>
+        <AssemblyName>Cosmos.Serialization.KoobooJson</AssemblyName>
+        <PackageId>CosmosStack.Serialization.KoobooJson</PackageId>
+        <Description>Kooboo JSON serializer extension for Cosmos base library</Description>
+    </PropertyGroup>
 
     <Import Project="..\..\common.props" />
 
-    <Import Project="project.dependency.props" />
+    <Import Project="dependency.props" />
 
 </Project>
