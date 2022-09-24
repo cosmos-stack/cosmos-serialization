@@ -1,32 +1,29 @@
-﻿using System;
+﻿namespace Cosmos.Serialization;
 
-namespace Cosmos.Serialization
+/// <summary>
+/// LitObjectSerializer extensions.
+/// </summary>
+public static class LitObjectSerializerExtensions
 {
     /// <summary>
-    /// LitObjectSerializer extensions.
+    /// Use LitObjectSerializer
     /// </summary>
-    public static class LitObjectSerializerExtensions
+    /// <param name="entry"></param>
+    public static void UseLit(this IJsonSerializerConfigureEntry entry)
     {
-        /// <summary>
-        /// Use LitObjectSerializer
-        /// </summary>
-        /// <param name="entry"></param>
-        public static void UseLit(this IJsonSerializerConfigureEntry entry)
-        {
-            entry.CheckNull(nameof(entry));
-            entry.ConfigureJsonSerializer(new LitObjectSerializer());
-        }
+        entry.CheckNull(nameof(entry));
+        entry.ConfigureJsonSerializer(new LitObjectSerializer());
+    }
 
-        /// <summary>
-        /// Use LitObjectSerializer
-        /// </summary>
-        /// <param name="entry"></param>
-        /// <param name="serializerFactory"></param>
-        public static void UseLit(this IJsonSerializerConfigureEntry entry, Func<LitObjectSerializer> serializerFactory)
-        {
-            entry.CheckNull(nameof(entry));
-            serializerFactory.CheckNull(nameof(serializerFactory));
-            entry.ConfigureJsonSerializer(serializerFactory);
-        }
+    /// <summary>
+    /// Use LitObjectSerializer
+    /// </summary>
+    /// <param name="entry"></param>
+    /// <param name="serializerFactory"></param>
+    public static void UseLit(this IJsonSerializerConfigureEntry entry, Func<LitObjectSerializer> serializerFactory)
+    {
+        entry.CheckNull(nameof(entry));
+        serializerFactory.CheckNull(nameof(serializerFactory));
+        entry.ConfigureJsonSerializer(serializerFactory);
     }
 }
