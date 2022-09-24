@@ -29,7 +29,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.Serialization.Lit", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.Serialization.MessagePack", "src\Cosmos.Serialization.MessagePack\Cosmos.Serialization.MessagePack.csproj", "{E291837A-E4E3-48C6-B0E5-C86EA3004FEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.Serialization.MicrosoftJson", "src\Cosmos.Serialization.MicrosoftJson\Cosmos.Serialization.MicrosoftJson.csproj", "{660258B3-FC90-4B00-9E9E-DDF8AFA539DE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.Serialization.SystemTextJson", "src\Cosmos.Serialization.SystemTextJson\Cosmos.Serialization.SystemTextJson.csproj", "{660258B3-FC90-4B00-9E9E-DDF8AFA539DE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.Serialization.MsgPackCli", "src\Cosmos.Serialization.MsgPackCli\Cosmos.Serialization.MsgPackCli.csproj", "{6B2EEA10-2CEE-4C8D-ACF1-A3A840E0E341}"
 EndProject
@@ -107,12 +107,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "props", "props", "{89FF2B35
 ProjectSection(SolutionItems) = preProject
 	asset\props\misc.props = asset\props\misc.props
 	asset\props\package.props = asset\props\package.props
+	asset\props\sourcelink.env.props = asset\props\sourcelink.env.props
+	asset\props\target.feature.props = asset\props\target.feature.props
 EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{918B0A07-1C41-4572-B875-8D283FAC4652}"
 ProjectSection(SolutionItems) = preProject
 	asset\images\icon.back.png = asset\images\icon.back.png
 	asset\images\icon.png = asset\images\icon.png
+	asset\images\icon,back3.png = asset\images\icon,back3.png
+	asset\images\icon.back2.png = asset\images\icon.back2.png
 EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{62F4975A-298D-4A36-AEAB-E7CBE5F818B9}"
@@ -120,19 +124,24 @@ ProjectSection(SolutionItems) = preProject
 	README.md = README.md
 EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{C39C82BC-5723-4EBF-937E-E8E70A9AE2ED}"
-ProjectSection(SolutionItems) = preProject
-	build\Beta.bat = build\Beta.bat
-	build\Beta_WithoutBuild.bat = build\Beta_WithoutBuild.bat
-	build\Nightly.bat = build\Nightly.bat
-	build\Nightly_WithoutBuild.bat = build\Nightly_WithoutBuild.bat
-	build\Release.bat = build\Release.bat
-	build\Release_WithoutBuild.bat = build\Release_WithoutBuild.bat
-EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.Serialization.Bssom", "src\Cosmos.Serialization.Bssom\Cosmos.Serialization.Bssom.csproj", "{443F953F-1963-40A5-BE49-6B1DEC20CA5A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.Serialization.FastJson", "src\Cosmos.Serialization.FastJson\Cosmos.Serialization.FastJson.csproj", "{3F73D857-7EE0-44F0-B03F-DB6F35DF9A49}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{145E7A7E-BBFD-406F-BFE1-CE47A8FA35E2}"
+	ProjectSection(SolutionItems) = preProject
+		scripts\Beta.bat = scripts\Beta.bat
+		scripts\Beta_WithoutBuild.bat = scripts\Beta_WithoutBuild.bat
+		scripts\BuildOnly.bat = scripts\BuildOnly.bat
+		scripts\Nightly.bat = scripts\Nightly.bat
+		scripts\Nightly_WithoutBuild.bat = scripts\Nightly_WithoutBuild.bat
+		scripts\Release.bat = scripts\Release.bat
+		scripts\Release_WithoutBuild.bat = scripts\Release_WithoutBuild.bat
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.Serialization.SpanJson", "src\Cosmos.Serialization.SpanJson\Cosmos.Serialization.SpanJson.csproj", "{7BB03770-034D-4548-B4EC-C417DC15C6C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.Test.Serialization.SpanJson", "tests\Cosmos.Test.Serialization.SpanJson\Cosmos.Test.Serialization.SpanJson.csproj", "{075F5042-F547-4249-AC19-28C0CBB52E0C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -280,6 +289,14 @@ Global
 		{3F73D857-7EE0-44F0-B03F-DB6F35DF9A49}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F73D857-7EE0-44F0-B03F-DB6F35DF9A49}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F73D857-7EE0-44F0-B03F-DB6F35DF9A49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BB03770-034D-4548-B4EC-C417DC15C6C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BB03770-034D-4548-B4EC-C417DC15C6C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BB03770-034D-4548-B4EC-C417DC15C6C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BB03770-034D-4548-B4EC-C417DC15C6C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{075F5042-F547-4249-AC19-28C0CBB52E0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{075F5042-F547-4249-AC19-28C0CBB52E0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{075F5042-F547-4249-AC19-28C0CBB52E0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{075F5042-F547-4249-AC19-28C0CBB52E0C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -330,6 +347,8 @@ Global
 		{918B0A07-1C41-4572-B875-8D283FAC4652} = {9B0DF39D-9858-43BB-B427-34104D519755}
 		{443F953F-1963-40A5-BE49-6B1DEC20CA5A} = {D99596A9-CA98-40A9-A643-285063D7F600}
 		{3F73D857-7EE0-44F0-B03F-DB6F35DF9A49} = {9F9BB5E8-2BC0-4339-BDAA-8118526B4D58}
+		{7BB03770-034D-4548-B4EC-C417DC15C6C9} = {9F9BB5E8-2BC0-4339-BDAA-8118526B4D58}
+		{075F5042-F547-4249-AC19-28C0CBB52E0C} = {C7F9D95E-37A9-4B73-B32A-C6637EE96FE5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {45736C31-1DF4-498D-A203-98B7B81363D6}
