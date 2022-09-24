@@ -1,36 +1,37 @@
-# Cosmos Serialization Overview
+# CosmosStack Serialization Overview
 
-Cosmos.Serialization is an inline common project of [Cosmosloops Labs.](https://github.com/cosmos-loops).
+CosmosStack.Serialization is an inline common project of [Cosmos Stack](https://github.com/cosmos-stack).
 
 **Includes projects:**
 
 - Xml
-  - Cosmos.Serialization.Xml
+  - CosmosStack.Serialization.Xml
 - Json
-  - Cosmos.Serialization.Jil
-  - Cosmos.Serialization.KoobooJson
-  - Cosmos.Serialization.Lit *(Cosmos.Serialization.LitJson)*
-  - Cosmos.Serialization.NewtonsoftJson
-  - Cosmos.Serialization.MicrosoftJson
-  - Cosmos.Serialization.FastJson
-  - Cosmos.Serialization.SwifterJson
-  - Cosmos.Serialization.Utf8Json
+  - CosmosStack.Serialization.FastJson
+  - CosmosStack.Serialization.Jil
+  - CosmosStack.Serialization.KoobooJson
+  - CosmosStack.Serialization.Lit *(CosmosStack.Serialization.LitJson)*
+  - CosmosStack.Serialization.MicrosoftJson
+  - CosmosStack.Serialization.NewtonsoftJson
+  - CosmosStack.Serialization.SpanJson
+  - CosmosStack.Serialization.SwifterJson
+  - CosmosStack.Serialization.Utf8Json
 - Yaml
-  - Cosmos.Serialization.YamlDotNet
-  - Cosmos.Serialization.SharpYaml
+  - CosmosStack.Serialization.SharpYaml
+  - CosmosStack.Serialization.YamlDotNet
 - Toml
-  - Cosmos.Serialization.Nett
+  - CosmosStack.Serialization.Nett
 - Binary
-  - Cosmos.Serialization.Binary
-  - Cosmos.Serialization.Bssom
+  - CosmosStack.Serialization.Binary
+  - CosmosStack.Serialization.Bssom
 - Protobuf
-  - Cosmos.Serialization.Protobuf
+  - CosmosStack.Serialization.Protobuf
 - MessagePack
-  - Cosmos.Serialization.MsgPackCli
-  - Cosmos.Serialization.MessagePack
-  - Cosmos.Serialization.SwifterMsgPack
+  - CosmosStack.Serialization.MessagePack
+  - CosmosStack.Serialization.MsgPackCli
+  - CosmosStack.Serialization.SwifterMsgPack
 - ZeroFormatter
-  - Cosmos.Serialization.ZeroFormatter
+  - CosmosStack.Serialization.ZeroFormatter
 
 ---
 
@@ -49,7 +50,7 @@ People or projects that have made a great contributions to this project:
 
 ## License
 
-Member project of [Cosmosloops Labs.](https://github.com/cosmos-loops).
+Member project of [Cosmos Stack](https://github.com/cosmos-stack).
 
 [Apache License 2.0](/LICENSE)
 ~~~~
