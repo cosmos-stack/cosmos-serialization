@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <Configurations>Debug;Release</Configurations>
+        <Platforms>AnyCPU</Platforms>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <AssemblyName>Cosmos.Serialization.SpanJson</AssemblyName>
+        <PackageId>CosmosStack.Serialization.SpanJson</PackageId>
+        <Description>SpanJson serializer extension for Cosmos base library</Description>
+    </PropertyGroup>
+
+    <Import Project="..\..\common.props" />
+
+    <PropertyGroup>
+        <!--Overwrite the default TargetFrameworks-->
+        <TargetFrameworks>net6.0;net5.0;netcoreapp3.1</TargetFrameworks>
+    </PropertyGroup>
+
+    <Import Project="dependency.props" />
+
+</Project>

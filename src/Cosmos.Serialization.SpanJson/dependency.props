@@ -1,0 +1,8 @@
+﻿<Project>
+
+    <ItemGroup>
+        <PackageReference Include="CosmosStack.Standard" Version="$(Standard-RefVersion)" />
+        <PackageReference Include="SpanJson" Version="3.3.1" />
+    </ItemGroup>
+
+</Project>

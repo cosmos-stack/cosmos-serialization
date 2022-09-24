@@ -1,0 +1,495 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cosmos.Serialization.SpanJson</name>
+    </assembly>
+    <members>
+        <member name="T:Cosmos.Serialization.Json.Extensions">
+            <summary>
+            SpanJson extensions
+            </summary>
+            <summary>
+            SpanJson extensions
+            </summary>
+            <summary>
+            SpanJson extensions
+            </summary>
+            <summary>
+            SpanJson extensions
+            </summary>
+            <summary>
+            SpanJson extensions
+            </summary>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.ToSpanJsonBytes``1(``0)">
+            <summary>
+            To SpanJson bytes
+            </summary>
+            <param name="obj"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.ToSpanJsonBytesAsync``1(``0)">
+            <summary>
+            To SpanJson bytes async
+            </summary>
+            <param name="obj"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.FromSpanJsonBytes``1(System.Byte[])">
+            <summary>
+            From SpanJson bytes
+            </summary>
+            <param name="data"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.FromSpanJsonBytes(System.Byte[],System.Type)">
+            <summary>
+            From SpanJson bytes
+            </summary>
+            <param name="data"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.FromSpanJsonBytesAsync``1(System.Byte[])">
+            <summary>
+            From SpanJson bytes async
+            </summary>
+            <param name="data"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.FromSpanJsonBytesAsync(System.Byte[],System.Type)">
+            <summary>
+            From SpanJson bytes async
+            </summary>
+            <param name="data"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.ToSpanJson``1(``0)">
+            <summary>
+            To SpanJson
+            </summary>
+            <param name="o"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.ToSpanJsonAsync``1(``0)">
+            <summary>
+            To SpanJson async
+            </summary>
+            <param name="o"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.SpanJsonPack``1(``0)">
+            <summary>
+            SpanJson pack to
+            </summary>
+            <param name="obj"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.SpanJsonPackTo``1(``0,System.IO.Stream)">
+            <summary>
+            SpanJson pack to
+            </summary>
+            <param name="obj"></param>
+            <param name="stream"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.SpanJsonPackBy(System.IO.Stream,System.Object)">
+            <summary>
+            SpanJson pack by
+            </summary>
+            <param name="stream"></param>
+            <param name="obj"></param>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.SpanJsonPackAsync``1(``0)">
+            <summary>
+            SpanJson pack to
+            </summary>
+            <param name="obj"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.SpanJsonPackToAsync``1(``0,System.IO.Stream)">
+            <summary>
+            SpanJson pack to
+            </summary>
+            <param name="obj"></param>
+            <param name="stream"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.SpanJsonPackByAsync(System.IO.Stream,System.Object)">
+            <summary>
+            SpanJson pack by async
+            </summary>
+            <param name="stream"></param>
+            <param name="obj"></param>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.SpanJsonUnpack``1(System.IO.Stream)">
+            <summary>
+            SpanJson unpack
+            </summary>
+            <param name="stream"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.SpanJsonUnpack(System.IO.Stream,System.Type)">
+            <summary>
+            SpanJson unpack
+            </summary>
+            <param name="stream"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.SpanJsonUnpackAsync``1(System.IO.Stream)">
+            <summary>
+            SpanJson unpack async
+            </summary>
+            <param name="stream"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.SpanJsonUnpackAsync(System.IO.Stream,System.Type)">
+            <summary>
+            SpanJson unpack async
+            </summary>
+            <param name="stream"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.FromSpanJson``1(System.String)">
+            <summary>
+            From SpanJson
+            </summary>
+            <param name="str"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.FromSpanJson(System.String,System.Type)">
+            <summary>
+            From SpanJson
+            </summary>
+            <param name="str"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.FromSpanJsonAsync``1(System.String)">
+            <summary>
+            From SpanJson async
+            </summary>
+            <param name="str"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.Extensions.FromSpanJsonAsync(System.String,System.Type)">
+            <summary>
+            From SpanJson async
+            </summary>
+            <param name="str"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.SpanJson.SpanJsonHelper.SerializeAsync``1(``0,System.Threading.CancellationToken)">
+            <summary>
+            Serialize async
+            </summary>
+            <param name="o"></param>
+            <param name="cancellationToken"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.SpanJson.SpanJsonHelper.SerializeAsync``1(``0,System.IO.TextWriter,System.Threading.CancellationToken)">
+            <summary>
+            Serialize async
+            </summary>
+            <param name="o"></param>
+            <param name="writer"></param>
+            <param name="cancellationToken"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.SpanJson.SpanJsonHelper.SerializeToBytesAsync``1(``0,System.IO.Stream,System.Threading.CancellationToken)">
+            <summary>
+            Serialize to bytes
+            </summary>
+            <param name="o"></param>
+            <param name="stream"></param>
+            <param name="cancellationToken"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.SpanJson.SpanJsonHelper.DeserializeAsync(System.String,System.Type,System.Threading.CancellationToken)">
+            <summary>
+            Deserialize
+            </summary>
+            <param name="json"></param>
+            <param name="type"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.SpanJson.SpanJsonHelper.DeserializeAsync``1(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Deserialize
+            </summary>
+            <param name="json"></param>
+            <param name="cancellationToken"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.SpanJson.SpanJsonHelper.DeserializeFromBytesAsync(System.Byte[],System.Type,System.Threading.CancellationToken)">
+            <summary>
+            Deserialize from bytes
+            </summary>
+            <param name="data"></param>
+            <param name="type"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.SpanJson.SpanJsonHelper.DeserializeFromBytesAsync(System.IO.Stream,System.Type,System.Threading.CancellationToken)">
+            <summary>
+            Deserialize from bytes
+            </summary>
+            <param name="stream"></param>
+            <param name="type"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.SpanJson.SpanJsonHelper.DeserializeFromBytesAsync``1(System.Byte[],System.Threading.CancellationToken)">
+            <summary>
+            Deserialize from bytes
+            </summary>
+            <param name="data"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.SpanJson.SpanJsonHelper.DeserializeFromBytesAsync``1(System.IO.Stream,System.Threading.CancellationToken)">
+            <summary>
+            Deserialize from bytes
+            </summary>
+            <param name="stream"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.SpanJson.SpanJsonHelper.PackAsync``1(``0,System.Threading.CancellationToken)">
+            <summary>
+            Pack
+            </summary>
+            <param name="o"></param>
+            <param name="cancellationToken"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.SpanJson.SpanJsonHelper.PackAsync``1(``0,System.IO.Stream,System.Threading.CancellationToken)">
+            <summary>
+            Pack
+            </summary>
+            <param name="t"></param>
+            <param name="stream"></param>
+            <param name="cancellationToken"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.SpanJson.SpanJsonHelper.UnpackAsync``1(System.IO.Stream,System.Threading.CancellationToken)">
+            <summary>
+            Unpack
+            </summary>
+            <param name="stream"></param>
+            <param name="cancellationToken"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.SpanJson.SpanJsonHelper.UnpackAsync(System.IO.Stream,System.Type,System.Threading.CancellationToken)">
+            <summary>
+            Unpack
+            </summary>
+            <param name="stream"></param>
+            <param name="type"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.SpanJson.SpanJsonHelper.Serialize``1(``0)">
+            <summary>
+            Serialize
+            </summary>
+            <param name="o"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.SpanJson.SpanJsonHelper.SerializeToBytes``1(``0)">
+            <summary>
+            Serialize to bytes
+            </summary>
+            <param name="o"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.SpanJson.SpanJsonHelper.Deserialize(System.String,System.Type)">
+            <summary>
+            Deserialize
+            </summary>
+            <param name="json"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.SpanJson.SpanJsonHelper.Deserialize(System.ReadOnlySpan{System.Char}@,System.Type)">
+            <summary>
+            Deserialize
+            </summary>
+            <param name="jsonChar"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.SpanJson.SpanJsonHelper.Deserialize``1(System.String)">
+            <summary>
+            Deserialize
+            </summary>
+            <param name="json"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.SpanJson.SpanJsonHelper.Deserialize``1(System.ReadOnlySpan{System.Char}@)">
+            <summary>
+            Deserialize
+            </summary>
+            <param name="jsonChar"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.SpanJson.SpanJsonHelper.DeserializeFromBytes(System.Byte[],System.Type)">
+            <summary>
+            Deserialize from bytes
+            </summary>
+            <param name="data"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.SpanJson.SpanJsonHelper.DeserializeFromBytes(System.ReadOnlySpan{System.Byte}@,System.Type)">
+            <summary>
+            Deserialize from bytes
+            </summary>
+            <param name="data"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.SpanJson.SpanJsonHelper.DeserializeFromBytes``1(System.Byte[])">
+            <summary>
+            Deserialize from bytes
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.SpanJson.SpanJsonHelper.DeserializeFromBytes``1(System.ReadOnlySpan{System.Byte}@)">
+            <summary>
+            Deserialize from bytes
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.SpanJson.SpanJsonHelper.Pack``1(``0)">
+            <summary>
+            Pack
+            </summary>
+            <param name="o"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.SpanJson.SpanJsonHelper.Pack``1(``0,System.IO.Stream)">
+            <summary>
+            Pack
+            </summary>
+            <param name="t"></param>
+            <param name="stream"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.SpanJson.SpanJsonHelper.Unpack``1(System.IO.Stream)">
+            <summary>
+            Unpack
+            </summary>
+            <param name="stream"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Serialization.Json.SpanJson.SpanJsonHelper.Unpack(System.IO.Stream,System.Type)">
+            <summary>
+            Unpack
+            </summary>
+            <param name="stream"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.Serialization.Json.SpanJson.SpanJsonManager">
+            <summary>
+            SpanJson Manager
+            </summary>
+        </member>
+        <member name="P:Cosmos.Serialization.Json.SpanJson.SpanJsonManager.DefaultEncoding">
+            <summary>
+            Gets or sets default encoding
+            </summary>
+        </member>
+        <member name="T:Cosmos.Serialization.SpanJsonObjectSerializer">
+            <summary>
+            SpanJson Serializer
+            </summary>
+        </member>
+        <member name="M:Cosmos.Serialization.SpanJsonObjectSerializer.Serialize``1(``0)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.SpanJsonObjectSerializer.SerializeToStream``1(``0)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.SpanJsonObjectSerializer.Deserialize``1(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.SpanJsonObjectSerializer.Deserialize(System.String,System.Type)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.SpanJsonObjectSerializer.DeserializeFromStream``1(System.IO.Stream)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.SpanJsonObjectSerializer.DeserializeFromStream(System.IO.Stream,System.Type)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.SpanJsonObjectSerializer.SerializeAsync``1(``0)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.SpanJsonObjectSerializer.SerializeToStreamAsync``1(``0)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.SpanJsonObjectSerializer.DeserializeAsync``1(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.SpanJsonObjectSerializer.DeserializeAsync(System.String,System.Type)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.SpanJsonObjectSerializer.DeserializeFromStreamAsync``1(System.IO.Stream)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Serialization.SpanJsonObjectSerializer.DeserializeFromStreamAsync(System.IO.Stream,System.Type)">
+            <inheritdoc />
+        </member>
+        <member name="T:Cosmos.Serialization.SpanJsonObjectSerializerExtensions">
+            <summary>
+            SpanJson Serializer extensions
+            </summary>
+        </member>
+        <member name="M:Cosmos.Serialization.SpanJsonObjectSerializerExtensions.UseSpanJson(Cosmos.Serialization.IJsonSerializerConfigureEntry)">
+            <summary>
+            Use SpanJsonObjectSerializer
+            </summary>
+            <param name="entry"></param>
+        </member>
+        <member name="M:Cosmos.Serialization.SpanJsonObjectSerializerExtensions.UseSpanJson(Cosmos.Serialization.IJsonSerializerConfigureEntry,System.Func{Cosmos.Serialization.SpanJsonObjectSerializer})">
+            <summary>
+            Use SpanJsonObjectSerializer
+            </summary>
+            <param name="entry"></param>
+            <param name="serializerFactory"></param>
+        </member>
+    </members>
+</doc>
