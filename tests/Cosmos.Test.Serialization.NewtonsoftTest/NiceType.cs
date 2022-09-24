@@ -1,6 +1,7 @@
-namespace Cosmos.Test.Serialization.NewtonsoftTest {
-    public enum NiceType {
-        Yes,
-        No
-    }
+namespace Cosmos.Test.Serialization.NewtonsoftTest;
+
+public enum NiceType
+{
+    Yes,
+    No
 }

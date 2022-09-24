@@ -1,56 +1,61 @@
 using System;
 using System.Threading.Tasks;
-using Cosmos.Serialization.Json;
+using Cosmos.Serialization.Newtonsoft;
 using Newtonsoft.Json;
 using Xunit;
 
-namespace Cosmos.Test.Serialization.NewtonsoftTest {
-    public class JsonTestAsync {
-        [Fact]
-        public async Task BasicJsonTest() {
-            var model = CreateNiceModel();
-            var json1 = await model.ToJsonAsync();
-            var back1 = await json1.FromJsonAsync<NiceModel>();
-            var back2 = (NiceModel) await json1.FromJsonAsync(typeof(NiceModel));
+namespace Cosmos.Test.Serialization.NewtonsoftTest;
 
-            Assert.Equal(
-                Tuple.Create(model.Id, model.Name, model.NiceType, model.Count, model.CreatedTime, model.IsValid),
-                Tuple.Create(back1.Id, back1.Name, back1.NiceType, back1.Count, back1.CreatedTime, back1.IsValid));
+public class JsonTestAsync
+{
+    [Fact]
+    public async Task BasicJsonTest()
+    {
+        var model = CreateNiceModel();
+        var json1 = await model.ToNewtonsoftJsonAsync();
+        var back1 = await json1.FromNewtonsoftJsonAsync<NiceModel>();
+        var back2 = (NiceModel)await json1.FromNewtonsoftJsonAsync(typeof(NiceModel));
 
-            Assert.Equal(
-                Tuple.Create(model.Id, model.Name, model.NiceType, model.Count, model.CreatedTime, model.IsValid),
-                Tuple.Create(back2.Id, back2.Name, back2.NiceType, back2.Count, back2.CreatedTime, back2.IsValid));
-        }
+        Assert.Equal(
+            Tuple.Create(model.Id, model.Name, model.NiceType, model.Count, model.CreatedTime, model.IsValid),
+            Tuple.Create(back1.Id, back1.Name, back1.NiceType, back1.Count, back1.CreatedTime, back1.IsValid));
 
-        [Fact]
-        public async Task OptionalJsonTest() {
-            var model = CreateNiceModel();
+        Assert.Equal(
+            Tuple.Create(model.Id, model.Name, model.NiceType, model.Count, model.CreatedTime, model.IsValid),
+            Tuple.Create(back2.Id, back2.Name, back2.NiceType, back2.Count, back2.CreatedTime, back2.IsValid));
+    }
 
-            var options = new JsonSerializerSettings {DateTimeZoneHandling = DateTimeZoneHandling.Utc};
+    [Fact]
+    public async Task OptionalJsonTest()
+    {
+        var model = CreateNiceModel();
 
-            var json1 = await model.ToJsonAsync(options);
-            var back1 = await json1.FromJsonAsync<NiceModel>(options);
-            var back2 = (NiceModel) await json1.FromJsonAsync(typeof(NiceModel), options);
+        var options = new JsonSerializerSettings { DateTimeZoneHandling = DateTimeZoneHandling.Utc };
 
-            Assert.Equal(
-                Tuple.Create(model.Id, model.Name, model.NiceType, model.Count, model.CreatedTime, model.IsValid),
-                Tuple.Create(back1.Id, back1.Name, back1.NiceType, back1.Count, back1.CreatedTime, back1.IsValid));
+        var json1 = await model.ToNewtonsoftJsonAsync(options);
+        var back1 = await json1.FromNewtonsoftJsonAsync<NiceModel>(options);
+        var back2 = (NiceModel)await json1.FromNewtonsoftJsonAsync(typeof(NiceModel), options);
 
-            Assert.Equal(
-                Tuple.Create(model.Id, model.Name, model.NiceType, model.Count, model.CreatedTime, model.IsValid),
-                Tuple.Create(back2.Id, back2.Name, back2.NiceType, back2.Count, back2.CreatedTime, back2.IsValid));
-        }
+        Assert.Equal(
+            Tuple.Create(model.Id, model.Name, model.NiceType, model.Count, model.CreatedTime, model.IsValid),
+            Tuple.Create(back1.Id, back1.Name, back1.NiceType, back1.Count, back1.CreatedTime, back1.IsValid));
+
+        Assert.Equal(
+            Tuple.Create(model.Id, model.Name, model.NiceType, model.Count, model.CreatedTime, model.IsValid),
+            Tuple.Create(back2.Id, back2.Name, back2.NiceType, back2.Count, back2.CreatedTime, back2.IsValid));
+    }
 
 
-        private static NiceModel CreateNiceModel() {
-            return new NiceModel {
-                Id = Guid.NewGuid(),
-                Name = "nice",
-                NiceType = NiceType.Yes,
-                Count = new Random().Next(0, 100),
-                CreatedTime = new DateTime(2019, 10, 1).ToUniversalTime(),
-                IsValid = true
-            };
-        }
+    private static NiceModel CreateNiceModel()
+    {
+        return new NiceModel
+        {
+            Id = Guid.NewGuid(),
+            Name = "nice",
+            NiceType = NiceType.Yes,
+            Count = new Random().Next(0, 100),
+            CreatedTime = new DateTime(2019, 10, 1).ToUniversalTime(),
+            IsValid = true
+        };
     }
 }

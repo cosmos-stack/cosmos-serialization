@@ -1,0 +1,43 @@
+﻿<Project>
+
+    <PropertyGroup>
+        <NodaTime-RefVersion>3.0.0</NodaTime-RefVersion>
+        <NodaTime-RefVersion-nfx452>2.3.0</NodaTime-RefVersion-nfx452>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="CosmosStack.Standard" Version="$(Standard-RefVersion)" />
+        <PackageReference Include="CosmosStack.Prowess" Version="$(Prowess-RefVersion)" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    </ItemGroup>
+
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net452' ">
+        <PackageReference Include="NodaTime.Serialization.JsonNet" Version="$(NodaTime-RefVersion-nfx452)" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net462' ">
+        <PackageReference Include="NodaTime.Serialization.JsonNet" Version="$(NodaTime-RefVersion)" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net472' ">
+        <PackageReference Include="NodaTime.Serialization.JsonNet" Version="$(NodaTime-RefVersion)" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net48' ">
+        <PackageReference Include="NodaTime.Serialization.JsonNet" Version="$(NodaTime-RefVersion)" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.1' ">
+        <PackageReference Include="NodaTime.Serialization.JsonNet" Version="$(NodaTime-RefVersion)" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net5.0' ">
+        <PackageReference Include="NodaTime.Serialization.JsonNet" Version="$(NodaTime-RefVersion)" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net6.0' ">
+        <PackageReference Include="NodaTime.Serialization.JsonNet" Version="$(NodaTime-RefVersion)" />
+    </ItemGroup>
+
+</Project>
