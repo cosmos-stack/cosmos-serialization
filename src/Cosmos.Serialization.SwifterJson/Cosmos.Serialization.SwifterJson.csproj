@@ -5,10 +5,19 @@
       <Platforms>AnyCPU</Platforms>
     </PropertyGroup>
 
-    <Import Project="project.props" />
+    <PropertyGroup>
+        <AssemblyName>Cosmos.Serialization.SwifterJson</AssemblyName>
+        <PackageId>CosmosStack.Serialization.SwifterJson</PackageId>
+        <Description>SwifterJson serializer extension for Cosmos base library</Description>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Compile Include="Cosmos\Serialization\SwifterJson\SwifterJsonHelper.TextReader.Deserialize.cs" />
+      <Compile Include="Cosmos\Serialization\SwifterJson\SwifterJsonHelper.TextWriter.Serialize.cs" />
+    </ItemGroup>
 
     <Import Project="..\..\common.props" />
 
-    <Import Project="project.dependency.props" />
+    <Import Project="dependency.props" />
 
 </Project>

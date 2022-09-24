@@ -41,7 +41,7 @@
         </member>
         <member name="M:Cosmos.Serialization.Json.Extensions.FromSwifterBytes``1(System.Byte[],System.Nullable{Swifter.Json.JsonFormatterOptions})">
             <summary>
-            From Swifter bytes 
+            From Swifter bytes
             </summary>
             <param name="data"></param>
             <param name="options"></param>
@@ -50,7 +50,7 @@
         </member>
         <member name="M:Cosmos.Serialization.Json.Extensions.FromSwifterBytes(System.Byte[],System.Type,System.Nullable{Swifter.Json.JsonFormatterOptions})">
             <summary>
-            From Swifter bytes 
+            From Swifter bytes
             </summary>
             <param name="data"></param>
             <param name="type"></param>

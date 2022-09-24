@@ -1,9 +1,0 @@
-<Project>
-
-    <ItemGroup>
-        <PackageReference Include="Cosmos.Standard" Version="$(Standard-PkgVersion)" />
-        <PackageReference Include="Cosmos.Extensions.DynamicEnums" Version="$(DynamicEnums-PkgVersion)" />
-        <PackageReference Include="Swifter.Json" Version="1.5.0.3" />
-    </ItemGroup>
-
-</Project>

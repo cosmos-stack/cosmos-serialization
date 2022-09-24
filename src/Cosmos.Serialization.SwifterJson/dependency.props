@@ -1,0 +1,9 @@
+﻿<Project>
+
+    <ItemGroup>
+        <PackageReference Include="CosmosStack.Standard" Version="$(Standard-RefVersion)" />
+        <PackageReference Include="CosmosStack.Prowess" Version="$(Prowess-RefVersion)" />
+        <PackageReference Include="Swifter.Json" Version="1.5.0.3" />
+    </ItemGroup>
+
+</Project>
