@@ -1,32 +1,29 @@
-﻿using System;
+﻿namespace Cosmos.Serialization;
 
-namespace Cosmos.Serialization
+/// <summary>
+/// Utf8JsonObjectSerializer extensions.
+/// </summary>
+public static class Utf8JsonObjectSerializerExtensions
 {
     /// <summary>
-    /// Utf8JsonObjectSerializer extensions.
+    /// Use Utf8JsonObjectSerializer
     /// </summary>
-    public static class Utf8JsonObjectSerializerExtensions
+    /// <param name="entry"></param>
+    public static void UseUtf8Json(this IJsonSerializerConfigureEntry entry)
     {
-        /// <summary>
-        /// Use Utf8JsonObjectSerializer
-        /// </summary>
-        /// <param name="entry"></param>
-        public static void UseUtf8Json(this IJsonSerializerConfigureEntry entry)
-        {
-            entry.CheckNull(nameof(entry));
-            entry.ConfigureJsonSerializer(new Utf8JsonObjectSerializer());
-        }
+        entry.CheckNull(nameof(entry));
+        entry.ConfigureJsonSerializer(new Utf8JsonObjectSerializer());
+    }
 
-        /// <summary>
-        /// Use Utf8JsonObjectSerializer
-        /// </summary>
-        /// <param name="entry"></param>
-        /// <param name="serializerFactory"></param>
-        public static void UseUtf8Json(this IJsonSerializerConfigureEntry entry, Func<Utf8JsonObjectSerializer> serializerFactory)
-        {
-            entry.CheckNull(nameof(entry));
-            serializerFactory.CheckNull(nameof(serializerFactory));
-            entry.ConfigureJsonSerializer(serializerFactory);
-        }
+    /// <summary>
+    /// Use Utf8JsonObjectSerializer
+    /// </summary>
+    /// <param name="entry"></param>
+    /// <param name="serializerFactory"></param>
+    public static void UseUtf8Json(this IJsonSerializerConfigureEntry entry, Func<Utf8JsonObjectSerializer> serializerFactory)
+    {
+        entry.CheckNull(nameof(entry));
+        serializerFactory.CheckNull(nameof(serializerFactory));
+        entry.ConfigureJsonSerializer(serializerFactory);
     }
 }

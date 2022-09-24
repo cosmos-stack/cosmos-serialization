@@ -5,10 +5,14 @@
       <Platforms>AnyCPU</Platforms>
     </PropertyGroup>
 
-    <Import Project="project.props" />
+    <PropertyGroup>
+        <AssemblyName>Cosmos.Serialization.Utf8Json</AssemblyName>
+        <PackageId>CosmosStack.Serialization.Utf8Json</PackageId>
+        <Description>Utf8Json serializer extension for Cosmos base library</Description>
+    </PropertyGroup>
 
     <Import Project="..\..\common.props" />
 
-    <Import Project="project.dependency.props" />
+    <Import Project="dependency.props" />
 
 </Project>

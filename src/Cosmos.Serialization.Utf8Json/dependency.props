@@ -1,0 +1,9 @@
+﻿<Project>
+
+    <ItemGroup>
+        <PackageReference Include="CosmosStack.Standard" Version="$(Standard-RefVersion)" />
+        <PackageReference Include="CosmosStack.Prowess" Version="$(Prowess-RefVersion)" />
+        <PackageReference Include="Utf8Json" Version="1.3.7" />
+    </ItemGroup>
+
+</Project>

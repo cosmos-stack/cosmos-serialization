@@ -38,7 +38,7 @@
         </member>
         <member name="M:Cosmos.Serialization.Json.Utf8JsonExtensions.FromUtf8JsonBytes``1(System.Byte[],Utf8Json.IJsonFormatterResolver)">
             <summary>
-            From Utf8Json bytes 
+            From Utf8Json bytes
             </summary>
             <param name="data"></param>
             <param name="resolver"></param>
@@ -47,7 +47,7 @@
         </member>
         <member name="M:Cosmos.Serialization.Json.Utf8JsonExtensions.FromUtf8JsonBytes(System.Byte[],System.Type,Utf8Json.IJsonFormatterResolver)">
             <summary>
-            From Utf8Json bytes 
+            From Utf8Json bytes
             </summary>
             <param name="data"></param>
             <param name="type"></param>
