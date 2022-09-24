@@ -1,9 +1,0 @@
-<Project>
-
-    <PropertyGroup>
-        <AssemblyName>Cosmos.Serialization.MicrosoftJson</AssemblyName>
-        <PackageId>Cosmos.Serialization.MicrosoftJson</PackageId>
-        <Description>Microsoft System.Text.Json serializer extension for Cosmos base library</Description>
-    </PropertyGroup>
-
-</Project>

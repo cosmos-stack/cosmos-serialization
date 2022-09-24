@@ -5,10 +5,18 @@
     <PropertyGroup>
         <!--Overwrite the default target frameworks in common.props-->
         <TargetFrameworks>net5.0;netcoreapp3.1;net48;net472;net462</TargetFrameworks>
+        <RootNamespace>Cosmos.Test.Serialization.MicrosoftJsonTest</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\src\Cosmos.Serialization.MicrosoftJson\Cosmos.Serialization.MicrosoftJson.csproj" />
+        <ProjectReference Include="..\..\src\Cosmos.Serialization.SystemTextJson\Cosmos.Serialization.SystemTextJson.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Update="coverlet.collector" Version="3.1.2">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
     </ItemGroup>
 
 </Project>

@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <Configurations>Debug;Release</Configurations>
+        <Platforms>AnyCPU</Platforms>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <AssemblyName>Cosmos.Serialization.SystemTextJson</AssemblyName>
+        <PackageId>CosmosStack.Serialization.SystemTextJson</PackageId>
+        <Description>Microsoft System.Text.Json serializer extension for Cosmos base library</Description>
+    </PropertyGroup>
+
+    <Import Project="..\..\common.props" />
+
+    <PropertyGroup>
+        <!--Overwrite the default target frameworks in common.props-->
+        <TargetFrameworks>net6.0;net5.0;netcoreapp3.1;net48;net472;net462</TargetFrameworks>
+    </PropertyGroup>
+
+    <Import Project="dependency.props" />
+
+</Project>
