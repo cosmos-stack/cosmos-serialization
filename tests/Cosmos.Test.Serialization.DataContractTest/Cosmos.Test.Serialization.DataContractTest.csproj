@@ -1,13 +1,13 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
 <PropertyGroup>
-    <RootNamespace>Cosmos.Test.Serialization.BinaryTest</RootNamespace>
+    <RootNamespace>Cosmos.Test.Serialization.DataContractTest</RootNamespace>
 </PropertyGroup>
 
 <Import Project="..\..\common.tests.props" />
 
 <ItemGroup>
-    <ProjectReference Include="..\..\src\Cosmos.Serialization.Binary\Cosmos.Serialization.Binary.csproj" />
+    <ProjectReference Include="..\..\src\Cosmos.Serialization.DataContract\Cosmos.Serialization.DataContract.csproj" />
 </ItemGroup>
 
 <ItemGroup>

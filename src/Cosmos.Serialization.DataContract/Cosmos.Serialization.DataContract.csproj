@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <Configurations>Debug;Release</Configurations>
+        <Platforms>AnyCPU</Platforms>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <AssemblyName>Cosmos.Serialization.DataContract</AssemblyName>
+        <PackageId>CosmosStack.Serialization.DataContract</PackageId>
+        <Description>DataContract serializer extension for Cosmos base library</Description>
+    </PropertyGroup>
+
+    <Import Project="..\..\common.props" />
+
+    <Import Project="dependency.props" />
+
+</Project>
